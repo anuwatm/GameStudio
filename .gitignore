@@ -1,0 +1,10 @@
+# Excluded folders
+temp/
+
+# Excluded agent working files
+AGENTS.md
+agent.md
+gemini.md
+GEMINI.md
+gpt.md
+GPT.md
