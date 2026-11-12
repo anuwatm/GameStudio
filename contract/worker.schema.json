@@ -1,0 +1,1043 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "contractVersion": {
+          "const": 1
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "kind": {
+          "const": "command"
+        },
+        "name": {
+          "const": "openProject"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "project": {
+              "$ref": "https://storyflow.local/project.schema.json"
+            }
+          },
+          "required": [
+            "project"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "contractVersion",
+        "requestId",
+        "kind",
+        "name",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contractVersion": {
+          "const": 1
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "kind": {
+          "const": "result"
+        },
+        "name": {
+          "const": "openProject"
+        },
+        "value": {
+          "type": "object",
+          "properties": {
+            "project": {
+              "$ref": "https://storyflow.local/project.schema.json"
+            }
+          },
+          "required": [
+            "project"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "contractVersion",
+        "requestId",
+        "kind",
+        "name",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contractVersion": {
+          "const": 1
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "kind": {
+          "const": "command"
+        },
+        "name": {
+          "const": "applyEdit"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "patch": {
+              "type": "array",
+              "items": {
+                "oneOf": [
+                  {
+                    "type": "object",
+                    "properties": {
+                      "op": {
+                        "const": "add"
+                      },
+                      "path": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": [
+                          "object",
+                          "array",
+                          "string",
+                          "number",
+                          "boolean",
+                          "null"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "op",
+                      "path",
+                      "value"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "op": {
+                        "const": "replace"
+                      },
+                      "path": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": [
+                          "object",
+                          "array",
+                          "string",
+                          "number",
+                          "boolean",
+                          "null"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "op",
+                      "path",
+                      "value"
+                    ],
+                    "additionalProperties": false
+                  },
+                  {
+                    "type": "object",
+                    "properties": {
+                      "op": {
+                        "const": "remove"
+                      },
+                      "path": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "op",
+                      "path"
+                    ],
+                    "additionalProperties": false
+                  }
+                ]
+              }
+            }
+          },
+          "required": [
+            "patch"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "contractVersion",
+        "requestId",
+        "kind",
+        "name",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contractVersion": {
+          "const": 1
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "kind": {
+          "const": "result"
+        },
+        "name": {
+          "const": "applyEdit"
+        },
+        "value": {
+          "type": "object",
+          "properties": {
+            "project": {
+              "$ref": "https://storyflow.local/project.schema.json"
+            }
+          },
+          "required": [
+            "project"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "contractVersion",
+        "requestId",
+        "kind",
+        "name",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contractVersion": {
+          "const": 1
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "kind": {
+          "const": "command"
+        },
+        "name": {
+          "const": "undo"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {},
+          "required": [],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "contractVersion",
+        "requestId",
+        "kind",
+        "name",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contractVersion": {
+          "const": 1
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "kind": {
+          "const": "result"
+        },
+        "name": {
+          "const": "undo"
+        },
+        "value": {
+          "type": "object",
+          "properties": {
+            "project": {
+              "$ref": "https://storyflow.local/project.schema.json"
+            }
+          },
+          "required": [
+            "project"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "contractVersion",
+        "requestId",
+        "kind",
+        "name",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contractVersion": {
+          "const": 1
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "kind": {
+          "const": "command"
+        },
+        "name": {
+          "const": "redo"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {},
+          "required": [],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "contractVersion",
+        "requestId",
+        "kind",
+        "name",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contractVersion": {
+          "const": 1
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "kind": {
+          "const": "result"
+        },
+        "name": {
+          "const": "redo"
+        },
+        "value": {
+          "type": "object",
+          "properties": {
+            "project": {
+              "$ref": "https://storyflow.local/project.schema.json"
+            }
+          },
+          "required": [
+            "project"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "contractVersion",
+        "requestId",
+        "kind",
+        "name",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contractVersion": {
+          "const": 1
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "kind": {
+          "const": "command"
+        },
+        "name": {
+          "const": "startPlaytest"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "startNodeId": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "initialVarsOverride": {
+              "type": "object",
+              "propertyNames": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "additionalProperties": {
+                "type": [
+                  "string",
+                  "integer",
+                  "boolean"
+                ]
+              }
+            }
+          },
+          "required": [],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "contractVersion",
+        "requestId",
+        "kind",
+        "name",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contractVersion": {
+          "const": 1
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "kind": {
+          "const": "result"
+        },
+        "name": {
+          "const": "startPlaytest"
+        },
+        "value": {
+          "$ref": "#/$defs/PlaytestState"
+        }
+      },
+      "required": [
+        "contractVersion",
+        "requestId",
+        "kind",
+        "name",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contractVersion": {
+          "const": 1
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "kind": {
+          "const": "command"
+        },
+        "name": {
+          "const": "choose"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "choiceId": {
+              "type": "string",
+              "format": "uuid"
+            }
+          },
+          "required": [
+            "choiceId"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "contractVersion",
+        "requestId",
+        "kind",
+        "name",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contractVersion": {
+          "const": 1
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "kind": {
+          "const": "result"
+        },
+        "name": {
+          "const": "choose"
+        },
+        "value": {
+          "$ref": "#/$defs/PlaytestState"
+        }
+      },
+      "required": [
+        "contractVersion",
+        "requestId",
+        "kind",
+        "name",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contractVersion": {
+          "const": 1
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "kind": {
+          "const": "command"
+        },
+        "name": {
+          "const": "setVar"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "variableId": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "value": {
+              "type": [
+                "string",
+                "integer",
+                "boolean"
+              ]
+            }
+          },
+          "required": [
+            "variableId",
+            "value"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "contractVersion",
+        "requestId",
+        "kind",
+        "name",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contractVersion": {
+          "const": 1
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "kind": {
+          "const": "result"
+        },
+        "name": {
+          "const": "setVar"
+        },
+        "value": {
+          "$ref": "#/$defs/PlaytestState"
+        }
+      },
+      "required": [
+        "contractVersion",
+        "requestId",
+        "kind",
+        "name",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contractVersion": {
+          "const": 1
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "kind": {
+          "const": "command"
+        },
+        "name": {
+          "const": "rewind"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {
+            "steps": {
+              "type": "integer",
+              "minimum": 1
+            }
+          },
+          "required": [
+            "steps"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "contractVersion",
+        "requestId",
+        "kind",
+        "name",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contractVersion": {
+          "const": 1
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "kind": {
+          "const": "result"
+        },
+        "name": {
+          "const": "rewind"
+        },
+        "value": {
+          "$ref": "#/$defs/PlaytestState"
+        }
+      },
+      "required": [
+        "contractVersion",
+        "requestId",
+        "kind",
+        "name",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contractVersion": {
+          "const": 1
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "kind": {
+          "const": "query"
+        },
+        "name": {
+          "const": "getProject"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {},
+          "required": [],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "contractVersion",
+        "requestId",
+        "kind",
+        "name",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contractVersion": {
+          "const": 1
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "kind": {
+          "const": "result"
+        },
+        "name": {
+          "const": "getProject"
+        },
+        "value": {
+          "type": "object",
+          "properties": {
+            "project": {
+              "$ref": "https://storyflow.local/project.schema.json"
+            }
+          },
+          "required": [
+            "project"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "contractVersion",
+        "requestId",
+        "kind",
+        "name",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contractVersion": {
+          "const": 1
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "kind": {
+          "const": "query"
+        },
+        "name": {
+          "const": "validate"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {},
+          "required": [],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "contractVersion",
+        "requestId",
+        "kind",
+        "name",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contractVersion": {
+          "const": 1
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "kind": {
+          "const": "result"
+        },
+        "name": {
+          "const": "validate"
+        },
+        "value": {
+          "type": "object",
+          "properties": {
+            "issues": {
+              "type": "array",
+              "items": {
+                "$ref": "#/$defs/ValidationIssue"
+              }
+            }
+          },
+          "required": [
+            "issues"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "contractVersion",
+        "requestId",
+        "kind",
+        "name",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contractVersion": {
+          "const": 1
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "kind": {
+          "const": "query"
+        },
+        "name": {
+          "const": "getTrace"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {},
+          "required": [],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "contractVersion",
+        "requestId",
+        "kind",
+        "name",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contractVersion": {
+          "const": 1
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "kind": {
+          "const": "result"
+        },
+        "name": {
+          "const": "getTrace"
+        },
+        "value": {
+          "type": "object",
+          "properties": {
+            "trace": {
+              "type": "array",
+              "items": {
+                "$ref": "https://storyflow.local/step-trace.schema.json"
+              }
+            }
+          },
+          "required": [
+            "trace"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "contractVersion",
+        "requestId",
+        "kind",
+        "name",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contractVersion": {
+          "const": 1
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "kind": {
+          "const": "error"
+        },
+        "error": {
+          "type": "object",
+          "properties": {
+            "code": {
+              "type": "string"
+            },
+            "message": {
+              "type": "string"
+            },
+            "path": {
+              "type": "array",
+              "items": {
+                "anyOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "integer",
+                    "minimum": 0
+                  }
+                ]
+              }
+            }
+          },
+          "required": [
+            "code",
+            "message"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "contractVersion",
+        "requestId",
+        "kind",
+        "error"
+      ],
+      "additionalProperties": false
+    }
+  ],
+  "$defs": {
+    "ValidationIssue": {
+      "type": "object",
+      "properties": {
+        "code": {
+          "type": "string"
+        },
+        "message": {
+          "type": "string"
+        },
+        "severity": {
+          "enum": [
+            "error",
+            "warning"
+          ]
+        },
+        "nodeId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "edgeId": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "field": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "code",
+        "message",
+        "severity"
+      ],
+      "additionalProperties": false
+    },
+    "ExplainCondition": {
+      "type": "object",
+      "properties": {
+        "passed": {
+          "type": "boolean"
+        },
+        "expression": {
+          "type": "string"
+        },
+        "operands": {
+          "type": "array",
+          "items": {
+            "type": [
+              "string",
+              "integer",
+              "boolean"
+            ]
+          }
+        }
+      },
+      "required": [
+        "passed",
+        "expression",
+        "operands"
+      ],
+      "additionalProperties": false
+    },
+    "PlaytestState": {
+      "type": "object",
+      "properties": {
+        "runState": {
+          "type": "object",
+          "properties": {
+            "nodeId": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "day": {
+              "type": "integer",
+              "minimum": 1
+            },
+            "vars": {
+              "type": "object",
+              "propertyNames": {
+                "type": "string",
+                "format": "uuid"
+              },
+              "additionalProperties": {
+                "type": [
+                  "string",
+                  "integer",
+                  "boolean"
+                ]
+              }
+            },
+            "firedEventIds": {
+              "type": "array",
+              "items": {
+                "type": "string",
+                "format": "uuid"
+              }
+            }
+          },
+          "required": [
+            "nodeId",
+            "day",
+            "vars",
+            "firedEventIds"
+          ],
+          "additionalProperties": false
+        },
+        "visibleChoices": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "trace": {
+          "type": "array",
+          "items": {
+            "$ref": "https://storyflow.local/step-trace.schema.json"
+          }
+        },
+        "conditions": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/ExplainCondition"
+          }
+        }
+      },
+      "required": [
+        "runState",
+        "visibleChoices",
+        "trace",
+        "conditions"
+      ],
+      "additionalProperties": false
+    }
+  }
+}

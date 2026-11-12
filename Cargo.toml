@@ -1,0 +1,3 @@
+[workspace]
+members = ["crates/sf-core", "crates/sf-cli", "crates/sf-wasm"]
+resolver = "2"

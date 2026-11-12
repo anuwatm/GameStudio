@@ -1,0 +1,52 @@
+[
+  {
+    "case": "A1",
+    "passed": true,
+    "steps": 16
+  },
+  {
+    "case": "A2-2-20",
+    "passed": true,
+    "steps": 6
+  },
+  {
+    "case": "A2-3-19",
+    "passed": true,
+    "steps": 6
+  },
+  {
+    "case": "A2-3-20",
+    "passed": true,
+    "steps": 5
+  },
+  {
+    "case": "A3",
+    "passed": true,
+    "steps": 12
+  },
+  {
+    "case": "A4",
+    "passed": true,
+    "steps": 6
+  },
+  {
+    "case": "A5",
+    "passed": true,
+    "steps": 6
+  },
+  {
+    "case": "A6",
+    "passed": true,
+    "steps": 8
+  },
+  {
+    "case": "Aplus-low",
+    "passed": true,
+    "steps": 7
+  },
+  {
+    "case": "Aplus-high",
+    "passed": true,
+    "steps": 7
+  }
+]

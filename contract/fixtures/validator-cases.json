@@ -1,0 +1,532 @@
+{
+  "base": "summer-house.json",
+  "patchFormat": "RFC 6902",
+  "rules": [
+    {
+      "code": "V001",
+      "rule": "รหัสซ้ำ",
+      "valid": {
+        "patch": [],
+        "expectAbsent": "V001"
+      },
+      "invalid": {
+        "patch": [
+          {
+            "op": "replace",
+            "path": "/nodes/1/id",
+            "value": "00000000-0000-4000-8000-000000000003"
+          }
+        ],
+        "expect": {
+          "code": "V001",
+          "severity": "error"
+        }
+      }
+    },
+    {
+      "code": "V002",
+      "rule": "next ขาด",
+      "valid": {
+        "patch": [],
+        "expectAbsent": "V002"
+      },
+      "invalid": {
+        "patch": [
+          {
+            "op": "remove",
+            "path": "/edges/0"
+          }
+        ],
+        "expect": {
+          "code": "V002",
+          "severity": "error"
+        }
+      }
+    },
+    {
+      "code": "V003",
+      "rule": "onComplete ขาด",
+      "valid": {
+        "patch": [],
+        "expectAbsent": "V003"
+      },
+      "invalid": {
+        "patch": [
+          {
+            "op": "remove",
+            "path": "/edges/1"
+          }
+        ],
+        "expect": {
+          "code": "V003",
+          "severity": "error"
+        }
+      }
+    },
+    {
+      "code": "V004",
+      "rule": "fallback ขาด",
+      "valid": {
+        "patch": [],
+        "expectAbsent": "V004"
+      },
+      "invalid": {
+        "patch": [
+          {
+            "op": "remove",
+            "path": "/edges/4"
+          }
+        ],
+        "expect": {
+          "code": "V004",
+          "severity": "error"
+        }
+      }
+    },
+    {
+      "code": "V005",
+      "rule": "ไม่มีกิจกรรมสำรอง",
+      "valid": {
+        "patch": [],
+        "expectAbsent": "V005"
+      },
+      "invalid": {
+        "patch": [
+          {
+            "op": "replace",
+            "path": "/activities/1/condition",
+            "value": {
+              "kind": "compare",
+              "operator": "ge",
+              "left": {
+                "kind": "variable",
+                "variableId": "00000000-0000-4000-8000-000000000011"
+              },
+              "right": {
+                "kind": "literal",
+                "value": 1
+              }
+            }
+          }
+        ],
+        "expect": {
+          "code": "V005",
+          "severity": "error"
+        }
+      }
+    },
+    {
+      "code": "V006",
+      "rule": "Event priority/order ซ้ำในเฟสเดียวกัน",
+      "valid": {
+        "patch": [],
+        "expectAbsent": "V006"
+      },
+      "invalid": {
+        "patch": [
+          {
+            "op": "add",
+            "path": "/events/-",
+            "value": {
+              "id": "00000000-0000-4000-8000-000000000080",
+              "phase": "after_activity",
+              "priority": 1,
+              "order": 0,
+              "once": true,
+              "condition": {
+                "kind": "all",
+                "conditions": [
+                  {
+                    "kind": "compare",
+                    "operator": "ge",
+                    "left": {
+                      "kind": "day"
+                    },
+                    "right": {
+                      "kind": "literal",
+                      "value": 3
+                    }
+                  },
+                  {
+                    "kind": "compare",
+                    "operator": "ge",
+                    "left": {
+                      "kind": "variable",
+                      "variableId": "00000000-0000-4000-8000-000000000010"
+                    },
+                    "right": {
+                      "kind": "literal",
+                      "value": 20
+                    }
+                  }
+                ]
+              },
+              "subgraphId": "00000000-0000-4000-8000-000000000007"
+            }
+          },
+          {
+            "op": "add",
+            "path": "/nodes/1/eventIds/-",
+            "value": "00000000-0000-4000-8000-000000000080"
+          }
+        ],
+        "expect": {
+          "code": "V006",
+          "severity": "error"
+        }
+      }
+    },
+    {
+      "code": "V007",
+      "rule": "lastDay ต่ำกว่า startDay",
+      "valid": {
+        "patch": [],
+        "expectAbsent": "V007"
+      },
+      "invalid": {
+        "patch": [
+          {
+            "op": "replace",
+            "path": "/nodes/1/startDay",
+            "value": 4
+          }
+        ],
+        "expect": {
+          "code": "V007",
+          "severity": "error"
+        }
+      }
+    },
+    {
+      "code": "V008",
+      "rule": "Subgraph กระโดดออก",
+      "valid": {
+        "patch": [],
+        "expectAbsent": "V008"
+      },
+      "invalid": {
+        "patch": [
+          {
+            "op": "replace",
+            "path": "/nodes/5",
+            "value": {
+              "kind": "end",
+              "id": "00000000-0000-4000-8000-000000000008",
+              "graphId": "00000000-0000-4000-8000-000000000007",
+              "mode": "jump",
+              "targetGraphId": "00000000-0000-4000-8000-000000000002"
+            }
+          }
+        ],
+        "expect": {
+          "code": "V008",
+          "severity": "error"
+        }
+      }
+    },
+    {
+      "code": "V009",
+      "rule": "ชนิดตัวแปรผิด",
+      "valid": {
+        "patch": [],
+        "expectAbsent": "V009"
+      },
+      "invalid": {
+        "patch": [
+          {
+            "op": "replace",
+            "path": "/variables/0/initial",
+            "value": "0"
+          }
+        ],
+        "expect": {
+          "code": "V009",
+          "severity": "error"
+        }
+      }
+    },
+    {
+      "code": "V010",
+      "rule": "ปลายทางไม่มีอยู่",
+      "valid": {
+        "patch": [],
+        "expectAbsent": "V010"
+      },
+      "invalid": {
+        "patch": [
+          {
+            "op": "replace",
+            "path": "/edges/0/to",
+            "value": "00000000-0000-4000-8000-000000000090"
+          }
+        ],
+        "expect": {
+          "code": "V010",
+          "severity": "error"
+        }
+      }
+    },
+    {
+      "code": "V011",
+      "rule": "ฉากเข้าไม่ถึง",
+      "valid": {
+        "patch": [],
+        "expectAbsent": "V011"
+      },
+      "invalid": {
+        "patch": [
+          {
+            "op": "add",
+            "path": "/nodes/-",
+            "value": {
+              "kind": "end",
+              "id": "00000000-0000-4000-8000-000000000091",
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "mode": "ending"
+            }
+          }
+        ],
+        "expect": {
+          "code": "V011",
+          "severity": "warning"
+        }
+      }
+    },
+    {
+      "code": "V012",
+      "rule": "พาธสื่อออกนอกโฟลเดอร์",
+      "valid": {
+        "patch": [],
+        "expectAbsent": "V012"
+      },
+      "invalid": {
+        "patch": [
+          {
+            "op": "add",
+            "path": "/assets/-",
+            "value": {
+              "id": "00000000-0000-4000-8000-000000000092",
+              "path": "../escape.webm"
+            }
+          }
+        ],
+        "expect": {
+          "code": "V012",
+          "severity": "error"
+        }
+      }
+    },
+    {
+      "code": "V013",
+      "rule": "Schedule ใน Subgraph",
+      "valid": {
+        "patch": [],
+        "expectAbsent": "V013"
+      },
+      "invalid": {
+        "patch": [
+          {
+            "op": "replace",
+            "path": "/nodes/5",
+            "value": {
+              "kind": "schedule",
+              "id": "00000000-0000-4000-8000-000000000008",
+              "graphId": "00000000-0000-4000-8000-000000000007",
+              "startDay": 1,
+              "lastDay": 3,
+              "activityIds": [
+                "00000000-0000-4000-8000-000000000012",
+                "00000000-0000-4000-8000-000000000013"
+              ],
+              "eventIds": [
+                "00000000-0000-4000-8000-000000000014"
+              ]
+            }
+          }
+        ],
+        "expect": {
+          "code": "V013",
+          "severity": "error"
+        }
+      }
+    },
+    {
+      "code": "V014",
+      "rule": "AST เทียบคนละชนิด",
+      "valid": {
+        "patch": [],
+        "expectAbsent": "V014"
+      },
+      "invalid": {
+        "patch": [
+          {
+            "op": "replace",
+            "path": "/events/0/condition/conditions/1/right/value",
+            "value": "20"
+          }
+        ],
+        "expect": {
+          "code": "V014",
+          "severity": "error"
+        }
+      }
+    },
+    {
+      "code": "V015",
+      "rule": "Effect add ใช้ operand ผิดชนิด",
+      "valid": {
+        "patch": [],
+        "expectAbsent": "V015"
+      },
+      "invalid": {
+        "patch": [
+          {
+            "op": "replace",
+            "path": "/activities/0/effects/0/value",
+            "value": true
+          }
+        ],
+        "expect": {
+          "code": "V015",
+          "severity": "error"
+        }
+      }
+    },
+    {
+      "code": "V016",
+      "rule": "branch ขาด false",
+      "valid": {
+        "patch": [],
+        "expectAbsent": "V016"
+      },
+      "invalid": {
+        "patch": [
+          {
+            "op": "remove",
+            "path": "/edges/6"
+          }
+        ],
+        "expect": {
+          "code": "V016",
+          "severity": "error"
+        }
+      }
+    },
+    {
+      "code": "V017",
+      "rule": "effect ขาด next",
+      "valid": {
+        "patch": [],
+        "expectAbsent": "V017"
+      },
+      "invalid": {
+        "patch": [
+          {
+            "op": "remove",
+            "path": "/edges/7"
+          }
+        ],
+        "expect": {
+          "code": "V017",
+          "severity": "error"
+        }
+      }
+    },
+    {
+      "code": "V018",
+      "rule": "choice ขาดเส้นเชื่อม",
+      "valid": {
+        "patch": [],
+        "expectAbsent": "V018"
+      },
+      "invalid": {
+        "patch": [
+          {
+            "op": "remove",
+            "path": "/edges/2"
+          }
+        ],
+        "expect": {
+          "code": "V018",
+          "severity": "error"
+        }
+      }
+    },
+    {
+      "code": "V019",
+      "rule": "return ใน main",
+      "valid": {
+        "patch": [],
+        "expectAbsent": "V019"
+      },
+      "invalid": {
+        "patch": [
+          {
+            "op": "replace",
+            "path": "/nodes/2/mode",
+            "value": "return"
+          }
+        ],
+        "expect": {
+          "code": "V019",
+          "severity": "error"
+        }
+      }
+    },
+    {
+      "code": "V020",
+      "rule": "initial อยู่นอกขอบเขต",
+      "valid": {
+        "patch": [],
+        "expectAbsent": "V020"
+      },
+      "invalid": {
+        "patch": [
+          {
+            "op": "replace",
+            "path": "/variables/0/initial",
+            "value": 101
+          }
+        ],
+        "expect": {
+          "code": "V020",
+          "severity": "error"
+        }
+      }
+    },
+    {
+      "code": "V021",
+      "rule": "shortId ชน",
+      "valid": {
+        "patch": [],
+        "expectAbsent": "V021"
+      },
+      "invalid": {
+        "patch": [
+          {
+            "op": "add",
+            "path": "/nodes/-",
+            "value": {
+              "kind": "scene",
+              "id": "10000000-0000-4000-8000-000000000003",
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "lines": [
+                {
+                  "text": "Summer House",
+                  "characterId": null
+                }
+              ],
+              "assetIds": [],
+              "effects": [],
+              "choices": []
+            }
+          }
+        ],
+        "expect": {
+          "code": "V021",
+          "severity": "error"
+        }
+      }
+    }
+  ]
+}

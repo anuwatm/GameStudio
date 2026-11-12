@@ -285,6 +285,8 @@ my-renpy-game/
 
 ### 4.3 เป้าประสิทธิภาพ (ชั่วคราว — ยืนยันหลัง baseline ของ Phase 0)
 
+> มติ 0b.5 (2026-11-12): เจ้าของยืนยัน Rust/WASM และเกณฑ์ P1–P8 ตาม [Decision Gate](document/phase-0b/decision-gate-0b5.md) แล้ว ตารางเป้าชั่วคราวด้านล่างเก็บเป็นประวัติ; applyEdit ใช้ median ≤100 ms แทน 16 ms
+
 | ชุด | ตัวชี้วัด | เป้าชั่วคราว (Gemini §6) | วัดที่ |
 |---|---|---|---|
 | Core | ขนาด WASM (บีบอัดแล้ว) | ≤ 3 MB | Build |
@@ -327,31 +329,31 @@ my-renpy-game/
 
 ## 6. รายการขออนุมัติ (แยกสถานะตาม GPT §7)
 
-**หมายเหตุสถานะ:** Concept เดิมระบุ "Final Approved" แต่ช่องอนุมัติทั้ง 6 รายการยังไม่ติ๊ก จึงใช้สถานะ "รออนุมัติ" จนกว่าเจ้าของโครงการยืนยัน
+**หมายเหตุสถานะ:** เจ้าของโครงการ (`anuwat`) ยืนยันอนุมัติครบทั้ง 14 รายการเมื่อ `2026-11-10` และอนุญาตให้ Agent ตัดสินใจรายละเอียดทางเทคนิคในขอบเขต Phase 0a ตาม `AGENTS.md` ข้อ 11 (ดูรายละเอียดใน [decisions-0a1.md](document/phase-0a/decisions-0a1.md))
 
-### 6.1 แนวคิดเดิม (ผ่านการทบทวนจากทั้งสามฝ่าย รอเจ้าของโครงการลงนามอนุมัติ)
-
-| # | รายการ | ผู้ตัดสินใจ | ผลอนุมัติ |
-|---|---|---|---|
-| 1 | Web App บน Chromium ไม่มี Backend ใน MVP | _(ระบุชื่อ)_ | ☐ |
-| 2 | Core Contract + Rust/WASM เป็น Core หลัก (สลับ TypeScript ได้ที่ Decision Gate) | _(ระบุชื่อ)_ | ☐ |
-| 3 | โฟลเดอร์ Zero-Copy (`game/assets/` ร่วมกัน) | _(ระบุชื่อ)_ | ☐ |
-| 4 | Local Folder + Transactional Export + Manifest Hash | _(ระบุชื่อ)_ | ☐ |
-| 5 | Data Model มาตรฐาน (Node 5 ชนิด, ตัวแปร 3 ชนิด, Condition AST) | _(ระบุชื่อ)_ | ☐ |
-| 6 | เกณฑ์ Summer House และ Parity 100% (กลุ่ม A) เป็นเกณฑ์ผ่าน Phase 0a | _(ระบุชื่อ)_ | ☐ |
-
-### 6.2 รายการใหม่จากรอบนี้ (รอตัดสินใจ)
+### 6.1 แนวคิดเดิม (อนุมัติแล้วเมื่อ 2026-11-10)
 
 | # | รายการ | ผู้ตัดสินใจ | ผลอนุมัติ |
 |---|---|---|---|
-| 7 | ใช้ ID ถาวร (UUID) และชื่อ Ren'Py แบบ `sf_<kind>_<shortId>` | _(ระบุชื่อ)_ | ☐ |
-| 8 | ล็อกกฎตัวเลข (i64 → clamp หลังทุก effect) และกฎ Event/Subgraph เป็นสเปกกลาง | _(ระบุชื่อ)_ | ☐ |
-| 9 | Export แบบ Transaction หลายไฟล์ด้วย pending journal | _(ระบุชื่อ)_ | ☐ |
-| 10 | ย้าย Autosave/Recovery/Web Locks มา Phase 1 | _(ระบุชื่อ)_ | ☐ |
-| 11 | แบ่ง Phase 0 เป็น 0a (~2 สัปดาห์) และ 0b (~1 สัปดาห์) | _(ระบุชื่อ)_ | ☐ |
-| 12 | เป้าประสิทธิภาพเป็นค่าชั่วคราว ยืนยันหลัง baseline | _(ระบุชื่อ)_ | ☐ |
-| 13 | ข้อความผู้เขียนเป็น literal โดยค่าเริ่มต้น (Escape อัตโนมัติ) | _(ระบุชื่อ)_ | ☐ |
-| 14 | ไม่มีการสุ่มใน MVP | _(ระบุชื่อ)_ | ☐ |
+| 1 | Web App บน Chromium ไม่มี Backend ใน MVP | `anuwat` | ☑ |
+| 2 | Core Contract + Rust/WASM เป็น Core หลัก (สลับ TypeScript ได้ที่ Decision Gate) | `anuwat` | ☑ |
+| 3 | โฟลเดอร์ Zero-Copy (`game/assets/` ร่วมกัน) | `anuwat` | ☑ |
+| 4 | Local Folder + Transactional Export + Manifest Hash | `anuwat` | ☑ |
+| 5 | Data Model มาตรฐาน (Node 5 ชนิด, ตัวแปร 3 ชนิด, Condition AST) | `anuwat` | ☑ |
+| 6 | เกณฑ์ Summer House และ Parity 100% (กลุ่ม A) เป็นเกณฑ์ผ่าน Phase 0a | `anuwat` | ☑ |
+
+### 6.2 รายการใหม่จากรอบนี้ (อนุมัติแล้วเมื่อ 2026-11-10)
+
+| # | รายการ | ผู้ตัดสินใจ | ผลอนุมัติ |
+|---|---|---|---|
+| 7 | ใช้ ID ถาวร (UUID) และชื่อ Ren'Py แบบ `sf_<kind>_<shortId>` | `anuwat` | ☑ |
+| 8 | ล็อกกฎตัวเลข (i64 → clamp หลังทุก effect) และกฎ Event/Subgraph เป็นสเปกกลาง | `anuwat` | ☑ |
+| 9 | Export แบบ Transaction หลายไฟล์ด้วย pending journal | `anuwat` | ☑ |
+| 10 | ย้าย Autosave/Recovery/Web Locks มา Phase 1 | `anuwat` | ☑ |
+| 11 | แบ่ง Phase 0 เป็น 0a (~2 สัปดาห์) และ 0b (~1 สัปดาห์) | `anuwat` | ☑ |
+| 12 | เป้าประสิทธิภาพเป็นค่าชั่วคราว ยืนยันหลัง baseline | `anuwat` | ☑ |
+| 13 | ข้อความผู้เขียนเป็น literal โดยค่าเริ่มต้น (Escape อัตโนมัติ) | `anuwat` | ☑ |
+| 14 | ไม่มีการสุ่มใน MVP | `anuwat` | ☑ |
 
 ---
 
@@ -375,10 +377,14 @@ my-renpy-game/
 
 ---
 
-## 8. ประเด็นที่ยังเปิด (ต้องปิดใน Phase 0a)
+## 8. ประเด็นที่ยังเปิด (ปิดครบแล้วในขั้น `0a.1` เมื่อ 2026-11-10 — ดู [decisions-0a1.md](document/phase-0a/decisions-0a1.md))
 
-1. **ชื่อพอร์ตและฟิลด์ของ Schedule:** `onComplete`, วันสุดท้าย, การนับวัน ต้องล็อกใน Contract พร้อม fixture
-2. **รุ่น Ren'Py SDK ที่ตรึง:** เลือกรุ่นย่อยตายตัว (Gemini เสนอสาย 8.3.x) และบันทึกรุ่นที่ใช้จริงใน CI
-3. **รูปแบบ Trace สุดท้าย:** ตัวอย่างใน §3.2 เป็นแนวทาง ต้องสรุปฟิลด์บังคับและวิธีเทียบกับผลจาก Ren'Py Headless (ผู้รับผิดชอบการดึงค่ากลับมาจาก Ren'Py)
-4. **เครื่องและ fixture อ้างอิงสำหรับ baseline:** ต้องกำหนดสเปกก่อนเริ่มวัด
-5. **ชื่อผู้ตัดสินใจในตาราง §6:** รอเจ้าของโครงการระบุ
+1. **ชื่อพอร์ตและฟิลด์ของ Schedule:** ล็อกเป็น `startDay` (ค่าเริ่มต้น `1`), `lastDay` (`>= startDay`, รวมวันสุดท้าย), ตั้ง `day = startDay` เมื่อเข้าโหนด `schedule` และเมื่อจบ `end_of_day` ของ `lastDay` ให้เดินออกพอร์ต `onComplete` โดยไม่บวก `day` เพิ่ม
+2. **รุ่น Ren'Py SDK ที่ตรึง:** ตรึง **Ren'Py SDK `8.3.7.25031702`** (SHA-256 ของไฟล์ ZIP: `7722E17AED8C174307C1E69D087D74EF009BC164A4DE4830149794F8DA3F7ECF`) และใช้เครื่อง Windows พัฒนานี้ (`Windows NT 10.0.26300.0`, Desktop Session `-WindowStyle Hidden`) สำหรับรัน Parity (`0a.6`) ใน Phase 0a
+3. **รูปแบบ Trace สุดท้าย:** JSON Lines (`trace.jsonl`) มี 12 ฟิลด์บังคับ (`step`, `nodeId`, `day`, `phase`, `choiceId`, `eventId`, `ending`, `varsBefore`, `varsAfter`, `visibleChoices`, `conditionResults`, `transition`) โดยใช้ ID มาตรฐานเดียวกันใน `visibleChoices` และ `conditionResults` และเก็บผ่านกลไก `interact=False` + hook `store.menu` ใน `sf-cli`
+4. **เครื่องและ fixture อ้างอิงสำหรับ baseline:** ใช้เครื่อง Windows พัฒนานี้ (`Windows NT 10.0.26300.0`, 4 logical processors) คู่กับ Fixture กราฟสังเคราะห์ 2,000 โหนดที่สร้างซ้ำได้
+5. **ชื่อผู้ตัดสินใจในตาราง §6:** `anuwat` (Project Owner — อนุมัติครบทั้ง 14 รายการเมื่อ `2026-11-10`)
+
+## มติประสิทธิภาพและภาษา Core หลัง baseline · 0b.5 (2026-11-12)
+
+เจ้าของโครงการยืนยัน D1/D2 ตาม [Decision Gate 0b.5](document/phase-0b/decision-gate-0b5.md) แล้ว: ใช้ Rust/WASM ต่อ และใช้เกณฑ์ P1–P8 พร้อมวิธีวัดในไฟล์นั้นเป็นเกณฑ์ Phase 1 ตัวเลขชั่วคราวในตารางเดิมเป็นประวัติก่อนมตินี้ โดย applyEdit เปลี่ยนจาก 16 ms ชั่วคราวเป็น median ≤100 ms รวม Worker round-trip/full validation/full snapshot ส่วน Core/UI/media/Export วัดแยกกัน Gate 0b ยังต้องผ่านกลุ่ม C/C+ ครบก่อนปิด

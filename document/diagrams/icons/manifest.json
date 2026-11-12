@@ -1,0 +1,50 @@
+{
+  "database": {
+    "file": "database.svg",
+    "source": "Lucide"
+  },
+  "files": {
+    "file": "files.svg",
+    "source": "Lucide"
+  },
+  "webassembly": {
+    "file": "webassembly.svg",
+    "source": "gilbarbara/logos"
+  },
+  "folder": {
+    "file": "folder.svg",
+    "source": "Lucide"
+  },
+  "react": {
+    "file": "react.svg",
+    "source": "svgl"
+  },
+  "flow": {
+    "file": "flow.svg",
+    "source": "Lucide"
+  },
+  "chrome": {
+    "file": "chrome.svg",
+    "source": "svgl"
+  },
+  "rust": {
+    "file": "rust.svg",
+    "source": "svgl"
+  },
+  "nodejs": {
+    "file": "nodejs.svg",
+    "source": "svgl"
+  },
+  "renpy": {
+    "file": "renpy.svg",
+    "source": "devicon"
+  },
+  "cli": {
+    "file": "cli.svg",
+    "source": "Lucide"
+  },
+  "contract": {
+    "file": "contract.svg",
+    "source": "Lucide"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "report": [
+    {
+      "name": "unsafe paths rejected",
+      "passed": true,
+      "ms": 0.30000000074505806
+    },
+    {
+      "name": "export twice and preserve media/user files",
+      "passed": true,
+      "ms": 11100.60000000149
+    },
+    {
+      "name": "hash conflict and unowned collision stop before writing",
+      "passed": true,
+      "ms": 4995.900000002235
+    },
+    {
+      "name": "interrupt pending then reopen and recover",
+      "passed": true,
+      "ms": 7299.400000002235
+    },
+    {
+      "name": "interrupt file then reopen and recover",
+      "passed": true,
+      "ms": 8552.599999997765
+    },
+    {
+      "name": "interrupt sourceMap then reopen and recover",
+      "passed": true,
+      "ms": 11742.70000000298
+    },
+    {
+      "name": "interrupt manifest then reopen and recover",
+      "passed": true,
+      "ms": 17135.29999999702
+    },
+    {
+      "name": "NotAllowedError after first file remains recoverable",
+      "passed": true,
+      "ms": 9285.900000002235
+    },
+    {
+      "name": "recovery refuses external changes",
+      "passed": true,
+      "ms": 9109.599999997765
+    },
+    {
+      "name": "Subgraph warning and Source Map",
+      "passed": true,
+      "ms": 7311.60000000149
+    }
+  ],
+  "exportMs": 3661.5,
+  "storage": "0b-local-project",
+  "mode": "native-folder"
+}

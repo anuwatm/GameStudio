@@ -1,0 +1,57 @@
+{
+  "report": [
+    {
+      "name": "unsafe paths rejected",
+      "passed": true,
+      "ms": 0.6000000014901161
+    },
+    {
+      "name": "export twice and preserve media/user files",
+      "passed": true,
+      "ms": 452.5
+    },
+    {
+      "name": "hash conflict and unowned collision stop before writing",
+      "passed": true,
+      "ms": 337.79999999701977
+    },
+    {
+      "name": "interrupt pending then reopen and recover",
+      "passed": true,
+      "ms": 483.4000000022352
+    },
+    {
+      "name": "interrupt file then reopen and recover",
+      "passed": true,
+      "ms": 484.19999999925494
+    },
+    {
+      "name": "interrupt sourceMap then reopen and recover",
+      "passed": true,
+      "ms": 691.3999999985099
+    },
+    {
+      "name": "interrupt manifest then reopen and recover",
+      "passed": true,
+      "ms": 534.3000000007451
+    },
+    {
+      "name": "NotAllowedError after first file remains recoverable",
+      "passed": true,
+      "ms": 899.5
+    },
+    {
+      "name": "recovery refuses external changes",
+      "passed": true,
+      "ms": 262.19999999925494
+    },
+    {
+      "name": "Subgraph warning and Source Map",
+      "passed": true,
+      "ms": 278
+    }
+  ],
+  "exportMs": 282.19999999925494,
+  "storage": "storyflow-67d5968b-3f11-460d-b0a2-47de31e480bf",
+  "mode": "opfs"
+}

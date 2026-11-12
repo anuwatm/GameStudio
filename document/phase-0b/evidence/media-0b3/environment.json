@@ -1,0 +1,20 @@
+{
+  "audioVerification": "default driver, PCM initialized, movie channel progressed to end; no acoustic recording",
+  "date": "2026-11-12",
+  "paritySteps": 79,
+  "parityCases": 10,
+  "visualReview": "Codex inspected all five SDK screenshots",
+  "sdk": "8.3.7.25031702",
+  "sourceSha256": {
+    "crates/sf-core/src/export.rs": "C2C868F5074E02D49F36B51350E6F4E43ED3F857172E2B404D3A80BB6E387BC6",
+    "document/phase-0b/media-probe/probe.webm": "2DDC373B57A67DD5386D0E9FE687597627EF0EFE485AE2A3A02F9DB6F005EB2C",
+    "crates/sf-cli/src/main.rs": "0316B097AB12064092EF035BB85F851218FC3ABA01D88AF6B0FE136276281922",
+    "templates/renpy/game/assets/fonts/NotoSansThaiLoopedUI-Regular.ttf": "802C2A46D8C8C2372F3EC6FD67EC20590A6077F4E4703CB57EECBF11FE960CA9",
+    "templates/renpy/game/python-packages/sf_tcc.py": "B9C6956A08886738AF31B771B1C0B3057807CEE96E1F1106E0EABC157E2DD1F2",
+    "document/phase-0b/media-probe/project.json": "C48607D11922BA9FED92F935E3AC684B9F729416454B619E626BE3F26070E163",
+    "templates/renpy/game/sf_template.rpy": "0D47D9FBEDADAC1DBA166908E0F9DFEA7E358715E0B8A761631997A2CF472DBE",
+    "document/phase-0b/media-probe/probe.rpy": "494F71A1A0E5FB56EBB2CA13486F9B1606E6218F401A32E7B8CA0F8EFE6C8C30"
+  },
+  "rustTestsPassed": 13,
+  "sdkExit": 0
+}

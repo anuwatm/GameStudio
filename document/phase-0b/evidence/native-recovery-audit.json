@@ -1,0 +1,30 @@
+{
+  "date": "2026-11-12",
+  "passed": true,
+  "mode": "native-folder",
+  "case": "recovery-4c3fef85-2a09-4d82-8cf8-2141a82cf758",
+  "permissionLoss": {
+    "mode": "native-folder",
+    "name": "recovery-4c3fef85-2a09-4d82-8cf8-2141a82cf758",
+    "permission": "prompt",
+    "error": {
+      "name": "NotAllowedError",
+      "error": "NotAllowedError: Failed to execute 'getDirectoryHandle' on 'FileSystemDirectoryHandle': The request is not allowed by the user agent or the platform in the current context."
+    },
+    "method": "stored native directory handle reopened in fresh browser session; no permission override or synthetic exception"
+  },
+  "hashes": {
+    "game/storyflow_generated/sf_runtime.rpy": "d65775b0088329110a8942125481ece2680e4fc674cc38c1b8e25a04dce37cd3",
+    "game/storyflow_generated/sf_schedule.rpy": "8a47fe0090ffe720be19a8322bb93d7cbcda9fb58c24eb908acf10d4f5b7b64b",
+    "game/storyflow_generated/sf_story.rpy": "db5df921d464d21f85a54e6f4170f4a97ad6a30eb2264fbfe83c6c445f81547e",
+    "game/storyflow_generated/sf_variables.rpy": "92c634ad0dd314097d2029f1e130e1b9b6e5cd45fbf64cc92231cf3937b2805e",
+    "game/storyflow_generated/sf_manifest.json": "c4a3fce10072d1124ac8deeb61eea76d9a9308aec27b0491ebbe59162ed922ed",
+    ".storyflow/sourcemap.json": "6e6fa15942364827c9bb4be955dea25e7e618a7da8bd9f8b237f2bc6cd67fc68",
+    "game/user.rpy": "a51b55b316613032949f2bd92b7c905b7d4a6b380ceb78c5af72c3fb3794c292",
+    "game/assets/probe.webm": "2ddc373b57a67dd5386d0e9fe687597627ef0efe485ae2a3a02f9db6f005eb2c"
+  },
+  "pendingAbsent": true,
+  "filesVerified": 8,
+  "observation": "After manual regrant, on-disk scripts/manifest/map/media/user sentinel match baseline. Last UI call was a repeat/no-op; its strict harness error was not a storage failure.",
+  "limitation": "First recovered:true response was overwritten by a repeated UI call; raw last UI response is retained separately. Acceptance uses native permission error plus baseline/hash audit and pending absence."
+}

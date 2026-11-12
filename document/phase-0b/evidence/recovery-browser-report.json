@@ -1,0 +1,147 @@
+{
+  "pageClose": {
+    "passed": true,
+    "method": "page.close then context.close; reopen persistent profile on same origin",
+    "paused": {
+      "phase": "paused-after-first-file",
+      "mode": "opfs",
+      "name": "recovery-a2cd8869-1a4f-456c-ba5d-22144db02cc6",
+      "before": {
+        "game/storyflow_generated/sf_runtime.rpy": "d65775b0088329110a8942125481ece2680e4fc674cc38c1b8e25a04dce37cd3",
+        "game/storyflow_generated/sf_schedule.rpy": "8a47fe0090ffe720be19a8322bb93d7cbcda9fb58c24eb908acf10d4f5b7b64b",
+        "game/storyflow_generated/sf_story.rpy": "db5df921d464d21f85a54e6f4170f4a97ad6a30eb2264fbfe83c6c445f81547e",
+        "game/storyflow_generated/sf_variables.rpy": "92c634ad0dd314097d2029f1e130e1b9b6e5cd45fbf64cc92231cf3937b2805e",
+        "game/storyflow_generated/sf_manifest.json": "c4a3fce10072d1124ac8deeb61eea76d9a9308aec27b0491ebbe59162ed922ed",
+        ".storyflow/sourcemap.json": "6e6fa15942364827c9bb4be955dea25e7e618a7da8bd9f8b237f2bc6cd67fc68",
+        "game/user.rpy": "a51b55b316613032949f2bd92b7c905b7d4a6b380ceb78c5af72c3fb3794c292",
+        "game/assets/probe.webm": "2ddc373b57a67dd5386d0e9fe687597627ef0efe485ae2a3a02f9db6f005eb2c"
+      },
+      "partial": {
+        "game/storyflow_generated/sf_runtime.rpy": "674ed5a409958c8388475fc9d5bf33b9932378400b36e8907b598a472c334d4b",
+        "game/storyflow_generated/sf_schedule.rpy": "8a47fe0090ffe720be19a8322bb93d7cbcda9fb58c24eb908acf10d4f5b7b64b",
+        "game/storyflow_generated/sf_story.rpy": "db5df921d464d21f85a54e6f4170f4a97ad6a30eb2264fbfe83c6c445f81547e",
+        "game/storyflow_generated/sf_variables.rpy": "92c634ad0dd314097d2029f1e130e1b9b6e5cd45fbf64cc92231cf3937b2805e",
+        "game/storyflow_generated/sf_manifest.json": "c4a3fce10072d1124ac8deeb61eea76d9a9308aec27b0491ebbe59162ed922ed",
+        ".storyflow/sourcemap.json": "6e6fa15942364827c9bb4be955dea25e7e618a7da8bd9f8b237f2bc6cd67fc68",
+        "game/user.rpy": "a51b55b316613032949f2bd92b7c905b7d4a6b380ceb78c5af72c3fb3794c292",
+        "game/assets/probe.webm": "2ddc373b57a67dd5386d0e9fe687597627ef0efe485ae2a3a02f9db6f005eb2c"
+      },
+      "pending": true
+    },
+    "result": {
+      "mode": "opfs",
+      "name": "recovery-a2cd8869-1a4f-456c-ba5d-22144db02cc6",
+      "hadPending": true,
+      "recovery": {
+        "recovered": true,
+        "committed": false
+      },
+      "before": {
+        "game/storyflow_generated/sf_runtime.rpy": "d65775b0088329110a8942125481ece2680e4fc674cc38c1b8e25a04dce37cd3",
+        "game/storyflow_generated/sf_schedule.rpy": "8a47fe0090ffe720be19a8322bb93d7cbcda9fb58c24eb908acf10d4f5b7b64b",
+        "game/storyflow_generated/sf_story.rpy": "db5df921d464d21f85a54e6f4170f4a97ad6a30eb2264fbfe83c6c445f81547e",
+        "game/storyflow_generated/sf_variables.rpy": "92c634ad0dd314097d2029f1e130e1b9b6e5cd45fbf64cc92231cf3937b2805e",
+        "game/storyflow_generated/sf_manifest.json": "c4a3fce10072d1124ac8deeb61eea76d9a9308aec27b0491ebbe59162ed922ed",
+        ".storyflow/sourcemap.json": "6e6fa15942364827c9bb4be955dea25e7e618a7da8bd9f8b237f2bc6cd67fc68",
+        "game/user.rpy": "a51b55b316613032949f2bd92b7c905b7d4a6b380ceb78c5af72c3fb3794c292",
+        "game/assets/probe.webm": "2ddc373b57a67dd5386d0e9fe687597627ef0efe485ae2a3a02f9db6f005eb2c"
+      },
+      "after": {
+        "game/storyflow_generated/sf_runtime.rpy": "d65775b0088329110a8942125481ece2680e4fc674cc38c1b8e25a04dce37cd3",
+        "game/storyflow_generated/sf_schedule.rpy": "8a47fe0090ffe720be19a8322bb93d7cbcda9fb58c24eb908acf10d4f5b7b64b",
+        "game/storyflow_generated/sf_story.rpy": "db5df921d464d21f85a54e6f4170f4a97ad6a30eb2264fbfe83c6c445f81547e",
+        "game/storyflow_generated/sf_variables.rpy": "92c634ad0dd314097d2029f1e130e1b9b6e5cd45fbf64cc92231cf3937b2805e",
+        "game/storyflow_generated/sf_manifest.json": "c4a3fce10072d1124ac8deeb61eea76d9a9308aec27b0491ebbe59162ed922ed",
+        ".storyflow/sourcemap.json": "6e6fa15942364827c9bb4be955dea25e7e618a7da8bd9f8b237f2bc6cd67fc68",
+        "game/user.rpy": "a51b55b316613032949f2bd92b7c905b7d4a6b380ceb78c5af72c3fb3794c292",
+        "game/assets/probe.webm": "2ddc373b57a67dd5386d0e9fe687597627ef0efe485ae2a3a02f9db6f005eb2c"
+      },
+      "equal": true,
+      "failure": null,
+      "secondRecovery": {
+        "recovered": false
+      }
+    },
+    "repeat": {
+      "mode": "opfs",
+      "name": "recovery-a2cd8869-1a4f-456c-ba5d-22144db02cc6",
+      "alreadyRestored": true,
+      "hadPending": false,
+      "recovery": {
+        "recovered": false
+      },
+      "before": {
+        "game/storyflow_generated/sf_runtime.rpy": "d65775b0088329110a8942125481ece2680e4fc674cc38c1b8e25a04dce37cd3",
+        "game/storyflow_generated/sf_schedule.rpy": "8a47fe0090ffe720be19a8322bb93d7cbcda9fb58c24eb908acf10d4f5b7b64b",
+        "game/storyflow_generated/sf_story.rpy": "db5df921d464d21f85a54e6f4170f4a97ad6a30eb2264fbfe83c6c445f81547e",
+        "game/storyflow_generated/sf_variables.rpy": "92c634ad0dd314097d2029f1e130e1b9b6e5cd45fbf64cc92231cf3937b2805e",
+        "game/storyflow_generated/sf_manifest.json": "c4a3fce10072d1124ac8deeb61eea76d9a9308aec27b0491ebbe59162ed922ed",
+        ".storyflow/sourcemap.json": "6e6fa15942364827c9bb4be955dea25e7e618a7da8bd9f8b237f2bc6cd67fc68",
+        "game/user.rpy": "a51b55b316613032949f2bd92b7c905b7d4a6b380ceb78c5af72c3fb3794c292",
+        "game/assets/probe.webm": "2ddc373b57a67dd5386d0e9fe687597627ef0efe485ae2a3a02f9db6f005eb2c"
+      },
+      "after": {
+        "game/storyflow_generated/sf_runtime.rpy": "d65775b0088329110a8942125481ece2680e4fc674cc38c1b8e25a04dce37cd3",
+        "game/storyflow_generated/sf_schedule.rpy": "8a47fe0090ffe720be19a8322bb93d7cbcda9fb58c24eb908acf10d4f5b7b64b",
+        "game/storyflow_generated/sf_story.rpy": "db5df921d464d21f85a54e6f4170f4a97ad6a30eb2264fbfe83c6c445f81547e",
+        "game/storyflow_generated/sf_variables.rpy": "92c634ad0dd314097d2029f1e130e1b9b6e5cd45fbf64cc92231cf3937b2805e",
+        "game/storyflow_generated/sf_manifest.json": "c4a3fce10072d1124ac8deeb61eea76d9a9308aec27b0491ebbe59162ed922ed",
+        ".storyflow/sourcemap.json": "6e6fa15942364827c9bb4be955dea25e7e618a7da8bd9f8b237f2bc6cd67fc68",
+        "game/user.rpy": "a51b55b316613032949f2bd92b7c905b7d4a6b380ceb78c5af72c3fb3794c292",
+        "game/assets/probe.webm": "2ddc373b57a67dd5386d0e9fe687597627ef0efe485ae2a3a02f9db6f005eb2c"
+      },
+      "equal": true,
+      "failure": null
+    }
+  },
+  "permissionInjection": {
+    "passed": true,
+    "actualPermissionRevocation": false,
+    "failure": {
+      "phase": "failed",
+      "name": "NotAllowedError",
+      "error": "NotAllowedError: Injected permission loss after committed file",
+      "permission": "granted"
+    },
+    "result": {
+      "mode": "opfs",
+      "name": "recovery-6a7dfc8a-b212-469e-9243-96c81fb7e6bf",
+      "hadPending": true,
+      "recovery": {
+        "recovered": true,
+        "committed": false
+      },
+      "before": {
+        "game/storyflow_generated/sf_runtime.rpy": "d65775b0088329110a8942125481ece2680e4fc674cc38c1b8e25a04dce37cd3",
+        "game/storyflow_generated/sf_schedule.rpy": "8a47fe0090ffe720be19a8322bb93d7cbcda9fb58c24eb908acf10d4f5b7b64b",
+        "game/storyflow_generated/sf_story.rpy": "db5df921d464d21f85a54e6f4170f4a97ad6a30eb2264fbfe83c6c445f81547e",
+        "game/storyflow_generated/sf_variables.rpy": "92c634ad0dd314097d2029f1e130e1b9b6e5cd45fbf64cc92231cf3937b2805e",
+        "game/storyflow_generated/sf_manifest.json": "c4a3fce10072d1124ac8deeb61eea76d9a9308aec27b0491ebbe59162ed922ed",
+        ".storyflow/sourcemap.json": "6e6fa15942364827c9bb4be955dea25e7e618a7da8bd9f8b237f2bc6cd67fc68",
+        "game/user.rpy": "a51b55b316613032949f2bd92b7c905b7d4a6b380ceb78c5af72c3fb3794c292",
+        "game/assets/probe.webm": "2ddc373b57a67dd5386d0e9fe687597627ef0efe485ae2a3a02f9db6f005eb2c"
+      },
+      "after": {
+        "game/storyflow_generated/sf_runtime.rpy": "d65775b0088329110a8942125481ece2680e4fc674cc38c1b8e25a04dce37cd3",
+        "game/storyflow_generated/sf_schedule.rpy": "8a47fe0090ffe720be19a8322bb93d7cbcda9fb58c24eb908acf10d4f5b7b64b",
+        "game/storyflow_generated/sf_story.rpy": "db5df921d464d21f85a54e6f4170f4a97ad6a30eb2264fbfe83c6c445f81547e",
+        "game/storyflow_generated/sf_variables.rpy": "92c634ad0dd314097d2029f1e130e1b9b6e5cd45fbf64cc92231cf3937b2805e",
+        "game/storyflow_generated/sf_manifest.json": "c4a3fce10072d1124ac8deeb61eea76d9a9308aec27b0491ebbe59162ed922ed",
+        ".storyflow/sourcemap.json": "6e6fa15942364827c9bb4be955dea25e7e618a7da8bd9f8b237f2bc6cd67fc68",
+        "game/user.rpy": "a51b55b316613032949f2bd92b7c905b7d4a6b380ceb78c5af72c3fb3794c292",
+        "game/assets/probe.webm": "2ddc373b57a67dd5386d0e9fe687597627ef0efe485ae2a3a02f9db6f005eb2c"
+      },
+      "equal": true,
+      "failure": {
+        "phase": "failed",
+        "name": "NotAllowedError",
+        "error": "NotAllowedError: Injected permission loss after committed file",
+        "permission": "granted"
+      },
+      "secondRecovery": {
+        "recovered": false
+      }
+    }
+  },
+  "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36 Edg/157.0.0.0"
+}

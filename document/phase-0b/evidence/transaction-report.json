@@ -1,0 +1,131 @@
+{
+  "date": "2026-11-11",
+  "mode": "node-filesystem-handles",
+  "node": "v24.22.1",
+  "platform": "win32",
+  "base": "C:\\LocalDevine\\www\\GameStudio\\temp\\phase-0b2-1794416334479",
+  "report": [
+    {
+      "name": "unsafe paths rejected",
+      "passed": true,
+      "ms": 0.5855999999999995
+    },
+    {
+      "name": "export twice and preserve media/user files",
+      "passed": true,
+      "ms": 175.78610000000003
+    },
+    {
+      "name": "hash conflict and unowned collision stop before writing",
+      "passed": true,
+      "ms": 77.63900000000012
+    },
+    {
+      "name": "interrupt pending then reopen and recover",
+      "passed": true,
+      "ms": 133.6205
+    },
+    {
+      "name": "interrupt file then reopen and recover",
+      "passed": true,
+      "ms": 81.03700000000003
+    },
+    {
+      "name": "interrupt sourceMap then reopen and recover",
+      "passed": true,
+      "ms": 158.27909999999997
+    },
+    {
+      "name": "interrupt manifest then reopen and recover",
+      "passed": true,
+      "ms": 2200.5222000000003
+    },
+    {
+      "name": "NotAllowedError after first file remains recoverable",
+      "passed": true,
+      "ms": 303.85269999999946
+    },
+    {
+      "name": "recovery refuses external changes",
+      "passed": true,
+      "ms": 145.54569999999967
+    },
+    {
+      "name": "Subgraph warning and Source Map",
+      "passed": true,
+      "ms": 165.83479999999963
+    },
+    {
+      "name": "prepared set exists before pending; commit manifest last",
+      "passed": true,
+      "ms": 70.00860000000011
+    },
+    {
+      "name": "corrupted backup refuses recovery without changing files",
+      "passed": true,
+      "ms": 1275.2055
+    },
+    {
+      "name": "concurrent recovery and export serialize without mixed output",
+      "passed": true,
+      "ms": 1155.7546999999995
+    },
+    {
+      "name": "external Source Map modification during export is preserved",
+      "passed": true,
+      "ms": 124.52340000000004
+    },
+    {
+      "name": "removed owned file rolls back after interruption and disappears on commit",
+      "passed": true,
+      "ms": 661.3310999999994
+    },
+    {
+      "name": "recovery after first export interruption removes only new generated files",
+      "passed": true,
+      "ms": 22.37800000000061
+    },
+    {
+      "name": "identical choice text maps to distinct known choice IDs",
+      "passed": true,
+      "ms": 1286.5018
+    },
+    {
+      "name": "edit one scene through CLI bundle and reexport; warning only for structure",
+      "passed": true,
+      "ms": 2340.807500000001
+    }
+  ],
+  "evidence": {
+    "commitOrder": [
+      "prepared",
+      "pending",
+      "file",
+      "file",
+      "file",
+      "file",
+      "sourceMap",
+      "manifest"
+    ],
+    "sourceMap": [
+      {
+        "path": "game/storyflow_generated/sf_story.rpy",
+        "line": 18,
+        "choiceId": "00000000-0000-4000-8000-000000000015",
+        "nodeId": "00000000-0000-4000-8000-000000000006"
+      },
+      {
+        "path": "game/storyflow_generated/sf_story.rpy",
+        "line": 20,
+        "choiceId": "00000000-0000-4000-8000-000000000016",
+        "nodeId": "00000000-0000-4000-8000-000000000006"
+      }
+    ],
+    "sceneEditToExportMs": 891.9319999999989,
+    "timingBoundary": "in-memory scene text edit -> project JSON write -> native CLI bundle process -> filesystem adapter export commit"
+  },
+  "limitations": [
+    "Node handle adapter is not a browser native picker or OS permission test",
+    "Actual tab close/permission loss remains Phase 0b.4"
+  ]
+}

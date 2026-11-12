@@ -1,0 +1,18 @@
+[
+  {
+    "kind": "query",
+    "contractVersion": 1,
+    "requestId": "v1",
+    "name": "validate",
+    "payload": {}
+  },
+  {
+    "kind": "result",
+    "contractVersion": 1,
+    "requestId": "v1",
+    "name": "validate",
+    "value": {
+      "issues": []
+    }
+  }
+]

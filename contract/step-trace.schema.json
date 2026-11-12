@@ -1,0 +1,132 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "properties": {
+    "step": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "nodeId": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "day": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "phase": {
+      "enum": [
+        "scene",
+        "branch",
+        "before_activity",
+        "activity",
+        "after_activity",
+        "end_of_day",
+        "schedule_complete",
+        "end",
+        "effect"
+      ]
+    },
+    "choiceId": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "eventId": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "ending": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "uuid"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "varsBefore": {
+      "type": "object",
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "integer",
+            "minimum": -2147483648,
+            "maximum": 2147483647
+          },
+          {
+            "type": "boolean"
+          }
+        ]
+      }
+    },
+    "varsAfter": {
+      "type": "object",
+      "additionalProperties": {
+        "anyOf": [
+          {
+            "type": "string"
+          },
+          {
+            "type": "integer",
+            "minimum": -2147483648,
+            "maximum": 2147483647
+          },
+          {
+            "type": "boolean"
+          }
+        ]
+      }
+    },
+    "visibleChoices": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uuid"
+      }
+    },
+    "conditionResults": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "boolean"
+      }
+    },
+    "transition": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "step",
+    "nodeId",
+    "day",
+    "phase",
+    "choiceId",
+    "eventId",
+    "ending",
+    "varsBefore",
+    "varsAfter",
+    "visibleChoices",
+    "conditionResults",
+    "transition"
+  ],
+  "additionalProperties": false,
+  "$id": "https://storyflow.local/step-trace.schema.json"
+}

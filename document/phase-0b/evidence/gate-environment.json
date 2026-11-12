@@ -1,0 +1,15 @@
+{
+  "date": "2026-11-12",
+  "nativeAudit": "native-recovery-audit.json",
+  "limitations": "Native first response not retained; raw repeated UI response and filesystem audit retained",
+  "sourceSha256": {
+    "scripts/probe-native-reopen.py": "CB4F676857EA27F51656ABEBA9291EC200DFDC8BE33E12CDD3019F13D356D68B",
+    "web/local-folder.mjs": "D616F904C89949B727818611B2D81084F58D28EB9A2F10DDAA05684434C15F43",
+    "web/recovery-proof.mjs": "2D491EE0831D7E84317EC6EA556D9CB070980DCA1FE966CC85DF2D9C6C17F7F3",
+    "scripts/test-recovery-browser.py": "5F0A65D52B0C0B495EFAF3237249028602AC2DC285C723FC2CB0CDEEC2E00DAF",
+    "Cargo.lock": "C6053B24421FFEDE3E526CB4B285A5F07464AF9E8CEF5F3FB8E110C5FAD195CB",
+    "scripts/audit-native-recovery.mjs": "5958306BEAA4EEDF561DDD2161C021051B395A738D23CA24D4B20101F907A4BD",
+    "web/recovery-proof.html": "7AF34B6B314809ABADF417BE30B5CBE88ED85F51735B36617FF83FF970CDAC72"
+  },
+  "decisionApproval": "user confirmed D1 and D2 in chat"
+}

@@ -1,0 +1,1 @@
+{"step": 1, "nodeId": "trace_probe", "day": 1, "phase": "activity", "choiceId": "help_mina", "eventId": null, "ending": null, "varsBefore": {"affection": 0}, "varsAfter": {"affection": 10}, "visibleChoices": ["Help Mina", "Rest"], "conditionResults": {"date_invite": false}, "transition": "finish", "renpy": "Ren'Py 8.3.7.25031702"}
