@@ -2,7 +2,7 @@
 
 StoryFlow คือเว็บสตูดิโอสำหรับผู้สร้างเกมเดี่ยวและทีมเล็ก ใช้กราฟวางฉาก บทสนทนา คลิป และตัวเลือกสำหรับเกม Visual Novel, FMV, Dating Sim และ Life Sim แล้วส่งออกเป็นโปรเจกต์ที่เล่นใน Ren’Py SDK ได้
 
-**สถานะล่าสุด (2026-11-12):** 1.1 ตรวจรับร่วมแล้ว; 1.2 Project/Story Editor พัฒนาเสร็จและผ่านชุดตรวจฝั่ง Codex รอ Gemini ตรวจรับร่วม เปิด/สร้างโปรเจกต์ บันทึกแบบ manual จัดการตัวละคร/สื่อและแก้กราฟได้ ยังไม่มี Autosave, Rules/Playtest และ Export UI ครบวงจร ดู [checklist.md](checklist.md) และ [ผล 1.2](document/phase-1/editor-1.2.md)
+**สถานะล่าสุด (2026-11-13):** 1.1/1.2/1.3 ตรวจรับร่วมแล้ว; ตั้ง Variables, Conditions, Effects, Activities/Events และ Schedule ผ่าน UI ได้ พร้อม manual Save/Undo/Redo ยังไม่มี Autosave, Playtest และ Export UI ครบวงจร ดู [checklist.md](checklist.md) และ [ผล 1.3](document/phase-1/rules-1.3.md)
 
 รันหน้าจอด้วย `npm --prefix studio ci` แล้ว `npm --prefix studio run dev` หลัง build WASM ตาม [วิธีรัน Studio](studio/README.md)
 
@@ -42,7 +42,7 @@ flowchart TB
     CLI["ผ่าน 0a · sf-cli<br/>Validate · Export · SDK Parity<br/>เพิ่ม bundle สำหรับต้นแบบ Storage"]
 
     subgraph Browser["Chromium Desktop · ไม่มี Backend ใน MVP"]
-        UI["พัฒนาเสร็จ 1.2 · React + React Flow<br/>Project / Characters / Media / Story Editor<br/>Manual Save / Undo-Redo / Validate<br/>รอ Gemini ตรวจรับร่วม"]
+        UI["ผ่าน 1.3 · React + React Flow<br/>Project / Story Editor / Rules & Schedule<br/>Variables / Conditions / Effects / Events<br/>Manual Save / Undo-Redo / Validate"]
         Worker["ผ่าน 0a.7 · sf-wasm / Web Worker<br/>Core Contract ตรง native 18 ข้อความ"]
         Local["ผ่าน 0b.1 · Local Folder prototype<br/>Native picker · Asset path validation<br/>อ่านสื่อเดิม / Export ซ้ำแบบ Zero-Copy"]
         Tx["ผ่าน 0b.2 · Export Transaction<br/>Manifest/hash · Backup · Pending journal<br/>Recovery · Source Map · Save warning"]
@@ -173,6 +173,8 @@ React + React Flow UI ทั้ง Project, Story Graph/Scene Inspector, Rules &
 
 ขั้น 1.2 เปิด/สร้างโปรเจกต์ในโฟลเดอร์ บันทึก manual จัดการตัวละคร/สื่อ แก้กราฟ5ชนิดและ Inspector/ข้อความบนกราฟได้ ใช้ Core Patch และ Undo/Redo ชุดเดียวกัน ตัวอย่างยังอยู่ใน memory ตำแหน่งโหนดยังไม่บันทึกข้าม session ดู [วิธีรัน](studio/README.md) และ [ภาพ/ผลตรวจ 1.2](document/phase-1/editor-1.2.md) ภาษาไทยเป็นหลัก คงศัพท์เทคนิคอังกฤษ
 
+ขั้น 1.3 เพิ่ม Variables/Condition Builder/Effects และ Activities/Events/Schedule แล้ว สร้างกติกา Summer House จาก UI ได้ตรง fixture และผ่าน Worker/native 10เคส/79ก้าว ดู [ผล 1.3](document/phase-1/rules-1.3.md)
+
 Autosave, IndexedDB Recovery และการเชื่อมทุกหน้าจอเข้ากับ Core อยู่ในแผน MVP; ไม่มี Backend ในขอบเขตนี้
 
 ### Baseline ที่ใช้ตัดสินใจต่อ
@@ -199,7 +201,7 @@ cargo run -p sf-cli --locked -- export contract/fixtures/summer-house.json temp/
 |---|---|
 | **0a** | ตรวจรับผ่านครบ: Contract, Core, SDK Parity, WASM/Worker และ baseline |
 | **0b** | 0b.1–0b.5 และ Gate ตรวจรับผ่านร่วม Codex/Gemini ครบแล้ว |
-| **1** | 1.1 ตรวจรับร่วมแล้ว; 1.2 พัฒนาเสร็จรอ Gemini; 1.3–1.7 และ Gate ยังไม่เสร็จ |
+| **1** | 1.1/1.2 ตรวจรับร่วมแล้ว; 1.3 พัฒนาเสร็จรอ Gemini; 1.4–1.7 และ Gate ยังไม่เสร็จ |
 | **2** | ยังไม่เริ่ม: ความทนทานและ User Trial |
 | **3** | รอยืนยันขอบเขตตามผลทดลอง เช่น Cloud Sync, PWA, Localization |
 

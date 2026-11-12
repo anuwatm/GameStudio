@@ -1,10 +1,12 @@
-# StoryFlow Web Studio · Phase 1.2
+# StoryFlow Web Studio · Phase 1.3
 
 React + React Flow เชื่อม Rust/WASM Worker ด้วย Core Contract v1 ไม่มี Backend
 
-ปัจจุบันเปิด/สร้างโปรเจกต์ในโฟลเดอร์ บันทึกแบบ manual จัดการตัวละคร/สื่อ และแก้กราฟ/Inspector ได้ พร้อม Undo/Redo และ Validate ผ่าน Core Patch ข้อมูลในตัวอย่าง Summer House ยังอยู่ใน memory ส่วน Autosave, IndexedDB, Rules/Playtest และ Export UI เป็นขั้นถัดไป ภาษาไทยเป็นหลัก คงศัพท์เทคนิคอังกฤษ
+ปัจจุบันเปิด/สร้างโปรเจกต์ บันทึก manual จัดการตัวละคร/สื่อ แก้กราฟและตั้ง Rules & Schedule ได้: Variables, recursive Conditions, ordered Effects, Activities, Events และ Target Subgraph พร้อม Undo/Redo และ Core Validate ตัวอย่างยังอยู่ใน memory ส่วน Autosave/IndexedDB, Playtest และ Export UI เป็นขั้นถัดไป
 
 หน้า Project ใช้เพิ่มตัวละครและลงทะเบียนพาธสัมพัทธ์ใต้ `game/assets/` แล้วหน้า Story Graph ใช้เพิ่ม/เลือก/เชื่อมโหนด แก้ Inspector หรือข้อความบนกราฟ และกดบันทึกโปรเจกต์เมื่อทำงานกับโฟลเดอร์ ตำแหน่งโหนดยังเป็น view state ของ session ดู [ขอบเขตและผล 1.2](../document/phase-1/editor-1.2.md)
+
+หน้า Rules & Schedule ใช้แท็บ Variables / Daily Schedule / Events ส่วน Conditions/Effects ของฉากและ choices อยู่ใน Inspector กดใช้ข้อมูลก่อนบันทึก ดู [ผลและวิธีตรวจ 1.3](../document/phase-1/rules-1.3.md)
 
 ## รันบน Windows
 
@@ -44,6 +46,7 @@ $env:PYTHONPATH = "$PWD/temp/stack-python"
 $env:SF_PROOF_OUT = 'document/phase-1/evidence/1.2/regression-1.1'
 python -u studio/tests/browser-proof.py
 python -u studio/tests/editor-proof.py
+python -u studio/tests/rules-proof.py
 ```
 
 Browser proof ใช้ Python + Playwright และ Edge ตามพาธ Windows ในสคริปต์ รวม `temp/rust-target/debug/sf-cli.exe` สำหรับเทียบผล native โปรเจกต์เดิมติดตั้ง Playwright ที่ `temp/stack-python` แล้ว เครื่องใหม่ต้องติดตั้ง Python package `playwright` ก่อน แล้วปรับ PYTHONPATH ตามที่ติดตั้ง
@@ -58,6 +61,7 @@ Editor proof ใช้ OPFS handles จริงและจำลอง picker 
 - `src/core/create.ts`: สร้าง Worker จากชุด assets ที่เตรียมไว้
 - `src/core/features.ts`: ตรวจ requirements โดยไม่ขอสิทธิ์โฟลเดอร์
 - `src/core/editor.ts`: UI command → atomic JSON Patch โดยไม่แทนตรรกะ Rust
+- `src/core/rules.ts`, `src/ui/RuleFields.tsx`, `RulesPane.tsx`, `ScheduleFields.tsx`: typed rule forms/reference handling ร่วม Rules และ Inspector ไม่มี JS evaluation ของเกม
 - `src/core/folder.ts`: เปิด/สร้าง/recover-before-open, manual Save พร้อม conflict check และ backup guard สำหรับ Schema ที่ไม่รองรับ
 - `src/ui/`: แสดง snapshot ที่ Core ยืนยันแล้ว ตำแหน่ง node คำนวณเฉพาะการแสดงผล ไม่มี UI schema/logic ทดแทน Rust
 - `tests/contract-probe.ts`: ใช้ client เดียวกับแอป ทดสอบทุก request name ที่รองรับในรอบนี้ และส่งผลให้ test driver เทียบ CLI

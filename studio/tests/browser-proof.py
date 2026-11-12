@@ -74,13 +74,19 @@ try:
         context=browser.new_context()
         context.route('**/*.wasm',lambda route:route.fulfill(status=503,body='Injected failure'))
         failed=context.new_page();failed.goto(base+'/studio/dist/')
+        failed.on('pageerror',lambda e: report['errors'].append('Restart page: '+str(e)))
         expect(failed.get_by_role('alert')).to_contain_text('Core WASM HTTP 503')
         expect(failed.get_by_role('button',name='เปิดตัวอย่าง')).to_be_disabled()
         context.unroute('**/*.wasm')
         failed.get_by_role('button',name='เริ่ม Core ใหม่').click()
         expect(failed.get_by_role('status')).to_have_text('Core พร้อมใช้งาน')
         failed.get_by_role('button',name='เปิดตัวอย่าง').click()
-        expect(failed.locator('.react-flow__node')).to_have_count(6)
+        try:
+            expect(failed.locator('.react-flow__node')).to_have_count(6)
+        except Exception:
+            failed.screenshot(path=str(OUT/'restart-failure.png'),full_page=True)
+            (OUT/'restart-failure.txt').write_text(failed.locator('body').inner_text(),encoding='utf-8')
+            raise
         passed('WASM HTTP failure shown; restart recovers without replaying commands')
         assert not report['errors'],report['errors']
         passed('No uncaught page errors in normal production/proof flows')

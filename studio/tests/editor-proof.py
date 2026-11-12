@@ -1,11 +1,11 @@
 """Phase1.2 production UI with real Worker and OPFS handles via injected picker.
 This does not claim an OS native picker/permission grant; folder API operations are real.
 """
-import functools,http.server,json,pathlib,threading,sys,base64
+import functools,http.server,json,pathlib,threading,sys,base64,os
 from playwright.sync_api import sync_playwright,expect
 sys.stdout.reconfigure(encoding='utf-8')
 ROOT=pathlib.Path(__file__).resolve().parents[2]
-OUT=ROOT/'document/phase-1/evidence/1.2';OUT.mkdir(parents=True,exist_ok=True)
+OUT=ROOT/os.environ.get('SF_EDITOR_PROOF_OUT','document/phase-1/evidence/1.2');OUT.mkdir(parents=True,exist_ok=True)
 class Server(http.server.SimpleHTTPRequestHandler):
     extensions_map={**http.server.SimpleHTTPRequestHandler.extensions_map,'.js':'text/javascript','.mjs':'text/javascript','.wasm':'application/wasm'}
     def log_message(self,*_):pass

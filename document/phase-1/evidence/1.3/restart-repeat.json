@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "note": "smoke with default 5s assertion, not a P1/P5 budget benchmark",
+  "samples": [
+    {
+      "run": 1,
+      "graphReadyMs": 2030.11,
+      "passed": true
+    },
+    {
+      "run": 2,
+      "graphReadyMs": 2440.56,
+      "passed": true
+    },
+    {
+      "run": 3,
+      "graphReadyMs": 1398.18,
+      "passed": true
+    }
+  ]
+}

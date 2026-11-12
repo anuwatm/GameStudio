@@ -2,7 +2,7 @@
 
 อ้างอิง [Concept v2](StoryFlow-Game-Studio-Concept.md), [AGENTS.md](AGENTS.md), [gpt.md](gpt.md) และ [gemini.md](gemini.md)
 
-**สถานะล่าสุด:** Phase 0a/0b, 1.1 และ 1.2 ตรวจรับผ่านร่วม Codex/Gemini ครบสมบูรณ์แล้ว (2026-11-12); พร้อมเริ่มพัฒนา 1.3 (ฟอร์มกติกา Variables, Effects และ Schedule) ยังไม่ปิด Phase 1
+**สถานะล่าสุด:** Phase 0a/0b, 1.1, 1.2 และ 1.3 ตรวจรับร่วมแล้ว (2026-11-13) · พร้อมเริ่มพัฒนา 1.4 (Playtest และ Diagnostics); ยังไม่ปิด Phase 1
 
 ## วิธีใช้
 
@@ -60,7 +60,7 @@
 |---|---|---|:---:|:---:|---|
 | 1.1 | **เชื่อม React + React Flow กับ Worker** UI เรียก Core ผ่าน Contract ตรวจความพร้อมของเบราว์เซอร์และ File System Access API ตั้งแต่หน้าเปิดโปรเจกต์ | UI ส่ง Command/Query และรับ Patch/Result จาก Worker ได้ครบตามสัญญา | ☑ | ☑ | [ผล 1.1](document/phase-1/foundation-1.1.md) · Codex และ Gemini ตรวจรับผ่านตรงกัน: Edge 157 ผ่าน 7 กลุ่มตรวจ, unit tests 6/6, parity 20 ข้อความตรงกับ native CLI 100%, ภาษาไทยคงศัพท์เทคนิคอังกฤษ ตรวจรับปิดขั้นสมบูรณ์ (2026-11-12) |
 | 1.2 | **ทำ Project และ Story Editor** เปิด/สร้างโปรเจกต์ จัดการตัวละครและสื่อ เพิ่ม/ย้าย/ลบ/เชื่อมโหนด 5 ชนิด แก้ฉากและทางเลือกในข้อมูลชุดเดียวกัน ทำ Undo/Redo และสำรองก่อน migration | แก้ฉากและตัวเลือกจากทั้งบนกราฟและในฟอร์มได้ตรงกัน ลบโหนดพร้อมเส้นเชื่อมแล้วย้อนกลับ (`Undo`) ได้ในคำสั่งเดียว | ☑ | ☑ | [ผล 1.2](document/phase-1/editor-1.2.md) · Codex และ Gemini ตรวจรับผ่านตรงกัน: unit 9/9, Edge 157 ผ่าน 11 กลุ่มตรวจ + pointer drag จริง, regression 1.1 ครบ 20 ข้อความ, Atomic delete/undo, Web Lock และ Zero-Copy ตรวจรับปิดขั้นสมบูรณ์ (2026-11-12) |
-| 1.3 | **ทำฟอร์มกติกา** แก้ตัวแปร Effects และ Condition AST ตั้งกิจกรรม Event และ Subgraph รวมพอร์ต Schedule และสถานะ Validation | ตั้งกติกาของเกม Summer House ผ่านหน้าจอ UI ได้ครบทุกเงื่อนไขโดยไม่ต้องแก้ JSON ด้วยมือ | ☐ | ☐ | — |
+| 1.3 | **ทำฟอร์มกติกา** แก้ตัวแปร Effects และ Condition AST ตั้งกิจกรรม Event และ Subgraph รวมพอร์ต Schedule และสถานะ Validation | ตั้งกติกาของเกม Summer House ผ่านหน้าจอ UI ได้ครบทุกเงื่อนไขโดยไม่ต้องแก้ JSON ด้วยมือ | ☑ | ☑ | [ผล 1.3](document/phase-1/rules-1.3.md) · Codex และ Gemini ตรวจรับผ่านตรงกัน: unit tests 13/13, Edge 157 ผ่าน 7 กลุ่มตรวจ, UI Project ตรง fixture 100% หลัง map UUID, Worker/native trace parity 55 ข้อความ / 10 เคส / 79 ก้าว, AST serialization parity, และ reference-aware deletion guard ตรวจรับปิดขั้นสมบูรณ์ (2026-11-13) |
 | 1.4 | **ทำ Playtest และ Diagnostics** เริ่มจากโหนดที่เลือก ใช้ snapshot แยก แสดงค่าก่อน–หลังและเหตุผลของเงื่อนไข รองรับ SetVar/Rewind และเปิดโหนดจากผลตรวจ | ทดลองเล่นและตรวจสอบเหตุผลเงื่อนไขทุกก้าวได้ตรงตาม Core Contract | ☐ | ☐ | — |
 | 1.5 | **ทำ Autosave และ Recovery** debounce, snapshot ใน IndexedDB ผูก Project ID/revision, Web Locks, ตรวจไฟล์ภายนอกและสิทธิ์หลุด แสดงสถานะ และเปิดร่างเป็นสำเนาเมื่อขัดแย้ง | ผ่านการทดสอบกู้คืนร่างจาก IndexedDB, การบล็อกแท็บซ้อน และการป้องกันการเขียนทับเมื่อไฟล์ถูกแก้จากภายนอก | ☐ | ☐ | — |
 | 1.6 | **ทำหน้าส่งออก** ใช้กลไกที่ผ่าน 0b แสดง conflict และ recovery ใช้ source map ผูก error กับโหนด บล็อก Export เมื่อมี Error หรือ hash ขัดแย้งและแสดงไฟล์ที่ต้องตรวจ ตรวจเกมใหม่และเกมเดิม และแสดงข้อจำกัด Save เมื่อโครงสร้างกราฟเปลี่ยน | ส่งออกและแจ้งเตือนสถานะความขัดแย้งหรือข้อจำกัดของ Save ได้ครบถ้วน | ☐ | ☐ | — |
@@ -216,11 +216,11 @@
 
 ### 1.3
 
-- [ ] **1.3.1** ทำฟอร์ม Variables และ Condition Builder
-- [ ] **1.3.2** แก้ effects และ visibleIf ของทางเลือก
-- [ ] **1.3.3** ตั้งกิจกรรม Event และ Target Subgraph
-- [ ] **1.3.4** ตั้งวันสุดท้ายและต่อ onComplete
-- [ ] **1.3.5** สร้างกติกา Summer House จาก UI แล้วตรวจ Validation
+- [x] **1.3.1** ทำฟอร์ม Variables และ Condition Builder
+- [x] **1.3.2** แก้ effects และ visibleIf ของทางเลือก
+- [x] **1.3.3** ตั้งกิจกรรม Event และ Target Subgraph
+- [x] **1.3.4** ตั้งวันสุดท้ายและต่อ onComplete
+- [x] **1.3.5** สร้างกติกา Summer House จาก UI แล้วตรวจ Validation
 
 ### 1.4
 

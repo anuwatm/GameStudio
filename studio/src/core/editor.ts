@@ -39,5 +39,5 @@ export function connectPatch(project:Project,from:string,port:string,to:string):
  const source=project.nodes.find(n=>n.id===from),target=project.nodes.find(n=>n.id===to);
  if(!source||!target||source.graphId!==target.graphId||!ports(source).includes(port))throw Error('เลือกโหนดและพอร์ตในกราฟเดียวกัน');
  const existing=project.edges.find(e=>e.from===from&&e.port===port);
- return fieldsPatch(project,{edges:[...project.edges.filter(e=>e.from!==from||e.port!==port),{id:existing?.id??uuid(),from,port,to}]});
+ return fieldsPatch(project,{edges:existing?project.edges.map(e=>e.id===existing.id?{...e,to}:e):[...project.edges,{id:uuid(),from,port,to}]});
 }
