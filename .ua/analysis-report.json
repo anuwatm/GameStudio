@@ -1,0 +1,119 @@
+{
+  "stats": {
+    "totalNodes": 288,
+    "totalEdges": 427,
+    "totalLayers": 8,
+    "tourSteps": 8,
+    "nodeTypes": {
+      "config": 71,
+      "document": 28,
+      "file": 56,
+      "function": 112,
+      "class": 21
+    },
+    "edgeTypes": {
+      "contains": 133,
+      "imports": 30,
+      "depends_on": 18,
+      "reads_from": 5,
+      "related": 1,
+      "defines_schema": 3,
+      "tested_by": 8,
+      "triggers": 1,
+      "configures": 2,
+      "documents": 105,
+      "exports": 59,
+      "calls": 62
+    }
+  },
+  "warnings": [
+    "Node 'config:Cargo.toml' has no edges (orphan)",
+    "Node 'file:contract/fixtures/step-trace.jsonl' has no edges (orphan)",
+    "Node 'config:contract/fixtures/worker-messages.json' has no edges (orphan)",
+    "Node 'config:crates/sf-cli/Cargo.toml' has no edges (orphan)",
+    "Node 'file:crates/sf-cli/src/smoke.rpy' has no edges (orphan)",
+    "Node 'config:crates/sf-core/Cargo.toml' has no edges (orphan)",
+    "Node 'config:crates/sf-wasm/Cargo.toml' has no edges (orphan)",
+    "Node 'file:crates/sf-wasm/benchmark.html' has no edges (orphan)",
+    "Node 'file:crates/sf-wasm/run-benchmark.mjs' has no edges (orphan)",
+    "Node 'document:document/claud.md' has no edges (orphan)",
+    "Node 'document:document/claud_recommend.md' has no edges (orphan)",
+    "Node 'document:document/diagrams/OFL-Geist.txt' has no edges (orphan)",
+    "Node 'document:document/diagrams/OFL-JetBrainsMono.txt' has no edges (orphan)",
+    "Node 'config:document/diagrams/icons/manifest.json' has no edges (orphan)",
+    "Node 'file:document/diagrams/storyflow-stack.source.html' has no edges (orphan)",
+    "Node 'config:document/phase-0a/parity-evidence/A1/core-trace.json' has no edges (orphan)",
+    "Node 'config:document/phase-0a/parity-evidence/A1/parity-input.json' has no edges (orphan)",
+    "Node 'config:document/phase-0a/parity-evidence/A1/sdk-trace.json' has no edges (orphan)",
+    "Node 'config:document/phase-0a/parity-evidence/A2-2-20/core-trace.json' has no edges (orphan)",
+    "Node 'config:document/phase-0a/parity-evidence/A2-2-20/parity-input.json' has no edges (orphan)",
+    "Node 'config:document/phase-0a/parity-evidence/A2-2-20/sdk-trace.json' has no edges (orphan)",
+    "Node 'config:document/phase-0a/parity-evidence/A2-3-19/core-trace.json' has no edges (orphan)",
+    "Node 'config:document/phase-0a/parity-evidence/A2-3-19/parity-input.json' has no edges (orphan)",
+    "Node 'config:document/phase-0a/parity-evidence/A2-3-19/sdk-trace.json' has no edges (orphan)",
+    "Node 'config:document/phase-0a/parity-evidence/A2-3-20/core-trace.json' has no edges (orphan)",
+    "Node 'config:document/phase-0a/parity-evidence/A2-3-20/parity-input.json' has no edges (orphan)",
+    "Node 'config:document/phase-0a/parity-evidence/A2-3-20/sdk-trace.json' has no edges (orphan)",
+    "Node 'config:document/phase-0a/parity-evidence/A3/core-trace.json' has no edges (orphan)",
+    "Node 'config:document/phase-0a/parity-evidence/A3/parity-input.json' has no edges (orphan)",
+    "Node 'config:document/phase-0a/parity-evidence/A3/sdk-trace.json' has no edges (orphan)",
+    "Node 'config:document/phase-0a/parity-evidence/A4/core-trace.json' has no edges (orphan)",
+    "Node 'config:document/phase-0a/parity-evidence/A4/parity-input.json' has no edges (orphan)",
+    "Node 'config:document/phase-0a/parity-evidence/A4/sdk-trace.json' has no edges (orphan)",
+    "Node 'config:document/phase-0a/parity-evidence/A5/core-trace.json' has no edges (orphan)",
+    "Node 'config:document/phase-0a/parity-evidence/A5/parity-input.json' has no edges (orphan)",
+    "Node 'config:document/phase-0a/parity-evidence/A5/sdk-trace.json' has no edges (orphan)",
+    "Node 'config:document/phase-0a/parity-evidence/A6/core-trace.json' has no edges (orphan)",
+    "Node 'config:document/phase-0a/parity-evidence/A6/parity-input.json' has no edges (orphan)",
+    "Node 'config:document/phase-0a/parity-evidence/A6/sdk-trace.json' has no edges (orphan)",
+    "Node 'config:document/phase-0a/parity-evidence/Aplus-high/core-trace.json' has no edges (orphan)",
+    "Node 'config:document/phase-0a/parity-evidence/Aplus-high/parity-input.json' has no edges (orphan)",
+    "Node 'config:document/phase-0a/parity-evidence/Aplus-high/sdk-trace.json' has no edges (orphan)",
+    "Node 'config:document/phase-0a/parity-evidence/Aplus-low/core-trace.json' has no edges (orphan)",
+    "Node 'config:document/phase-0a/parity-evidence/Aplus-low/parity-input.json' has no edges (orphan)",
+    "Node 'config:document/phase-0a/parity-evidence/Aplus-low/sdk-trace.json' has no edges (orphan)",
+    "Node 'config:document/phase-0a/parity-evidence/environment.json' has no edges (orphan)",
+    "Node 'config:document/phase-0b/evidence/gate-environment.json' has no edges (orphan)",
+    "Node 'config:document/phase-0b/evidence/media-result.json' has no edges (orphan)",
+    "Node 'config:document/phase-0b/evidence/opfs-report.json' has no edges (orphan)",
+    "Node 'file:scripts/audit-native-recovery.mjs' has no edges (orphan)",
+    "Node 'file:scripts/build-stack-diagram.py' has no edges (orphan)",
+    "Node 'file:scripts/prepare-media-0b3.mjs' has no edges (orphan)",
+    "Node 'file:scripts/probe-native-reopen.py' has no edges (orphan)",
+    "Node 'file:scripts/test-recovery-browser.py' has no edges (orphan)",
+    "Node 'document:templates/renpy/game/assets/fonts/OFL.txt' has no edges (orphan)",
+    "Node 'document:templates/renpy/game/python-packages/PyThaiNLP-LICENSE.txt' has no edges (orphan)",
+    "Node 'file:web/serve-proof.mjs' has no edges (orphan)"
+  ],
+  "issues": [],
+  "files": 155,
+  "excluded": 75,
+  "limitations": [
+    "Subagents interrupted by account usage limit; root resumed from bundled extraction and partial artifacts",
+    "RenPy and WebM lack structural parser coverage; no codec/semantic runtime verification from the graph",
+    "Full source inventory155; ignore/default rules excluded75 files; ignored agent notes are not graph nodes",
+    "Graph inspection is not a product regression run; current working tree is the source of analysis"
+  ],
+  "categories": [
+    {
+      "count": 47,
+      "category": "code"
+    },
+    {
+      "count": 71,
+      "category": "config"
+    },
+    {
+      "count": 28,
+      "category": "docs"
+    },
+    {
+      "count": 8,
+      "category": "markup"
+    },
+    {
+      "count": 1,
+      "category": "script"
+    }
+  ]
+}

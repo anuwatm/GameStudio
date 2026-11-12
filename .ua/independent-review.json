@@ -1,0 +1,46 @@
+{
+  "reviewedAt": "2026-11-12T11:04:30.901Z",
+  "readOnly": true,
+  "issues": [
+    {
+      "code": "SEMANTIC_EXPORT_CONDITION",
+      "severity": "medium",
+      "id": "function:crates/sf-core/src/export.rs:condition",
+      "message": "summary อ้างว่าประเมินเงื่อนไขและเก็บคำอธิบายผล แต่ source บรรทัด 36–53 แปลง Condition AST เป็นข้อความ Python expression สำหรับ exporter ไม่ได้ประเมินหรือเก็บ explanation",
+      "suggestedSummary": "แปลง Condition AST เป็น Python expression สำหรับ Ren’Py โดยคง all/any/not/compare และกรณีเงื่อนไขว่าง"
+    }
+  ],
+  "warnings": [
+    {
+      "code": "GENERIC_SUMMARIES",
+      "message": "บาง symbol summaries เป็นแม่แบบ เช่น Project.value, Simulator.new/vars และ Generator.schedule แสดงชื่อกับบทบาทไฟล์แทนพฤติกรรมเฉพาะ ควรปรับเมื่อใช้อ่านระดับ function"
+    },
+    {
+      "code": "RUST_METHOD_OWNERSHIP",
+      "message": "พบ methods ของ Project/EditHistory/Session/Simulator ใน graph พร้อม lineRange ตรง extraction แต่ไม่มี class→method contains edges ในชุดที่ตรวจ จึงสำรวจ ownership ผ่านกราฟไม่ได้โดยตรง แม้ IDs แต่ละไฟล์ไม่ชนกัน"
+    }
+  ],
+  "stats": {
+    "inventoryFiles": 155,
+    "fileLevelNodes": 155,
+    "uniqueFilePaths": 155,
+    "totalNodes": 288,
+    "totalEdges": 427,
+    "expectedImportEdges": 30,
+    "actualImportEdges": 30,
+    "missingFiles": 0,
+    "extraFiles": 0,
+    "missingImports": 0,
+    "sampledSymbolRanges": 59,
+    "rangeMismatches": 0,
+    "layers": 8,
+    "tourSteps": 8,
+    "metaAnalyzedFiles": 155
+  },
+  "limitations": [
+    "ตรวจตาม inventory ปัจจุบัน 155 ไฟล์ ไม่ใช้จำนวน 230 จาก scan รอบก่อนเป็น baseline",
+    "ตรวจเชิงโครงสร้างครบ inventory/importMap/schema refs; semantic source spot-check เฉพาะ Rust Core, WASM ABI/Worker และ React UI/client ไม่ใช่ code review หรือรันทดสอบผลิตภัณฑ์ใหม่",
+    "Ren’Py .rpy, JSONL และ WebM ไม่มี parser โครงสร้างครบใน extraction; การมี file node ไม่รับรองการถอดรหัสหรือความสมบูรณ์ของ symbol ภายใน",
+    "ไม่มี merge stderr หรือ batch review report ที่ระบุให้ตรวจในรอบนี้ จึงไม่ยืนยันประวัติการ normalize/drop ของ pipeline"
+  ]
+}

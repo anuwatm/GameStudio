@@ -1,8 +1,10 @@
-# StoryFlow Web Studio · Phase 1.1
+# StoryFlow Web Studio · Phase 1.2
 
 React + React Flow เชื่อม Rust/WASM Worker ด้วย Core Contract v1 ไม่มี Backend
 
-ปัจจุบันเปิด Summer House ใน memory, ดูกราฟ/Inspector, เปลี่ยนชื่อด้วย JSON Patch, Undo/Redo และ Validate ได้ การแก้โหนด เปิดโฟลเดอร์ บันทึก Autosave และ Export เป็นขั้นถัดไป Reload/Restart Core จะทิ้งข้อมูลใน memory ภาษา UI ใช้ไทยเป็นหลัก คงศัพท์เทคนิคอังกฤษ ตามมติเจ้าของ 2026-11-12
+ปัจจุบันเปิด/สร้างโปรเจกต์ในโฟลเดอร์ บันทึกแบบ manual จัดการตัวละคร/สื่อ และแก้กราฟ/Inspector ได้ พร้อม Undo/Redo และ Validate ผ่าน Core Patch ข้อมูลในตัวอย่าง Summer House ยังอยู่ใน memory ส่วน Autosave, IndexedDB, Rules/Playtest และ Export UI เป็นขั้นถัดไป ภาษาไทยเป็นหลัก คงศัพท์เทคนิคอังกฤษ
+
+หน้า Project ใช้เพิ่มตัวละครและลงทะเบียนพาธสัมพัทธ์ใต้ `game/assets/` แล้วหน้า Story Graph ใช้เพิ่ม/เลือก/เชื่อมโหนด แก้ Inspector หรือข้อความบนกราฟ และกดบันทึกโปรเจกต์เมื่อทำงานกับโฟลเดอร์ ตำแหน่งโหนดยังเป็น view state ของ session ดู [ขอบเขตและผล 1.2](../document/phase-1/editor-1.2.md)
 
 ## รันบน Windows
 
@@ -39,18 +41,24 @@ npm --prefix studio test
 npm --prefix studio run build
 npm --prefix studio run proof:build
 $env:PYTHONPATH = "$PWD/temp/stack-python"
+$env:SF_PROOF_OUT = 'document/phase-1/evidence/1.2/regression-1.1'
 python -u studio/tests/browser-proof.py
+python -u studio/tests/editor-proof.py
 ```
 
 Browser proof ใช้ Python + Playwright และ Edge ตามพาธ Windows ในสคริปต์ รวม `temp/rust-target/debug/sf-cli.exe` สำหรับเทียบผล native โปรเจกต์เดิมติดตั้ง Playwright ที่ `temp/stack-python` แล้ว เครื่องใหม่ต้องติดตั้ง Python package `playwright` ก่อน แล้วปรับ PYTHONPATH ตามที่ติดตั้ง
 
 Proof build อยู่ `temp/studio-proof-dist/` แยกจาก production และไม่ควรเผยแพร่หน้า test ผลเก็บใน [หลักฐาน 1.1](../document/phase-1/foundation-1.1.md)
 
+Editor proof ใช้ OPFS handles จริงและจำลอง picker ไม่ใช่ native OS permission test ผลเก็บแยกใน [หลักฐาน 1.2](../document/phase-1/editor-1.2.md) ไม่เขียนทับหลักฐานตรวจรับ 1.1 เดิม
+
 ## ขอบเขตสถาปัตยกรรม
 
 - `src/core/client.ts`: requestId, Contract v1, Result/Error, timeout และ termination; timeout หยุดทั้ง session ไม่ replay mutation ที่ไม่ทราบผล
 - `src/core/create.ts`: สร้าง Worker จากชุด assets ที่เตรียมไว้
 - `src/core/features.ts`: ตรวจ requirements โดยไม่ขอสิทธิ์โฟลเดอร์
+- `src/core/editor.ts`: UI command → atomic JSON Patch โดยไม่แทนตรรกะ Rust
+- `src/core/folder.ts`: เปิด/สร้าง/recover-before-open, manual Save พร้อม conflict check และ backup guard สำหรับ Schema ที่ไม่รองรับ
 - `src/ui/`: แสดง snapshot ที่ Core ยืนยันแล้ว ตำแหน่ง node คำนวณเฉพาะการแสดงผล ไม่มี UI schema/logic ทดแทน Rust
 - `tests/contract-probe.ts`: ใช้ client เดียวกับแอป ทดสอบทุก request name ที่รองรับในรอบนี้ และส่งผลให้ test driver เทียบ CLI
 

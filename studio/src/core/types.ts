@@ -1,5 +1,10 @@
-export type StoryNode = {id:string;kind:string;graphId:string;lines?:{text:string;characterId?:string|null}[];choices?:{id:string;text:string}[];[key:string]:unknown};
-export type Project = {schemaVersion:number;id:string;name:string;entryGraphId:string;graphs:{id:string;kind:string;entryNodeId:string}[];nodes:StoryNode[];edges:{id:string;from:string;port:string;to:string}[];[key:string]:unknown};
+export type NodeKind='scene'|'branch'|'effect'|'schedule'|'end';
+export type Choice={id:string;text:string;visibleIf:unknown;effects:unknown[]};
+export type StoryNode={id:string;kind:NodeKind;graphId:string;lines?:{text:string;characterId:string|null}[];choices?:Choice[];assetIds?:string[];effects?:unknown[];condition?:unknown;startDay?:number;lastDay?:number;activityIds?:string[];eventIds?:string[];mode?:'ending'|'return'|'jump';targetGraphId?:string;[key:string]:unknown};
+export type Character={id:string;name:string;color:string;portraitAssetId:string|null};
+export type Asset={id:string;path:string};
+export type StoryEdge={id:string;from:string;port:string;to:string};
+export type Project={schemaVersion:number;id:string;name:string;entryGraphId:string;characters:Character[];assets:Asset[];variables:unknown[];activities:unknown[];events:unknown[];graphs:{id:string;kind:'main'|'subgraph';entryNodeId:string}[];nodes:StoryNode[];edges:StoryEdge[];[key:string]:unknown};
 export type Patch={op:'add'|'remove'|'replace';path:string;value?:unknown};
 export type Issue={code:string;severity:string;message:string;[key:string]:unknown};
 export type Payloads={openProject:{project:Project};applyEdit:{patch:Patch[]};undo:Record<string,never>;redo:Record<string,never>;getProject:Record<string,never>;validate:Record<string,never>;startPlaytest:{startNodeId?:string;initialVarsOverride?:Record<string,unknown>};choose:{choiceId:string};setVar:{variableId:string;value:unknown};rewind:{steps:number};getTrace:Record<string,never>};

@@ -1,0 +1,13 @@
+{
+  "resolved": [
+    {
+      "code": "SEMANTIC_EXPORT_CONDITION",
+      "id": "function:crates/sf-core/src/export.rs:condition",
+      "resolution": "ตรวจ source บรรทัด 36–53 แล้วแก้ summary ให้ระบุว่าแปลง AST เป็น Python expression สำหรับ Ren’Py ต่างจาก Simulator ที่ประเมินเงื่อนไข",
+      "validation": "canonical validateGraph และ inline validator ผ่านซ้ำหลังแก้"
+    }
+  ],
+  "openIssues": [],
+  "retainedWarnings": ["GENERIC_SUMMARIES", "RUST_METHOD_OWNERSHIP", "57 orphan nodes"],
+  "productCodeChanged": false
+}

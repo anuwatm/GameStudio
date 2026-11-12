@@ -1,10 +1,10 @@
 """Production + proof builds, served below a subpath; real Edge, no Vite dev server."""
-import functools, http.server, json, pathlib, subprocess, threading, sys
+import functools, http.server, json, pathlib, subprocess, threading, sys, os
 from playwright.sync_api import sync_playwright, expect
 sys.stdout.reconfigure(encoding='utf-8')
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
-OUT = ROOT / 'document/phase-1/evidence'
+OUT = ROOT / os.environ.get('SF_PROOF_OUT','document/phase-1/evidence')
 OUT.mkdir(parents=True, exist_ok=True)
 class Quiet(http.server.SimpleHTTPRequestHandler):
     extensions_map = {**http.server.SimpleHTTPRequestHandler.extensions_map, '.js':'text/javascript', '.mjs':'text/javascript', '.wasm':'application/wasm'}
@@ -39,13 +39,15 @@ try:
         expect(page.locator('.react-flow__node')).to_have_count(6)
         page.locator('.react-flow__node').first.click()
         expect(page.locator('.inspector details')).to_be_visible()
-        page.get_by_label('ชื่อ',exact=True).fill('บ้านฤดูร้อน · Transport')
-        page.get_by_role('button',name='ใช้ชื่อนี้').click()
+        page.get_by_role('button',name='โปรเจกต์',exact=True).click()
+        page.get_by_label('ชื่อโปรเจกต์',exact=True).fill('บ้านฤดูร้อน · Transport')
+        page.get_by_role('button',name='ใช้ชื่อโปรเจกต์',exact=True).click()
         expect(page.locator('.project-name')).to_have_text('บ้านฤดูร้อน · Transport')
         page.get_by_role('button',name='Undo',exact=True).click()
         expect(page.locator('.project-name')).to_have_text('Summer House')
         page.get_by_role('button',name='Redo',exact=True).click()
         expect(page.locator('.project-name')).to_have_text('บ้านฤดูร้อน · Transport')
+        page.get_by_role('button',name='Story Graph',exact=True).click()
         page.get_by_role('button',name='ตรวจโปรเจกต์ (Validate)').click()
         expect(page.get_by_role('heading',name='ผลการตรวจโปรเจกต์')).to_be_visible()
         page.screenshot(path=str(OUT/'graph-1440.png'),full_page=True)

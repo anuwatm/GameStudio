@@ -1,0 +1,6 @@
+{
+  "passed": true,
+  "mode": "real Edge pointer drag; fixture in memory",
+  "beforeStyle": "z-index: 1000; transform: translate(0px, 0px); pointer-events: all; visibility: visible;",
+  "afterStyle": "z-index: 1000; transform: translate(70px, 44px); pointer-events: all; visibility: visible;"
+}

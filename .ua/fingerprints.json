@@ -1,0 +1,3812 @@
+{
+  "version": "1.0.0",
+  "gitCommitHash": "b81f762cf03d702de9dc2346d73fb7c25717f891",
+  "generatedAt": "2026-11-12T10:59:43.568Z",
+  "files": {
+    "Cargo.toml": {
+      "filePath": "Cargo.toml",
+      "contentHash": "6f99ac0135738ee33b3b0f110ab5ecef05083aa0bbe83a0bc80bd61fe504b8c6",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 4,
+      "hasStructuralAnalysis": false
+    },
+    "DESIGN.md": {
+      "filePath": "DESIGN.md",
+      "contentHash": "6ac9aa081b39daec6463795030cfd7a83f6ddacdea613341cfa92ab9670ad42c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 192,
+      "hasStructuralAnalysis": false
+    },
+    "StoryFlow-Game-Studio-Concept.md": {
+      "filePath": "StoryFlow-Game-Studio-Concept.md",
+      "contentHash": "ff5b7af4ae94062a83bccaebb8ea7ac4ecf35eda989452740f3e3d8ff9ef9ccd",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 391,
+      "hasStructuralAnalysis": false
+    },
+    "checklist.md": {
+      "filePath": "checklist.md",
+      "contentHash": "481bcd7b0dc6cecbf14e8766b77bffea451fd0942882a36dbd940426b557c5fe",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 305,
+      "hasStructuralAnalysis": false
+    },
+    "contract/README.md": {
+      "filePath": "contract/README.md",
+      "contentHash": "799a76ee5abbbe2f2d41c3069df7870957fecfa3f9d3e1c540fb4d2d4ca59ab6",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 38,
+      "hasStructuralAnalysis": false
+    },
+    "contract/fixtures/generate-baseline.mjs": {
+      "filePath": "contract/fixtures/generate-baseline.mjs",
+      "contentHash": "837b3e319026204333cad94b74958a7fe98c141311d9d46bdfdbfc1e11fab90c",
+      "functions": [
+        {
+          "name": "id",
+          "params": [],
+          "exported": false,
+          "lineCount": 1
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:fs",
+          "specifiers": [
+            "readFileSync"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 27,
+      "hasStructuralAnalysis": true
+    },
+    "contract/fixtures/step-trace.jsonl": {
+      "filePath": "contract/fixtures/step-trace.jsonl",
+      "contentHash": "ae40025334b2ce4501f9195615ce795f713266834dbeb3b0763c5fd7af96d2b6",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 2,
+      "hasStructuralAnalysis": false
+    },
+    "contract/fixtures/summer-house-cases.json": {
+      "filePath": "contract/fixtures/summer-house-cases.json",
+      "contentHash": "773de11f69e735347199b713bcfce09808f9161f7175cf26d6ca187ac278f8c4",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 336,
+      "hasStructuralAnalysis": false
+    },
+    "contract/fixtures/summer-house.json": {
+      "filePath": "contract/fixtures/summer-house.json",
+      "contentHash": "63466c164f3d84f8a1d9cb23497512e90d3bc422e07b129f459e0eecebd4e0c1",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 331,
+      "hasStructuralAnalysis": false
+    },
+    "contract/fixtures/validator-cases.json": {
+      "filePath": "contract/fixtures/validator-cases.json",
+      "contentHash": "494d557230410190a9066bef1e60d5939e891de7256a8d72b800890ac20b00ad",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 533,
+      "hasStructuralAnalysis": false
+    },
+    "contract/fixtures/worker-messages.json": {
+      "filePath": "contract/fixtures/worker-messages.json",
+      "contentHash": "c73bf5d4ebe6d32f9c69b01393f973d3cd6edf87f6aebe16e31b8c6e0b6d58e0",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 19,
+      "hasStructuralAnalysis": false
+    },
+    "contract/project.schema.json": {
+      "filePath": "contract/project.schema.json",
+      "contentHash": "ba165fb98b011c601dca27544eb23cdd31e731b256b7f3462c6556e8f01d1b7b",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 840,
+      "hasStructuralAnalysis": false
+    },
+    "contract/step-trace.schema.json": {
+      "filePath": "contract/step-trace.schema.json",
+      "contentHash": "2996ccdf28abce60f23c84d0869557d0072fd1902df4dbcfb1f2e66d90617c03",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 133,
+      "hasStructuralAnalysis": false
+    },
+    "contract/worker.schema.json": {
+      "filePath": "contract/worker.schema.json",
+      "contentHash": "d2b0b49f324e215da6b1f506c5ebe7e736f69a8375412e9e74c9733fdd5c3f22",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1044,
+      "hasStructuralAnalysis": false
+    },
+    "crates/sf-cli/Cargo.toml": {
+      "filePath": "crates/sf-cli/Cargo.toml",
+      "contentHash": "75ce4bf9dcb2270e9ffd8fe37a7e98b0ad8ba779735accfd16cb026e61649285",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 11,
+      "hasStructuralAnalysis": false
+    },
+    "crates/sf-cli/src/main.rs": {
+      "filePath": "crates/sf-cli/src/main.rs",
+      "contentHash": "0316b097ab12064092ef035bb85f851218fc3aba01d88af6b0fe136276281922",
+      "functions": [
+        {
+          "name": "write_new_game",
+          "owner": "",
+          "params": [
+            "project",
+            "dir"
+          ],
+          "returnType": "Result<(), Box<dyn std::error::Error>>",
+          "exported": false,
+          "lineCount": 18
+        },
+        {
+          "name": "sdk_run",
+          "owner": "",
+          "params": [
+            "sdk",
+            "project",
+            "lint"
+          ],
+          "returnType": "Result<(), Box<dyn std::error::Error>>",
+          "exported": false,
+          "lineCount": 26
+        },
+        {
+          "name": "smoke",
+          "owner": "",
+          "params": [
+            "project",
+            "cases",
+            "case_id",
+            "sdk",
+            "dir"
+          ],
+          "returnType": "Result<(), Box<dyn std::error::Error>>",
+          "exported": false,
+          "lineCount": 35
+        },
+        {
+          "name": "run",
+          "owner": "",
+          "params": [],
+          "returnType": "Result<(), Box<dyn std::error::Error>>",
+          "exported": false,
+          "lineCount": 59
+        },
+        {
+          "name": "main",
+          "owner": "",
+          "params": [],
+          "returnType": "ExitCode",
+          "exported": false,
+          "lineCount": 6
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "serde_json",
+          "specifiers": [
+            "Value"
+          ]
+        },
+        {
+          "source": "sf_core",
+          "specifiers": [
+            "export::export_renpy",
+            "project::Project",
+            "validate::validate"
+          ]
+        },
+        {
+          "source": "std",
+          "specifiers": [
+            "env",
+            "fs",
+            "path::Path",
+            "thread"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 154,
+      "hasStructuralAnalysis": true
+    },
+    "crates/sf-cli/src/parity.rpy": {
+      "filePath": "crates/sf-cli/src/parity.rpy",
+      "contentHash": "84e91b6c3849da994e05dbc044976fe465f90dc409e42eda7abfb0d443f63a13",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 120,
+      "hasStructuralAnalysis": false
+    },
+    "crates/sf-cli/src/parity.rs": {
+      "filePath": "crates/sf-cli/src/parity.rs",
+      "contentHash": "5b72f5ba85653d343d54f87e3aa996a80cf44f39b100e45d22b9d95be745be15",
+      "functions": [
+        {
+          "name": "name",
+          "owner": "",
+          "params": [
+            "node"
+          ],
+          "returnType": "String",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "matching",
+          "owner": "",
+          "params": [
+            "actual",
+            "expected"
+          ],
+          "returnType": "bool",
+          "exported": false,
+          "lineCount": 6
+        },
+        {
+          "name": "run",
+          "owner": "",
+          "params": [
+            "project",
+            "cases",
+            "sdk",
+            "dir"
+          ],
+          "returnType": "Result<(), Box<dyn std::error::Error>>",
+          "exported": true,
+          "lineCount": 54
+        },
+        {
+          "name": "instrument",
+          "owner": "",
+          "params": [
+            "project",
+            "dir"
+          ],
+          "returnType": "Result<(), Box<dyn std::error::Error>>",
+          "exported": false,
+          "lineCount": 33
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "crate",
+          "specifiers": [
+            "sdk_run",
+            "write_new_game"
+          ]
+        },
+        {
+          "source": "serde_json",
+          "specifiers": [
+            "json",
+            "Value"
+          ]
+        },
+        {
+          "source": "sf_core",
+          "specifiers": [
+            "sim::Simulator"
+          ]
+        },
+        {
+          "source": "std",
+          "specifiers": [
+            "collections::HashMap",
+            "fs",
+            "path::Path"
+          ]
+        }
+      ],
+      "exports": [
+        "run"
+      ],
+      "totalLines": 105,
+      "hasStructuralAnalysis": true
+    },
+    "crates/sf-cli/src/smoke.rpy": {
+      "filePath": "crates/sf-cli/src/smoke.rpy",
+      "contentHash": "904d1311c4d7b74c9325d4751ed318c86fdc08ff8fb206f443e5ca66320c1bee",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 19,
+      "hasStructuralAnalysis": false
+    },
+    "crates/sf-core/Cargo.toml": {
+      "filePath": "crates/sf-core/Cargo.toml",
+      "contentHash": "5d75eeef9afeb7ea3c6e64534fd5cce51e6d173e2390a51e3766386846cb4464",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 13,
+      "hasStructuralAnalysis": false
+    },
+    "crates/sf-core/src/effect.rs": {
+      "filePath": "crates/sf-core/src/effect.rs",
+      "contentHash": "bc1b69cda56f8a0a9018c6d2fe433914dd0753f6dfd39030d6380d5bb694bb90",
+      "functions": [
+        {
+          "name": "apply_int_effect",
+          "owner": "",
+          "params": [
+            "current",
+            "effect",
+            "min",
+            "max"
+          ],
+          "returnType": "Option<i32>",
+          "exported": true,
+          "lineCount": 13
+        }
+      ],
+      "classes": [
+        {
+          "name": "IntEffect",
+          "methods": [],
+          "properties": [
+            "Set",
+            "Add",
+            "Subtract"
+          ],
+          "exported": true,
+          "lineCount": 5
+        }
+      ],
+      "imports": [],
+      "exports": [
+        "IntEffect",
+        "apply_int_effect"
+      ],
+      "totalLines": 44,
+      "hasStructuralAnalysis": true
+    },
+    "crates/sf-core/src/export.rs": {
+      "filePath": "crates/sf-core/src/export.rs",
+      "contentHash": "c2c868f5074e02d49f36b51350e6f4e43ed3f857172e2b404d3a80bb6e387bc6",
+      "functions": [
+        {
+          "name": "name",
+          "owner": "",
+          "params": [
+            "kind",
+            "id"
+          ],
+          "returnType": "String",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "literal",
+          "owner": "",
+          "params": [
+            "value"
+          ],
+          "returnType": "String",
+          "exported": false,
+          "lineCount": 7
+        },
+        {
+          "name": "dialogue",
+          "owner": "",
+          "params": [
+            "value"
+          ],
+          "returnType": "String",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "character_name",
+          "owner": "",
+          "params": [
+            "value"
+          ],
+          "returnType": "String",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "operand",
+          "owner": "",
+          "params": [
+            "value"
+          ],
+          "returnType": "String",
+          "exported": false,
+          "lineCount": 7
+        },
+        {
+          "name": "condition",
+          "owner": "",
+          "params": [
+            "value"
+          ],
+          "returnType": "String",
+          "exported": false,
+          "lineCount": 18
+        },
+        {
+          "name": "label",
+          "owner": "Generator<'_>",
+          "params": [
+            "id"
+          ],
+          "returnType": "String",
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "entry",
+          "owner": "Generator<'_>",
+          "params": [
+            "graph"
+          ],
+          "returnType": "String",
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "target",
+          "owner": "Generator<'_>",
+          "params": [
+            "id",
+            "port"
+          ],
+          "returnType": "String",
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "effects",
+          "owner": "Generator<'_>",
+          "params": [
+            "out",
+            "row",
+            "indent"
+          ],
+          "exported": false,
+          "lineCount": 20
+        },
+        {
+          "name": "call",
+          "owner": "Generator<'_>",
+          "params": [
+            "out",
+            "graph",
+            "indent"
+          ],
+          "exported": false,
+          "lineCount": 6
+        },
+        {
+          "name": "schedule",
+          "owner": "Generator<'_>",
+          "params": [
+            "out",
+            "id",
+            "node"
+          ],
+          "exported": false,
+          "lineCount": 32
+        },
+        {
+          "name": "node",
+          "owner": "Generator<'_>",
+          "params": [
+            "out",
+            "node"
+          ],
+          "returnType": "Result<(), String>",
+          "exported": false,
+          "lineCount": 48
+        },
+        {
+          "name": "export_renpy",
+          "owner": "",
+          "params": [
+            "project"
+          ],
+          "returnType": "Result<BTreeMap<&'static str, String>, String>",
+          "exported": true,
+          "lineCount": 30
+        },
+        {
+          "name": "source_map",
+          "owner": "",
+          "params": [
+            "project",
+            "files"
+          ],
+          "returnType": "Value",
+          "exported": true,
+          "lineCount": 32
+        }
+      ],
+      "classes": [
+        {
+          "name": "Generator",
+          "methods": [],
+          "properties": [
+            "nodes",
+            "graphs",
+            "variables",
+            "activities",
+            "events",
+            "assets",
+            "edges"
+          ],
+          "exported": false,
+          "lineCount": 9
+        }
+      ],
+      "imports": [
+        {
+          "source": "crate",
+          "specifiers": []
+        },
+        {
+          "source": "serde_json",
+          "specifiers": [
+            "Value"
+          ]
+        },
+        {
+          "source": "std::collections",
+          "specifiers": [
+            "BTreeMap",
+            "HashMap"
+          ]
+        },
+        {
+          "source": "std::fmt",
+          "specifiers": [
+            "Write"
+          ]
+        },
+        {
+          "source": "uuid",
+          "specifiers": [
+            "Uuid"
+          ]
+        }
+      ],
+      "exports": [
+        "export_renpy",
+        "source_map"
+      ],
+      "totalLines": 277,
+      "hasStructuralAnalysis": true
+    },
+    "crates/sf-core/src/expression.rs": {
+      "filePath": "crates/sf-core/src/expression.rs",
+      "contentHash": "24d766193fd78dd3712b0bd32d1f018f4c153cefabf160f9e5cc7367172307f5",
+      "functions": [
+        {
+          "name": "resolve",
+          "owner": "Operand",
+          "params": [
+            "vars",
+            "day"
+          ],
+          "returnType": "Result<Value, String>",
+          "exported": false,
+          "lineCount": 8
+        },
+        {
+          "name": "evaluate",
+          "owner": "Condition",
+          "params": [
+            "vars",
+            "day"
+          ],
+          "returnType": "Result<bool, String>",
+          "exported": true,
+          "lineCount": 38
+        }
+      ],
+      "classes": [
+        {
+          "name": "Value",
+          "methods": [],
+          "properties": [
+            "Int",
+            "Bool",
+            "String"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "Operand",
+          "methods": [
+            "resolve"
+          ],
+          "properties": [
+            "Variable",
+            "Literal",
+            "Day"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "Operator",
+          "methods": [],
+          "properties": [
+            "Eq",
+            "Ne",
+            "Lt",
+            "Le",
+            "Gt",
+            "Ge"
+          ],
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "Condition",
+          "methods": [
+            "evaluate"
+          ],
+          "properties": [
+            "All",
+            "Any",
+            "Not",
+            "Compare"
+          ],
+          "exported": true,
+          "lineCount": 6
+        }
+      ],
+      "imports": [
+        {
+          "source": "serde",
+          "specifiers": [
+            "Deserialize"
+          ]
+        },
+        {
+          "source": "std::cmp",
+          "specifiers": [
+            "Ordering"
+          ]
+        },
+        {
+          "source": "std::collections",
+          "specifiers": [
+            "HashMap"
+          ]
+        },
+        {
+          "source": "uuid",
+          "specifiers": [
+            "Uuid"
+          ]
+        }
+      ],
+      "exports": [
+        "Value",
+        "Operand",
+        "Operator",
+        "Condition",
+        "evaluate"
+      ],
+      "totalLines": 111,
+      "hasStructuralAnalysis": true
+    },
+    "crates/sf-core/src/lib.rs": {
+      "filePath": "crates/sf-core/src/lib.rs",
+      "contentHash": "370b1b22fbe139b045508a62577c1a62f1629dd8c3907033d5ac05456e6cf523",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 10,
+      "hasStructuralAnalysis": true
+    },
+    "crates/sf-core/src/project.rs": {
+      "filePath": "crates/sf-core/src/project.rs",
+      "contentHash": "13ff26df0d3161a64d6d3bdaa594caaf1466614355c9a92d5a692faa64b14bec",
+      "functions": [
+        {
+          "name": "from_json",
+          "owner": "Project",
+          "params": [
+            "input"
+          ],
+          "returnType": "Result<Self, String>",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "from_value",
+          "owner": "Project",
+          "params": [
+            "value"
+          ],
+          "returnType": "Result<Self, String>",
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "value",
+          "owner": "Project",
+          "params": [],
+          "returnType": "&Value",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "export_name",
+          "owner": "",
+          "params": [
+            "kind",
+            "id"
+          ],
+          "returnType": "Option<String>",
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "check_export_names",
+          "owner": "",
+          "params": [
+            "entities"
+          ],
+          "returnType": "Result<(), String>",
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "new",
+          "owner": "EditHistory",
+          "params": [
+            "project"
+          ],
+          "returnType": "Self",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "project",
+          "owner": "EditHistory",
+          "params": [],
+          "returnType": "&Project",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "apply",
+          "owner": "EditHistory",
+          "params": [
+            "patch"
+          ],
+          "returnType": "Result<(), String>",
+          "exported": true,
+          "lineCount": 18
+        },
+        {
+          "name": "undo",
+          "owner": "EditHistory",
+          "params": [],
+          "returnType": "bool",
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "redo",
+          "owner": "EditHistory",
+          "params": [],
+          "returnType": "bool",
+          "exported": true,
+          "lineCount": 5
+        }
+      ],
+      "classes": [
+        {
+          "name": "Project",
+          "methods": [
+            "from_json",
+            "from_value",
+            "value"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "EditHistory",
+          "methods": [
+            "new",
+            "project",
+            "apply",
+            "undo",
+            "redo"
+          ],
+          "properties": [
+            "current",
+            "undo",
+            "redo"
+          ],
+          "exported": true,
+          "lineCount": 5
+        }
+      ],
+      "imports": [
+        {
+          "source": "json_patch",
+          "specifiers": [
+            "Patch",
+            "PatchOperation"
+          ]
+        },
+        {
+          "source": "serde_json",
+          "specifiers": [
+            "Value"
+          ]
+        },
+        {
+          "source": "std::collections",
+          "specifiers": [
+            "HashSet"
+          ]
+        },
+        {
+          "source": "std::sync",
+          "specifiers": [
+            "LazyLock"
+          ]
+        },
+        {
+          "source": "uuid",
+          "specifiers": [
+            "Uuid"
+          ]
+        }
+      ],
+      "exports": [
+        "Project",
+        "from_json",
+        "from_value",
+        "value",
+        "export_name",
+        "check_export_names",
+        "EditHistory",
+        "new",
+        "project",
+        "apply",
+        "undo",
+        "redo"
+      ],
+      "totalLines": 148,
+      "hasStructuralAnalysis": true
+    },
+    "crates/sf-core/src/protocol.rs": {
+      "filePath": "crates/sf-core/src/protocol.rs",
+      "contentHash": "a6ca5b2fca26877b87f33acfd404386592c262974283601472e95ef2af2ba951",
+      "functions": [
+        {
+          "name": "dispatch",
+          "owner": "Session",
+          "params": [
+            "message"
+          ],
+          "returnType": "Value",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "execute",
+          "owner": "Session",
+          "params": [
+            "message"
+          ],
+          "returnType": "Result<Value, String>",
+          "exported": false,
+          "lineCount": 46
+        },
+        {
+          "name": "play",
+          "owner": "",
+          "params": [
+            "project",
+            "start",
+            "actions"
+          ],
+          "returnType": "Result<Value, String>",
+          "exported": false,
+          "lineCount": 27
+        }
+      ],
+      "classes": [
+        {
+          "name": "Session",
+          "methods": [
+            "dispatch",
+            "execute"
+          ],
+          "properties": [
+            "history",
+            "run"
+          ],
+          "exported": true,
+          "lineCount": 4
+        }
+      ],
+      "imports": [
+        {
+          "source": "crate",
+          "specifiers": [
+            "sim::Simulator",
+            "validate::validate"
+          ]
+        },
+        {
+          "source": "serde_json",
+          "specifiers": [
+            "json",
+            "Value"
+          ]
+        },
+        {
+          "source": "std",
+          "specifiers": [
+            "collections::VecDeque",
+            "sync::LazyLock"
+          ]
+        }
+      ],
+      "exports": [
+        "Session",
+        "dispatch"
+      ],
+      "totalLines": 111,
+      "hasStructuralAnalysis": true
+    },
+    "crates/sf-core/src/sim.rs": {
+      "filePath": "crates/sf-core/src/sim.rs",
+      "contentHash": "732b548113efd445be6468e28f862227a27ae7baecb356f842a45c5b75abe60e",
+      "functions": [
+        {
+          "name": "new",
+          "owner": "Simulator<'a>",
+          "params": [
+            "project",
+            "start",
+            "overrides"
+          ],
+          "returnType": "Result<Self, String>",
+          "exported": true,
+          "lineCount": 19
+        },
+        {
+          "name": "trace",
+          "owner": "Simulator<'a>",
+          "params": [],
+          "returnType": "&[StepTrace]",
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "vars",
+          "owner": "Simulator<'a>",
+          "params": [],
+          "returnType": "&Variables",
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "explanations",
+          "owner": "Simulator<'a>",
+          "params": [],
+          "returnType": "&[ExplainCondition]",
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "is_finished",
+          "owner": "Simulator<'a>",
+          "params": [],
+          "returnType": "bool",
+          "exported": true,
+          "lineCount": 1
+        },
+        {
+          "name": "run_state",
+          "owner": "Simulator<'a>",
+          "params": [],
+          "returnType": "Value",
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "checkpoint",
+          "owner": "Simulator<'a>",
+          "params": [],
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "rewind",
+          "owner": "Simulator<'a>",
+          "params": [
+            "steps"
+          ],
+          "returnType": "bool",
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "checked_value",
+          "owner": "Simulator<'a>",
+          "params": [
+            "id",
+            "value"
+          ],
+          "returnType": "Result<Value, String>",
+          "exported": false,
+          "lineCount": 13
+        },
+        {
+          "name": "set_var",
+          "owner": "Simulator<'a>",
+          "params": [
+            "id",
+            "value"
+          ],
+          "returnType": "Result<(), String>",
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "condition",
+          "owner": "Simulator<'a>",
+          "params": [
+            "expression"
+          ],
+          "returnType": "Result<bool, String>",
+          "exported": false,
+          "lineCount": 12
+        },
+        {
+          "name": "effects",
+          "owner": "Simulator<'a>",
+          "params": [
+            "row"
+          ],
+          "exported": false,
+          "lineCount": 18
+        },
+        {
+          "name": "goto",
+          "owner": "Simulator<'a>",
+          "params": [
+            "target"
+          ],
+          "exported": false,
+          "lineCount": 4
+        },
+        {
+          "name": "call",
+          "owner": "Simulator<'a>",
+          "params": [
+            "graph",
+            "resume"
+          ],
+          "exported": false,
+          "lineCount": 4
+        },
+        {
+          "name": "advance",
+          "owner": "Simulator<'a>",
+          "params": [
+            "inputs"
+          ],
+          "returnType": "Result<Vec<String>, String>",
+          "exported": true,
+          "lineCount": 143
+        },
+        {
+          "name": "collect_operands",
+          "owner": "",
+          "params": [
+            "expression",
+            "state",
+            "operands"
+          ],
+          "exported": false,
+          "lineCount": 13
+        }
+      ],
+      "classes": [
+        {
+          "name": "StepTrace",
+          "methods": [],
+          "properties": [
+            "step",
+            "node_id",
+            "day",
+            "phase",
+            "choice_id",
+            "event_id",
+            "ending",
+            "vars_before",
+            "vars_after",
+            "visible_choices",
+            "condition_results",
+            "transition"
+          ],
+          "exported": true,
+          "lineCount": 14
+        },
+        {
+          "name": "ExplainCondition",
+          "methods": [],
+          "properties": [
+            "passed",
+            "expression",
+            "operands"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "Stage",
+          "methods": [],
+          "properties": [
+            "Enter",
+            "Before",
+            "Activity",
+            "After",
+            "EndDay",
+            "Complete",
+            "Finished"
+          ],
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "State",
+          "methods": [],
+          "properties": [
+            "node",
+            "day",
+            "vars",
+            "fired",
+            "stage",
+            "resume"
+          ],
+          "exported": false,
+          "lineCount": 8
+        },
+        {
+          "name": "Simulator",
+          "methods": [],
+          "properties": [
+            "nodes",
+            "graphs",
+            "activities",
+            "events",
+            "variables",
+            "links",
+            "state",
+            "trace",
+            "history",
+            "explanations"
+          ],
+          "exported": true,
+          "lineCount": 12
+        }
+      ],
+      "imports": [
+        {
+          "source": "crate",
+          "specifiers": [
+            "project::Project"
+          ]
+        },
+        {
+          "source": "serde",
+          "specifiers": [
+            "Serialize"
+          ]
+        },
+        {
+          "source": "serde_json",
+          "specifiers": [
+            "Value"
+          ]
+        },
+        {
+          "source": "std::collections",
+          "specifiers": [
+            "BTreeMap",
+            "HashMap",
+            "HashSet"
+          ]
+        },
+        {
+          "source": "uuid",
+          "specifiers": [
+            "Uuid"
+          ]
+        }
+      ],
+      "exports": [
+        "StepTrace",
+        "ExplainCondition",
+        "Simulator",
+        "new",
+        "trace",
+        "vars",
+        "explanations",
+        "is_finished",
+        "run_state",
+        "rewind",
+        "set_var",
+        "advance"
+      ],
+      "totalLines": 332,
+      "hasStructuralAnalysis": true
+    },
+    "crates/sf-core/src/validate.rs": {
+      "filePath": "crates/sf-core/src/validate.rs",
+      "contentHash": "393cde84a462eb69e241403f5ad4c100cff34cf453b5806de6ee1838ed4aac25",
+      "functions": [
+        {
+          "name": "rows",
+          "owner": "",
+          "params": [
+            "value"
+          ],
+          "returnType": "&[Value]",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "text",
+          "owner": "",
+          "params": [
+            "value"
+          ],
+          "returnType": "&str",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "index",
+          "owner": "",
+          "params": [
+            "value"
+          ],
+          "returnType": "HashMap<&str, &Value>",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "validate",
+          "owner": "",
+          "params": [
+            "project"
+          ],
+          "returnType": "Vec<Issue>",
+          "exported": true,
+          "lineCount": 223
+        }
+      ],
+      "classes": [
+        {
+          "name": "Issue",
+          "methods": [],
+          "properties": [
+            "code",
+            "severity",
+            "message",
+            "node_id"
+          ],
+          "exported": true,
+          "lineCount": 7
+        }
+      ],
+      "imports": [
+        {
+          "source": "crate",
+          "specifiers": []
+        },
+        {
+          "source": "serde",
+          "specifiers": [
+            "Serialize"
+          ]
+        },
+        {
+          "source": "serde_json",
+          "specifiers": [
+            "Value"
+          ]
+        },
+        {
+          "source": "std::collections",
+          "specifiers": [
+            "HashMap",
+            "HashSet"
+          ]
+        },
+        {
+          "source": "uuid",
+          "specifiers": [
+            "Uuid"
+          ]
+        }
+      ],
+      "exports": [
+        "rows",
+        "text",
+        "index",
+        "Issue",
+        "validate"
+      ],
+      "totalLines": 252,
+      "hasStructuralAnalysis": true
+    },
+    "crates/sf-core/tests/phase_0a4.rs": {
+      "filePath": "crates/sf-core/tests/phase_0a4.rs",
+      "contentHash": "ae5fe55ce7e87928634423e94bc02dbc44b358dccd583d33bff4e66d41f0fa08",
+      "functions": [
+        {
+          "name": "fixture",
+          "owner": "",
+          "params": [],
+          "returnType": "Value",
+          "exported": false,
+          "lineCount": 3
+        },
+        {
+          "name": "patched",
+          "owner": "",
+          "params": [
+            "project",
+            "patch"
+          ],
+          "returnType": "Project",
+          "exported": false,
+          "lineCount": 5
+        },
+        {
+          "name": "validator_fixture_pairs",
+          "owner": "",
+          "params": [],
+          "exported": false,
+          "lineCount": 10
+        },
+        {
+          "name": "matches",
+          "owner": "",
+          "params": [
+            "actual",
+            "expected"
+          ],
+          "returnType": "bool",
+          "exported": false,
+          "lineCount": 6
+        },
+        {
+          "name": "summer_house_cases",
+          "owner": "",
+          "params": [],
+          "exported": false,
+          "lineCount": 18
+        },
+        {
+          "name": "playtest_wait_set_var_and_rewind",
+          "owner": "",
+          "params": [],
+          "exported": false,
+          "lineCount": 13
+        },
+        {
+          "name": "automatic_loop_hits_guard",
+          "owner": "",
+          "params": [],
+          "exported": false,
+          "lineCount": 9
+        },
+        {
+          "name": "rejects_nonterminating_subgraph_path",
+          "owner": "",
+          "params": [],
+          "exported": false,
+          "lineCount": 9
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "serde_json",
+          "specifiers": [
+            "Value"
+          ]
+        },
+        {
+          "source": "sf_core",
+          "specifiers": [
+            "project::Project",
+            "sim::Simulator",
+            "validate::validate"
+          ]
+        },
+        {
+          "source": "std::collections",
+          "specifiers": [
+            "VecDeque"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 90,
+      "hasStructuralAnalysis": true
+    },
+    "crates/sf-wasm/Cargo.toml": {
+      "filePath": "crates/sf-wasm/Cargo.toml",
+      "contentHash": "cb52b3ef61d7a2e0bd9ff0e014945c046f6fc6d92e48121db66e852d69a10444",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 14,
+      "hasStructuralAnalysis": false
+    },
+    "crates/sf-wasm/benchmark.html": {
+      "filePath": "crates/sf-wasm/benchmark.html",
+      "contentHash": "f4dfd5099e0152c4fdffc585e69244f528da0bf51c38f087791822e864e19b0a",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 48,
+      "hasStructuralAnalysis": false
+    },
+    "crates/sf-wasm/prepare-benchmark.mjs": {
+      "filePath": "crates/sf-wasm/prepare-benchmark.mjs",
+      "contentHash": "ccc25d293d350c3f4b0ef3cd70444a21a4bbdd1b3420b2c5cec28c11221ebc46",
+      "functions": [
+        {
+          "name": "msg",
+          "params": [
+            "kind",
+            "name"
+          ],
+          "exported": false,
+          "lineCount": 1
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:fs/promises",
+          "specifiers": [
+            "readFile",
+            "writeFile",
+            "mkdir",
+            "copyFile"
+          ]
+        },
+        {
+          "source": "node:child_process",
+          "specifiers": [
+            "execFileSync"
+          ]
+        },
+        {
+          "source": "node:path",
+          "specifiers": [
+            "resolve"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 39,
+      "hasStructuralAnalysis": true
+    },
+    "crates/sf-wasm/run-benchmark.mjs": {
+      "filePath": "crates/sf-wasm/run-benchmark.mjs",
+      "contentHash": "43b0006515a7c228356197c78046768bb7ffccb37ba210c6925754e657561fe3",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:http",
+          "specifiers": [
+            "createServer"
+          ]
+        },
+        {
+          "source": "node:fs/promises",
+          "specifiers": [
+            "readFile",
+            "writeFile",
+            "mkdir"
+          ]
+        },
+        {
+          "source": "node:path",
+          "specifiers": [
+            "resolve",
+            "extname"
+          ]
+        },
+        {
+          "source": "node:child_process",
+          "specifiers": [
+            "spawn"
+          ]
+        },
+        {
+          "source": "node:zlib",
+          "specifiers": [
+            "gzipSync",
+            "brotliCompressSync",
+            "constants"
+          ]
+        },
+        {
+          "source": "node:crypto",
+          "specifiers": [
+            "createHash"
+          ]
+        },
+        {
+          "source": "node:util",
+          "specifiers": [
+            "isDeepStrictEqual"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 65,
+      "hasStructuralAnalysis": true
+    },
+    "crates/sf-wasm/src/lib.rs": {
+      "filePath": "crates/sf-wasm/src/lib.rs",
+      "contentHash": "6896abf9d7588c5d315306b6a75d03cc9ddc905aed82fba3b6bdc0830cb0e18a",
+      "functions": [
+        {
+          "name": "sf_alloc",
+          "owner": "",
+          "params": [
+            "length"
+          ],
+          "returnType": "*mut u8",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "sf_dispatch",
+          "owner": "",
+          "params": [
+            "pointer",
+            "length"
+          ],
+          "returnType": "u64",
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "__getrandom_v03_custom",
+          "owner": "",
+          "params": [
+            "pointer",
+            "length"
+          ],
+          "returnType": "Result<(), getrandom::Error>",
+          "exported": false,
+          "lineCount": 4
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "sf_core::protocol",
+          "specifiers": [
+            "Session"
+          ]
+        },
+        {
+          "source": "std::cell",
+          "specifiers": [
+            "RefCell"
+          ]
+        }
+      ],
+      "exports": [
+        "sf_alloc",
+        "sf_dispatch"
+      ],
+      "totalLines": 39,
+      "hasStructuralAnalysis": true
+    },
+    "crates/sf-wasm/worker.mjs": {
+      "filePath": "crates/sf-wasm/worker.mjs",
+      "contentHash": "57ceb1b325eb201685bb5313299294117939ee792825507876a57c8b348ea442",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 36,
+      "hasStructuralAnalysis": true
+    },
+    "document/claud.md": {
+      "filePath": "document/claud.md",
+      "contentHash": "a20cfd54b52c4844ba5075f8e8d13eb36529b6d0251b7e193ee61e46a0219f9f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 325,
+      "hasStructuralAnalysis": false
+    },
+    "document/claud_recommend.md": {
+      "filePath": "document/claud_recommend.md",
+      "contentHash": "a20cfd54b52c4844ba5075f8e8d13eb36529b6d0251b7e193ee61e46a0219f9f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 325,
+      "hasStructuralAnalysis": false
+    },
+    "document/demo screen/DESIGN.md": {
+      "filePath": "document/demo screen/DESIGN.md",
+      "contentHash": "93aa5c41dd4ee812c286598e73bf055a91d923b7315e337c24e6c7a39a9c1a05",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 24,
+      "hasStructuralAnalysis": false
+    },
+    "document/demo screen/Workflow-Screens.md": {
+      "filePath": "document/demo screen/Workflow-Screens.md",
+      "contentHash": "4bfc00ed40faccaa69a2cbf6714357f9b3fe7b5fe72c607e57c6ee21ca293c1f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 11,
+      "hasStructuralAnalysis": false
+    },
+    "document/diagrams/OFL-Geist.txt": {
+      "filePath": "document/diagrams/OFL-Geist.txt",
+      "contentHash": "c683bfbcc7e087f5d37a54ef628f10387c451a83ddc459b151403a164ac46c90",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 93,
+      "hasStructuralAnalysis": false
+    },
+    "document/diagrams/OFL-JetBrainsMono.txt": {
+      "filePath": "document/diagrams/OFL-JetBrainsMono.txt",
+      "contentHash": "8790c0909f720c509810f95268779450cd6b0aa75b6d24e32f0878afe068427c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 94,
+      "hasStructuralAnalysis": false
+    },
+    "document/diagrams/README.md": {
+      "filePath": "document/diagrams/README.md",
+      "contentHash": "c768d05a17f45341508f8d5e8c01b2163a23c91cf96f28e2d50c1a743a27c55f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 31,
+      "hasStructuralAnalysis": false
+    },
+    "document/diagrams/icons/manifest.json": {
+      "filePath": "document/diagrams/icons/manifest.json",
+      "contentHash": "c547ef3c4a73ac95787ea17e8b02eb56e6b39f2bea86b0071432453ecb8409b4",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 51,
+      "hasStructuralAnalysis": false
+    },
+    "document/diagrams/storyflow-stack.html": {
+      "filePath": "document/diagrams/storyflow-stack.html",
+      "contentHash": "febbd0e75ed23f8ad9e636925ee2700e90a4689c93a587220ebe13acf868964f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 229,
+      "hasStructuralAnalysis": false
+    },
+    "document/diagrams/storyflow-stack.source.html": {
+      "filePath": "document/diagrams/storyflow-stack.source.html",
+      "contentHash": "e1477e0851f9865103a8ebd9cdb9455483948f16c3d4b5d99718e92f1512dec7",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 229,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/decisions-0a1.md": {
+      "filePath": "document/phase-0a/decisions-0a1.md",
+      "contentHash": "9d2e7d19739e9fbf53311be9f7ebdabf26f935f9355d6f3b04de11f20b5db31c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 87,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/exporter-0a5.md": {
+      "filePath": "document/phase-0a/exporter-0a5.md",
+      "contentHash": "c1c2627febc8485f59a0adaf57c4cb627f0445c74fe1573391f4ed7496610539",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 24,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/parity-0a6.md": {
+      "filePath": "document/phase-0a/parity-0a6.md",
+      "contentHash": "230b9dd969de7f7afdc852f985cf41adbdbe5337d3556f869c315d8e1027e555",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 35,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/parity-evidence/A1/core-trace.json": {
+      "filePath": "document/phase-0a/parity-evidence/A1/core-trace.json",
+      "contentHash": "700d697fffcd05f384c5cff5854abfff4b1312b60d2c839f358915b3d645d26d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 386,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/parity-evidence/A1/parity-input.json": {
+      "filePath": "document/phase-0a/parity-evidence/A1/parity-input.json",
+      "contentHash": "189c36b0cac1af681c36071bf86e9f498b9f5c6af11cd200572039591789aec1",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/parity-evidence/A1/sdk-trace.json": {
+      "filePath": "document/phase-0a/parity-evidence/A1/sdk-trace.json",
+      "contentHash": "0caed7802efcdd7f302875cb9fd836ea85baa759ab192a2de8017da327b63b74",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/parity-evidence/A2-2-20/core-trace.json": {
+      "filePath": "document/phase-0a/parity-evidence/A2-2-20/core-trace.json",
+      "contentHash": "67a1ca7ce0c8301dbccf7d8383692b67bf6fa3eaf9b86ae4b9184fe3753923d1",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 142,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/parity-evidence/A2-2-20/parity-input.json": {
+      "filePath": "document/phase-0a/parity-evidence/A2-2-20/parity-input.json",
+      "contentHash": "5e5d01408f793bb3c9e91af5828f466586172c1b8bffd0110ad4e3c594f99161",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/parity-evidence/A2-2-20/sdk-trace.json": {
+      "filePath": "document/phase-0a/parity-evidence/A2-2-20/sdk-trace.json",
+      "contentHash": "9757ac02792a9cf970e6981ee9ec0d242f6b06fa36138f86f206838adbeb6987",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/parity-evidence/A2-3-19/core-trace.json": {
+      "filePath": "document/phase-0a/parity-evidence/A2-3-19/core-trace.json",
+      "contentHash": "79fed2e233eb83906d40eafa35d9b17f273e1f316fe99fc88939c1d0e5c624cd",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 142,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/parity-evidence/A2-3-19/parity-input.json": {
+      "filePath": "document/phase-0a/parity-evidence/A2-3-19/parity-input.json",
+      "contentHash": "87e35eca12e6d8faeca84cf1044b5619cd6c0b4e02ed4e9746a6e76fa1a41d76",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/parity-evidence/A2-3-19/sdk-trace.json": {
+      "filePath": "document/phase-0a/parity-evidence/A2-3-19/sdk-trace.json",
+      "contentHash": "8ff71ffddf3e365ecde327180b8e29e898e861eb703e090c057880047df6c988",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/parity-evidence/A2-3-20/core-trace.json": {
+      "filePath": "document/phase-0a/parity-evidence/A2-3-20/core-trace.json",
+      "contentHash": "0c1e49de2aa799526ce64dc62e765fbe596d820c85d241a5556cf635c0c5bb52",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 126,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/parity-evidence/A2-3-20/parity-input.json": {
+      "filePath": "document/phase-0a/parity-evidence/A2-3-20/parity-input.json",
+      "contentHash": "d6cdaf834d79ad718796f254689f35ba4e9409733c07b7b04ae7349c5e088077",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/parity-evidence/A2-3-20/sdk-trace.json": {
+      "filePath": "document/phase-0a/parity-evidence/A2-3-20/sdk-trace.json",
+      "contentHash": "4d55cc4cb58c5e1899a1c9e60675dbf7a4d0e5ff78f2472e0d2a013710ee1d89",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/parity-evidence/A3/core-trace.json": {
+      "filePath": "document/phase-0a/parity-evidence/A3/core-trace.json",
+      "contentHash": "d13cf219dd4abf6f7e1b2ae7dfcb9fc5a6778d13ff51f34d3f0288d5ed4b2eaf",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 286,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/parity-evidence/A3/parity-input.json": {
+      "filePath": "document/phase-0a/parity-evidence/A3/parity-input.json",
+      "contentHash": "48d0dd3f7180c9b41fe20ff7a7ceaca8f65b85f4c86ffaeca19f168e7107ecb4",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/parity-evidence/A3/sdk-trace.json": {
+      "filePath": "document/phase-0a/parity-evidence/A3/sdk-trace.json",
+      "contentHash": "4ad45b86e5043a91b5147675b47e3068e4638c890fe695e4cd6cfab05375cf3f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/parity-evidence/A4/core-trace.json": {
+      "filePath": "document/phase-0a/parity-evidence/A4/core-trace.json",
+      "contentHash": "ed8549ee6cdd2981ede994fe98e60b119ae0daab646de331ac0277da35fc12f8",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 142,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/parity-evidence/A4/parity-input.json": {
+      "filePath": "document/phase-0a/parity-evidence/A4/parity-input.json",
+      "contentHash": "edadeba0ded5e10c9b52c598fadee764250801066295047d20aab4112715c079",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/parity-evidence/A4/sdk-trace.json": {
+      "filePath": "document/phase-0a/parity-evidence/A4/sdk-trace.json",
+      "contentHash": "4fbf73defb3bcc08a29d3513423fd29e135080bfce3b6651e3de7925c978acd7",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/parity-evidence/A5/core-trace.json": {
+      "filePath": "document/phase-0a/parity-evidence/A5/core-trace.json",
+      "contentHash": "f4a399e7f4e814ac2a31acb17d064eba8351c2f17115be6063a6a5585bde4be8",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 141,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/parity-evidence/A5/parity-input.json": {
+      "filePath": "document/phase-0a/parity-evidence/A5/parity-input.json",
+      "contentHash": "95233e21ba8646de3f15d6d65cc600871548f2e9f60a45ec87cedcc1f95b112b",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/parity-evidence/A5/sdk-trace.json": {
+      "filePath": "document/phase-0a/parity-evidence/A5/sdk-trace.json",
+      "contentHash": "0697e2d62ce356e6065c0a2b90271ff581c276850f3fb150c39e61187ef801d7",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/parity-evidence/A6/core-trace.json": {
+      "filePath": "document/phase-0a/parity-evidence/A6/core-trace.json",
+      "contentHash": "83550762fb813fa1551198648544985d117743da988ec71a0fc6c6011621650b",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 189,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/parity-evidence/A6/parity-input.json": {
+      "filePath": "document/phase-0a/parity-evidence/A6/parity-input.json",
+      "contentHash": "05ba8481579ab508fa8ae9ebe27e1722a4202f5b81f853fe4299c6dd2bf21a5c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/parity-evidence/A6/sdk-trace.json": {
+      "filePath": "document/phase-0a/parity-evidence/A6/sdk-trace.json",
+      "contentHash": "6a8d48bf1cc957e3e581934157235fefdd3d4c6ac75f5964e48425eab5cc5b75",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/parity-evidence/Aplus-high/core-trace.json": {
+      "filePath": "document/phase-0a/parity-evidence/Aplus-high/core-trace.json",
+      "contentHash": "40bb9c2c04bc16e3b8f8b443cf1ff88a4fed342251c6ca29eda24160798ab908",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 164,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/parity-evidence/Aplus-high/parity-input.json": {
+      "filePath": "document/phase-0a/parity-evidence/Aplus-high/parity-input.json",
+      "contentHash": "2f8acccb233d4446d82e3ad0839be346d46bab7cded79f368b9552335d5539b6",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/parity-evidence/Aplus-high/sdk-trace.json": {
+      "filePath": "document/phase-0a/parity-evidence/Aplus-high/sdk-trace.json",
+      "contentHash": "951261c495814d76f209a6f27ed74da1942bc77ee7a71e1301f61a9ae0eb70c2",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/parity-evidence/Aplus-low/core-trace.json": {
+      "filePath": "document/phase-0a/parity-evidence/Aplus-low/core-trace.json",
+      "contentHash": "e060cbfe74104f410ad56d1f4850806f225238dd9619531f907f653083c869c4",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 164,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/parity-evidence/Aplus-low/parity-input.json": {
+      "filePath": "document/phase-0a/parity-evidence/Aplus-low/parity-input.json",
+      "contentHash": "0d1d64b74ef03fe74adc5187a4dd64b219bc5637f04bc7a8fa10222db51c8e96",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/parity-evidence/Aplus-low/sdk-trace.json": {
+      "filePath": "document/phase-0a/parity-evidence/Aplus-low/sdk-trace.json",
+      "contentHash": "2dde4d14d506bbc23286a850e646c6230b0a4b49c69200c9d644f61a8dd56d36",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/parity-evidence/environment.json": {
+      "filePath": "document/phase-0a/parity-evidence/environment.json",
+      "contentHash": "361bac6fc4c15ab92e2ca359dc2124f15f710533c9bc7e231f5f62bc1a628f97",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 9,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/parity-evidence/report.json": {
+      "filePath": "document/phase-0a/parity-evidence/report.json",
+      "contentHash": "2fdbf806b5e781f1df3dba9cb502b1e9d60be73097a33330beaca9c654aadfb2",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 52,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/trace-probe/game/script.rpy": {
+      "filePath": "document/phase-0a/trace-probe/game/script.rpy",
+      "contentHash": "ac3ac4eedcc097a3cb45467527e472a56883c96ee87844f23a6fe27f2025f133",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 39,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/trace-probe/trace.jsonl": {
+      "filePath": "document/phase-0a/trace-probe/trace.jsonl",
+      "contentHash": "1b1f23626e5a42d4aec5b467a2058e02ce71fa0ea295f91710f2982948bc41a9",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 2,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/trace-spike.md": {
+      "filePath": "document/phase-0a/trace-spike.md",
+      "contentHash": "66d582fc5ca558b5d4c1332d97bbca34da58805d1d716b80fbc6a2c5cea77ace",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 28,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/worker-0a7.md": {
+      "filePath": "document/phase-0a/worker-0a7.md",
+      "contentHash": "7c4a06d85e2b27bb71a7b86f71b432890d5715844378b6a5b8f4d214e94e179e",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 50,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/worker-evidence/browser-report.json": {
+      "filePath": "document/phase-0a/worker-evidence/browser-report.json",
+      "contentHash": "650fbc077d0dee428392f89697f58e90efc7875005f188f430df3a0358935431",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 3867,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/worker-evidence/messages.json": {
+      "filePath": "document/phase-0a/worker-evidence/messages.json",
+      "contentHash": "554e8001756a4f355f60a22fae59e27d779088064140153ad22c06262ec85889",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0a/worker-evidence/native-results.json": {
+      "filePath": "document/phase-0a/worker-evidence/native-results.json",
+      "contentHash": "3bcd1110acb64ea9c22ea9be8d6079bf1d5341bb1995470147559b853323d1c9",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 2,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0b/decision-gate-0b5.md": {
+      "filePath": "document/phase-0b/decision-gate-0b5.md",
+      "contentHash": "ef1f2849417c77d6f9a41e0a9b78009e4267a81f404abf4cde6fd1e297c0af11",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 79,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0b/evidence/gate-environment.json": {
+      "filePath": "document/phase-0b/evidence/gate-environment.json",
+      "contentHash": "a441388f71ef92f9ad38d3e6188065545c079a2232fd1499d12e1a6ae6082d58",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 16,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0b/evidence/gate-worker-report.json": {
+      "filePath": "document/phase-0b/evidence/gate-worker-report.json",
+      "contentHash": "c196abbd7b74f5d7e8b2d93d002b393fd8c80f4be8622be04e259342e5b67de9",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 3867,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0b/evidence/media-0b3/environment.json": {
+      "filePath": "document/phase-0b/evidence/media-0b3/environment.json",
+      "contentHash": "50df1b5f26fb3c1f3b5c7f624cf815e5ca66e198821d1a539758f6bb1514cfd4",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 21,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0b/evidence/media-0b3/ffprobe.json": {
+      "filePath": "document/phase-0b/evidence/media-0b3/ffprobe.json",
+      "contentHash": "c9f63e57291bc0946d4ebaa1c8566533deb044604aca908cf4387e5603df10fc",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 118,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0b/evidence/media-0b3/lint.txt": {
+      "filePath": "document/phase-0b/evidence/media-0b3/lint.txt",
+      "contentHash": "1de85c69175de163cb39acf7bac34f265c8b28ba695d55c3f0ba4828f62df42b",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 15,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0b/evidence/media-0b3/media-result.json": {
+      "filePath": "document/phase-0b/evidence/media-0b3/media-result.json",
+      "contentHash": "c5c9f0840f11c5ec6801cd7996fb6bcd1a79a5c287dd95492aeba3f32f145077",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 288,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0b/evidence/media-0b3/parity-report.json": {
+      "filePath": "document/phase-0b/evidence/media-0b3/parity-report.json",
+      "contentHash": "2fdbf806b5e781f1df3dba9cb502b1e9d60be73097a33330beaca9c654aadfb2",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 52,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0b/evidence/media-0b3/transaction-regression.json": {
+      "filePath": "document/phase-0b/evidence/media-0b3/transaction-regression.json",
+      "contentHash": "9d0d9759fd5197e9f82f51d6fbe0a97741b7249dffe47e5e972b2badd8e5c3d7",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 132,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0b/evidence/media-result.json": {
+      "filePath": "document/phase-0b/evidence/media-result.json",
+      "contentHash": "a3fb12af8a17f08cf93738651f5d8aa3156cf67c02154bbe069e6feae6b3ccf7",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0b/evidence/native-recovery-audit.json": {
+      "filePath": "document/phase-0b/evidence/native-recovery-audit.json",
+      "contentHash": "7a1c3b0f4b0bc1ba9d3f5df0bd8deb78cc13c40286573326844153175d61e6e3",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 31,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0b/evidence/native-recovery-last-ui-report.json": {
+      "filePath": "document/phase-0b/evidence/native-recovery-last-ui-report.json",
+      "contentHash": "beb61ef592d212ba9046f4aafb9f7fef2037b1b883e2895c1a5301937b999bf2",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 36,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0b/evidence/native-reopen-permission.json": {
+      "filePath": "document/phase-0b/evidence/native-reopen-permission.json",
+      "contentHash": "d3e5a239925c39f55b204e1c43c5b13f4146829bff1ece338e099bf0f630d336",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 10,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0b/evidence/native-report.json": {
+      "filePath": "document/phase-0b/evidence/native-report.json",
+      "contentHash": "5329ac12c88e2ac4dfbd709fa9bb733d3c2f7abc7ebc84bb26aff4bf83a754b2",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 58,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0b/evidence/opfs-report.json": {
+      "filePath": "document/phase-0b/evidence/opfs-report.json",
+      "contentHash": "c52fd4c678b2ebcbdb1f368f3d5243b10f31ed65bb9b13c6e8d1a563d79a8e6c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 58,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0b/evidence/recovery-browser-report.json": {
+      "filePath": "document/phase-0b/evidence/recovery-browser-report.json",
+      "contentHash": "a2b8b1193f6c5aea4ee34d454d6d6f111be35dd44390988c4e02743b8ee987ff",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 147,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0b/evidence/recovery-filesystem-regression.json": {
+      "filePath": "document/phase-0b/evidence/recovery-filesystem-regression.json",
+      "contentHash": "51a55b50b1677e1e2ab538fbb5056de13c2309a2f78e200def835f2c17de6812",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 132,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0b/evidence/transaction-browser-report.json": {
+      "filePath": "document/phase-0b/evidence/transaction-browser-report.json",
+      "contentHash": "e6056a7a47195f73cf694ee33069165c1d3c23b883b1e69df86248dc8d4b2b56",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 58,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0b/evidence/transaction-environment.json": {
+      "filePath": "document/phase-0b/evidence/transaction-environment.json",
+      "contentHash": "7f0913fda0feadb725acc89ece246ff639b3cabcc84af669d7677de1c782f4c5",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 14,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0b/evidence/transaction-report.json": {
+      "filePath": "document/phase-0b/evidence/transaction-report.json",
+      "contentHash": "ecc4c60d56e520bcd45911ae60b2ad21b9a7169309a6fe977371f768f8adc597",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 132,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0b/gate-0b.md": {
+      "filePath": "document/phase-0b/gate-0b.md",
+      "contentHash": "9dfa2a4b81a6fea48ba451bc06257e421eb23ed966d51ac2e81e90d967d84d3c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 36,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0b/media-0b3.md": {
+      "filePath": "document/phase-0b/media-0b3.md",
+      "contentHash": "cb6adabe052a80685c5d28cde01881108d6899ccbde45882c071ca9c11b1e777",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 92,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0b/media-probe/probe.rpy": {
+      "filePath": "document/phase-0b/media-probe/probe.rpy",
+      "contentHash": "494f71a1a0e5fb56ebb2ca13486f9b1606e6218f401a32e7b8ca0f8efe6c8c30",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 145,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0b/media-probe/probe.webm": {
+      "filePath": "document/phase-0b/media-probe/probe.webm",
+      "contentHash": "6b6ce781edfb64c297425e8287e3d9ea54f5a8aa59614ed90a9bbe4b6347b357",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 582,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0b/media-probe/project.json": {
+      "filePath": "document/phase-0b/media-probe/project.json",
+      "contentHash": "c48607d11922ba9fed92f935e3ac684b9f729416454b619e626be3f26070e163",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 89,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0b/recovery-0b4.md": {
+      "filePath": "document/phase-0b/recovery-0b4.md",
+      "contentHash": "a12f397fd64c7283874e9499744d8fb57548077f5ae4bea37cd6c9b1a2062c69",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 59,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-0b/transaction-0b2.md": {
+      "filePath": "document/phase-0b/transaction-0b2.md",
+      "contentHash": "118a4abc448fc5d7f1e11a41457bbce33190289e07e387c74b80d52602342fb5",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 79,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-1/evidence/browser-proof.json": {
+      "filePath": "document/phase-1/evidence/browser-proof.json",
+      "contentHash": "dccb88cc37eabd40090b885971fb3597b4b017504ffa0d1a2a61e2ba54268beb",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 13,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-1/evidence/contract-proof.json": {
+      "filePath": "document/phase-1/evidence/contract-proof.json",
+      "contentHash": "fd2b63a2937d7c95ee62faa5eb7ff3e6ab12f08195b8ff9fa404f7b4f56cb548",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 4683,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-1/evidence/design-detect.json": {
+      "filePath": "document/phase-1/evidence/design-detect.json",
+      "contentHash": "a5338d955b09046ec0b16f3a9625b7955c763aae07dc722e474e6078745f932f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 2,
+      "hasStructuralAnalysis": false
+    },
+    "document/phase-1/foundation-1.1.md": {
+      "filePath": "document/phase-1/foundation-1.1.md",
+      "contentHash": "fdc106161634e5f26e7031feb146c1dc861b229dc2453d5db4024165b83e62e9",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 53,
+      "hasStructuralAnalysis": false
+    },
+    "readme.md": {
+      "filePath": "readme.md",
+      "contentHash": "fadd82e7557249057f8c9d8ab9cb1660e1058a0dc5f735136494780492e3f09e",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 220,
+      "hasStructuralAnalysis": false
+    },
+    "scripts/audit-native-recovery.mjs": {
+      "filePath": "scripts/audit-native-recovery.mjs",
+      "contentHash": "5958306beaa4eedf561ddd2161c021051b395a738d23ca24d4b20101f907a4bd",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:fs/promises",
+          "specifiers": [
+            "fs"
+          ]
+        },
+        {
+          "source": "node:path",
+          "specifiers": [
+            "path"
+          ]
+        },
+        {
+          "source": "node:crypto",
+          "specifiers": [
+            "createHash"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 19,
+      "hasStructuralAnalysis": true
+    },
+    "scripts/build-stack-diagram.py": {
+      "filePath": "scripts/build-stack-diagram.py",
+      "contentHash": "7451df563905dbb636aae2724e575fa51a2e5c3d80f773caa2efbb2214f0e2df",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "re",
+          "specifiers": [
+            "re"
+          ]
+        },
+        {
+          "source": "sys",
+          "specifiers": [
+            "sys"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 29,
+      "hasStructuralAnalysis": true
+    },
+    "scripts/prepare-media-0b3.mjs": {
+      "filePath": "scripts/prepare-media-0b3.mjs",
+      "contentHash": "7643e86d4b9d5c5acabf56f0d442e8dfee4f5eb64f3ba631e66d835bc4e6c709",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:fs/promises",
+          "specifiers": [
+            "* as fs"
+          ]
+        },
+        {
+          "source": "node:path",
+          "specifiers": [
+            "path"
+          ]
+        },
+        {
+          "source": "node:child_process",
+          "specifiers": [
+            "execFileSync"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 23,
+      "hasStructuralAnalysis": true
+    },
+    "scripts/probe-native-reopen.py": {
+      "filePath": "scripts/probe-native-reopen.py",
+      "contentHash": "cb4f676857ea27f51656abeba9291ec200dfdc8be33e12cdd3019f13d356d68b",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "playwright.sync_api",
+          "specifiers": [
+            "sync_playwright"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 18,
+      "hasStructuralAnalysis": true
+    },
+    "scripts/test-recovery-browser.py": {
+      "filePath": "scripts/test-recovery-browser.py",
+      "contentHash": "5f0a65d52b0c0b495efaf3237249028602ac2dc285c723fc2cb0cdeec2e00daf",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "sys",
+          "specifiers": [
+            "sys"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "pathlib"
+          ]
+        },
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "threading",
+          "specifiers": [
+            "threading"
+          ]
+        },
+        {
+          "source": "functools",
+          "specifiers": [
+            "functools"
+          ]
+        },
+        {
+          "source": "http.server",
+          "specifiers": [
+            "http.server"
+          ]
+        },
+        {
+          "source": "playwright.sync_api",
+          "specifiers": [
+            "sync_playwright"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 29,
+      "hasStructuralAnalysis": true
+    },
+    "scripts/test-transaction.mjs": {
+      "filePath": "scripts/test-transaction.mjs",
+      "contentHash": "c0100a9412be0d08a0896eaeff17ba1f4474a4b6b89c64eae1a0f9213fd8bb30",
+      "functions": [
+        {
+          "name": "missing",
+          "params": [],
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "bundle",
+          "params": [
+            "project",
+            "name"
+          ],
+          "exported": false,
+          "lineCount": 2
+        },
+        {
+          "name": "check",
+          "params": [
+            "name",
+            "fn"
+          ],
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "fresh",
+          "params": [],
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "decode",
+          "params": [],
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "snapshot",
+          "params": [
+            "root"
+          ],
+          "exported": false,
+          "lineCount": 2
+        }
+      ],
+      "classes": [
+        {
+          "name": "Dir",
+          "methods": [
+            "constructor",
+            "getDirectoryHandle",
+            "getFileHandle",
+            "removeEntry"
+          ],
+          "properties": [],
+          "exported": false,
+          "lineCount": 17
+        }
+      ],
+      "imports": [
+        {
+          "source": "node:fs/promises",
+          "specifiers": [
+            "* as fs"
+          ]
+        },
+        {
+          "source": "node:path",
+          "specifiers": [
+            "path"
+          ]
+        },
+        {
+          "source": "node:assert/strict",
+          "specifiers": [
+            "assert"
+          ]
+        },
+        {
+          "source": "node:child_process",
+          "specifiers": [
+            "execFileSync"
+          ]
+        },
+        {
+          "source": "../web/local-folder.mjs",
+          "specifiers": [
+            "LocalProject",
+            "readFile",
+            "writeFile",
+            "sha256"
+          ]
+        },
+        {
+          "source": "../web/local-folder-test.mjs",
+          "specifiers": [
+            "tests"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 118,
+      "hasStructuralAnalysis": true
+    },
+    "start-studio.cmd": {
+      "filePath": "start-studio.cmd",
+      "contentHash": "ec06ec8c5b678983275da461fac4b4757249622280e54a40419c9522ad69df6d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 26,
+      "hasStructuralAnalysis": false
+    },
+    "studio/README.md": {
+      "filePath": "studio/README.md",
+      "contentHash": "3f7dfad0094ea32f613818f30fa770625299aa8b4c145a441093c1a94ea8dc4b",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 58,
+      "hasStructuralAnalysis": false
+    },
+    "studio/index.html": {
+      "filePath": "studio/index.html",
+      "contentHash": "3184b97d9547c67077b8e467d71cf114206d8b6f82ba2459a5556ab4079ce281",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 2,
+      "hasStructuralAnalysis": false
+    },
+    "studio/package.json": {
+      "filePath": "studio/package.json",
+      "contentHash": "ec1e710ad38759ae3e26845d8cf491d7992522de76ed3e11b2450370ed4360e9",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 2,
+      "hasStructuralAnalysis": false
+    },
+    "studio/scripts/prepare-core.mjs": {
+      "filePath": "studio/scripts/prepare-core.mjs",
+      "contentHash": "76eb4489b6de71bcbedff306886467e34049645bbbcb6ccc63612c5a8071bc59",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:fs/promises",
+          "specifiers": [
+            "readFile",
+            "mkdir",
+            "writeFile",
+            "copyFile",
+            "access"
+          ]
+        },
+        {
+          "source": "node:url",
+          "specifiers": [
+            "fileURLToPath"
+          ]
+        },
+        {
+          "source": "node:path",
+          "specifiers": [
+            "resolve"
+          ]
+        },
+        {
+          "source": "node:crypto",
+          "specifiers": [
+            "createHash"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 16,
+      "hasStructuralAnalysis": true
+    },
+    "studio/src/core/client.test.ts": {
+      "filePath": "studio/src/core/client.test.ts",
+      "contentHash": "7bd8b1c0055ddf81a6311a38472ce4a65e5a5a10db5e74400752a25f005f1b9c",
+      "functions": [
+        {
+          "name": "response",
+          "params": [
+            "id",
+            "name",
+            "value"
+          ],
+          "exported": false,
+          "lineCount": 1
+        }
+      ],
+      "classes": [
+        {
+          "name": "FakeWorker",
+          "methods": [
+            "postMessage",
+            "terminate",
+            "reply"
+          ],
+          "properties": [
+            "sent",
+            "terminated"
+          ],
+          "exported": false,
+          "lineCount": 1
+        }
+      ],
+      "imports": [
+        {
+          "source": "node:test",
+          "specifiers": [
+            "test"
+          ]
+        },
+        {
+          "source": "node:assert/strict",
+          "specifiers": [
+            "assert"
+          ]
+        },
+        {
+          "source": "./client.ts",
+          "specifiers": [
+            "CoreClient"
+          ]
+        },
+        {
+          "source": "./features.ts",
+          "specifiers": [
+            "inspectFeatures"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 11,
+      "hasStructuralAnalysis": true
+    },
+    "studio/src/core/client.ts": {
+      "filePath": "studio/src/core/client.ts",
+      "contentHash": "6e873d383f791b39be5abf3ee8a3d06a98a6d96001e0ace3974ec5452bbd2565",
+      "functions": [],
+      "classes": [
+        {
+          "name": "CoreError",
+          "methods": [
+            "constructor"
+          ],
+          "properties": [
+            "code"
+          ],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "CoreClient",
+          "methods": [
+            "constructor",
+            "closed",
+            "request",
+            "close"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 31
+        }
+      ],
+      "imports": [
+        {
+          "source": "./types.ts",
+          "specifiers": [
+            "Payloads",
+            "RequestName",
+            "Results"
+          ]
+        }
+      ],
+      "exports": [
+        "CoreError",
+        "CoreClient"
+      ],
+      "totalLines": 41,
+      "hasStructuralAnalysis": true
+    },
+    "studio/src/core/create.ts": {
+      "filePath": "studio/src/core/create.ts",
+      "contentHash": "8604bcc5ab7374b6f23f407c56ace286c68b6c42b3bc873ee9baed3198e19eea",
+      "functions": [
+        {
+          "name": "createCore",
+          "params": [
+            "base"
+          ],
+          "exported": true,
+          "lineCount": 1
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./client",
+          "specifiers": [
+            "CoreClient"
+          ]
+        },
+        {
+          "source": "./generated",
+          "specifiers": [
+            "coreWorkerPath"
+          ]
+        }
+      ],
+      "exports": [
+        "createCore"
+      ],
+      "totalLines": 4,
+      "hasStructuralAnalysis": true
+    },
+    "studio/src/core/features.ts": {
+      "filePath": "studio/src/core/features.ts",
+      "contentHash": "59c7ff7af38b0bc3d2df8e6e22623cd8a027a2a800d32696e7fb70b2698840ad",
+      "functions": [
+        {
+          "name": "inspectFeatures",
+          "params": [
+            "env"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "browserFeatures",
+          "params": [],
+          "exported": true,
+          "lineCount": 1
+        }
+      ],
+      "classes": [],
+      "imports": [],
+      "exports": [
+        "inspectFeatures",
+        "browserFeatures"
+      ],
+      "totalLines": 8,
+      "hasStructuralAnalysis": true
+    },
+    "studio/src/core/types.ts": {
+      "filePath": "studio/src/core/types.ts",
+      "contentHash": "246dfd152972310b8ce5a121fd409afdef18a67363772ae92b3fb1304eef04fe",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 8,
+      "hasStructuralAnalysis": true
+    },
+    "studio/src/main.tsx": {
+      "filePath": "studio/src/main.tsx",
+      "contentHash": "61534ec6db36bd0e4d86a5fd3d7019291f83f5258e04f0b7d3de563bd0b71854",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "React"
+          ]
+        },
+        {
+          "source": "react-dom/client",
+          "specifiers": [
+            "createRoot"
+          ]
+        },
+        {
+          "source": "./ui/App",
+          "specifiers": [
+            "App"
+          ]
+        },
+        {
+          "source": "@xyflow/react/dist/style.css",
+          "specifiers": []
+        },
+        {
+          "source": "./ui/style.css",
+          "specifiers": []
+        }
+      ],
+      "exports": [],
+      "totalLines": 7,
+      "hasStructuralAnalysis": true
+    },
+    "studio/src/ui/App.tsx": {
+      "filePath": "studio/src/ui/App.tsx",
+      "contentHash": "3ec3ac3889f919c895d6b294bdd073513a1f86fe928fc1ed6ad7488c5794367b",
+      "functions": [
+        {
+          "name": "App",
+          "params": [],
+          "exported": true,
+          "lineCount": 48
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "react",
+          "specifiers": [
+            "useEffect",
+            "useMemo",
+            "useRef",
+            "useState"
+          ]
+        },
+        {
+          "source": "@xyflow/react",
+          "specifiers": [
+            "ReactFlow",
+            "Controls",
+            "Background"
+          ]
+        },
+        {
+          "source": "../core/create",
+          "specifiers": [
+            "createCore"
+          ]
+        },
+        {
+          "source": "../core/client",
+          "specifiers": [
+            "CoreClient",
+            "CoreError"
+          ]
+        },
+        {
+          "source": "../core/features",
+          "specifiers": [
+            "browserFeatures"
+          ]
+        },
+        {
+          "source": "../core/types",
+          "specifiers": [
+            "Project",
+            "Issue"
+          ]
+        },
+        {
+          "source": "../../../contract/fixtures/summer-house.json",
+          "specifiers": [
+            "fixture"
+          ]
+        },
+        {
+          "source": "./graph",
+          "specifiers": [
+            "graphView"
+          ]
+        }
+      ],
+      "exports": [
+        "App"
+      ],
+      "totalLines": 61,
+      "hasStructuralAnalysis": true
+    },
+    "studio/src/ui/graph.ts": {
+      "filePath": "studio/src/ui/graph.ts",
+      "contentHash": "0ad0e838ec431302e387010e0780119cb5cfff7d9838d3e4220ee5ead61bd85d",
+      "functions": [
+        {
+          "name": "graphView",
+          "params": [
+            "project",
+            "graphId"
+          ],
+          "returnType": "{nodes:Node[];edges:Edge[]}",
+          "exported": true,
+          "lineCount": 8
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "@xyflow/react",
+          "specifiers": [
+            "Position",
+            "Edge",
+            "Node"
+          ]
+        },
+        {
+          "source": "../core/types",
+          "specifiers": [
+            "Project"
+          ]
+        }
+      ],
+      "exports": [
+        "graphView"
+      ],
+      "totalLines": 12,
+      "hasStructuralAnalysis": true
+    },
+    "studio/src/ui/style.css": {
+      "filePath": "studio/src/ui/style.css",
+      "contentHash": "52ca9501970ae7409ea229a6ec952bafe214af1dc3be37c5fe64e35d8a92585b",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 6,
+      "hasStructuralAnalysis": false
+    },
+    "studio/tests/browser-proof.py": {
+      "filePath": "studio/tests/browser-proof.py",
+      "contentHash": "f5edd1f55de0a00aca4ca17c3c5a8520d37c7d555d5e1ef37c371e6cfcc8c299",
+      "functions": [
+        {
+          "name": "passed",
+          "params": [
+            "name"
+          ],
+          "exported": true,
+          "lineCount": 1
+        }
+      ],
+      "classes": [
+        {
+          "name": "Quiet",
+          "methods": [
+            "log_message"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "imports": [
+        {
+          "source": "functools",
+          "specifiers": [
+            "functools"
+          ]
+        },
+        {
+          "source": "http.server",
+          "specifiers": [
+            "http.server"
+          ]
+        },
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "pathlib"
+          ]
+        },
+        {
+          "source": "subprocess",
+          "specifiers": [
+            "subprocess"
+          ]
+        },
+        {
+          "source": "threading",
+          "specifiers": [
+            "threading"
+          ]
+        },
+        {
+          "source": "sys",
+          "specifiers": [
+            "sys"
+          ]
+        },
+        {
+          "source": "playwright.sync_api",
+          "specifiers": [
+            "sync_playwright",
+            "expect"
+          ]
+        }
+      ],
+      "exports": [
+        "Quiet",
+        "passed"
+      ],
+      "totalLines": 91,
+      "hasStructuralAnalysis": true
+    },
+    "studio/tests/contract-probe.ts": {
+      "filePath": "studio/tests/contract-probe.ts",
+      "contentHash": "4071cbb206d2c54ae945cbf0749d019e2aa562deb4ff0a2e62aeff8a21d38fdb",
+      "functions": [
+        {
+          "name": "assert",
+          "params": [
+            "value",
+            "message"
+          ],
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "call",
+          "params": [
+            "name",
+            "payload",
+            "expectError"
+          ],
+          "exported": false,
+          "lineCount": 6
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "../src/core/create",
+          "specifiers": [
+            "createCore"
+          ]
+        },
+        {
+          "source": "../src/core/client",
+          "specifiers": [
+            "CoreError"
+          ]
+        },
+        {
+          "source": "../src/core/types",
+          "specifiers": [
+            "RequestName",
+            "Payloads",
+            "Project"
+          ]
+        },
+        {
+          "source": "../../contract/fixtures/summer-house.json",
+          "specifiers": [
+            "fixture"
+          ]
+        },
+        {
+          "source": "../../contract/fixtures/summer-house-cases.json",
+          "specifiers": [
+            "cases"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 35,
+      "hasStructuralAnalysis": true
+    },
+    "studio/tests/contract.html": {
+      "filePath": "studio/tests/contract.html",
+      "contentHash": "bd9bdb3bf01f099bb4d4835fe0edaac75975c75c8686d2cee367e573e83238b3",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 2,
+      "hasStructuralAnalysis": false
+    },
+    "studio/tsconfig.json": {
+      "filePath": "studio/tsconfig.json",
+      "contentHash": "b3b21099bea898c6df94c2aa627f77b36def2c89a7fc54ef1d8cad26ae500f1d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 2,
+      "hasStructuralAnalysis": false
+    },
+    "studio/vite.config.ts": {
+      "filePath": "studio/vite.config.ts",
+      "contentHash": "29db602d45ce21e92d51aa0c8eccda961bd998c4ca2acca211c3dafe9d0568c4",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "vite",
+          "specifiers": [
+            "defineConfig"
+          ]
+        },
+        {
+          "source": "@vitejs/plugin-react",
+          "specifiers": [
+            "react"
+          ]
+        },
+        {
+          "source": "node:path",
+          "specifiers": [
+            "resolve"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 5,
+      "hasStructuralAnalysis": true
+    },
+    "templates/renpy/README.md": {
+      "filePath": "templates/renpy/README.md",
+      "contentHash": "68545d176cac2772c35d588318d0495e3eee1d21eb4ae7f83ee2aa4cad6b04e4",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 24,
+      "hasStructuralAnalysis": false
+    },
+    "templates/renpy/game/assets/fonts/OFL.txt": {
+      "filePath": "templates/renpy/game/assets/fonts/OFL.txt",
+      "contentHash": "dad6e6abc2bf3fc37cc698af7607c3f4d4235039695713b222e5a034fb5b9b1c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 94,
+      "hasStructuralAnalysis": false
+    },
+    "templates/renpy/game/python-packages/PyThaiNLP-LICENSE.txt": {
+      "filePath": "templates/renpy/game/python-packages/PyThaiNLP-LICENSE.txt",
+      "contentHash": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 202,
+      "hasStructuralAnalysis": false
+    },
+    "templates/renpy/game/python-packages/sf_tcc.py": {
+      "filePath": "templates/renpy/game/python-packages/sf_tcc.py",
+      "contentHash": "b9c6956a08886738af31b771b1c0b3057807cee96e1f1106e0eabc157e2dd1f2",
+      "functions": [
+        {
+          "name": "tcc",
+          "params": [
+            "text"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 21
+        },
+        {
+          "name": "tcc_pos",
+          "params": [
+            "text"
+          ],
+          "returnType": "Set[int]",
+          "exported": true,
+          "lineCount": 18
+        },
+        {
+          "name": "segment",
+          "params": [
+            "text"
+          ],
+          "returnType": "List[str]",
+          "exported": true,
+          "lineCount": 11
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "re",
+          "specifiers": [
+            "re"
+          ]
+        },
+        {
+          "source": "typing",
+          "specifiers": [
+            "List",
+            "Set"
+          ]
+        }
+      ],
+      "exports": [
+        "tcc",
+        "tcc_pos",
+        "segment"
+      ],
+      "totalLines": 117,
+      "hasStructuralAnalysis": true
+    },
+    "templates/renpy/game/sf_template.rpy": {
+      "filePath": "templates/renpy/game/sf_template.rpy",
+      "contentHash": "0d47d9fbedadac1dba166908e0f9dfea7e358715e0b8a761631997a2cf472dbe",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 50,
+      "hasStructuralAnalysis": false
+    },
+    "web/local-folder-test.mjs": {
+      "filePath": "web/local-folder-test.mjs",
+      "contentHash": "6d012d19db5222b930c6b55690acead922c3ae8bd2ff994322f14a5f37b4623d",
+      "functions": [
+        {
+          "name": "assert",
+          "params": [
+            "value",
+            "message"
+          ],
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "rejects",
+          "params": [
+            "fn",
+            "fragment"
+          ],
+          "exported": false,
+          "lineCount": 7
+        },
+        {
+          "name": "snapshot",
+          "params": [
+            "root"
+          ],
+          "exported": false,
+          "lineCount": 9
+        },
+        {
+          "name": "tests",
+          "params": [
+            "root",
+            "bundle"
+          ],
+          "exported": true,
+          "lineCount": 122
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./local-folder.mjs",
+          "specifiers": [
+            "LocalProject",
+            "readFile",
+            "writeFile",
+            "sha256",
+            "safePath"
+          ]
+        }
+      ],
+      "exports": [
+        "tests"
+      ],
+      "totalLines": 143,
+      "hasStructuralAnalysis": true
+    },
+    "web/local-folder.html": {
+      "filePath": "web/local-folder.html",
+      "contentHash": "6bcfb741ca76be109aeab850421054384a404cca7dd8aec372701b9644fe9c60",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 35,
+      "hasStructuralAnalysis": false
+    },
+    "web/local-folder.mjs": {
+      "filePath": "web/local-folder.mjs",
+      "contentHash": "d616f904c89949b727818611b2d81084f58d28eb9a2f10ddaa05684434c15f43",
+      "functions": [
+        {
+          "name": "safePath",
+          "params": [
+            "path"
+          ],
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "sha256",
+          "params": [
+            "value"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "parent",
+          "params": [
+            "root",
+            "path"
+          ],
+          "exported": false,
+          "lineCount": 7
+        },
+        {
+          "name": "read",
+          "params": [
+            "root",
+            "path"
+          ],
+          "exported": false,
+          "lineCount": 9
+        },
+        {
+          "name": "write",
+          "params": [
+            "root",
+            "path",
+            "value"
+          ],
+          "exported": false,
+          "lineCount": 7
+        },
+        {
+          "name": "remove",
+          "params": [
+            "root",
+            "path"
+          ],
+          "exported": false,
+          "lineCount": 6
+        },
+        {
+          "name": "readJson",
+          "params": [
+            "root",
+            "path"
+          ],
+          "exported": false,
+          "lineCount": 4
+        },
+        {
+          "name": "ownedFiles",
+          "params": [
+            "files"
+          ],
+          "exported": false,
+          "lineCount": 9
+        },
+        {
+          "name": "verify",
+          "params": [
+            "root",
+            "files"
+          ],
+          "exported": false,
+          "lineCount": 6
+        },
+        {
+          "name": "manifest",
+          "params": [
+            "root"
+          ],
+          "exported": false,
+          "lineCount": 9
+        }
+      ],
+      "classes": [
+        {
+          "name": "LocalProject",
+          "methods": [
+            "constructor",
+            "asset",
+            "export",
+            "exportLocked",
+            "recover",
+            "recoverLocked"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 128
+        }
+      ],
+      "imports": [],
+      "exports": [
+        "safePath",
+        "sha256",
+        "LocalProject",
+        "readFile",
+        "writeFile"
+      ],
+      "totalLines": 217,
+      "hasStructuralAnalysis": true
+    },
+    "web/recovery-proof.html": {
+      "filePath": "web/recovery-proof.html",
+      "contentHash": "7af34b6b314809abadf417be30b5cbe88ed85f51735b36617ff83ff970cdac72",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 8,
+      "hasStructuralAnalysis": false
+    },
+    "web/recovery-proof.mjs": {
+      "filePath": "web/recovery-proof.mjs",
+      "contentHash": "2d491ee0831d7e84317ec6ea556d9cb070980dca1fe966cc85df2d9c6c17f7f3",
+      "functions": [
+        {
+          "name": "show",
+          "params": [],
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "saveHandle",
+          "params": [
+            "h"
+          ],
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "loadHandle",
+          "params": [],
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "root",
+          "params": [],
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "snapshot",
+          "params": [
+            "dir"
+          ],
+          "exported": false,
+          "lineCount": 1
+        },
+        {
+          "name": "start",
+          "params": [],
+          "exported": false,
+          "lineCount": 23
+        },
+        {
+          "name": "recover",
+          "params": [],
+          "exported": false,
+          "lineCount": 13
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "./local-folder.mjs",
+          "specifiers": [
+            "LocalProject",
+            "readFile",
+            "writeFile",
+            "sha256"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 65,
+      "hasStructuralAnalysis": true
+    },
+    "web/serve-proof.mjs": {
+      "filePath": "web/serve-proof.mjs",
+      "contentHash": "5d001f2ba80b595b851337690ec2a8b0053c58698d61aba53d8ce791ef8d9946",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "node:http",
+          "specifiers": [
+            "createServer"
+          ]
+        },
+        {
+          "source": "node:fs/promises",
+          "specifiers": [
+            "readFile",
+            "writeFile"
+          ]
+        },
+        {
+          "source": "node:path",
+          "specifiers": [
+            "resolve",
+            "extname"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 25,
+      "hasStructuralAnalysis": true
+    }
+  }
+}
