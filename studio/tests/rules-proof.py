@@ -1,9 +1,9 @@
 """Rebuild every Summer House rule with UI controls, then check canonical data and Core parity."""
-import functools,http.server,json,pathlib,threading,sys,copy,re,subprocess
+import functools,http.server,json,pathlib,threading,sys,copy,re,subprocess,os
 from playwright.sync_api import sync_playwright,expect
 sys.stdout.reconfigure(encoding='utf-8')
 ROOT=pathlib.Path(__file__).resolve().parents[2]
-OUT=ROOT/'document/phase-1/evidence/1.3';OUT.mkdir(parents=True,exist_ok=True)
+OUT=ROOT/os.environ.get('SF_RULES_PROOF_OUT','document/phase-1/evidence/1.3');OUT.mkdir(parents=True,exist_ok=True)
 fixture=json.loads((ROOT/'contract/fixtures/summer-house.json').read_text(encoding='utf-8'))
 cases=json.loads((ROOT/'contract/fixtures/summer-house-cases.json').read_text(encoding='utf-8'))['cases']
 skeleton=copy.deepcopy(fixture);skeleton.update(variables=[],activities=[],events=[])

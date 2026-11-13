@@ -1,0 +1,11 @@
+{
+  "detector": "impeccable detect --json studio/src/ui studio/index.html",
+  "findings": [],
+  "visualReview": [
+    "playtest-1440.png",
+    "playtest-1000.png",
+    "playtest-700.png",
+    "diagnostics-1440.png"
+  ],
+  "note": "Existing DESIGN.md palette retained; keyboard focus and overflow checked. Not full WCAG certification."
+}

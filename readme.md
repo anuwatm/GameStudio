@@ -2,7 +2,7 @@
 
 StoryFlow คือเว็บสตูดิโอสำหรับผู้สร้างเกมเดี่ยวและทีมเล็ก ใช้กราฟวางฉาก บทสนทนา คลิป และตัวเลือกสำหรับเกม Visual Novel, FMV, Dating Sim และ Life Sim แล้วส่งออกเป็นโปรเจกต์ที่เล่นใน Ren’Py SDK ได้
 
-**สถานะล่าสุด (2026-11-13):** 1.1/1.2/1.3 ตรวจรับร่วมแล้ว; ตั้ง Variables, Conditions, Effects, Activities/Events และ Schedule ผ่าน UI ได้ พร้อม manual Save/Undo/Redo ยังไม่มี Autosave, Playtest และ Export UI ครบวงจร ดู [checklist.md](checklist.md) และ [ผล 1.3](document/phase-1/rules-1.3.md)
+**สถานะล่าสุด (2026-11-14):** 1.1–1.4 ตรวจรับร่วมแล้ว; ใช้ Project/Story Graph/Rules, manual Save/Undo/Redo, Playtest และ Diagnostics ได้ พร้อมเริ่มพัฒนา 1.5 Autosave/Recovery และ Web Locks ดู [checklist.md](checklist.md) และ [ผล 1.4](document/phase-1/playtest-1.4.md)
 
 รันหน้าจอด้วย `npm --prefix studio ci` แล้ว `npm --prefix studio run dev` หลัง build WASM ตาม [วิธีรัน Studio](studio/README.md)
 
@@ -42,7 +42,7 @@ flowchart TB
     CLI["ผ่าน 0a · sf-cli<br/>Validate · Export · SDK Parity<br/>เพิ่ม bundle สำหรับต้นแบบ Storage"]
 
     subgraph Browser["Chromium Desktop · ไม่มี Backend ใน MVP"]
-        UI["ผ่าน 1.3 · React + React Flow<br/>Project / Story Editor / Rules & Schedule<br/>Variables / Conditions / Effects / Events<br/>Manual Save / Undo-Redo / Validate"]
+        UI["ผ่าน 1.4 · React + React Flow<br/>Project / Story Editor / Rules & Schedule<br/>Playtest / Diagnostics / Trace<br/>Manual Save / Undo-Redo / Validate"]
         Worker["ผ่าน 0a.7 · sf-wasm / Web Worker<br/>Core Contract ตรง native 18 ข้อความ"]
         Local["ผ่าน 0b.1 · Local Folder prototype<br/>Native picker · Asset path validation<br/>อ่านสื่อเดิม / Export ซ้ำแบบ Zero-Copy"]
         Tx["ผ่าน 0b.2 · Export Transaction<br/>Manifest/hash · Backup · Pending journal<br/>Recovery · Source Map · Save warning"]
@@ -175,7 +175,9 @@ React + React Flow UI ทั้ง Project, Story Graph/Scene Inspector, Rules &
 
 ขั้น 1.3 เพิ่ม Variables/Condition Builder/Effects และ Activities/Events/Schedule แล้ว สร้างกติกา Summer House จาก UI ได้ตรง fixture และผ่าน Worker/native 10เคส/79ก้าว ดู [ผล 1.3](document/phase-1/rules-1.3.md)
 
-Autosave, IndexedDB Recovery และการเชื่อมทุกหน้าจอเข้ากับ Core อยู่ในแผน MVP; ไม่มี Backend ในขอบเขตนี้
+ขั้น 1.4 เพิ่ม Playtest/Diagnostics: เริ่มจากโหนดที่เลือก, SetVar/Rewind, ExplainCondition, StepTrace JSON และเปิดโหนดจากผลตรวจ โดย RunState แยกจาก Project ดู [ผลและข้อจำกัด 1.4](document/phase-1/playtest-1.4.md)
+
+Autosave, IndexedDB Recovery และ Export UI อยู่ในแผน MVP; ไม่มี Backend ในขอบเขตนี้
 
 ### Baseline ที่ใช้ตัดสินใจต่อ
 
@@ -195,13 +197,13 @@ cargo run -p sf-cli --locked -- export contract/fixtures/summer-house.json temp/
 
 คำสั่ง `export` ของ CLI ใช้ปลายทางใหม่ที่ยังไม่มีอยู่ จัดสื่อจริงใน `game/assets/` ก่อนรันเกมบน SDK ตัว CLI นี้แยกจาก native-folder prototype และยังไม่ใช่หน้า Export UI
 
-ผล Rust ในหลักฐาน 0a.5 ผ่าน 12 เทสต์; การตรวจ Parity, Worker และ Local Folder มีหลักฐานแยกตามลิงก์ด้านล่าง การแก้ README รอบนี้ไม่ได้รันชุดทดสอบระบบใหม่
+ผล Rust ในหลักฐาน 0a.5 ผ่าน 12 เทสต์; การตรวจ Parity, Worker และ Local Folder มีหลักฐานแยกตามลิงก์ด้านล่าง รอบ1.4ผ่าน build/unit13, Edge E2E9กลุ่ม และ regression1.1–1.3 ตามหลักฐานด้านบน
 
 | Phase | สถานะ / เป้าหมาย |
 |---|---|
 | **0a** | ตรวจรับผ่านครบ: Contract, Core, SDK Parity, WASM/Worker และ baseline |
 | **0b** | 0b.1–0b.5 และ Gate ตรวจรับผ่านร่วม Codex/Gemini ครบแล้ว |
-| **1** | 1.1/1.2 ตรวจรับร่วมแล้ว; 1.3 พัฒนาเสร็จรอ Gemini; 1.4–1.7 และ Gate ยังไม่เสร็จ |
+| **1** | 1.1–1.3 ตรวจรับร่วมแล้ว; 1.4 พัฒนาเสร็จรอ Gemini; 1.5–1.7 และ Gate ยังไม่เสร็จ |
 | **2** | ยังไม่เริ่ม: ความทนทานและ User Trial |
 | **3** | รอยืนยันขอบเขตตามผลทดลอง เช่น Cloud Sync, PWA, Localization |
 
