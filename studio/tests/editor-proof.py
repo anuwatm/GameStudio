@@ -21,7 +21,7 @@ try:
   page=browser.new_page(viewport={'width':1440,'height':1100})
   page.on('pageerror',lambda e:report['errors'].append(str(e)))
   page.on('dialog',lambda dialog:dialog.accept())
-  page.goto(url);expect(page.get_by_role('status')).to_have_text('Core พร้อมใช้งาน')
+  page.goto(url);expect(page.locator('.session-status')).to_have_text('Core พร้อมใช้งาน')
   page.keyboard.press('Tab')
   assert page.evaluate("(()=>{const a=document.activeElement,s=getComputedStyle(a);return a.matches('button,input,select,textarea')&&s.outlineStyle==='solid'&&parseFloat(s.outlineWidth)>=2;})()")
   passed('Keyboard focus is visible before interacting with the editor')
@@ -45,7 +45,10 @@ try:
   page.get_by_role('button',name='ใช้การแก้ไขโหนด',exact=True).click()
   card=page.locator(f'.react-flow__node[data-id="{main_scene}"]')
   expect(card).to_contain_text('บทพูดไทยจาก Inspector')
-  card.get_by_role('button',name='แก้ข้อความบนกราฟ',exact=True).click()
+  expect(page.locator('.session-status')).to_have_text('Core พร้อมใช้งาน')
+  try:card.get_by_role('button',name='แก้ข้อความบนกราฟ',exact=True).click()
+  except Exception:
+   page.screenshot(path=str(OUT/'inline-failure.png'),full_page=True);(OUT/'inline-failure.txt').write_text(page.locator('body').inner_text(),encoding='utf-8');raise
   card.get_by_label('บทพูดบนกราฟ',exact=True).fill('บทพูดไทยจากกราฟ')
   card.get_by_label('ตัวเลือกบนกราฟ 1',exact=True).fill('เดินต่อบนกราฟ')
   card.get_by_role('button',name='ใช้ข้อความบนกราฟ',exact=True).click()
@@ -85,7 +88,7 @@ try:
   # Five kinds are created through real Core commands; view-only positions are excluded from saved project.
   for kind in ('branch','effect','schedule','end'):
    page.get_by_label('ชนิดโหนด',exact=True).select_option(kind);page.get_by_role('button',name='เพิ่มโหนด',exact=True).click()
-   expect(page.get_by_role('status').first).to_have_text('Core พร้อมใช้งาน')
+   expect(page.locator('.session-status').first).to_have_text('Core พร้อมใช้งาน')
   save();assert set(n['kind'] for n in read_saved()['nodes'])=={'scene','branch','effect','schedule','end'}
   schedule_id=next(n['id'] for n in read_saved()['nodes'] if n['kind']=='schedule')
   select_node(schedule_id);page.get_by_label('startDay',exact=True).fill('0')
@@ -141,14 +144,15 @@ try:
   page.get_by_role('button',name='บันทึกโปรเจกต์',exact=True).click();expect(page.get_by_role('alert')).to_contain_text('ถูกแก้ไขภายนอก')
   assert read_saved()['name']=='External';expect(page.locator('.project-name')).to_have_text('Local edit retained')
   passed('External file conflict stops overwrite and retains local Core snapshot')
-  page.evaluate('''()=>{window.denyWrite=false;window.showDirectoryPicker=async()=>new Proxy(window.originalRoot,{get(root,key){if(key==='getFileHandle')return async(...args)=>{const handle=await root.getFileHandle(...args);return new Proxy(handle,{get(file,prop){if(prop==='createWritable'&&window.denyWrite)return async()=>{throw new DOMException('Injected write denial','NotAllowedError')};const value=Reflect.get(file,prop,file);return typeof value==='function'?value.bind(file):value;}});};const value=Reflect.get(root,key,root);return typeof value==='function'?value.bind(root):value;}});}''')
-  page.get_by_role('button',name='เปิดโฟลเดอร์โปรเจกต์',exact=True).click();expect(page.locator('.project-name')).to_have_text('External')
+  page.evaluate("""()=>{window.denyWrite=false;window.originalWritable=FileSystemFileHandle.prototype.createWritable;FileSystemFileHandle.prototype.createWritable=async function(...args){if(window.denyWrite)throw new DOMException('Injected write denial','NotAllowedError');return window.originalWritable.apply(this,args);};window.showDirectoryPicker=async()=>window.originalRoot;}""")
+  page.get_by_role('button',name='เปิดโฟลเดอร์โปรเจกต์',exact=True).click();page.get_by_role('button',name='ทิ้งร่างและเปิดไฟล์บนดิสก์',exact=True).click();expect(page.locator('.project-name')).to_have_text('External')
   page.get_by_role('button',name='โปรเจกต์',exact=True).click()
   page.get_by_label('ชื่อโปรเจกต์',exact=True).fill('Unsaved after denied write');page.get_by_role('button',name='ใช้ชื่อโปรเจกต์',exact=True).click()
   page.evaluate('window.denyWrite=true')
   page.get_by_role('button',name='บันทึกโปรเจกต์',exact=True).click();expect(page.get_by_role('alert')).to_contain_text('NotAllowedError')
   assert read_saved()['name']=='External';expect(page.locator('.project-name')).to_have_text('Unsaved after denied write')
   passed('Write permission failure preserves original file and dirty local snapshot; no false Saved status')
+  page.evaluate('window.denyWrite=false')
   page.evaluate('''async()=>{window.testRoot=await(await navigator.storage.getDirectory()).getDirectoryHandle('new-'+crypto.randomUUID(),{create:true});window.showDirectoryPicker=async()=>window.testRoot;}''')
   page.get_by_label('ชื่อโปรเจกต์ใหม่',exact=True).fill('เกมใหม่ภาษาไทย')
   page.get_by_role('button',name='สร้างโปรเจกต์ในโฟลเดอร์',exact=True).click();expect(page.locator('.project-name')).to_have_text('เกมใหม่ภาษาไทย');expect(page.locator('.react-flow__node')).to_have_count(1)

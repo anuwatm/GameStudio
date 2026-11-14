@@ -1,0 +1,19 @@
+{
+  "mode": "OPFS handles; injected showDirectoryPicker; production build + real WASM Worker",
+  "checks": [
+    "Keyboard focus is visible before interacting with the editor",
+    "Folder open → Inspector/inline graph sync → Unicode dialogue/choice edits preserve UUID → manual save",
+    "Connect by form, move without drag, atomic delete of node/edges/entry; one Undo restores complete snapshot; Redo works",
+    "Core rejects invalid Inspector draft without losing input or mutating the acknowledged/saved project",
+    "Create all five node kinds, switch graph and add a Subgraph with return entry; no position fields added to Schema",
+    "Character create/update/reference; missing asset, traversal rejection, actual WebM preview from existing file without media copy",
+    "Thai editor/Inspector has no page horizontal overflow at 1440/1000/700 pixels",
+    "Unsupported Schema guarded with byte-identical backup and original unchanged; permission denial preserves active project",
+    "External file conflict stops overwrite and retains local Core snapshot",
+    "Write permission failure preserves original file and dirty local snapshot; no false Saved status",
+    "Create project/game/assets in empty folder; existing project cannot be overwritten by Create"
+  ],
+  "errors": [],
+  "passed": true,
+  "browser": "157.0.4341.46"
+}

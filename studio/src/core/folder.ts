@@ -1,6 +1,7 @@
 import {LocalProject,readFile,writeFile,safePath,sha256} from '../../../web/local-folder.mjs';
 import type {Project,Asset} from './types.ts';
 const PROJECT='project.storyflow.json';
+export class RevisionConflict extends Error{constructor(){super('ไฟล์โปรเจกต์ถูกแก้ไขภายนอก หยุดบันทึกเพื่อไม่เขียนทับ เปิดร่างเป็นสำเนาเพื่อตรวจสอบ');this.name='RevisionConflict';}}
 export type FolderSession={root:FileSystemDirectoryHandle;hash:string|null};
 export async function pickFolder():Promise<FileSystemDirectoryHandle>{
  const picker=(window as unknown as {showDirectoryPicker:(options:{mode:string})=>Promise<FileSystemDirectoryHandle>}).showDirectoryPicker;
@@ -21,7 +22,7 @@ export async function saveProject(folder:FolderSession,project:Project):Promise<
  return navigator.locks.request('storyflow-export',async()=>{
   await new LocalProject(folder.root).recoverLocked();
   const current=await readFile(folder.root,PROJECT),hash=current===null?null:await sha256(current);
-  if(hash!==folder.hash)throw Error('ไฟล์โปรเจกต์ถูกแก้ไขภายนอก หยุดบันทึกเพื่อไม่เขียนทับ เปิดไฟล์ใหม่เพื่อตรวจสอบ');
+  if(hash!==folder.hash)throw new RevisionConflict();
   const text=JSON.stringify(project,null,2)+'\n';await writeFile(folder.root,PROJECT,text);
   return {root:folder.root,hash:await sha256(text)};
  });

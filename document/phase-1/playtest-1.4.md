@@ -1,6 +1,6 @@
 # Phase 1.4 — Playtest และ Diagnostics
 
-วันที่ 2026-11-13 · พัฒนาเสร็จ / Codex ตรวจตาม checklist ผ่าน · รอ Gemini ตรวจรับร่วม
+พัฒนาเสร็จ 2026-11-13 · ตรวจรับร่วม Codex/Gemini ผ่าน 2026-11-14 ตาม gemini.md และ checklist.md
 
 ต่อจาก 1.3 ที่ตรวจรับร่วมแล้วตาม gemini.md และ checklist.md ใช้ DESIGN.md/impeccable/design-md เดิม ไม่มี dependency ใหม่ ไม่เปลี่ยน Rust, Contract, WASM หรือกติกาเกม
 

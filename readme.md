@@ -2,7 +2,7 @@
 
 StoryFlow คือเว็บสตูดิโอสำหรับผู้สร้างเกมเดี่ยวและทีมเล็ก ใช้กราฟวางฉาก บทสนทนา คลิป และตัวเลือกสำหรับเกม Visual Novel, FMV, Dating Sim และ Life Sim แล้วส่งออกเป็นโปรเจกต์ที่เล่นใน Ren’Py SDK ได้
 
-**สถานะล่าสุด (2026-11-14):** 1.1–1.4 ตรวจรับร่วมแล้ว; ใช้ Project/Story Graph/Rules, manual Save/Undo/Redo, Playtest และ Diagnostics ได้ พร้อมเริ่มพัฒนา 1.5 Autosave/Recovery และ Web Locks ดู [checklist.md](checklist.md) และ [ผล 1.4](document/phase-1/playtest-1.4.md)
+**สถานะล่าสุด (2026-11-14):** 1.1–1.5 ตรวจรับร่วมแล้ว; มี Autosave, IndexedDB Recovery และ Web Locks แล้ว พร้อมเริ่มพัฒนา 1.6 (Export UI) ดู [checklist](checklist.md) และ [ผล 1.5](document/phase-1/recovery-1.5.md)
 
 รันหน้าจอด้วย `npm --prefix studio ci` แล้ว `npm --prefix studio run dev` หลัง build WASM ตาม [วิธีรัน Studio](studio/README.md)
 
@@ -27,7 +27,7 @@ StoryFlow คือเว็บสตูดิโอสำหรับผู้�
 
 [ภาพ Dark](document/diagrams/storyflow-stack-dark.png) · [HTML แบบเปิดออฟไลน์](document/diagrams/storyflow-stack.html) · [ที่มาและวิธีปรับภาพ](document/diagrams/README.md)
 
-React/React Flow เชื่อม Worker แล้วใน 1.1; IndexedDB และ UI ขั้นถัดไปยังเป็นแผน Phase 1 ส่วน Rust/WASM, Core Contract และ Local Folder/Transaction ผ่านขั้นพิสูจน์ต้นแบบแล้ว Node.js ใช้ build frontend และทดสอบ ไม่ใช่ Backend; เจ้าของยืนยันใช้ Rust/WASM ต่อแล้วตามมติ 0b.5
+React/React Flow เชื่อม Worker แล้วใน 1.1; IndexedDB/Autosave/Web Locks เชื่อมแล้วใน1.5 ส่วน Export UI เป็นขั้นถัดไป ส่วน Rust/WASM, Core Contract และ Local Folder/Transaction ผ่านขั้นพิสูจน์ต้นแบบแล้ว Node.js ใช้ build frontend และทดสอบ ไม่ใช่ Backend; เจ้าของยืนยันใช้ Rust/WASM ต่อแล้วตามมติ 0b.5
 
 เส้นทึบแสดงความสัมพันธ์ runtime/data รวมส่วนที่ติดป้าย planned เส้นประแสดงการ build/test ดูรายละเอียดพฤติกรรมและสถานะใน Architecture ด้านล่าง
 
@@ -46,7 +46,7 @@ flowchart TB
         Worker["ผ่าน 0a.7 · sf-wasm / Web Worker<br/>Core Contract ตรง native 18 ข้อความ"]
         Local["ผ่าน 0b.1 · Local Folder prototype<br/>Native picker · Asset path validation<br/>อ่านสื่อเดิม / Export ซ้ำแบบ Zero-Copy"]
         Tx["ผ่าน 0b.2 · Export Transaction<br/>Manifest/hash · Backup · Pending journal<br/>Recovery · Source Map · Save warning"]
-        Save["แผน Phase 1 · Project Persistence<br/>Autosave · IndexedDB Recovery<br/>การเปิดโปรเจกต์ซ้อนหลายแท็บ"]
+        Save["ผ่าน 1.5 · Project Persistence<br/>Autosave · IndexedDB Recovery<br/>การเปิดโปรเจกต์ซ้อนหลายแท็บ"]
     end
 
     subgraph Disk["โฟลเดอร์โปรเจกต์บนเครื่อง"]
@@ -81,7 +81,7 @@ flowchart TB
     classDef planned fill:#202938,stroke:#a8b5c7,color:#f2f5f7,stroke-dasharray:5 5
     class Contract,Core,CLI,Worker,Local,Tx,SDK passed
 
-    class UI,Save planned
+    class UI,Save prototype
 ```
 
 Core สร้างเนื้อหาสคริปต์และ Source Map; CLI/Storage เป็นผู้ทำ I/O ส่วน manifest/hash, journal และ backup อยู่ใน Storage prototype ภาษา Core และเกณฑ์ประสิทธิภาพยืนยันแล้วตาม [มติ 0b.5](document/phase-0b/decision-gate-0b5.md) แผนภาพนี้ไม่เพิ่ม scope ของ Phase
@@ -177,7 +177,9 @@ React + React Flow UI ทั้ง Project, Story Graph/Scene Inspector, Rules &
 
 ขั้น 1.4 เพิ่ม Playtest/Diagnostics: เริ่มจากโหนดที่เลือก, SetVar/Rewind, ExplainCondition, StepTrace JSON และเปิดโหนดจากผลตรวจ โดย RunState แยกจาก Project ดู [ผลและข้อจำกัด 1.4](document/phase-1/playtest-1.4.md)
 
-Autosave, IndexedDB Recovery และ Export UI อยู่ในแผน MVP; ไม่มี Backend ในขอบเขตนี้
+ขั้น1.5เพิ่มAutosave~2วินาที, ร่างIndexedDBตามProjectID/source revision, WebLocksกันแท็บซ้อน และกู้conflictเป็นสำเนาแล้ว ดู [ผล1.5](document/phase-1/recovery-1.5.md)
+
+Export UI ยังอยู่ในแผน MVP; ไม่มี Backend ในขอบเขตนี้
 
 ### Baseline ที่ใช้ตัดสินใจต่อ
 
@@ -203,7 +205,7 @@ cargo run -p sf-cli --locked -- export contract/fixtures/summer-house.json temp/
 |---|---|
 | **0a** | ตรวจรับผ่านครบ: Contract, Core, SDK Parity, WASM/Worker และ baseline |
 | **0b** | 0b.1–0b.5 และ Gate ตรวจรับผ่านร่วม Codex/Gemini ครบแล้ว |
-| **1** | 1.1–1.3 ตรวจรับร่วมแล้ว; 1.4 พัฒนาเสร็จรอ Gemini; 1.5–1.7 และ Gate ยังไม่เสร็จ |
+| **1** | 1.1–1.4 ตรวจรับร่วมแล้ว; 1.5 พัฒนาเสร็จรอ Gemini; 1.6–1.7 และ Gate ยังไม่เสร็จ |
 | **2** | ยังไม่เริ่ม: ความทนทานและ User Trial |
 | **3** | รอยืนยันขอบเขตตามผลทดลอง เช่น Cloud Sync, PWA, Localization |
 

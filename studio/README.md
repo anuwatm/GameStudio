@@ -1,14 +1,16 @@
-# StoryFlow Web Studio · Phase 1.4
+# StoryFlow Web Studio · Phase 1.5
 
 React + React Flow เชื่อม Rust/WASM Worker ด้วย Core Contract v1 ไม่มี Backend
 
-ปัจจุบันเปิด/สร้างโปรเจกต์ บันทึก manual จัดการตัวละคร/สื่อ แก้กราฟและตั้ง Rules & Schedule ได้: Variables, recursive Conditions, ordered Effects, Activities, Events และ Target Subgraph พร้อม Undo/Redo และ Core Validate ตัวอย่างยังอยู่ใน memory มี Playtest/Diagnostics แล้ว ส่วน Autosave/IndexedDB และ Export UI เป็นขั้นถัดไป
+ปัจจุบันเปิด/สร้างโปรเจกต์ บันทึก manual จัดการตัวละคร/สื่อ แก้กราฟและตั้ง Rules & Schedule ได้: Variables, recursive Conditions, ordered Effects, Activities, Events และ Target Subgraph พร้อม Undo/Redo และ Core Validate ตัวอย่างยังอยู่ใน memory มี Playtest/Diagnostics แล้ว มี Autosave/IndexedDB Recovery และ Web Locks ใน1.5แล้ว ส่วน Export UI เป็นขั้นถัดไป
 
 หน้า Project ใช้เพิ่มตัวละครและลงทะเบียนพาธสัมพัทธ์ใต้ `game/assets/` แล้วหน้า Story Graph ใช้เพิ่ม/เลือก/เชื่อมโหนด แก้ Inspector หรือข้อความบนกราฟ และกดบันทึกโปรเจกต์เมื่อทำงานกับโฟลเดอร์ ตำแหน่งโหนดยังเป็น view state ของ session ดู [ขอบเขตและผล 1.2](../document/phase-1/editor-1.2.md)
 
 หน้า Rules & Schedule ใช้แท็บ Variables / Daily Schedule / Events ส่วน Conditions/Effects ของฉากและ choices อยู่ใน Inspector กดใช้ข้อมูลก่อนบันทึก ดู [ผลและวิธีตรวจ 1.3](../document/phase-1/rules-1.3.md)
 
 หน้า Playtest เริ่มจาก Entry/โหนดที่เลือก ใช้ SetVar/Rewind ตรวจ ExplainCondition และ StepTrace หรือดาวน์โหลด Trace JSON ได้ หน้า Validate เปิดโหนดจาก Diagnostics ดู [ผลและข้อจำกัด 1.4](../document/phase-1/playtest-1.4.md)
+
+เปิดโฟลเดอร์แล้วระบบเก็บร่างก่อน Autosave~2วินาที เปิดใหม่เลือกกู้ร่างได้ หากไฟล์ภายนอกเปลี่ยนจะเปิดร่างเป็นสำเนา ID ใหม่ที่ไม่ผูกโฟลเดอร์เดิม ดู [ผลและข้อจำกัด1.5](../document/phase-1/recovery-1.5.md)
 
 ## รันบน Windows
 
@@ -65,6 +67,7 @@ Editor proof ใช้ OPFS handles จริงและจำลอง picker 
 - `src/core/editor.ts`: UI command → atomic JSON Patch โดยไม่แทนตรรกะ Rust
 - `src/core/rules.ts`, `src/ui/RuleFields.tsx`, `RulesPane.tsx`, `ScheduleFields.tsx`: typed rule forms/reference handling ร่วม Rules และ Inspector ไม่มี JS evaluation ของเกม
 - `src/ui/PlaytestPane.tsx` และ `useStudio.ts`: แยก Project snapshot/RunState, Core playtest commands, Trace/Diagnostics; ไม่ eval เงื่อนไขใน UI
+- `src/core/recovery.ts`, `src/ui/RecoveryPanel.tsx`: IndexedDB draft/source revision, project session Web Lock, recovery/copy และ Save status
 - `src/core/folder.ts`: เปิด/สร้าง/recover-before-open, manual Save พร้อม conflict check และ backup guard สำหรับ Schema ที่ไม่รองรับ
 - `src/ui/`: แสดง snapshot ที่ Core ยืนยันแล้ว ตำแหน่ง node คำนวณเฉพาะการแสดงผล ไม่มี UI schema/logic ทดแทน Rust
 - `tests/contract-probe.ts`: ใช้ client เดียวกับแอป ทดสอบทุก request name ที่รองรับในรอบนี้ และส่งผลให้ test driver เทียบ CLI

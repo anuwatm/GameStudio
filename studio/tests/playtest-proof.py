@@ -1,8 +1,8 @@
 """Production UI + real WASM Worker. OPFS picker injection, no game logic mock."""
-import functools,http.server,json,pathlib,threading,sys,copy,subprocess
+import os,functools,http.server,json,pathlib,threading,sys,copy,subprocess
 from playwright.sync_api import sync_playwright,expect
 sys.stdout.reconfigure(encoding='utf-8')
-ROOT=pathlib.Path(__file__).resolve().parents[2];OUT=ROOT/'document/phase-1/evidence/1.4';OUT.mkdir(parents=True,exist_ok=True)
+ROOT=pathlib.Path(__file__).resolve().parents[2];OUT=ROOT/os.environ.get('SF_PLAYTEST_PROOF_OUT','document/phase-1/evidence/1.4');OUT.mkdir(parents=True,exist_ok=True)
 fixture=json.loads((ROOT/'contract/fixtures/summer-house.json').read_text(encoding='utf-8'))
 class Handler(http.server.SimpleHTTPRequestHandler):
  extensions_map={**http.server.SimpleHTTPRequestHandler.extensions_map,'.js':'text/javascript','.mjs':'text/javascript','.wasm':'application/wasm'}
@@ -61,7 +61,7 @@ try:
   # Snapshot survives editor changes. SetVar is not an edit or save.
   nav('โปรเจกต์');page.get_by_label('ชื่อโปรเจกต์',exact=True).fill('Edited while playing');click('ใช้ชื่อโปรเจกต์');nav('Playtest');expect(page.get_by_role('status').filter(has_text='snapshot เดิม')).to_be_visible()
   click('เริ่มจาก Entry');assert page.get_by_role('status').filter(has_text='snapshot เดิม').count()==0
-  nav('โปรเจกต์');click('เปิดโฟลเดอร์โปรเจกต์');nav('Playtest');expect(page.get_by_role('status').filter(has_text='ยังไม่เริ่ม')).to_be_visible()
+  click('Undo');nav('โปรเจกต์');click('เปิดโฟลเดอร์โปรเจกต์');nav('Playtest');expect(page.get_by_role('status').filter(has_text='ยังไม่เริ่ม')).to_be_visible()
   saved=page.evaluate("async()=>JSON.parse(await(await window.testRoot.getFileHandle('project.storyflow.json')).getFile().then(f=>f.text()))");assert saved==fixture
   passed('Editor changes retain explicitly labelled old snapshot; restart refreshes; load clears run; saved bytes untouched')
   # Select branch directly; show affection >=20 at19, then20, using visibleIf in scene.

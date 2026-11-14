@@ -1,0 +1,15 @@
+{
+  "date": "2026-11-14",
+  "build": "passed: tsc --noEmit + vite build",
+  "proofBuild": "passed",
+  "unitTests": {
+    "passed": 13,
+    "failed": 0
+  },
+  "designDetector": {
+    "command": "impeccable detect --json studio/src/ui studio/index.html",
+    "findings": []
+  },
+  "scope": "Rust/Contract/WASM unchanged; Core asset 0b38dc3b7bb005d0",
+  "note": "OPFS/IndexedDB/Web Locks are real. Picker, write denial and quota faults injected. No new native OS permission, SDK or performance certification."
+}
