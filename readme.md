@@ -2,7 +2,7 @@
 
 StoryFlow คือเว็บสตูดิโอสำหรับผู้สร้างเกมเดี่ยวและทีมเล็ก ใช้กราฟวางฉาก บทสนทนา คลิป และตัวเลือกสำหรับเกม Visual Novel, FMV, Dating Sim และ Life Sim แล้วส่งออกเป็นโปรเจกต์ที่เล่นใน Ren’Py SDK ได้
 
-**สถานะล่าสุด (2026-11-14):** Phase 1 (1.1–1.7 และ Gate 1) ตรวจรับร่วมปิดสมบูรณ์แล้ว; UI→SDK และชุดทดสอบ A–D ผ่านครบ พร้อมตัวเลขประสิทธิภาพ P1–P8 บน baseline 2,000 โหนดและโฟลเดอร์จริง พร้อมเริ่ม Phase 2 ดู [checklist](checklist.md) และ [ผล 1.7](document/phase-1/end-to-end-1.7.md)
+**สถานะล่าสุด (2026-11-14):** 1.1–1.7 และ Gate 1 เดิมตรวจรับร่วมแล้ว; เพิ่ม **Phase 1.8 Customize node** สำหรับภาพ เสียง วิดีโอ และ Scene Composer แล้ว ยังไม่เริ่มพัฒนาส่วนเพิ่ม ดู [checklist](checklist.md) และ [แผน 1.8](document/node-media-customization-plan.md)
 
 รันหน้าจอด้วย `npm --prefix studio ci` แล้ว `npm --prefix studio run dev` หลัง build WASM ตาม [วิธีรัน Studio](studio/README.md)
 
@@ -224,3 +224,9 @@ cargo run -p sf-cli --locked -- export contract/fixtures/summer-house.json temp/
 
 
 - [ภาษาไทยและสื่อจริง 0b.3](document/phase-0b/media-0b3.md) และ [เทมเพลตเกมใหม่](templates/renpy/README.md) — Literal, ฟอนต์, TCC wrapping และ VP9+Opus
+
+## ผลตรวจรับและแผนจัดฉาก
+
+Phase 1/Gate 1 ตรวจรับร่วมแล้ว พร้อมใช้ MVP ในวงทดลอง Windows/Edge ตาม [ผลตรวจรับรวม](document/phase-1/acceptance-phase-1.md) ซึ่งระบุข้อจำกัดและหลักฐานรอบล่าสุด; Phase 2 ยังไม่เริ่มโดยอัตโนมัติ
+
+[แผน customize ภาพ เสียง วิดีโอ และ Scene Composer](document/node-media-customization-plan.md) เพิ่มเป็น Phase 1.8 แล้ว; ต้องล็อก schema/semantics ใน1.8.1ก่อนพัฒนาขั้นถัดไป

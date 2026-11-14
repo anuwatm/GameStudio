@@ -1,0 +1,110 @@
+{
+  "date": "2026-11-14",
+  "passed": true,
+  "decision": "Phase 1 MVP accepted for local Windows/Edge pilot; Phase 2 resilience/user trial remains",
+  "currentBuild": "./assets/index-BhoyhudF.js",
+  "build": "npm --prefix studio run build passed; unchanged asset",
+  "unit": {
+    "passed": 15,
+    "failed": 0
+  },
+  "editorFresh": {
+    "passed": 11,
+    "errors": 0
+  },
+  "evidence": [
+    {
+      "file": "document/phase-1/evidence/browser-proof.json",
+      "sha256": "dccb88cc37eabd40090b885971fb3597b4b017504ffa0d1a2a61e2ba54268beb",
+      "passed": true
+    },
+    {
+      "file": "document/phase-1/evidence/contract-proof.json",
+      "sha256": "fd2b63a2937d7c95ee62faa5eb7ff3e6ab12f08195b8ff9fa404f7b4f56cb548",
+      "passed": true
+    },
+    {
+      "file": "document/phase-1/evidence/1.2/editor-browser.json",
+      "sha256": "781ec3b03d4b3bbf757933d5d794ad459691576b55264eae21b1fe333313a122",
+      "passed": true
+    },
+    {
+      "file": "document/phase-1/evidence/1.3/rules-browser.json",
+      "sha256": "cf3e786f6e53445fc37205a8314abd5979d3fc7cbb0891d9a3c9e0af27613c66",
+      "passed": true
+    },
+    {
+      "file": "document/phase-1/evidence/1.4/playtest-browser.json",
+      "sha256": "92dff6f2109733d7eae8e96345b3f2b6edea87ec08334f37196fdf89971dd070",
+      "passed": true
+    },
+    {
+      "file": "document/phase-1/evidence/1.5/recovery-browser.json",
+      "sha256": "7d53d1ea24d21130a1a8075f0098300de11a6cae5626dfe235d4bac5303c47ca",
+      "passed": true
+    },
+    {
+      "file": "document/phase-1/evidence/1.6/export-browser.json",
+      "sha256": "57623cacfd68e593e3fb1d461e3743634e904d8b428307a6499e59bf6c8e2055",
+      "passed": true
+    },
+    {
+      "file": "document/phase-1/evidence/1.6/sdk-export.json",
+      "sha256": "686bc5235b1d5ef82898e4290f0102d4bbba8dd28cfbde2415c622b88271d10d",
+      "passed": true
+    },
+    {
+      "file": "document/phase-1/evidence/1.7/full-e2e/full-e2e.json",
+      "sha256": "8c71da3b98ce167edf7b1b21973a4730f36784e03f18fe615fcc4888519246bf",
+      "passed": true
+    },
+    {
+      "file": "document/phase-1/evidence/1.7/full-sdk.json",
+      "sha256": "1caca6248ec3197d31e7ac8cd0cb16a53ed5f51a62b549d2203465b944a6ee27",
+      "passed": true
+    },
+    {
+      "file": "document/phase-1/evidence/1.7/cases-ABC-summary.json",
+      "sha256": "17c2a8c715901dbe27a19955268a5ed0658c48939ad95222d3779c5e1cb59dca",
+      "passed": true
+    },
+    {
+      "file": "document/phase-1/evidence/1.7/cases-D/recovery-browser.json",
+      "sha256": "5294ccf431769b0a0020fd0ab121a7ec1ad4a4d2cdaa30dbd91e86d8a4f821ea",
+      "passed": true
+    },
+    {
+      "file": "document/phase-1/evidence/1.7/performance-P1-P7.json",
+      "sha256": "e3232a46f046ce200d51e31aca7bdfdcb45b500a68398df17c0602b4244efb34",
+      "passed": true
+    },
+    {
+      "file": "document/phase-1/evidence/1.7/native-P8-visible.json",
+      "sha256": "8468dfa9b24a5d98d74a87d182359d15f18890937c89d98c87a7a3b1e63f1930",
+      "passed": true
+    },
+    {
+      "file": "document/phase-1/evidence/1.7/native-P8-disk-audit.json",
+      "sha256": "70c7d9c8380159ba46123ea6f9dca3b8f7d26a3a1d1da6793696de7b77835995",
+      "passed": true
+    },
+    {
+      "file": "document/phase-1/evidence/release-review/editor/editor-browser.json",
+      "sha256": "781ec3b03d4b3bbf757933d5d794ad459691576b55264eae21b1fe333313a122",
+      "passed": true
+    }
+  ],
+  "additionalChecks": [
+    "performance source hashes match current files",
+    "P8 report SHA256 matches disk audit",
+    "P8/P1-P7 production build same",
+    "native manifest independently rechecked on disk",
+    "C all18 pass; C+ pageClose pass"
+  ],
+  "limits": [
+    "Most UI tests use OPFS/injected picker/faults; P8 native grant and disk writes are real",
+    "P8 is 9-node Summer House; only P1-P3/P5-P6 use 2000 nodes",
+    "No new SDK/native-permission-revocation/performance run this review; audited accepted evidence",
+    "Positions session-only; no multi-layer media composer yet"
+  ]
+}

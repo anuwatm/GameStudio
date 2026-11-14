@@ -2,7 +2,7 @@
 
 วันที่ 2026-11-14 · ผู้พัฒนา/ผู้ตรวจรอบนี้: Codex
 
-**สถานะ: 1.7.1–1.7.4 เสร็จและผ่านรอบ Codex** — P1–P8 ผ่านครบ; Gemini รับ 1.7.1–1.7.3 และ P1–P7 แล้ว เหลือตรวจหลักฐาน P8 ใหม่และลงมติปิด Gate 1 ร่วมกัน
+**สถานะ: ตรวจรับร่วม 1.7 และ Gate 1 แล้ว (2026-11-14)** — Codex และ Gemini รับ P1–P8 ครบ; ผลตรวจรับ Phase 1 เพื่อใช้งานจริงอยู่ [acceptance-phase-1.md](acceptance-phase-1.md)
 
 ## Checklist และหลักฐาน
 
@@ -11,9 +11,9 @@
 | 1.7.1 สร้าง Summer House จาก UI ทั้งหมด → Save → เปิดใหม่ | ผ่าน | `full-e2e/full-e2e.json`, `ui-project.json` |
 | 1.7.2 Playtest → Export จาก UI → รัน output เดิมใน SDK 8.3.7 | ผ่าน | `full-sdk.json`, `full-sdk-lint.txt`, `full-sdk-run.txt` |
 | 1.7.3 A/A+, B, C/C+, D | ผ่านตามขอบเขตด้านล่าง | `cases-ABC-summary.json`, `cases-C-transaction.json`, `cases-Cplus-browser.json`, `cases-D/recovery-browser.json` |
-| 1.7.4 P1–P8 | ผ่าน Codex; รอ Gemini ยืนยัน P8 | `performance-P1-P7.json`, `native-P8-visible.json`, `native-P8-disk-audit.json` |
+| 1.7.4 P1–P8 | ผ่านร่วม Codex / Gemini | `performance-P1-P7.json`, `native-P8-visible.json`, `native-P8-disk-audit.json` |
 | Build / unit / Editor regression | ผ่าน | build TypeScript/Vite; unit 15/15; `regression-editor/editor-browser.json` 11 กลุ่ม |
-| ตรวจรับร่วม / Gate 1 | ผ่านบางส่วน / ค้าง Gate | Codex และ Gemini รับ 1.7.1–1.7.3 และ P1–P7 แล้ว; P8 ผ่าน Codex แล้ว รอ Gemini ตรวจรายงานรอบใหม่ก่อนปิด Gate 1 |
+| ตรวจรับร่วม / Gate 1 | ผ่านร่วม | gemini.md ยืนยันรับ 1.7/P8/Gate 1 แล้ว; Codex ยืนยันหลักฐานในการตรวจรอบรวม |
 
 สร้าง Project ว่างจริงผ่าน UI: 2 graphs, 9 nodes, 9 edges รวม Choices, Variables, Effects, nested Condition AST, Activities, Events และ Schedule ไม่โหลด graph skeleton และไม่ใช้ JSON editor สร้างเนื้อหา เทียบ fixture ด้วย UUID mapping และ normalize เฉพาะลำดับ collection ระดับบน ไม่สลับ Choice/Effects/Trace
 
@@ -63,4 +63,4 @@ Server bind เฉพาะ localhost และ whitelist build/test page/config
 - `native-P8-visible.json`: complete/passed=true, genuine directory handle granted, 6 distinct scene edits และ generated hashes ทั้ง 24 รายการตรง
 - `native-P8-disk-audit.json`: คำนวณ median ใหม่และอ่านไฟล์ดิสก์จริงอิสระ final manifest hashes ตรงทั้ง4ไฟล์; project/scene generated มีข้อความรอบ5จริง เก็บ SHA256 project/manifest/source map และ report แล้ว
 - รายงาน AbortError ก่อน grant เก็บเป็น `native-P8-aborted-before-grant.json`; การรันใหม่แยก Edge ภายนอกสำเร็จ ไม่สรุปต้นเหตุ AbortError จากผลนี้
-- 1.7.4 ไม่มีงานพัฒนาค้าง; Gemini ยังต้องตรวจผล P8 นี้ จึงไม่อ้างว่าปิด Gate 1 ร่วมแล้ว
+- 1.7.4 ไม่มีงานพัฒนาค้าง; Gemini ตรวจผล P8 และปิด Gate 1 แล้วตาม gemini.md
