@@ -1,0 +1,75 @@
+{
+  "passed": false,
+  "fixtureHash": "9872ffbb991fd00c324e18ae0afbcd9cca7d0449fa0b21ae8a3f890acc29bd33",
+  "nodeCount": 2000,
+  "samples": {
+    "P1": {
+      "warmup": 1459.5,
+      "raw": [
+        143.09999999962747,
+        46.80000000074506,
+        49.40000000037253,
+        46.79999999888241,
+        47
+      ],
+      "median": 47,
+      "max": 143.09999999962747,
+      "limit": 2000,
+      "passed": true
+    },
+    "P2": {
+      "warmup": 17.09999999962747,
+      "raw": [
+        11.599999999627471,
+        12.099999999627471,
+        11,
+        10.800000000745058,
+        10
+      ],
+      "median": 11,
+      "max": 12.099999999627471,
+      "limit": 200,
+      "passed": true
+    },
+    "P3": {
+      "warmup": 26.800000000745058,
+      "raw": [
+        23.40000000037253,
+        23.59999999962747,
+        25.800000000745058,
+        22.799999998882413,
+        22.600000001490116
+      ],
+      "median": 23.40000000037253,
+      "max": 25.800000000745058,
+      "limit": 100,
+      "passed": true
+    }
+  },
+  "pageErrors": [],
+  "os": "Windows-11-10.0.26300-SP0",
+  "method": "warmup1 + measured5; retain all samples; no WASM startup in P1; P5 starts at Worker Project response; OPFS only for P5/P7 local fixture setup, not P8",
+  "browser": "157.0.4341.46",
+  "hardware": {
+    "logicalProcessors": 4,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36 Edg/157.0.0.0"
+  },
+  "error": "Page.wait_for_function: Timeout 15000ms exceeded.",
+  "partialUIRoundsFromRunStdout": [
+    {
+      "round": 0,
+      "P5": 1044.0999999996275,
+      "P6": 139.59999999962747
+    },
+    {
+      "round": 1,
+      "P5": 989.4000000003725,
+      "P6": 144.7999999988824
+    },
+    {
+      "round": 2,
+      "P5": 1057.800000000745,
+      "P6": 155
+    }
+  ]
+}

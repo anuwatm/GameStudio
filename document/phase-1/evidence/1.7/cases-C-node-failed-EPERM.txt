@@ -1,0 +1,22 @@
+node:internal/fs/promises:1491
+  return await PromisePrototypeThen(
+         ^
+
+Error: EPERM: operation not permitted, rename 'C:\LocalDevine\www\GameStudio\temp\phase-0b2-1794646163049\run-3c135122-3eff-4a9e-8b0d-c249f8d7c6c9\case-7\game\storyflow_generated\sf_story.rpy.swap-4e908f0a-5ea9-4649-a3f3-13dbbbdd206c' -> 'C:\LocalDevine\www\GameStudio\temp\phase-0b2-1794646163049\run-3c135122-3eff-4a9e-8b0d-c249f8d7c6c9\case-7\game\storyflow_generated\sf_story.rpy'
+    at async Module.rename (node:internal/fs/promises:1491:10)
+    at async Object.close (file:///C:/LocalDevine/www/GameStudio/scripts/test-transaction.mjs:28:72)
+    at async write (file:///C:/LocalDevine/www/GameStudio/web/local-folder.mjs:44:36)
+    at async LocalProject.exportLocked (file:///C:/LocalDevine/www/GameStudio/web/local-folder.mjs:149:32)
+    at async rejects (file:///C:/LocalDevine/www/GameStudio/web/local-folder-test.mjs:5:8)
+    at async file:///C:/LocalDevine/www/GameStudio/web/local-folder-test.mjs:81:7
+    at async test (file:///C:/LocalDevine/www/GameStudio/web/local-folder-test.mjs:35:5)
+    at async tests (file:///C:/LocalDevine/www/GameStudio/web/local-folder-test.mjs:74:5)
+    at async file:///C:/LocalDevine/www/GameStudio/scripts/test-transaction.mjs:41:15 {
+  errno: -4048,
+  code: 'EPERM',
+  syscall: 'rename',
+  path: 'C:\\LocalDevine\\www\\GameStudio\\temp\\phase-0b2-1794646163049\\run-3c135122-3eff-4a9e-8b0d-c249f8d7c6c9\\case-7\\game\\storyflow_generated\\sf_story.rpy.swap-4e908f0a-5ea9-4649-a3f3-13dbbbdd206c',
+  dest: 'C:\\LocalDevine\\www\\GameStudio\\temp\\phase-0b2-1794646163049\\run-3c135122-3eff-4a9e-8b0d-c249f8d7c6c9\\case-7\\game\\storyflow_generated\\sf_story.rpy'
+}
+
+Node.js v24.22.1

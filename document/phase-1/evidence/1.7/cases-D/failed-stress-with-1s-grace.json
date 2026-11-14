@@ -1,0 +1,128 @@
+{
+  "passed": false,
+  "mode": "production UI + real Worker/IndexedDB/Web Locks/OPFS; injected picker, write and IDB faults",
+  "checks": [
+    "Debounced Autosave writes latest acknowledged edit after ~2s; IDB precedes disk and clears committed draft"
+  ],
+  "pageErrors": [],
+  "closeRecoveryLockEvents": [
+    {
+      "name": "storyflow-project:b7623a85-69be-4322-93aa-b8a404216e88",
+      "time": 2129.3000000000466,
+      "granted": true,
+      "state": {
+        "held": [
+          {
+            "clientId": "F124C0C7A38FFD77C33D24D95297D27B",
+            "mode": "exclusive",
+            "name": "storyflow-project:b7623a85-69be-4322-93aa-b8a404216e88"
+          }
+        ],
+        "pending": []
+      }
+    }
+  ],
+  "closeStress": [
+    {
+      "cycle": 0,
+      "lockEvents": [
+        {
+          "name": "storyflow-project:b7623a85-69be-4322-93aa-b8a404216e88",
+          "time": 3632,
+          "granted": true,
+          "state": {
+            "held": [
+              {
+                "clientId": "98BA8D2FD9717327945C86C4307C6C89",
+                "mode": "exclusive",
+                "name": "storyflow-project:b7623a85-69be-4322-93aa-b8a404216e88"
+              }
+            ],
+            "pending": []
+          }
+        }
+      ]
+    },
+    {
+      "cycle": 1,
+      "lockEvents": [
+        {
+          "name": "storyflow-project:b7623a85-69be-4322-93aa-b8a404216e88",
+          "time": 1443.6999999999534,
+          "granted": false,
+          "state": {
+            "held": [
+              {
+                "clientId": "98BA8D2FD9717327945C86C4307C6C89",
+                "mode": "exclusive",
+                "name": "storyflow-project:b7623a85-69be-4322-93aa-b8a404216e88"
+              }
+            ],
+            "pending": []
+          }
+        },
+        {
+          "name": "storyflow-project:b7623a85-69be-4322-93aa-b8a404216e88",
+          "time": 1706.2999999999302,
+          "granted": false,
+          "state": {
+            "held": [
+              {
+                "clientId": "98BA8D2FD9717327945C86C4307C6C89",
+                "mode": "exclusive",
+                "name": "storyflow-project:b7623a85-69be-4322-93aa-b8a404216e88"
+              }
+            ],
+            "pending": []
+          }
+        },
+        {
+          "name": "storyflow-project:b7623a85-69be-4322-93aa-b8a404216e88",
+          "time": 1966.5,
+          "granted": false,
+          "state": {
+            "held": [
+              {
+                "clientId": "98BA8D2FD9717327945C86C4307C6C89",
+                "mode": "exclusive",
+                "name": "storyflow-project:b7623a85-69be-4322-93aa-b8a404216e88"
+              }
+            ],
+            "pending": []
+          }
+        },
+        {
+          "name": "storyflow-project:b7623a85-69be-4322-93aa-b8a404216e88",
+          "time": 2228.79999999993,
+          "granted": false,
+          "state": {
+            "held": [
+              {
+                "clientId": "98BA8D2FD9717327945C86C4307C6C89",
+                "mode": "exclusive",
+                "name": "storyflow-project:b7623a85-69be-4322-93aa-b8a404216e88"
+              }
+            ],
+            "pending": []
+          }
+        },
+        {
+          "name": "storyflow-project:b7623a85-69be-4322-93aa-b8a404216e88",
+          "time": 2489.1999999999534,
+          "granted": true,
+          "state": {
+            "held": [
+              {
+                "clientId": "09FC04D8D7FCAC691DCFBFADC09D6EEC",
+                "mode": "exclusive",
+                "name": "storyflow-project:b7623a85-69be-4322-93aa-b8a404216e88"
+              }
+            ],
+            "pending": []
+          }
+        }
+      ]
+    }
+  ],
+  "error": "Locator expected to have text 'Close stress 2'\nActual value: Web Studio \nCall log:\n  - Expect \"to_have_text\" locator(\".project-name\") with timeout 5000ms\n  - waiting for locator(\".project-name\")\n    13 × locator resolved to <span class=\"project-name\">Web Studio</span>\n       - unexpected value \"Web Studio\"\n\nAria snapshot:\n- text: Web Studio"
+}

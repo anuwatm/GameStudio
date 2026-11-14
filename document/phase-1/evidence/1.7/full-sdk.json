@@ -1,0 +1,38 @@
+{
+  "passed": true,
+  "game": "C:\\LocalDevine\\www\\GameStudio\\temp\\phase-1.7-full-sdk-8ee93716-1e54-4d21-9287-e8842794a831",
+  "mode": "actual UI-created/reopened/Playtested/exported Project; actual start→test entry wrapper→unchanged generated sf_entry",
+  "lintExit": 0,
+  "runExit": 0,
+  "actual": {
+    "ending": "f8058caf-c940-4592-98c2-9088378bb3ce",
+    "day": 3,
+    "firedEventIds": [
+      "91aa65f2-5d27-4c27-9e76-f02e44de1f9e"
+    ],
+    "vars": {
+      "sf_variable_b93e9e8fadaa": 20,
+      "sf_variable_d4440f20269d": 80,
+      "sf_variable_da32ef3379e0": 0
+    }
+  },
+  "expected": {
+    "day": 3,
+    "firedEventIds": [
+      "91aa65f2-5d27-4c27-9e76-f02e44de1f9e"
+    ],
+    "nodeId": "f8058caf-c940-4592-98c2-9088378bb3ce",
+    "vars": {
+      "08600ef6-7aa4-4163-b143-da32ef3379e0": 0,
+      "20acde87-894e-4f01-9b23-d4440f20269d": 80,
+      "4f469e1c-c1bc-49e2-882f-b93e9e8fadaa": 20
+    }
+  },
+  "generatedHashes": {
+    "sf_runtime.rpy": "d65775b0088329110a8942125481ece2680e4fc674cc38c1b8e25a04dce37cd3",
+    "sf_schedule.rpy": "f767d6c5fba80abc03789e27b8c1fc92f01bdb88419df96af413dc7eda4cbb2d",
+    "sf_story.rpy": "03fe2b5d213a3c1faf97f5f390cd9cd0b61f43d2754a8e96a2d135c21ab531a2",
+    "sf_variables.rpy": "715e33e503aaffa13c350bafa65b254269e5957fcad4228a2a34cc6da9f86af3"
+  },
+  "generatedUnchanged": true
+}

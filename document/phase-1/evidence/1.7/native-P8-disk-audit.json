@@ -1,0 +1,47 @@
+{
+  "passed": true,
+  "os": "Windows-11-10.0.26300-SP0",
+  "reportSHA256": "8468dfa9b24a5d98d74a87d182359d15f18890937c89d98c87a7a3b1e63f1930",
+  "build": "./assets/index-BhoyhudF.js",
+  "warmup": 1935.2000000001863,
+  "measured": [
+    1860.2000000001863,
+    1567.7000000001863,
+    1743.5,
+    1627.2000000001863,
+    1631.7000000001863
+  ],
+  "median": 1631.7000000001863,
+  "max": 1860.2000000001863,
+  "checks": [
+    "genuine native directory permission granted",
+    "warmup1+5 and median recomputed",
+    "all 24 per-round generated hashes agree",
+    "six distinct scene edits persisted",
+    "final manifest hashes independently verified on disk",
+    "final project and generated story contain last edited scene"
+  ],
+  "nativeFiles": {
+    "game/storyflow_generated/sf_runtime.rpy": {
+      "sha256": "d65775b0088329110a8942125481ece2680e4fc674cc38c1b8e25a04dce37cd3",
+      "equal": true
+    },
+    "game/storyflow_generated/sf_schedule.rpy": {
+      "sha256": "9e6b4f57070b6d01bc447fc11b3e366f427dc33b28eb29c310529bae7484dec8",
+      "equal": true
+    },
+    "game/storyflow_generated/sf_story.rpy": {
+      "sha256": "232f515c6e562d2f685ace91d90e08a0fe085b5bebe5a7a0185133a072fe9b97",
+      "equal": true
+    },
+    "game/storyflow_generated/sf_variables.rpy": {
+      "sha256": "d93a8a273d4dc27e779e9c3725d6a0b316de1c4605cef28a3d82e1fcd9d45b8f",
+      "equal": true
+    }
+  },
+  "otherFilesSHA256": {
+    "project.storyflow.json": "6bcbcbafe4fdf30c014655fa7c18b6b9fcd04c89d428501c79f0508cd3f0cf2f",
+    "game/storyflow_generated/sf_manifest.json": "42133c522eedca0435269c3f2579027fe9a46327de61ed311319cbfa79b45706",
+    ".storyflow/sourcemap.json": "6e6fa15942364827c9bb4be955dea25e7e618a7da8bd9f8b237f2bc6cd67fc68"
+  }
+}

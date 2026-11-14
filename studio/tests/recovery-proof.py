@@ -14,7 +14,7 @@ try:
  with sync_playwright() as pw:
   browser=pw.chromium.launch(executable_path=r'C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe',headless=True);context=browser.new_context(accept_downloads=True,viewport={'width':1440,'height':1100})
   def newpage():
-   page=context.new_page();page.on('pageerror',lambda e:report['pageErrors'].append(str(e)));page.on('dialog',lambda d:d.accept());page.goto(url);expect(page.locator('.session-status')).to_have_text('Core พร้อมใช้งาน');return page
+   page=context.new_page();page.add_init_script("""(()=>{window.sfLockEvents=[];const locks=navigator.locks,native=locks.request.bind(locks);locks.request=function(name,options,callback){if(typeof options==='function')return native(name,options);return native(name,options,lock=>{if(name.startsWith('storyflow-project:')){const row={name,time:performance.now(),granted:!!lock};window.sfLockEvents.push(row);locks.query().then(q=>row.state=q);}return callback(lock);});};})();""");page.on('pageerror',lambda e:report['pageErrors'].append(str(e)));page.on('dialog',lambda d:d.accept());page.goto(url);expect(page.locator('.session-status')).to_have_text('Core พร้อมใช้งาน');return page
   page=newpage()
   def settled(p=None):expect((p or page).locator('.session-status')).to_have_text('Core พร้อมใช้งาน')
   def click(name,p=None):(p or page).get_by_role('button',name=name,exact=True).click();settled(p)
@@ -22,7 +22,7 @@ try:
   def title(name):
    try:expect(page.locator('.project-name')).to_have_text(name)
    except Exception:
-    page.screenshot(path=str(OUT/'recovery-failure.png'),full_page=True);(OUT/'recovery-failure.txt').write_text(page.locator('body').inner_text(),encoding='utf-8');(OUT/'recovery-locks.json').write_text(json.dumps(page.evaluate('navigator.locks.query()'),indent=2),encoding='utf-8');raise
+    page.screenshot(path=str(OUT/'recovery-failure.png'),full_page=True);(OUT/'recovery-failure.txt').write_text(page.locator('body').inner_text(),encoding='utf-8');(OUT/'recovery-locks.json').write_text(json.dumps(page.evaluate('navigator.locks.query()'),indent=2),encoding='utf-8');(OUT/'recovery-lock-events.json').write_text(json.dumps(page.evaluate('window.sfLockEvents'),indent=2),encoding='utf-8');raise
   def install(rootname,p=None):
    (p or page).evaluate("""async name=>{window.testRoot=await(await navigator.storage.getDirectory()).getDirectoryHandle(name,{create:true});window.showDirectoryPicker=async()=>window.testRoot;}""",rootname)
   def load():
@@ -36,7 +36,13 @@ try:
   original,root=load();edit('ร่างแรก');first=next(r for r in rows() if r['project']['id']==original['id']);assert first['sourceRevision'] and first['revision'];assert disk()['name']==original['name']
   edit('ร่างล่าสุด');second=next(r for r in rows() if r['project']['id']==original['id']);assert second['revision']!=first['revision'];page.wait_for_timeout(600);assert disk()['name']==original['name'];saved('ร่างล่าสุด');assert not any(r['project']['id']==original['id'] for r in rows())
   passed('Debounced Autosave writes latest acknowledged edit after ~2s; IDB precedes disk and clears committed draft')
-  edit('กู้หลังปิดหน้า');assert any(r['project']['name']=='กู้หลังปิดหน้า' for r in rows());page.close();page=newpage();install(root);page.get_by_text('ร่างที่กู้คืนได้',exact=False).click();click('กู้คืนร่าง');title('กู้หลังปิดหน้า');saved('กู้หลังปิดหน้า')
+  edit('กู้หลังปิดหน้า');assert any(r['project']['name']=='กู้หลังปิดหน้า' for r in rows());page.close();page=newpage();install(root);page.get_by_text('ร่างที่กู้คืนได้',exact=False).click();click('กู้คืนร่าง');title('กู้หลังปิดหน้า');saved('กู้หลังปิดหน้า');report['closeRecoveryLockEvents']=page.evaluate('window.sfLockEvents')
+  report['closeStress']=[]
+  for cycle in range(int(os.environ.get('SF_CLOSE_STRESS_ROUNDS','0'))):
+   text='Close stress '+str(cycle);edit(text);assert any(r['project']['name']==text for r in rows());page.close();page=newpage();install(root);page.get_by_text('ร่างที่กู้คืนได้',exact=False).click();click('กู้คืนร่าง');title(text);saved(text);report['closeStress'].append({'cycle':cycle,'lockEvents':page.evaluate('window.sfLockEvents')})
+  if report['closeStress']:
+   # Preserve the remaining reference checks' original expected name.
+   edit('กู้หลังปิดหน้า');saved('กู้หลังปิดหน้า')
   passed('Real page close before debounce → persisted IndexedDB draft and folder handle → recovery to unchanged source revision')
   # A second tab cannot open same Project ID, even if it picked the same folder itself.
   other=newpage();install(root,other);click('เปิดโฟลเดอร์โปรเจกต์',other);expect(other.get_by_role('alert')).to_contain_text('เปิดอยู่ในแท็บอื่น');assert disk(other)['name']=='กู้หลังปิดหน้า';page.close();page=other;click('เปิดโฟลเดอร์โปรเจกต์');expect(page.locator('.react-flow__node')).to_have_count(6)

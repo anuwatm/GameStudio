@@ -1,0 +1,445 @@
+{
+  "passed": true,
+  "mode": "production UI + real Worker; OPFS handles with injected picker",
+  "checks": [
+    "Created Project, both Graphs, all nine Nodes, Choices, entry points and nine Edges through UI; no skeleton/JSON injection",
+    "Declare Summer House Variables with initial/min/max using UI; keyboard tabs work",
+    "Build Activities, nested Event condition, phase/priority/order/once/target and inclusive Schedule/onComplete through UI",
+    "All Summer House rules rebuilt without JSON editing; full saved Project equals fixture after UUID-only mapping; Core Validate has zero issues",
+    "UI-generated rules pass all ten Core cases with Worker/native trace equality",
+    "UI-created Summer House → save → actual reload/reopen → Playtest trace → template+transaction Export; dumped this exact output for SDK"
+  ],
+  "pageErrors": [],
+  "graphUUIDMapping": {
+    "00000000-0000-4000-8000-000000000001": "31e8e460-b64e-4f40-9817-8b90af164700",
+    "00000000-0000-4000-8000-000000000002": "d8fcc985-06fb-47da-8c5b-22d06f82df57",
+    "00000000-0000-4000-8000-000000000005": "2a41a9b9-2eee-40f3-9c91-c2daf680b6db",
+    "00000000-0000-4000-8000-000000000007": "97a89b52-9641-4bc9-aecf-9858b0db139c",
+    "00000000-0000-4000-8000-000000000008": "b12899ee-7e25-47e5-897d-0be4198e29ce",
+    "00000000-0000-4000-8000-000000000003": "3dcb9eae-0c90-499d-91b0-ec864e34c1c4",
+    "00000000-0000-4000-8000-000000000004": "a740e595-df89-4218-bee0-f1246c0c62d5",
+    "00000000-0000-4000-8000-000000000006": "e9e7aea3-1232-426d-b3ef-1d792a362868",
+    "00000000-0000-4000-8000-000000000015": "7d42cb86-947d-4e7e-be73-9934b36bf205",
+    "00000000-0000-4000-8000-000000000016": "67af2b5d-f56b-4052-9cdd-463efd849e65",
+    "00000000-0000-4000-8000-000000000009": "f8058caf-c940-4592-98c2-9088378bb3ce",
+    "00000000-0000-4000-8000-000000000201": "f98f1a20-9370-468c-9fee-f378e24a459e",
+    "00000000-0000-4000-8000-000000000202": "e51ca095-70d6-4fb4-ad82-c5d9a33627ed",
+    "00000000-0000-4000-8000-000000000203": "3a61419f-1961-4202-942a-b42f451c9879",
+    "00000000-0000-4000-8000-000000000101": "1c11eb87-45c3-4a01-b877-d1f0ead6412c",
+    "00000000-0000-4000-8000-000000000102": "0edd4dd5-9333-4923-9078-e2f7259cec12",
+    "00000000-0000-4000-8000-000000000103": "edb97bee-305b-4f82-b8a5-4a6ba3c0c030",
+    "00000000-0000-4000-8000-000000000104": "4d13c44c-b7da-4615-8d05-f7e76944b215",
+    "00000000-0000-4000-8000-000000000105": "5f7cc0d6-7702-4bdc-92f6-48d6927dcfa4",
+    "00000000-0000-4000-8000-000000000205": "c9e31ab4-c0d2-4869-9931-1259f02e32fb",
+    "00000000-0000-4000-8000-000000000206": "86fe751d-063a-46e8-a9f2-11e9b644a45d",
+    "00000000-0000-4000-8000-000000000207": "4ef0e752-f0f2-4251-af00-7028ea0cf0b0",
+    "00000000-0000-4000-8000-000000000208": "f66383b7-a9d5-4bb6-8e8d-2edae43c38da"
+  },
+  "parity": {
+    "cases": 10,
+    "messages": 55,
+    "traceSteps": 79,
+    "uuidAndTopLevelGraphCollectionOrderOnly": true
+  },
+  "uiTrace": [
+    {
+      "choiceId": null,
+      "conditionResults": {},
+      "day": 1,
+      "ending": null,
+      "eventId": null,
+      "nodeId": "3dcb9eae-0c90-499d-91b0-ec864e34c1c4",
+      "phase": "scene",
+      "step": 1,
+      "transition": "f98f1a20-9370-468c-9fee-f378e24a459e",
+      "varsAfter": {
+        "08600ef6-7aa4-4163-b143-da32ef3379e0": 0,
+        "20acde87-894e-4f01-9b23-d4440f20269d": 100,
+        "4f469e1c-c1bc-49e2-882f-b93e9e8fadaa": 0
+      },
+      "varsBefore": {
+        "08600ef6-7aa4-4163-b143-da32ef3379e0": 0,
+        "20acde87-894e-4f01-9b23-d4440f20269d": 100,
+        "4f469e1c-c1bc-49e2-882f-b93e9e8fadaa": 0
+      },
+      "visibleChoices": []
+    },
+    {
+      "choiceId": null,
+      "conditionResults": {
+        "f98f1a20-9370-468c-9fee-f378e24a459e": true
+      },
+      "day": 1,
+      "ending": null,
+      "eventId": null,
+      "nodeId": "f98f1a20-9370-468c-9fee-f378e24a459e",
+      "phase": "branch",
+      "step": 2,
+      "transition": "e51ca095-70d6-4fb4-ad82-c5d9a33627ed",
+      "varsAfter": {
+        "08600ef6-7aa4-4163-b143-da32ef3379e0": 0,
+        "20acde87-894e-4f01-9b23-d4440f20269d": 100,
+        "4f469e1c-c1bc-49e2-882f-b93e9e8fadaa": 0
+      },
+      "varsBefore": {
+        "08600ef6-7aa4-4163-b143-da32ef3379e0": 0,
+        "20acde87-894e-4f01-9b23-d4440f20269d": 100,
+        "4f469e1c-c1bc-49e2-882f-b93e9e8fadaa": 0
+      },
+      "visibleChoices": []
+    },
+    {
+      "choiceId": null,
+      "conditionResults": {},
+      "day": 1,
+      "ending": null,
+      "eventId": null,
+      "nodeId": "e51ca095-70d6-4fb4-ad82-c5d9a33627ed",
+      "phase": "effect",
+      "step": 3,
+      "transition": "a740e595-df89-4218-bee0-f1246c0c62d5",
+      "varsAfter": {
+        "08600ef6-7aa4-4163-b143-da32ef3379e0": 0,
+        "20acde87-894e-4f01-9b23-d4440f20269d": 100,
+        "4f469e1c-c1bc-49e2-882f-b93e9e8fadaa": 0
+      },
+      "varsBefore": {
+        "08600ef6-7aa4-4163-b143-da32ef3379e0": 0,
+        "20acde87-894e-4f01-9b23-d4440f20269d": 100,
+        "4f469e1c-c1bc-49e2-882f-b93e9e8fadaa": 0
+      },
+      "visibleChoices": []
+    },
+    {
+      "choiceId": null,
+      "conditionResults": {},
+      "day": 1,
+      "ending": null,
+      "eventId": null,
+      "nodeId": "a740e595-df89-4218-bee0-f1246c0c62d5",
+      "phase": "before_activity",
+      "step": 4,
+      "transition": "a740e595-df89-4218-bee0-f1246c0c62d5",
+      "varsAfter": {
+        "08600ef6-7aa4-4163-b143-da32ef3379e0": 0,
+        "20acde87-894e-4f01-9b23-d4440f20269d": 100,
+        "4f469e1c-c1bc-49e2-882f-b93e9e8fadaa": 0
+      },
+      "varsBefore": {
+        "08600ef6-7aa4-4163-b143-da32ef3379e0": 0,
+        "20acde87-894e-4f01-9b23-d4440f20269d": 100,
+        "4f469e1c-c1bc-49e2-882f-b93e9e8fadaa": 0
+      },
+      "visibleChoices": []
+    },
+    {
+      "choiceId": "719cd82e-c84f-495f-9591-a8e3fd29e38e",
+      "conditionResults": {
+        "4eccebaf-cad6-4042-b235-a0375db5f9f6": true,
+        "719cd82e-c84f-495f-9591-a8e3fd29e38e": true
+      },
+      "day": 1,
+      "ending": null,
+      "eventId": null,
+      "nodeId": "a740e595-df89-4218-bee0-f1246c0c62d5",
+      "phase": "activity",
+      "step": 5,
+      "transition": "a740e595-df89-4218-bee0-f1246c0c62d5",
+      "varsAfter": {
+        "08600ef6-7aa4-4163-b143-da32ef3379e0": 0,
+        "20acde87-894e-4f01-9b23-d4440f20269d": 80,
+        "4f469e1c-c1bc-49e2-882f-b93e9e8fadaa": 10
+      },
+      "varsBefore": {
+        "08600ef6-7aa4-4163-b143-da32ef3379e0": 0,
+        "20acde87-894e-4f01-9b23-d4440f20269d": 100,
+        "4f469e1c-c1bc-49e2-882f-b93e9e8fadaa": 0
+      },
+      "visibleChoices": [
+        "719cd82e-c84f-495f-9591-a8e3fd29e38e",
+        "4eccebaf-cad6-4042-b235-a0375db5f9f6"
+      ]
+    },
+    {
+      "choiceId": null,
+      "conditionResults": {
+        "91aa65f2-5d27-4c27-9e76-f02e44de1f9e": false
+      },
+      "day": 1,
+      "ending": null,
+      "eventId": null,
+      "nodeId": "a740e595-df89-4218-bee0-f1246c0c62d5",
+      "phase": "after_activity",
+      "step": 6,
+      "transition": "a740e595-df89-4218-bee0-f1246c0c62d5",
+      "varsAfter": {
+        "08600ef6-7aa4-4163-b143-da32ef3379e0": 0,
+        "20acde87-894e-4f01-9b23-d4440f20269d": 80,
+        "4f469e1c-c1bc-49e2-882f-b93e9e8fadaa": 10
+      },
+      "varsBefore": {
+        "08600ef6-7aa4-4163-b143-da32ef3379e0": 0,
+        "20acde87-894e-4f01-9b23-d4440f20269d": 80,
+        "4f469e1c-c1bc-49e2-882f-b93e9e8fadaa": 10
+      },
+      "visibleChoices": []
+    },
+    {
+      "choiceId": null,
+      "conditionResults": {},
+      "day": 1,
+      "ending": null,
+      "eventId": null,
+      "nodeId": "a740e595-df89-4218-bee0-f1246c0c62d5",
+      "phase": "end_of_day",
+      "step": 7,
+      "transition": "a740e595-df89-4218-bee0-f1246c0c62d5",
+      "varsAfter": {
+        "08600ef6-7aa4-4163-b143-da32ef3379e0": 0,
+        "20acde87-894e-4f01-9b23-d4440f20269d": 80,
+        "4f469e1c-c1bc-49e2-882f-b93e9e8fadaa": 10
+      },
+      "varsBefore": {
+        "08600ef6-7aa4-4163-b143-da32ef3379e0": 0,
+        "20acde87-894e-4f01-9b23-d4440f20269d": 80,
+        "4f469e1c-c1bc-49e2-882f-b93e9e8fadaa": 10
+      },
+      "visibleChoices": []
+    },
+    {
+      "choiceId": null,
+      "conditionResults": {},
+      "day": 2,
+      "ending": null,
+      "eventId": null,
+      "nodeId": "a740e595-df89-4218-bee0-f1246c0c62d5",
+      "phase": "before_activity",
+      "step": 8,
+      "transition": "a740e595-df89-4218-bee0-f1246c0c62d5",
+      "varsAfter": {
+        "08600ef6-7aa4-4163-b143-da32ef3379e0": 0,
+        "20acde87-894e-4f01-9b23-d4440f20269d": 80,
+        "4f469e1c-c1bc-49e2-882f-b93e9e8fadaa": 10
+      },
+      "varsBefore": {
+        "08600ef6-7aa4-4163-b143-da32ef3379e0": 0,
+        "20acde87-894e-4f01-9b23-d4440f20269d": 80,
+        "4f469e1c-c1bc-49e2-882f-b93e9e8fadaa": 10
+      },
+      "visibleChoices": []
+    },
+    {
+      "choiceId": "719cd82e-c84f-495f-9591-a8e3fd29e38e",
+      "conditionResults": {
+        "4eccebaf-cad6-4042-b235-a0375db5f9f6": true,
+        "719cd82e-c84f-495f-9591-a8e3fd29e38e": true
+      },
+      "day": 2,
+      "ending": null,
+      "eventId": null,
+      "nodeId": "a740e595-df89-4218-bee0-f1246c0c62d5",
+      "phase": "activity",
+      "step": 9,
+      "transition": "a740e595-df89-4218-bee0-f1246c0c62d5",
+      "varsAfter": {
+        "08600ef6-7aa4-4163-b143-da32ef3379e0": 0,
+        "20acde87-894e-4f01-9b23-d4440f20269d": 60,
+        "4f469e1c-c1bc-49e2-882f-b93e9e8fadaa": 20
+      },
+      "varsBefore": {
+        "08600ef6-7aa4-4163-b143-da32ef3379e0": 0,
+        "20acde87-894e-4f01-9b23-d4440f20269d": 80,
+        "4f469e1c-c1bc-49e2-882f-b93e9e8fadaa": 10
+      },
+      "visibleChoices": [
+        "719cd82e-c84f-495f-9591-a8e3fd29e38e",
+        "4eccebaf-cad6-4042-b235-a0375db5f9f6"
+      ]
+    },
+    {
+      "choiceId": null,
+      "conditionResults": {
+        "91aa65f2-5d27-4c27-9e76-f02e44de1f9e": false
+      },
+      "day": 2,
+      "ending": null,
+      "eventId": null,
+      "nodeId": "a740e595-df89-4218-bee0-f1246c0c62d5",
+      "phase": "after_activity",
+      "step": 10,
+      "transition": "a740e595-df89-4218-bee0-f1246c0c62d5",
+      "varsAfter": {
+        "08600ef6-7aa4-4163-b143-da32ef3379e0": 0,
+        "20acde87-894e-4f01-9b23-d4440f20269d": 60,
+        "4f469e1c-c1bc-49e2-882f-b93e9e8fadaa": 20
+      },
+      "varsBefore": {
+        "08600ef6-7aa4-4163-b143-da32ef3379e0": 0,
+        "20acde87-894e-4f01-9b23-d4440f20269d": 60,
+        "4f469e1c-c1bc-49e2-882f-b93e9e8fadaa": 20
+      },
+      "visibleChoices": []
+    },
+    {
+      "choiceId": null,
+      "conditionResults": {},
+      "day": 2,
+      "ending": null,
+      "eventId": null,
+      "nodeId": "a740e595-df89-4218-bee0-f1246c0c62d5",
+      "phase": "end_of_day",
+      "step": 11,
+      "transition": "a740e595-df89-4218-bee0-f1246c0c62d5",
+      "varsAfter": {
+        "08600ef6-7aa4-4163-b143-da32ef3379e0": 0,
+        "20acde87-894e-4f01-9b23-d4440f20269d": 60,
+        "4f469e1c-c1bc-49e2-882f-b93e9e8fadaa": 20
+      },
+      "varsBefore": {
+        "08600ef6-7aa4-4163-b143-da32ef3379e0": 0,
+        "20acde87-894e-4f01-9b23-d4440f20269d": 60,
+        "4f469e1c-c1bc-49e2-882f-b93e9e8fadaa": 20
+      },
+      "visibleChoices": []
+    },
+    {
+      "choiceId": null,
+      "conditionResults": {},
+      "day": 3,
+      "ending": null,
+      "eventId": null,
+      "nodeId": "a740e595-df89-4218-bee0-f1246c0c62d5",
+      "phase": "before_activity",
+      "step": 12,
+      "transition": "a740e595-df89-4218-bee0-f1246c0c62d5",
+      "varsAfter": {
+        "08600ef6-7aa4-4163-b143-da32ef3379e0": 0,
+        "20acde87-894e-4f01-9b23-d4440f20269d": 60,
+        "4f469e1c-c1bc-49e2-882f-b93e9e8fadaa": 20
+      },
+      "varsBefore": {
+        "08600ef6-7aa4-4163-b143-da32ef3379e0": 0,
+        "20acde87-894e-4f01-9b23-d4440f20269d": 60,
+        "4f469e1c-c1bc-49e2-882f-b93e9e8fadaa": 20
+      },
+      "visibleChoices": []
+    },
+    {
+      "choiceId": "4eccebaf-cad6-4042-b235-a0375db5f9f6",
+      "conditionResults": {
+        "4eccebaf-cad6-4042-b235-a0375db5f9f6": true,
+        "719cd82e-c84f-495f-9591-a8e3fd29e38e": true
+      },
+      "day": 3,
+      "ending": null,
+      "eventId": null,
+      "nodeId": "a740e595-df89-4218-bee0-f1246c0c62d5",
+      "phase": "activity",
+      "step": 13,
+      "transition": "a740e595-df89-4218-bee0-f1246c0c62d5",
+      "varsAfter": {
+        "08600ef6-7aa4-4163-b143-da32ef3379e0": 0,
+        "20acde87-894e-4f01-9b23-d4440f20269d": 80,
+        "4f469e1c-c1bc-49e2-882f-b93e9e8fadaa": 20
+      },
+      "varsBefore": {
+        "08600ef6-7aa4-4163-b143-da32ef3379e0": 0,
+        "20acde87-894e-4f01-9b23-d4440f20269d": 60,
+        "4f469e1c-c1bc-49e2-882f-b93e9e8fadaa": 20
+      },
+      "visibleChoices": [
+        "719cd82e-c84f-495f-9591-a8e3fd29e38e",
+        "4eccebaf-cad6-4042-b235-a0375db5f9f6"
+      ]
+    },
+    {
+      "choiceId": null,
+      "conditionResults": {
+        "91aa65f2-5d27-4c27-9e76-f02e44de1f9e": true
+      },
+      "day": 3,
+      "ending": null,
+      "eventId": "91aa65f2-5d27-4c27-9e76-f02e44de1f9e",
+      "nodeId": "a740e595-df89-4218-bee0-f1246c0c62d5",
+      "phase": "after_activity",
+      "step": 14,
+      "transition": "e9e7aea3-1232-426d-b3ef-1d792a362868",
+      "varsAfter": {
+        "08600ef6-7aa4-4163-b143-da32ef3379e0": 0,
+        "20acde87-894e-4f01-9b23-d4440f20269d": 80,
+        "4f469e1c-c1bc-49e2-882f-b93e9e8fadaa": 20
+      },
+      "varsBefore": {
+        "08600ef6-7aa4-4163-b143-da32ef3379e0": 0,
+        "20acde87-894e-4f01-9b23-d4440f20269d": 80,
+        "4f469e1c-c1bc-49e2-882f-b93e9e8fadaa": 20
+      },
+      "visibleChoices": []
+    },
+    {
+      "choiceId": "7d42cb86-947d-4e7e-be73-9934b36bf205",
+      "conditionResults": {
+        "67af2b5d-f56b-4052-9cdd-463efd849e65": true,
+        "7d42cb86-947d-4e7e-be73-9934b36bf205": true
+      },
+      "day": 3,
+      "ending": null,
+      "eventId": null,
+      "nodeId": "e9e7aea3-1232-426d-b3ef-1d792a362868",
+      "phase": "scene",
+      "step": 15,
+      "transition": "f8058caf-c940-4592-98c2-9088378bb3ce",
+      "varsAfter": {
+        "08600ef6-7aa4-4163-b143-da32ef3379e0": 0,
+        "20acde87-894e-4f01-9b23-d4440f20269d": 80,
+        "4f469e1c-c1bc-49e2-882f-b93e9e8fadaa": 20
+      },
+      "varsBefore": {
+        "08600ef6-7aa4-4163-b143-da32ef3379e0": 0,
+        "20acde87-894e-4f01-9b23-d4440f20269d": 80,
+        "4f469e1c-c1bc-49e2-882f-b93e9e8fadaa": 20
+      },
+      "visibleChoices": [
+        "7d42cb86-947d-4e7e-be73-9934b36bf205",
+        "67af2b5d-f56b-4052-9cdd-463efd849e65"
+      ]
+    },
+    {
+      "choiceId": null,
+      "conditionResults": {},
+      "day": 3,
+      "ending": "f8058caf-c940-4592-98c2-9088378bb3ce",
+      "eventId": null,
+      "nodeId": "f8058caf-c940-4592-98c2-9088378bb3ce",
+      "phase": "end",
+      "step": 16,
+      "transition": "ending:f8058caf-c940-4592-98c2-9088378bb3ce",
+      "varsAfter": {
+        "08600ef6-7aa4-4163-b143-da32ef3379e0": 0,
+        "20acde87-894e-4f01-9b23-d4440f20269d": 80,
+        "4f469e1c-c1bc-49e2-882f-b93e9e8fadaa": 20
+      },
+      "varsBefore": {
+        "08600ef6-7aa4-4163-b143-da32ef3379e0": 0,
+        "20acde87-894e-4f01-9b23-d4440f20269d": 80,
+        "4f469e1c-c1bc-49e2-882f-b93e9e8fadaa": 20
+      },
+      "visibleChoices": []
+    }
+  ],
+  "sdkGame": "C:\\LocalDevine\\www\\GameStudio\\temp\\phase-1.7-full-sdk-8ee93716-1e54-4d21-9287-e8842794a831",
+  "expectedRunState": {
+    "day": 3,
+    "firedEventIds": [
+      "91aa65f2-5d27-4c27-9e76-f02e44de1f9e"
+    ],
+    "nodeId": "f8058caf-c940-4592-98c2-9088378bb3ce",
+    "vars": {
+      "08600ef6-7aa4-4163-b143-da32ef3379e0": 0,
+      "20acde87-894e-4f01-9b23-d4440f20269d": 80,
+      "4f469e1c-c1bc-49e2-882f-b93e9e8fadaa": 20
+    }
+  },
+  "expectedEnding": "f8058caf-c940-4592-98c2-9088378bb3ce",
+  "browser": "157.0.4341.46"
+}

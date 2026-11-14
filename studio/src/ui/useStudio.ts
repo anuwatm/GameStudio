@@ -8,7 +8,7 @@ import {drafts as listDrafts,draftFor,putDraft,removeDraft,acquireProject,reques
 import {exportToFolder,saveWarnings,initializeTemplate,recoverExportFolder} from '../core/export';
 import {stableJSON} from '../core/editor';
 export function useStudio(supported:boolean){
- const client=useRef<CoreClient|null>(null),active=useRef(true),guard=useRef(false),ack=useRef<Project|null>(null);
+ const client=useRef<CoreClient|null>(null),active=useRef(true),guard=useRef(false),departed=useRef(false),ack=useRef<Project|null>(null);
  const [project,setProject]=useState<Project|null>(null),[folder,setFolder]=useState<FolderSession|null>(null),[saved,setSaved]=useState('');
  const [ready,setReady]=useState(false),[busy,setBusy]=useState(false),[status,setStatus]=useState('กำลังเริ่ม Core…'),[error,setError]=useState(''),[session,setSession]=useState(0);
  const [undo,setUndo]=useState(0),[redo,setRedo]=useState(0),[issues,setIssues]=useState<Issue[]|null>(null);
@@ -17,6 +17,13 @@ export function useStudio(supported:boolean){
  const [drafts,setDrafts]=useState<Draft[]>([]),[pending,setPending]=useState<{draft:Draft;folder:FolderSession|null;project:Project}|null>(null),[storageStatus,setStorageStatus]=useState('ยังไม่มีโปรเจกต์'),[saveProblem,setSaveProblem]=useState('');
  const refreshDrafts=useCallback(async()=>setDrafts(await listDrafts()),[]);
  useEffect(()=>{void refreshDrafts().catch(e=>{setStorageStatus('เก็บร่างไม่ได้');setError(String(e));});return()=>{lease.current?.release();lease.current=null;};},[refreshDrafts]);
+ useEffect(()=>{
+  const leave=()=>{departed.current=true;if(!guard.current){lease.current?.release();lease.current=null;}};
+  // A restored document must reacquire ownership through the normal open/recovery flow.
+  const restore=(event:PageTransitionEvent)=>{if(event.persisted&&departed.current)window.location.reload();};
+  window.addEventListener('pagehide',leave);window.addEventListener('pageshow',restore);
+  return()=>{window.removeEventListener('pagehide',leave);window.removeEventListener('pageshow',restore);};
+ },[]);
  const checkpoint=useCallback(async(next:Project)=>{
   if(stableJSON(next)===baseline.current){const old=latestDraft.current;if(old){await removeDraft(next.id,old.revision);latestDraft.current=null;await refreshDrafts();}setStorageStatus(previous=>previous.includes('ลงโฟลเดอร์ไม่สำเร็จ')?'ไม่มีการแก้ไขใหม่ · ตรวจไฟล์บนดิสก์ก่อนทำต่อ':'บันทึกแล้ว');return;}
   const draft:Draft={project:next,sourceRevision:source.current?.hash??null,revision:crypto.randomUUID(),updatedAt:Date.now(),root:source.current?.root??null};
@@ -34,8 +41,8 @@ export function useStudio(supported:boolean){
   return()=>{disposed=true;active.current=false;c.close();client.current=null;};
  },[supported,session]);
  const run=useCallback(async(action:(c:CoreClient)=>Promise<void>)=>{
-  const c=client.current;if(!c||guard.current)return;guard.current=true;setBusy(true);setError('');
-  try{await action(c);return true;}catch(e){if(active.current){setError(e instanceof CoreError?`${e.code}: ${e.message}`:String(e));if(c.closed){setReady(false);setStatus('Core หยุดทำงาน');}}return false;}finally{guard.current=false;if(active.current)setBusy(false);}
+  const c=client.current;if(!c||guard.current||departed.current)return;guard.current=true;setBusy(true);setError('');
+  try{await action(c);return true;}catch(e){if(active.current){setError(e instanceof CoreError?`${e.code}: ${e.message}`:String(e));if(c.closed){setReady(false);setStatus('Core หยุดทำงาน');}}return false;}finally{guard.current=false;if(departed.current){lease.current?.release();lease.current=null;}if(active.current)setBusy(false);}
  },[]);
  const load=useCallback(async(next:Project,origin:FolderSession|null=null,recover=false,savedBaseline?:string)=>{let loaded=false;const ok=await run(async c=>{
   const previous=lease.current;const acquired=previous?.id===next.id?previous:await acquireProject(next.id);

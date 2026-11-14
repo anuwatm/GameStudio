@@ -1,0 +1,155 @@
+{
+  "passed": true,
+  "mode": "production UI + real Worker/IndexedDB/Web Locks/OPFS; injected picker, write and IDB faults",
+  "checks": [
+    "Debounced Autosave writes latest acknowledged edit after ~2s; IDB precedes disk and clears committed draft",
+    "Real page close before debounce → persisted IndexedDB draft and folder handle → recovery to unchanged source revision",
+    "Session Web Lock blocks duplicate tab before editing; page close releases ownership and next tab opens",
+    "Write permission loss pauses Autosave with recoverable draft; user regrant action retries successfully",
+    "External hash conflict never overwrites file; copy gets new Project ID and detached folder",
+    "Recovery detects revision changed while page was closed; opens detached copy without writing external source",
+    "IDB quota failure retains acknowledged memory, blocks disk Autosave and exposes retry without false recoverable status",
+    "Undo to saved baseline removes obsolete draft and does not resurrect undone edits"
+  ],
+  "pageErrors": [],
+  "closeRecoveryLockEvents": [
+    {
+      "name": "storyflow-project:e769ed8b-58ac-4362-b734-8f2c687e08d9",
+      "time": 1174.6999999999534,
+      "granted": true,
+      "state": {
+        "held": [
+          {
+            "clientId": "4E15CC2B5D90DEE65732FC9CA8B0597A",
+            "mode": "exclusive",
+            "name": "storyflow-project:e769ed8b-58ac-4362-b734-8f2c687e08d9"
+          }
+        ],
+        "pending": []
+      }
+    }
+  ],
+  "closeStress": [
+    {
+      "cycle": 0,
+      "lockEvents": [
+        {
+          "name": "storyflow-project:e769ed8b-58ac-4362-b734-8f2c687e08d9",
+          "time": 1219.4000000000233,
+          "granted": true,
+          "state": {
+            "held": [
+              {
+                "clientId": "3FC753C9A79D5970F1553F33D678ADAE",
+                "mode": "exclusive",
+                "name": "storyflow-project:e769ed8b-58ac-4362-b734-8f2c687e08d9"
+              }
+            ],
+            "pending": []
+          }
+        }
+      ]
+    },
+    {
+      "cycle": 1,
+      "lockEvents": [
+        {
+          "name": "storyflow-project:e769ed8b-58ac-4362-b734-8f2c687e08d9",
+          "time": 1180,
+          "granted": true,
+          "state": {
+            "held": [
+              {
+                "clientId": "A37616BA46377F64DBDE35FB253B4360",
+                "mode": "exclusive",
+                "name": "storyflow-project:e769ed8b-58ac-4362-b734-8f2c687e08d9"
+              }
+            ],
+            "pending": []
+          }
+        }
+      ]
+    },
+    {
+      "cycle": 2,
+      "lockEvents": [
+        {
+          "name": "storyflow-project:e769ed8b-58ac-4362-b734-8f2c687e08d9",
+          "time": 1177.3000000000466,
+          "granted": true,
+          "state": {
+            "held": [
+              {
+                "clientId": "282437E6B35174FF8D021FF129D04011",
+                "mode": "exclusive",
+                "name": "storyflow-project:e769ed8b-58ac-4362-b734-8f2c687e08d9"
+              }
+            ],
+            "pending": []
+          }
+        }
+      ]
+    },
+    {
+      "cycle": 3,
+      "lockEvents": [
+        {
+          "name": "storyflow-project:e769ed8b-58ac-4362-b734-8f2c687e08d9",
+          "time": 3336.0999999999767,
+          "granted": true,
+          "state": {
+            "held": [
+              {
+                "clientId": "E072F33013F94DE902187961B1D9C43C",
+                "mode": "exclusive",
+                "name": "storyflow-project:e769ed8b-58ac-4362-b734-8f2c687e08d9"
+              }
+            ],
+            "pending": []
+          }
+        }
+      ]
+    },
+    {
+      "cycle": 4,
+      "lockEvents": [
+        {
+          "name": "storyflow-project:e769ed8b-58ac-4362-b734-8f2c687e08d9",
+          "time": 1510.8000000000466,
+          "granted": true,
+          "state": {
+            "held": [
+              {
+                "clientId": "B85E703F3EADA382E1E706AF87E01D0D",
+                "mode": "exclusive",
+                "name": "storyflow-project:e769ed8b-58ac-4362-b734-8f2c687e08d9"
+              }
+            ],
+            "pending": []
+          }
+        }
+      ]
+    },
+    {
+      "cycle": 5,
+      "lockEvents": [
+        {
+          "name": "storyflow-project:e769ed8b-58ac-4362-b734-8f2c687e08d9",
+          "time": 1227.2999999999302,
+          "granted": true,
+          "state": {
+            "held": [
+              {
+                "clientId": "4EB6BCB722F3A72E5C85214F03602877",
+                "mode": "exclusive",
+                "name": "storyflow-project:e769ed8b-58ac-4362-b734-8f2c687e08d9"
+              }
+            ],
+            "pending": []
+          }
+        }
+      ]
+    }
+  ],
+  "browser": "157.0.4341.46"
+}

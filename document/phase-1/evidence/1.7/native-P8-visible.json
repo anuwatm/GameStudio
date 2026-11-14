@@ -1,0 +1,189 @@
+{
+  "passed": true,
+  "status": "complete",
+  "samples": [
+    {
+      "round": 0,
+      "warmup": true,
+      "ms": 1935.2000000001863,
+      "hashes": {
+        "game/storyflow_generated/sf_runtime.rpy": {
+          "expected": "d65775b0088329110a8942125481ece2680e4fc674cc38c1b8e25a04dce37cd3",
+          "actual": "d65775b0088329110a8942125481ece2680e4fc674cc38c1b8e25a04dce37cd3",
+          "equal": true
+        },
+        "game/storyflow_generated/sf_schedule.rpy": {
+          "expected": "9e6b4f57070b6d01bc447fc11b3e366f427dc33b28eb29c310529bae7484dec8",
+          "actual": "9e6b4f57070b6d01bc447fc11b3e366f427dc33b28eb29c310529bae7484dec8",
+          "equal": true
+        },
+        "game/storyflow_generated/sf_story.rpy": {
+          "expected": "f898d3b6bb901ff690d2e40f21515790172967473018ffe2cdfb5a1c712e56ba",
+          "actual": "f898d3b6bb901ff690d2e40f21515790172967473018ffe2cdfb5a1c712e56ba",
+          "equal": true
+        },
+        "game/storyflow_generated/sf_variables.rpy": {
+          "expected": "d93a8a273d4dc27e779e9c3725d6a0b316de1c4605cef28a3d82e1fcd9d45b8f",
+          "actual": "d93a8a273d4dc27e779e9c3725d6a0b316de1c4605cef28a3d82e1fcd9d45b8f",
+          "equal": true
+        }
+      },
+      "savedSceneText": "P8 visible native edit 0 ไทย"
+    },
+    {
+      "round": 1,
+      "warmup": false,
+      "ms": 1860.2000000001863,
+      "hashes": {
+        "game/storyflow_generated/sf_runtime.rpy": {
+          "expected": "d65775b0088329110a8942125481ece2680e4fc674cc38c1b8e25a04dce37cd3",
+          "actual": "d65775b0088329110a8942125481ece2680e4fc674cc38c1b8e25a04dce37cd3",
+          "equal": true
+        },
+        "game/storyflow_generated/sf_schedule.rpy": {
+          "expected": "9e6b4f57070b6d01bc447fc11b3e366f427dc33b28eb29c310529bae7484dec8",
+          "actual": "9e6b4f57070b6d01bc447fc11b3e366f427dc33b28eb29c310529bae7484dec8",
+          "equal": true
+        },
+        "game/storyflow_generated/sf_story.rpy": {
+          "expected": "a0a19574b99fb878e943720b5494c6b1f71173e8790c988020cc475a451b10b4",
+          "actual": "a0a19574b99fb878e943720b5494c6b1f71173e8790c988020cc475a451b10b4",
+          "equal": true
+        },
+        "game/storyflow_generated/sf_variables.rpy": {
+          "expected": "d93a8a273d4dc27e779e9c3725d6a0b316de1c4605cef28a3d82e1fcd9d45b8f",
+          "actual": "d93a8a273d4dc27e779e9c3725d6a0b316de1c4605cef28a3d82e1fcd9d45b8f",
+          "equal": true
+        }
+      },
+      "savedSceneText": "P8 visible native edit 1 ไทย"
+    },
+    {
+      "round": 2,
+      "warmup": false,
+      "ms": 1567.7000000001863,
+      "hashes": {
+        "game/storyflow_generated/sf_runtime.rpy": {
+          "expected": "d65775b0088329110a8942125481ece2680e4fc674cc38c1b8e25a04dce37cd3",
+          "actual": "d65775b0088329110a8942125481ece2680e4fc674cc38c1b8e25a04dce37cd3",
+          "equal": true
+        },
+        "game/storyflow_generated/sf_schedule.rpy": {
+          "expected": "9e6b4f57070b6d01bc447fc11b3e366f427dc33b28eb29c310529bae7484dec8",
+          "actual": "9e6b4f57070b6d01bc447fc11b3e366f427dc33b28eb29c310529bae7484dec8",
+          "equal": true
+        },
+        "game/storyflow_generated/sf_story.rpy": {
+          "expected": "a3adb8241754243789cc5037a742e8118ad950c63a2715f1b4a097f5e75da98d",
+          "actual": "a3adb8241754243789cc5037a742e8118ad950c63a2715f1b4a097f5e75da98d",
+          "equal": true
+        },
+        "game/storyflow_generated/sf_variables.rpy": {
+          "expected": "d93a8a273d4dc27e779e9c3725d6a0b316de1c4605cef28a3d82e1fcd9d45b8f",
+          "actual": "d93a8a273d4dc27e779e9c3725d6a0b316de1c4605cef28a3d82e1fcd9d45b8f",
+          "equal": true
+        }
+      },
+      "savedSceneText": "P8 visible native edit 2 ไทย"
+    },
+    {
+      "round": 3,
+      "warmup": false,
+      "ms": 1743.5,
+      "hashes": {
+        "game/storyflow_generated/sf_runtime.rpy": {
+          "expected": "d65775b0088329110a8942125481ece2680e4fc674cc38c1b8e25a04dce37cd3",
+          "actual": "d65775b0088329110a8942125481ece2680e4fc674cc38c1b8e25a04dce37cd3",
+          "equal": true
+        },
+        "game/storyflow_generated/sf_schedule.rpy": {
+          "expected": "9e6b4f57070b6d01bc447fc11b3e366f427dc33b28eb29c310529bae7484dec8",
+          "actual": "9e6b4f57070b6d01bc447fc11b3e366f427dc33b28eb29c310529bae7484dec8",
+          "equal": true
+        },
+        "game/storyflow_generated/sf_story.rpy": {
+          "expected": "b2daadd1969c5b2672189005a4ba7fa3de496e316e502870249be39cd02ab58d",
+          "actual": "b2daadd1969c5b2672189005a4ba7fa3de496e316e502870249be39cd02ab58d",
+          "equal": true
+        },
+        "game/storyflow_generated/sf_variables.rpy": {
+          "expected": "d93a8a273d4dc27e779e9c3725d6a0b316de1c4605cef28a3d82e1fcd9d45b8f",
+          "actual": "d93a8a273d4dc27e779e9c3725d6a0b316de1c4605cef28a3d82e1fcd9d45b8f",
+          "equal": true
+        }
+      },
+      "savedSceneText": "P8 visible native edit 3 ไทย"
+    },
+    {
+      "round": 4,
+      "warmup": false,
+      "ms": 1627.2000000001863,
+      "hashes": {
+        "game/storyflow_generated/sf_runtime.rpy": {
+          "expected": "d65775b0088329110a8942125481ece2680e4fc674cc38c1b8e25a04dce37cd3",
+          "actual": "d65775b0088329110a8942125481ece2680e4fc674cc38c1b8e25a04dce37cd3",
+          "equal": true
+        },
+        "game/storyflow_generated/sf_schedule.rpy": {
+          "expected": "9e6b4f57070b6d01bc447fc11b3e366f427dc33b28eb29c310529bae7484dec8",
+          "actual": "9e6b4f57070b6d01bc447fc11b3e366f427dc33b28eb29c310529bae7484dec8",
+          "equal": true
+        },
+        "game/storyflow_generated/sf_story.rpy": {
+          "expected": "3ee7717f062d0e51651d34bdf9e5d9ceef20fae0fe87edd8129d2d26b6de55d4",
+          "actual": "3ee7717f062d0e51651d34bdf9e5d9ceef20fae0fe87edd8129d2d26b6de55d4",
+          "equal": true
+        },
+        "game/storyflow_generated/sf_variables.rpy": {
+          "expected": "d93a8a273d4dc27e779e9c3725d6a0b316de1c4605cef28a3d82e1fcd9d45b8f",
+          "actual": "d93a8a273d4dc27e779e9c3725d6a0b316de1c4605cef28a3d82e1fcd9d45b8f",
+          "equal": true
+        }
+      },
+      "savedSceneText": "P8 visible native edit 4 ไทย"
+    },
+    {
+      "round": 5,
+      "warmup": false,
+      "ms": 1631.7000000001863,
+      "hashes": {
+        "game/storyflow_generated/sf_runtime.rpy": {
+          "expected": "d65775b0088329110a8942125481ece2680e4fc674cc38c1b8e25a04dce37cd3",
+          "actual": "d65775b0088329110a8942125481ece2680e4fc674cc38c1b8e25a04dce37cd3",
+          "equal": true
+        },
+        "game/storyflow_generated/sf_schedule.rpy": {
+          "expected": "9e6b4f57070b6d01bc447fc11b3e366f427dc33b28eb29c310529bae7484dec8",
+          "actual": "9e6b4f57070b6d01bc447fc11b3e366f427dc33b28eb29c310529bae7484dec8",
+          "equal": true
+        },
+        "game/storyflow_generated/sf_story.rpy": {
+          "expected": "232f515c6e562d2f685ace91d90e08a0fe085b5bebe5a7a0185133a072fe9b97",
+          "actual": "232f515c6e562d2f685ace91d90e08a0fe085b5bebe5a7a0185133a072fe9b97",
+          "equal": true
+        },
+        "game/storyflow_generated/sf_variables.rpy": {
+          "expected": "d93a8a273d4dc27e779e9c3725d6a0b316de1c4605cef28a3d82e1fcd9d45b8f",
+          "actual": "d93a8a273d4dc27e779e9c3725d6a0b316de1c4605cef28a3d82e1fcd9d45b8f",
+          "equal": true
+        }
+      },
+      "savedSceneText": "P8 visible native edit 5 ไทย"
+    }
+  ],
+  "folder": "C:\\LocalDevine\\www\\GameStudio\\temp\\phase-1.7-native-b46886bc-ec4b-4a66-b9c5-6f52146b3729",
+  "fixtureHash": "020b6ac0b897e41760b8529d14cfba7fbb047901fed303c2f587ebdb8cfc8447",
+  "nodeCount": 9,
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36 Edg/157.0.0.0",
+  "hardwareConcurrency": 4,
+  "method": "real native showDirectoryPicker and production UI iframe; Apply→Core/IDB→manual Save→Export→native commit→paint success; warmup1+5; no OPFS/Node adapter",
+  "nativeHandle": {
+    "name": "phase-1.7-native-b46886bc-ec4b-4a66-b9c5-6f52146b3729",
+    "kind": "directory",
+    "permission": "granted"
+  },
+  "uiBuild": "./assets/index-BhoyhudF.js",
+  "median": 1631.7000000001863,
+  "max": 1860.2000000001863,
+  "limit": 5000
+}

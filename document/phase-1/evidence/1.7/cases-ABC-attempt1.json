@@ -1,0 +1,336 @@
+{
+  "passed": false,
+  "root": "C:\\LocalDevine\\www\\GameStudio\\temp\\phase-1.7-cases-75f1fab5-bb4b-413b-92d2-c86658eeb8bf",
+  "A": [
+    {
+      "case": "A1",
+      "passed": true,
+      "steps": 16
+    },
+    {
+      "case": "A2-2-20",
+      "passed": true,
+      "steps": 6
+    },
+    {
+      "case": "A2-3-19",
+      "passed": true,
+      "steps": 6
+    },
+    {
+      "case": "A2-3-20",
+      "passed": true,
+      "steps": 5
+    },
+    {
+      "case": "A3",
+      "passed": true,
+      "steps": 12
+    },
+    {
+      "case": "A4",
+      "passed": true,
+      "steps": 6
+    },
+    {
+      "case": "A5",
+      "passed": true,
+      "steps": 6
+    },
+    {
+      "case": "A6",
+      "passed": true,
+      "steps": 8
+    },
+    {
+      "case": "Aplus-low",
+      "passed": true,
+      "steps": 7
+    },
+    {
+      "case": "Aplus-high",
+      "passed": true,
+      "steps": 7
+    }
+  ],
+  "B": {
+    "sdk": "Ren'Py 8.3.7.25031702",
+    "rows": [
+      {
+        "stage": "say",
+        "who": "ภาษาไทย กิ่ง กุ้ง ผู้หญิง น้ำ เก้า [name] ] {b} } 100% \"คำพูด\" \\path",
+        "what": "ภาษาไทย กิ่ง กุ้ง ผู้หญิง น้ำ เก้า [name] ] {b} } 100% \"คำพูด\" \\path\nทดสอบการตัดบรรทัดภาษาไทยโดยไม่เติมช่องว่างและตำแหน่งสระวรรณยุกต์ทดสอบการตัดบรรทัดภาษาไทยโดยไม่เติมช่องว่างและตำแหน่งสระวรรณยุกต์ทดสอบการตัดบรรทัดภาษาไทยโดยไม่เติมช่องว่างและตำแหน่งสระวรรณยุกต์ทดสอบการตัดบรรทัดภาษาไทยโดยไม่เติมช่องว่างและตำแหน่งสระวรรณยุกต์ทดสอบการตัดบรรทัดภาษาไทยโดยไม่เติมช่องว่างและตำแหน่งสระวรรณยุกต์",
+        "stringInitial": "ภาษาไทย กิ่ง กุ้ง ผู้หญิง น้ำ เก้า [name] ] {b} } 100% \"คำพูด\" \\path"
+      },
+      {
+        "stage": "choice",
+        "caption": "ภาษาไทย กิ่ง กุ้ง ผู้หญิง น้ำ เก้า [name] ] {b} } 100% \"คำพูด\" \\path"
+      },
+      {
+        "stage": "string",
+        "stringAfterEffect": "ภาษาไทย กิ่ง กุ้ง ผู้หญิง น้ำ เก้า [name] ] {b} } 100% \"คำพูด\" \\path หลังตั้งค่า\nบรรทัดใหม่"
+      }
+    ],
+    "layouts": [
+      {
+        "widget": "who",
+        "width": 852.0,
+        "lines": 1
+      },
+      {
+        "widget": "what",
+        "width": 1192.0,
+        "lines": 5
+      },
+      {
+        "widget": "variable",
+        "width": 815.2,
+        "lines": 1
+      },
+      {
+        "widget": "caption",
+        "width": 815.2,
+        "lines": 1
+      },
+      {
+        "widget": "result",
+        "width": 927.2,
+        "lines": 2
+      }
+    ],
+    "movies": [
+      {
+        "path": "assets/probe.webm",
+        "elapsed": 3.110000000000582,
+        "interrupted": false
+      }
+    ],
+    "samples": [
+      {
+        "pos": 0.085,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 0.128,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 0.17,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 0.213,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 0.298,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 0.341,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 0.384,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 0.469,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 0.597,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 0.64,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 0.682,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 0.768,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 0.81,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 0.853,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 0.896,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 0.938,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 0.981,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 1.066,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 1.109,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 1.152,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 1.194,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 1.28,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 1.322,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 1.365,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 1.408,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 1.45,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 1.493,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 1.578,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 1.621,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 1.792,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 1.792,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 1.877,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 1.92,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 1.962,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 2.005,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 2.048,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 2.133,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 2.176,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 2.218,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 2.261,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 2.346,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 2.389,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 2.432,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 2.474,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 2.517,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 2.56,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 2.645,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 2.688,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 2.73,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 2.773,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 2.816,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 2.858,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 2.944,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 2.986,
+        "playing": "assets/probe.webm"
+      },
+      {
+        "pos": 3.029,
+        "playing": "assets/probe.webm"
+      }
+    ],
+    "audio": {
+      "pcm_ok": true,
+      "driver": "default"
+    },
+    "ending": "00000000-0000-4000-8000-0000000003ea"
+  }
+}

@@ -11,7 +11,14 @@ export function putDraft(draft:Draft){return transaction<void>('readwrite',(s)=>
 export function removeDraft(id:string,revision:string){return transaction<void>('readwrite',s=>{const req=s.get(id);req.onsuccess=()=>{if(req.result?.revision===revision)s.delete(id);};});}
 export type Lease={id:string;release:()=>void};
 export async function acquireProject(id:string):Promise<Lease>{
- return new Promise((resolve,reject)=>{let finish:()=>void;const held=new Promise<void>(r=>finish=r);navigator.locks.request(`storyflow-project:${id}`,{ifAvailable:true},async lock=>{if(!lock){reject(Error('โปรเจกต์นี้เปิดอยู่ในแท็บอื่น กรุณาปิดหรือเปลี่ยนโปรเจกต์ในแท็บนั้นก่อน'));return;}resolve({id,release:()=>finish()});await held;}).catch(reject);});
+ // A destroyed page may release its browser-managed lock just after page.close resolves.
+ // Every retry remains ifAvailable: never queue behind, steal, or bypass a live owner.
+ for(let attempt=0;attempt<5;attempt++){
+  const lease=await new Promise<Lease|null>((resolve,reject)=>{let finish:()=>void;const held=new Promise<void>(r=>finish=r);navigator.locks.request(`storyflow-project:${id}`,{ifAvailable:true},async lock=>{if(!lock){resolve(null);return;}resolve({id,release:()=>finish()});await held;}).catch(reject);});
+  if(lease)return lease;
+  if(attempt<4)await new Promise(resolve=>setTimeout(resolve,250));
+ }
+ throw Error('โปรเจกต์นี้เปิดอยู่ในแท็บอื่น กรุณาปิดหรือเปลี่ยนโปรเจกต์ในแท็บนั้นก่อน');
 }
 export async function requestFolderPermission(root:FileSystemDirectoryHandle){
  const handle=root as FileSystemDirectoryHandle&{requestPermission?:(options:{mode:'readwrite'})=>Promise<PermissionState>};

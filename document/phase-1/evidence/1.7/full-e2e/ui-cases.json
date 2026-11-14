@@ -1,0 +1,335 @@
+{
+  "project": "summer-house.json",
+  "cases": [
+    {
+      "id": "A1",
+      "startNodeId": "e44f6caf-a48f-4905-b2ba-a45d55d83149",
+      "initialVarsOverride": {},
+      "inputs": [
+        "85442a8a-b7e3-4089-b977-a993604003d6",
+        "85442a8a-b7e3-4089-b977-a993604003d6",
+        "2ae6f15a-e80b-4788-b670-c7121b77ac90",
+        "ef00e586-cb40-4038-a2f5-c21c63610717"
+      ],
+      "projectPatch": [],
+      "assertions": [
+        {
+          "eventId": "2a86c63a-45d1-481f-8431-570163830d69",
+          "day": 3
+        },
+        {
+          "ending": "a8bc3d6f-eee7-4ce7-978c-c23b4929fb68"
+        }
+      ]
+    },
+    {
+      "id": "A2-2-20",
+      "startNodeId": "6437fd98-4973-402a-b7cc-19e4311507f0",
+      "initialVarsOverride": {
+        "657bdd1d-d3e6-442e-b4f3-1447a5dc0dc3": 20
+      },
+      "inputs": [
+        "2ae6f15a-e80b-4788-b670-c7121b77ac90"
+      ],
+      "projectPatch": [
+        {
+          "op": "replace",
+          "path": "/nodes/3/startDay",
+          "value": 2
+        },
+        {
+          "op": "replace",
+          "path": "/nodes/3/lastDay",
+          "value": 2
+        }
+      ],
+      "assertions": [
+        {
+          "phase": "after_activity",
+          "conditionResults": {
+            "2a86c63a-45d1-481f-8431-570163830d69": false
+          }
+        },
+        {
+          "ending": "5e364b5c-12c3-4e58-b90d-37f597207596"
+        }
+      ]
+    },
+    {
+      "id": "A2-3-19",
+      "startNodeId": "6437fd98-4973-402a-b7cc-19e4311507f0",
+      "initialVarsOverride": {
+        "657bdd1d-d3e6-442e-b4f3-1447a5dc0dc3": 19
+      },
+      "inputs": [
+        "2ae6f15a-e80b-4788-b670-c7121b77ac90"
+      ],
+      "projectPatch": [
+        {
+          "op": "replace",
+          "path": "/nodes/3/startDay",
+          "value": 3
+        },
+        {
+          "op": "replace",
+          "path": "/nodes/3/lastDay",
+          "value": 3
+        }
+      ],
+      "assertions": [
+        {
+          "phase": "after_activity",
+          "conditionResults": {
+            "2a86c63a-45d1-481f-8431-570163830d69": false
+          }
+        },
+        {
+          "ending": "5e364b5c-12c3-4e58-b90d-37f597207596"
+        }
+      ]
+    },
+    {
+      "id": "A2-3-20",
+      "startNodeId": "6437fd98-4973-402a-b7cc-19e4311507f0",
+      "initialVarsOverride": {
+        "657bdd1d-d3e6-442e-b4f3-1447a5dc0dc3": 20
+      },
+      "inputs": [
+        "2ae6f15a-e80b-4788-b670-c7121b77ac90",
+        "ef00e586-cb40-4038-a2f5-c21c63610717"
+      ],
+      "projectPatch": [
+        {
+          "op": "replace",
+          "path": "/nodes/3/startDay",
+          "value": 3
+        },
+        {
+          "op": "replace",
+          "path": "/nodes/3/lastDay",
+          "value": 3
+        }
+      ],
+      "assertions": [
+        {
+          "eventId": "2a86c63a-45d1-481f-8431-570163830d69",
+          "day": 3
+        },
+        {
+          "ending": "a8bc3d6f-eee7-4ce7-978c-c23b4929fb68"
+        }
+      ]
+    },
+    {
+      "id": "A3",
+      "startNodeId": "6437fd98-4973-402a-b7cc-19e4311507f0",
+      "initialVarsOverride": {
+        "657bdd1d-d3e6-442e-b4f3-1447a5dc0dc3": 20
+      },
+      "inputs": [
+        "2ae6f15a-e80b-4788-b670-c7121b77ac90",
+        "d1226119-fdbe-46b4-95a3-af33831c6e40",
+        "2ae6f15a-e80b-4788-b670-c7121b77ac90"
+      ],
+      "projectPatch": [
+        {
+          "op": "replace",
+          "path": "/nodes/3/startDay",
+          "value": 3
+        },
+        {
+          "op": "replace",
+          "path": "/nodes/3/lastDay",
+          "value": 4
+        }
+      ],
+      "assertions": [
+        {
+          "eventId": "2a86c63a-45d1-481f-8431-570163830d69",
+          "count": 1
+        },
+        {
+          "nodeId": "3fab000f-c0ff-46fa-874f-63f127b40b6c",
+          "transition": "return"
+        },
+        {
+          "ending": "5e364b5c-12c3-4e58-b90d-37f597207596"
+        }
+      ]
+    },
+    {
+      "id": "A4",
+      "startNodeId": "6437fd98-4973-402a-b7cc-19e4311507f0",
+      "initialVarsOverride": {
+        "c973d870-4325-4978-9bfa-27a7623187a1": 100
+      },
+      "inputs": [
+        "2ae6f15a-e80b-4788-b670-c7121b77ac90"
+      ],
+      "projectPatch": [
+        {
+          "op": "replace",
+          "path": "/nodes/3/startDay",
+          "value": 1
+        },
+        {
+          "op": "replace",
+          "path": "/nodes/3/lastDay",
+          "value": 1
+        }
+      ],
+      "assertions": [
+        {
+          "choiceId": "2ae6f15a-e80b-4788-b670-c7121b77ac90",
+          "varsAfter": {
+            "c973d870-4325-4978-9bfa-27a7623187a1": 100
+          }
+        },
+        {
+          "ending": "5e364b5c-12c3-4e58-b90d-37f597207596"
+        }
+      ]
+    },
+    {
+      "id": "A5",
+      "startNodeId": "6437fd98-4973-402a-b7cc-19e4311507f0",
+      "initialVarsOverride": {
+        "c973d870-4325-4978-9bfa-27a7623187a1": 19
+      },
+      "inputs": [
+        "2ae6f15a-e80b-4788-b670-c7121b77ac90"
+      ],
+      "projectPatch": [
+        {
+          "op": "replace",
+          "path": "/nodes/3/startDay",
+          "value": 1
+        },
+        {
+          "op": "replace",
+          "path": "/nodes/3/lastDay",
+          "value": 1
+        }
+      ],
+      "assertions": [
+        {
+          "choiceId": "2ae6f15a-e80b-4788-b670-c7121b77ac90",
+          "visibleChoices": [
+            "2ae6f15a-e80b-4788-b670-c7121b77ac90"
+          ]
+        },
+        {
+          "ending": "5e364b5c-12c3-4e58-b90d-37f597207596"
+        }
+      ]
+    },
+    {
+      "id": "A6",
+      "startNodeId": "6437fd98-4973-402a-b7cc-19e4311507f0",
+      "initialVarsOverride": {
+        "657bdd1d-d3e6-442e-b4f3-1447a5dc0dc3": 20
+      },
+      "inputs": [
+        "2ae6f15a-e80b-4788-b670-c7121b77ac90"
+      ],
+      "projectPatch": [
+        {
+          "op": "replace",
+          "path": "/nodes/3/startDay",
+          "value": 3
+        },
+        {
+          "op": "replace",
+          "path": "/nodes/3/lastDay",
+          "value": 3
+        },
+        {
+          "op": "replace",
+          "path": "/nodes/4/choices/0/visibleIf/right/value",
+          "value": 21
+        },
+        {
+          "op": "replace",
+          "path": "/nodes/4/choices/1/visibleIf/right/value",
+          "value": 21
+        }
+      ],
+      "assertions": [
+        {
+          "nodeId": "8345a1c1-65c6-46f2-aae6-472dcb4b6429",
+          "visibleChoices": [],
+          "transition": "3fab000f-c0ff-46fa-874f-63f127b40b6c"
+        },
+        {
+          "ending": "5e364b5c-12c3-4e58-b90d-37f597207596"
+        }
+      ]
+    },
+    {
+      "id": "Aplus-low",
+      "startNodeId": "01e1c425-2a0e-4d26-a6e6-1bccbd0fbcc8",
+      "initialVarsOverride": {
+        "ed97406f-f325-4169-977e-31e504be527c": -2147483648
+      },
+      "inputs": [
+        "2ae6f15a-e80b-4788-b670-c7121b77ac90"
+      ],
+      "projectPatch": [
+        {
+          "op": "replace",
+          "path": "/nodes/3/startDay",
+          "value": 1
+        },
+        {
+          "op": "replace",
+          "path": "/nodes/3/lastDay",
+          "value": 1
+        }
+      ],
+      "assertions": [
+        {
+          "nodeId": "01e1c425-2a0e-4d26-a6e6-1bccbd0fbcc8",
+          "varsAfter": {
+            "ed97406f-f325-4169-977e-31e504be527c": -2147483647
+          }
+        },
+        {
+          "ending": "5e364b5c-12c3-4e58-b90d-37f597207596"
+        }
+      ]
+    },
+    {
+      "id": "Aplus-high",
+      "startNodeId": "6fe02bb5-1b55-4c8f-ae9e-e1f79fbd7ce6",
+      "initialVarsOverride": {
+        "ed97406f-f325-4169-977e-31e504be527c": 2147483647
+      },
+      "inputs": [
+        "2ae6f15a-e80b-4788-b670-c7121b77ac90"
+      ],
+      "projectPatch": [
+        {
+          "op": "replace",
+          "path": "/nodes/3/startDay",
+          "value": 1
+        },
+        {
+          "op": "replace",
+          "path": "/nodes/3/lastDay",
+          "value": 1
+        }
+      ],
+      "assertions": [
+        {
+          "nodeId": "6fe02bb5-1b55-4c8f-ae9e-e1f79fbd7ce6",
+          "varsAfter": {
+            "ed97406f-f325-4169-977e-31e504be527c": 2147483646
+          }
+        },
+        {
+          "ending": "5e364b5c-12c3-4e58-b90d-37f597207596"
+        }
+      ]
+    }
+  ]
+}

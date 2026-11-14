@@ -1,0 +1,77 @@
+[
+  {
+    "name": "storyflow-project:b7623a85-69be-4322-93aa-b8a404216e88",
+    "time": 2555.899999999907,
+    "granted": false,
+    "state": {
+      "held": [
+        {
+          "clientId": "09FC04D8D7FCAC691DCFBFADC09D6EEC",
+          "mode": "exclusive",
+          "name": "storyflow-project:b7623a85-69be-4322-93aa-b8a404216e88"
+        }
+      ],
+      "pending": []
+    }
+  },
+  {
+    "name": "storyflow-project:b7623a85-69be-4322-93aa-b8a404216e88",
+    "time": 2820,
+    "granted": false,
+    "state": {
+      "held": [
+        {
+          "clientId": "09FC04D8D7FCAC691DCFBFADC09D6EEC",
+          "mode": "exclusive",
+          "name": "storyflow-project:b7623a85-69be-4322-93aa-b8a404216e88"
+        }
+      ],
+      "pending": []
+    }
+  },
+  {
+    "name": "storyflow-project:b7623a85-69be-4322-93aa-b8a404216e88",
+    "time": 3083.6999999999534,
+    "granted": false,
+    "state": {
+      "held": [
+        {
+          "clientId": "09FC04D8D7FCAC691DCFBFADC09D6EEC",
+          "mode": "exclusive",
+          "name": "storyflow-project:b7623a85-69be-4322-93aa-b8a404216e88"
+        }
+      ],
+      "pending": []
+    }
+  },
+  {
+    "name": "storyflow-project:b7623a85-69be-4322-93aa-b8a404216e88",
+    "time": 3347,
+    "granted": false,
+    "state": {
+      "held": [
+        {
+          "clientId": "09FC04D8D7FCAC691DCFBFADC09D6EEC",
+          "mode": "exclusive",
+          "name": "storyflow-project:b7623a85-69be-4322-93aa-b8a404216e88"
+        }
+      ],
+      "pending": []
+    }
+  },
+  {
+    "name": "storyflow-project:b7623a85-69be-4322-93aa-b8a404216e88",
+    "time": 3609.6999999999534,
+    "granted": false,
+    "state": {
+      "held": [
+        {
+          "clientId": "09FC04D8D7FCAC691DCFBFADC09D6EEC",
+          "mode": "exclusive",
+          "name": "storyflow-project:b7623a85-69be-4322-93aa-b8a404216e88"
+        }
+      ],
+      "pending": []
+    }
+  }
+]

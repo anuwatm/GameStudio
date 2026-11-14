@@ -1,11 +1,13 @@
-import sys, pathlib, json, threading, functools, http.server
+import sys, pathlib, json, threading, functools, http.server, os
 from playwright.sync_api import sync_playwright
 root=pathlib.Path(sys.argv[1]).resolve()
-handler=functools.partial(http.server.SimpleHTTPRequestHandler,directory=str(root))
+class Handler(http.server.SimpleHTTPRequestHandler):
+ extensions_map={**http.server.SimpleHTTPRequestHandler.extensions_map,'.js':'text/javascript','.mjs':'text/javascript'}
+handler=functools.partial(Handler,directory=str(root))
 server=http.server.ThreadingHTTPServer(('127.0.0.1',0),handler)
 threading.Thread(target=server.serve_forever,daemon=True).start()
 url=f'http://127.0.0.1:{server.server_port}/recovery-proof.html'
-profile=str(root/'profile')
+profile=os.environ.get('SF_RECOVERY_PROFILE',str(root/'profile'))
 with sync_playwright() as p:
  def launch():return p.chromium.launch_persistent_context(profile,executable_path='C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',headless=True)
  context=launch();page=context.new_page();page.goto(url);page.wait_for_function('window.sfProof')
@@ -22,7 +24,7 @@ with sync_playwright() as p:
  page.close();page=context.new_page();page.goto(url);page.wait_for_function('window.sfProof')
  permission_recovery=page.evaluate('sfProof.recover()');assert permission_recovery['equal']
  report={'pageClose':{'passed':True,'method':'page.close then context.close; reopen persistent profile on same origin','paused':paused,'result':result,'repeat':repeat},'permissionInjection':{'passed':True,'actualPermissionRevocation':False,'failure':failure,'result':permission_recovery},'userAgent':page.evaluate('navigator.userAgent')}
- pathlib.Path('document/phase-0b/evidence/recovery-browser-report.json').write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
+ pathlib.Path(os.environ.get('SF_RECOVERY_CASE_OUT','document/phase-0b/evidence/recovery-browser-report.json')).write_text(json.dumps(report,ensure_ascii=False,indent=2),encoding='utf-8')
  context.close()
 server.shutdown()
 print('PASS real page/context close and recovery; PASS explicit NotAllowedError injection; native permission verified separately by native audit')

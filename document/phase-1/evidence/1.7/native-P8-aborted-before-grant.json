@@ -1,0 +1,12 @@
+{
+  "passed": false,
+  "status": "failed",
+  "samples": [],
+  "folder": "C:\\LocalDevine\\www\\GameStudio\\temp\\phase-1.7-native-b46886bc-ec4b-4a66-b9c5-6f52146b3729",
+  "fixtureHash": "020b6ac0b897e41760b8529d14cfba7fbb047901fed303c2f587ebdb8cfc8447",
+  "nodeCount": 9,
+  "browser": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36",
+  "hardwareConcurrency": 4,
+  "method": "real native showDirectoryPicker and production UI iframe; Apply→Core/IDB→manual Save→Export→native commit→paint success; warmup1+5; no OPFS/Node adapter",
+  "error": "AbortError: Failed to execute 'showDirectoryPicker' on 'Window': The user aborted a request."
+}

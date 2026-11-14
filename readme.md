@@ -2,7 +2,7 @@
 
 StoryFlow คือเว็บสตูดิโอสำหรับผู้สร้างเกมเดี่ยวและทีมเล็ก ใช้กราฟวางฉาก บทสนทนา คลิป และตัวเลือกสำหรับเกม Visual Novel, FMV, Dating Sim และ Life Sim แล้วส่งออกเป็นโปรเจกต์ที่เล่นใน Ren’Py SDK ได้
 
-**สถานะล่าสุด (2026-11-14):** 1.1–1.6 ตรวจรับร่วมแล้ว; Export UI ส่งออกด้วย Transaction พร้อม Source Map/Save warning และตรวจ SDK แล้ว พร้อมเริ่มพัฒนา 1.7 (ตรวจครบวงจร End-to-End กลุ่ม A–D และวัดประสิทธิภาพ) ดู [checklist](checklist.md) และ [ผล 1.6](document/phase-1/export-1.6.md)
+**สถานะล่าสุด (2026-11-14):** Phase 1 (1.1–1.7 และ Gate 1) ตรวจรับร่วมปิดสมบูรณ์แล้ว; UI→SDK และชุดทดสอบ A–D ผ่านครบ พร้อมตัวเลขประสิทธิภาพ P1–P8 บน baseline 2,000 โหนดและโฟลเดอร์จริง พร้อมเริ่ม Phase 2 ดู [checklist](checklist.md) และ [ผล 1.7](document/phase-1/end-to-end-1.7.md)
 
 รันหน้าจอด้วย `npm --prefix studio ci` แล้ว `npm --prefix studio run dev` หลัง build WASM ตาม [วิธีรัน Studio](studio/README.md)
 
@@ -27,7 +27,7 @@ StoryFlow คือเว็บสตูดิโอสำหรับผู้�
 
 [ภาพ Dark](document/diagrams/storyflow-stack-dark.png) · [HTML แบบเปิดออฟไลน์](document/diagrams/storyflow-stack.html) · [ที่มาและวิธีปรับภาพ](document/diagrams/README.md)
 
-React/React Flow เชื่อม Worker แล้วใน 1.1; IndexedDB/Autosave/Web Locks เชื่อมแล้วใน1.5 Export UI เชื่อมแล้วใน1.6 รอตรวจรับร่วม ส่วน Rust/WASM, Core Contract และ Local Folder/Transaction ผ่านขั้นพิสูจน์ต้นแบบแล้ว Node.js ใช้ build frontend และทดสอบ ไม่ใช่ Backend; เจ้าของยืนยันใช้ Rust/WASM ต่อแล้วตามมติ 0b.5
+React/React Flow เชื่อม Worker แล้วใน 1.1; IndexedDB/Autosave/Web Locks เชื่อมแล้วใน1.5 Export UI ตรวจรับร่วมแล้วใน1.6 ส่วน Rust/WASM, Core Contract และ Local Folder/Transaction ผ่านขั้นพิสูจน์ต้นแบบแล้ว Node.js ใช้ build frontend และทดสอบ ไม่ใช่ Backend; เจ้าของยืนยันใช้ Rust/WASM ต่อแล้วตามมติ 0b.5
 
 เส้นทึบแสดงความสัมพันธ์ runtime/data รวมส่วนที่ติดป้าย planned เส้นประแสดงการ build/test ดูรายละเอียดพฤติกรรมและสถานะใน Architecture ด้านล่าง
 
@@ -42,7 +42,7 @@ flowchart TB
     CLI["ผ่าน 0a · sf-cli<br/>Validate · Export · SDK Parity<br/>เพิ่ม bundle สำหรับต้นแบบ Storage"]
 
     subgraph Browser["Chromium Desktop · ไม่มี Backend ใน MVP"]
-        UI["ผ่าน 1.6 · React + React Flow<br/>Project / Story Editor / Rules & Schedule<br/>Playtest / Diagnostics / Trace<br/>Autosave / Export UI / Undo-Redo / Validate"]
+        UI["ผ่าน 1.7 (Gate 1) · React + React Flow<br/>Project / Story Editor / Rules & Schedule<br/>Playtest / Diagnostics / Trace<br/>Autosave / Export UI / Undo-Redo / Validate"]
         Worker["ผ่าน 0a.7 · sf-wasm / Web Worker<br/>Core Contract ตรง native 18 ข้อความ"]
         Local["ผ่าน 0b.1 · Local Folder prototype<br/>Native picker · Asset path validation<br/>อ่านสื่อเดิม / Export ซ้ำแบบ Zero-Copy"]
         Tx["ผ่าน 0b.2 · Export Transaction<br/>Manifest/hash · Backup · Pending journal<br/>Recovery · Source Map · Save warning"]
@@ -205,7 +205,7 @@ cargo run -p sf-cli --locked -- export contract/fixtures/summer-house.json temp/
 |---|---|
 | **0a** | ตรวจรับผ่านครบ: Contract, Core, SDK Parity, WASM/Worker และ baseline |
 | **0b** | 0b.1–0b.5 และ Gate ตรวจรับผ่านร่วม Codex/Gemini ครบแล้ว |
-| **1** | 1.1–1.5 ตรวจรับร่วมแล้ว; 1.6 พัฒนาเสร็จรอ Gemini; 1.7 และ Gate ยังไม่เสร็จ |
+| **1** | 1.1–1.6 ตรวจรับร่วมแล้ว; 1.7 P8 native ผ่านแล้ว; รอ Gemini ยืนยัน P8 และ Gate 1; Gate 1 ยังไม่ปิด |
 | **2** | ยังไม่เริ่ม: ความทนทานและ User Trial |
 | **3** | รอยืนยันขอบเขตตามผลทดลอง เช่น Cloud Sync, PWA, Localization |
 

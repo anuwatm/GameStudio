@@ -1,0 +1,9 @@
+{
+  "passed": false,
+  "mode": "production UI + real Worker/IndexedDB/Web Locks/OPFS; injected picker, write and IDB faults",
+  "checks": [
+    "Debounced Autosave writes latest acknowledged edit after ~2s; IDB precedes disk and clears committed draft"
+  ],
+  "pageErrors": [],
+  "error": "Locator expected to have text 'กู้หลังปิดหน้า'\nActual value: Web Studio \nCall log:\n  - Expect \"to_have_text\" locator(\".project-name\") with timeout 5000ms\n  - waiting for locator(\".project-name\")\n    14 × locator resolved to <span class=\"project-name\">Web Studio</span>\n       - unexpected value \"Web Studio\"\n\nAria snapshot:\n- text: Web Studio"
+}

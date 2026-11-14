@@ -1,0 +1,154 @@
+{
+  "passed": false,
+  "fixtureHash": "9872ffbb991fd00c324e18ae0afbcd9cca7d0449fa0b21ae8a3f890acc29bd33",
+  "nodeCount": 2000,
+  "samples": {
+    "P1": {
+      "warmup": 861.9000000003725,
+      "raw": [
+        100.30000000074506,
+        37.69999999925494,
+        38.09999999962747,
+        39,
+        36.80000000074506
+      ],
+      "median": 38.09999999962747,
+      "max": 100.30000000074506,
+      "limit": 2000,
+      "passed": true
+    },
+    "P2": {
+      "warmup": 49.80000000074506,
+      "raw": [
+        8.699999999254942,
+        7.600000001490116,
+        8.5,
+        8.100000001490116,
+        7.299999998882413
+      ],
+      "median": 8.100000001490116,
+      "max": 8.699999999254942,
+      "limit": 200,
+      "passed": true
+    },
+    "P3": {
+      "warmup": 31.299999998882413,
+      "raw": [
+        19.40000000037253,
+        19.899999998509884,
+        21.299999998882413,
+        19.699999999254942,
+        20.200000001117587
+      ],
+      "median": 19.899999998509884,
+      "max": 21.299999998882413,
+      "limit": 100,
+      "passed": true
+    },
+    "P5": {
+      "warmup": 1095.199999999255,
+      "raw": [
+        1077,
+        1143.7999999988824,
+        1073,
+        1088.5999999996275,
+        1085.199999999255
+      ],
+      "median": 1085.199999999255,
+      "max": 1143.7999999988824,
+      "limit": 2000,
+      "passed": true
+    },
+    "P6": {
+      "warmup": 581,
+      "raw": [
+        598.6999999992549,
+        641.1999999992549,
+        572.6999999992549,
+        587.6999999992549,
+        603.9000000003725
+      ],
+      "median": 598.6999999992549,
+      "max": 641.1999999992549,
+      "limit": 150,
+      "passed": false
+    },
+    "P7": {
+      "warmup": 911.3000000007451,
+      "raw": [
+        63,
+        47.30000000074506,
+        63.29999999888241,
+        51.30000000074506,
+        47.5
+      ],
+      "median": 51.30000000074506,
+      "max": 63.29999999888241,
+      "limit": 1000,
+      "passed": true
+    },
+    "P4": {
+      "bytes": 688197,
+      "limit": 1000000,
+      "passed": true,
+      "rawBytes": 3799818,
+      "sha256": "9230f5afb4b2dbc0c473d118aa4652d8143754b68467314e9c4bb7c0dfdb9061"
+    }
+  },
+  "pageErrors": [],
+  "os": "Windows-11-10.0.26300-SP0",
+  "method": "warmup1 + measured5; retain all samples; no WASM startup in P1; P5 starts at Worker Project response; OPFS only for P5/P7 local fixture setup, not P8",
+  "browser": "157.0.4341.46",
+  "hardware": {
+    "logicalProcessors": 4,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36 Edg/157.0.0.0"
+  },
+  "media": {
+    "sha256": "2ddc373b57a67dd5386d0e9fe687597627ef0efe485ae2a3a02f9db6f005eb2c",
+    "path": "C:\\LocalDevine\\www\\GameStudio\\document\\phase-0b\\media-probe\\probe.webm",
+    "frames": [
+      {
+        "ms": 911.3000000007451,
+        "width": 640,
+        "height": 360,
+        "mediaTime": 0,
+        "presentedFrames": 1
+      },
+      {
+        "ms": 63,
+        "width": 640,
+        "height": 360,
+        "mediaTime": 0,
+        "presentedFrames": 1
+      },
+      {
+        "ms": 47.30000000074506,
+        "width": 640,
+        "height": 360,
+        "mediaTime": 0,
+        "presentedFrames": 1
+      },
+      {
+        "ms": 63.29999999888241,
+        "width": 640,
+        "height": 360,
+        "mediaTime": 0,
+        "presentedFrames": 1
+      },
+      {
+        "ms": 51.30000000074506,
+        "width": 640,
+        "height": 360,
+        "mediaTime": 0,
+        "presentedFrames": 1
+      },
+      {
+        "ms": 47.5,
+        "width": 640,
+        "height": 360,
+        "mediaTime": 0,
+        "presentedFrames": 1
+      }
+    ]
+  }
+}
