@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "mode": "production UI + real Worker; OPFS handles with injected picker",
+  "checks": [
+    "Declare Summer House Variables with initial/min/max using UI; keyboard tabs work",
+    "Build Activities, nested Event condition, phase/priority/order/once/target and inclusive Schedule/onComplete through UI",
+    "All Summer House rules rebuilt without JSON editing; full saved Project equals fixture after UUID-only mapping; Core Validate has zero issues",
+    "UI-generated rules pass all ten Core cases with Worker/native trace equality",
+    "Missing external Activity/Event memberships can be removed through UI without editing JSON or changing other rules",
+    "bool/string Variables and typed Effects, recursive NOT/ANY, choice Effects and atomic Undo/Redo work without coercion",
+    "Reference-aware variable deletion guard, invalid i32 draft retention, activity/event cascade+Undo and fallback Validation are correct"
+  ],
+  "pageErrors": [],
+  "parity": {
+    "cases": 10,
+    "messages": 55,
+    "traceSteps": 79,
+    "uuidNormalizationOnly": true
+  },
+  "browser": "157.0.4341.46"
+}

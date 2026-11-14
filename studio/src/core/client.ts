@@ -5,7 +5,7 @@ export class CoreError extends Error {
 }
 type Port=Pick<Worker,'postMessage'|'addEventListener'|'removeEventListener'|'terminate'>;
 type Pending={name:RequestName;resolve:(value:never)=>void;reject:(error:Error)=>void;timer:ReturnType<typeof setTimeout>};
-const queries=new Set<RequestName>(['getProject','validate','getTrace']);
+const queries=new Set<RequestName>(['getProject','validate','getTrace','buildExport']);
 /** Owns its Worker. A timeout invalidates the session; mutations are never replayed. */
 export class CoreClient {
  #port:Port;#pending=new Map<string,Pending>();#next=0;#closed=false;#timeout:number;

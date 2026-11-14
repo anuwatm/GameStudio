@@ -1,0 +1,22 @@
+{
+  "passed": true,
+  "mode": "production UI + real Worker; OPFS injected picker",
+  "checks": [
+    "Entry start returns real RunState and activity choices; saved Project unchanged",
+    "Typed SetVar bounds failure is atomic; Rewind restores prior value; insufficient history preserves trace",
+    "Summer House Activity→Event→Choice→Ending; 12-field trace download and before/after values",
+    "Trace choice jumps to selected graph node with choice identity; start selected node uses Core",
+    "Editor changes retain explicitly labelled old snapshot; restart refreshes; load clears run; saved bytes untouched",
+    "Core condition at19 hides Choice with deficit1 explanation; at20 unlocks without modifying Project",
+    "Diagnostics empty and Core errors; nodeId opens source node",
+    "Project-level Diagnostics has no fabricated node; validation blocks invalid start without stale run",
+    "bool/string SetVar retains Scalar types and Unicode without edit history or dirty state"
+  ],
+  "pageErrors": [],
+  "nativeTraceParity": {
+    "equal": true,
+    "steps": 16
+  },
+  "browser": "157.0.4341.46",
+  "keyboardFocusVisible": true
+}

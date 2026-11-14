@@ -1,0 +1,19 @@
+{
+  "date": "2026-11-14",
+  "build": "passed: tsc --noEmit + vite build",
+  "proofBuild": "passed",
+  "typescriptUnitTests": 13,
+  "rustWorkspaceTests": 13,
+  "coreAsset": "39d9c8c997eb6762",
+  "designDetectorFindings": [],
+  "browserViewports": [
+    1440,
+    1000,
+    700
+  ],
+  "warnings": [
+    "Vite main JS chunk ~511kB exceeds advisory 500kB; no performance acceptance claimed.",
+    "Native hardlink incremental-cache warning; Cargo used copy fallback."
+  ],
+  "scope": "Additive buildExport query in Contract v1. Pure generator/simulator semantics unchanged; bundler shared CLI/WASM."
+}

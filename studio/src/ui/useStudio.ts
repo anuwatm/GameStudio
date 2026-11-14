@@ -1,10 +1,11 @@
 import {useCallback,useEffect,useRef,useState,useMemo} from 'react';
 import {createCore} from '../core/create';
 import {CoreClient,CoreError} from '../core/client';
-import type {Project,Patch,Issue,PlayResult,Payloads} from '../core/types';
+import type {Project,Patch,Issue,PlayResult,Payloads,ExportBundle} from '../core/types';
 import type {FolderSession} from '../core/folder';
 import {saveProject,readProject,RevisionConflict} from '../core/folder';
 import {drafts as listDrafts,draftFor,putDraft,removeDraft,acquireProject,requestFolderPermission,DraftStorageError,type Draft,type Lease} from '../core/recovery';
+import {exportToFolder,saveWarnings,initializeTemplate,recoverExportFolder} from '../core/export';
 import {stableJSON} from '../core/editor';
 export function useStudio(supported:boolean){
  const client=useRef<CoreClient|null>(null),active=useRef(true),guard=useRef(false),ack=useRef<Project|null>(null);
@@ -22,7 +23,8 @@ export function useStudio(supported:boolean){
   try{await putDraft(draft);latestDraft.current=draft;setStorageStatus(source.current?'กู้คืนได้ · รอ Autosave':'กู้คืนได้ · ร่างใน IndexedDB');await refreshDrafts();}
   catch(e){setSaveProblem('draft');setStorageStatus('เก็บร่างไม่ได้ · ยังอยู่ในหน่วยความจำ');throw new DraftStorageError(e);}
  },[refreshDrafts]);
- const snapshot=useCallback((next:Project)=>{ack.current=next;setProject(next);setIssues(null);},[]);
+ const [exportPreview,setExportPreview]=useState<{bundle:ExportBundle;warnings:string[];key:string}|null>(null),[exportReport,setExportReport]=useState<{kind?:'template'|'recovery';files:string[];warnings:string[];sourceMap:string}|null>(null);
+ const snapshot=useCallback((next:Project)=>{ack.current=next;setProject(next);setIssues(null);setExportPreview(null);setExportReport(null);},[]);
  useEffect(()=>{
   active.current=true;let disposed=false;setReady(false);setPlay(null);
   if(!supported){setStatus('เบราว์เซอร์ยังไม่พร้อม');return;}
@@ -66,7 +68,11 @@ export function useStudio(supported:boolean){
  const dirty=useMemo(()=>!!project&&saved!==stableJSON(project),[project,saved]);
  useEffect(()=>{if(!project||!folder||!dirty||busy||!ready||saveProblem||pending)return;const timer=setTimeout(()=>void save(),2000);return()=>clearTimeout(timer);},[project,folder,dirty,busy,ready,saveProblem,pending,save]);
  useEffect(()=>{const warn=(e:BeforeUnloadEvent)=>{if(dirty){e.preventDefault();e.returnValue='';}};window.addEventListener('beforeunload',warn);return()=>window.removeEventListener('beforeunload',warn);},[dirty]);
+ const prepareExport=()=>run(async c=>{if(!project||!folder)throw Error('เปิดโฟลเดอร์โปรเจกต์ก่อนส่งออก');if(dirty||saveProblem)throw Error('บันทึกโปรเจกต์และแก้ปัญหาการบันทึกก่อนส่งออก');setExportReport(null);setExportPreview(null);const found=(await c.request('validate',{})).issues;setIssues(found);if(found.some(i=>i.severity==='error'))throw Error('Core Validate พบ error กรุณาแก้ก่อนส่งออก');const bundle=await c.request('buildExport',{});setExportPreview({bundle,warnings:await saveWarnings(folder,bundle),key:stableJSON(project)});});
+ const commitExport=()=>run(async c=>{if(!project||!folder||!exportPreview||exportPreview.key!==stableJSON(project)||dirty||saveProblem)throw Error('ข้อมูลเปลี่ยน ต้องบันทึกและเตรียมส่งออกใหม่');setExportReport(null);const found=(await c.request('validate',{})).issues;setIssues(found);if(found.some(i=>i.severity==='error'))throw Error('Core Validate พบ error');const bundle=await c.request('buildExport',{});setExportReport(await exportToFolder(folder,project,bundle));});
+ const recoverExport=()=>run(async()=>{if(!folder)throw Error('เปิดโฟลเดอร์ก่อนกู้คืน');setExportReport(null);const result=await recoverExportFolder(folder);setExportPreview(null);setExportReport({kind:'recovery',files:[],warnings:[JSON.stringify(result)],sourceMap:''});});
+ const installTemplate=()=>run(async()=>{setExportReport(null);if(!folder||dirty||saveProblem)throw Error('บันทึกโปรเจกต์ก่อนติดตั้งเทมเพลต');const files=await initializeTemplate(folder);setExportReport({kind:'template',files,warnings:['ติดตั้งเทมเพลตแล้ว ยังต้องส่งออก generated scripts'],sourceMap:''});});
  const startPlay=async(startNodeId?:string)=>run(async c=>{if(!project)return;const result=await c.request('startPlaytest',startNodeId?{startNodeId}:{});setPlay({project,result});});
  const playCommand=async<N extends 'choose'|'setVar'|'rewind'>(name:N,payload:Payloads[N])=>run(async c=>{const result=await c.request(name,payload);setPlay(previous=>previous?{...previous,result}:null);});
- return {project,folder,saved,dirty,ready,busy,status,error,undo,redo,issues,drafts,pending,storageStatus,saveProblem,recoverDraft,discardPending,regrant,play,startPlay,playCommand,exportTrace:()=>run(async c=>{const {trace}=await c.request('getTrace',{});const url=URL.createObjectURL(new Blob([JSON.stringify(trace,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='storyflow-trace.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}),locked:!ready||busy||!!pending,run,load,patch,history,save,finishCreate:async(next:FolderSession,current:Project)=>{source.current=next;baseline.current=stableJSON(current);setFolder(next);setSaved(baseline.current);const old=latestDraft.current;if(old){await removeDraft(current.id,old.revision);latestDraft.current=null;}setStorageStatus('บันทึกแล้ว');await refreshDrafts();},retryDraft:()=>run(async()=>{if(ack.current){await checkpoint(ack.current);setSaveProblem('');}}),setError,validate:()=>run(async c=>setIssues((await c.request('validate',{})).issues)),restart:()=>{setError('');setSession(v=>v+1);}};
+ return {project,folder,saved,dirty,ready,busy,status,error,undo,redo,issues,exportPreview,exportReport,prepareExport,commitExport,installTemplate,recoverExport,drafts,pending,storageStatus,saveProblem,recoverDraft,discardPending,regrant,play,startPlay,playCommand,exportTrace:()=>run(async c=>{const {trace}=await c.request('getTrace',{});const url=URL.createObjectURL(new Blob([JSON.stringify(trace,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download='storyflow-trace.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}),locked:!ready||busy||!!pending,run,load,patch,history,save,finishCreate:async(next:FolderSession,current:Project)=>{source.current=next;baseline.current=stableJSON(current);setFolder(next);setSaved(baseline.current);const old=latestDraft.current;if(old){await removeDraft(current.id,old.revision);latestDraft.current=null;}setStorageStatus('บันทึกแล้ว');await refreshDrafts();},retryDraft:()=>run(async()=>{if(ack.current){await checkpoint(ack.current);setSaveProblem('');}}),setError,validate:()=>run(async c=>setIssues((await c.request('validate',{})).issues)),restart:()=>{setError('');setSession(v=>v+1);}};
 }

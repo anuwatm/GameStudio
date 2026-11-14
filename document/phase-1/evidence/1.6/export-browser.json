@@ -1,0 +1,94 @@
+{
+  "passed": true,
+  "mode": "production UI + real WASM/OPFS; injected picker and mid-export write denial",
+  "checks": [
+    "Existing game export preserves entry/user/media/project bytes; Worker-generated files and Source Map match native CLI bundle",
+    "Repeated export works; generated hash conflict blocks before overwrite and clears success status",
+    "Source Map file/line opens exact Choice node; Subgraph structure change displays old-Save warning before and after export",
+    "Mid-export permission failure retains pending journal; explicit regrant/recovery restores then re-export succeeds",
+    "Project source revision is rechecked under transaction lock and blocks external edit overwrite",
+    "Unowned generated-name collision blocks export without replacing the user file or committing manifest",
+    "Core Validate errors block bundle/commit; diagnostic node links remain available",
+    "New game installs approved Noto Thai/TCC template and UI export preserves template/entry while emitting playable generated files"
+  ],
+  "pageErrors": [],
+  "existingOutsideHashes": {
+    "project.storyflow.json": "6cf3d680d4667ffc2c453d776c927353daec0ec06526392a7338fda95f4050cd",
+    "game/user.rpy": "6a52e21b22ffc7fd00c38517ccaa0467b163952730deb534b8a339586ebd5d5c",
+    "game/script.rpy": "f457667cc7a7a586c630ed9d3c37b1d367c55e240a4f53616bb306bd5cb87237",
+    "game/assets/probe.webm": "f136d1d4a4cf83256ad6463ff257ec5d92b89c227c75c369f94a124459eaa64c"
+  },
+  "existingGame": "C:\\LocalDevine\\www\\GameStudio\\temp\\phase-1.6-sdk-existing-bf870265-e7c4-47ba-9841-5b8654db81f9",
+  "newOutsideHashes": {
+    "project.storyflow.json": "cb46bfc61dd23089fef2d4ba568b7dd2bcaf6a9fe507f1ebff808bfde0f6bdfd",
+    "game/sf_template.rpy": "0d47d9fbedadac1dba166908e0f9dfea7e358715e0b8a761631997a2cf472dbe",
+    "game/script.rpy": "85b9907bcd2b8dfd004ddc0213a821187530fbf1a42553812e8b5f0b9843891a",
+    "game/python-packages/sf_tcc.py": "b9c6956a08886738af31b771b1c0b3057807cee96e1f1106e0eabc157e2dd1f2",
+    "game/python-packages/PyThaiNLP-LICENSE.txt": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+    "game/assets/fonts/OFL.txt": "dad6e6abc2bf3fc37cc698af7607c3f4d4235039695713b222e5a034fb5b9b1c",
+    "game/assets/fonts/NotoSansThaiLoopedUI-Regular.ttf": "802c2a46d8c8c2372f3ec6fd67ec20590a6077f4e4703cb57eecbf11fe960ca9"
+  },
+  "newGame": "C:\\LocalDevine\\www\\GameStudio\\temp\\phase-1.6-sdk-new-9f6ab04d-02ad-495b-b23d-0787c31e9814",
+  "newProject": {
+    "schemaVersion": 1,
+    "id": "dec54863-68c1-4272-b7b9-db359b9dafce",
+    "name": "UI New Game ไทย",
+    "entryGraphId": "8efa25b5-ad3c-442e-98e8-50f8bccb2d56",
+    "characters": [],
+    "assets": [],
+    "variables": [
+      {
+        "id": "d4f3e333-1876-4d89-b98b-51c2c5403fca",
+        "name": "score",
+        "type": "int",
+        "initial": 0
+      }
+    ],
+    "activities": [],
+    "events": [],
+    "graphs": [
+      {
+        "id": "8efa25b5-ad3c-442e-98e8-50f8bccb2d56",
+        "kind": "main",
+        "entryNodeId": "dcf53be6-3e0e-4fbc-b5b0-0ede88656c5e"
+      }
+    ],
+    "nodes": [
+      {
+        "id": "dcf53be6-3e0e-4fbc-b5b0-0ede88656c5e",
+        "kind": "scene",
+        "graphId": "8efa25b5-ad3c-442e-98e8-50f8bccb2d56",
+        "lines": [
+          {
+            "text": "ภาษาไทยจาก UI Export",
+            "characterId": null
+          }
+        ],
+        "assetIds": [],
+        "choices": [],
+        "effects": [
+          {
+            "variableId": "d4f3e333-1876-4d89-b98b-51c2c5403fca",
+            "op": "add",
+            "value": 7
+          }
+        ]
+      },
+      {
+        "id": "45a59873-e1a8-4255-9500-22bddc0f7da0",
+        "kind": "end",
+        "graphId": "8efa25b5-ad3c-442e-98e8-50f8bccb2d56",
+        "mode": "ending"
+      }
+    ],
+    "edges": [
+      {
+        "id": "849f7828-33f2-44c5-a278-0f24cc058d94",
+        "from": "dcf53be6-3e0e-4fbc-b5b0-0ede88656c5e",
+        "port": "next",
+        "to": "45a59873-e1a8-4255-9500-22bddc0f7da0"
+      }
+    ]
+  },
+  "browser": "157.0.4341.46"
+}

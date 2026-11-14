@@ -47,6 +47,7 @@ impl Session {
         }
         let history = self.history.as_mut().ok_or("No open project")?;
         match name {
+            "buildExport" => crate::export::export_bundle(history.project()),
             "getProject" => Ok(json!({"project":history.project().value()})),
             "applyEdit" | "undo" | "redo" => {
                 match name {

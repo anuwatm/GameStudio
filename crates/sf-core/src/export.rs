@@ -244,6 +244,38 @@ pub fn source_map(project: &Project, files: &BTreeMap<&str, String>) -> Value {
     serde_json::json!({"version":1,"files":mapped})
 }
 
+/// Accepted CLI bundle representation, shared by native and Worker export.
+pub fn export_bundle(project: &Project) -> Result<Value, String> {
+            let files = export_renpy(project)?;
+            let map = source_map(project, &files);
+            let nodes = project.value()["nodes"].as_array().unwrap();
+            let graphs = project.value()["graphs"].as_array().unwrap();
+            let subgraphs: Vec<_> = graphs.iter().filter(|g| g["kind"] == "subgraph").collect();
+            let ids: std::collections::HashSet<_> = subgraphs.iter().map(|g| &g["id"]).collect();
+            let subnodes: Vec<_> = nodes.iter().filter(|n| ids.contains(&n["graphId"])).collect();
+            let node_ids: std::collections::HashSet<_> = subnodes.iter().map(|n| &n["id"]).collect();
+            let edges: Vec<_> = project.value()["edges"].as_array().unwrap().iter()
+                .filter(|e| node_ids.contains(&e["from"])).collect();
+            // Save compatibility depends on graph structure, not dialogue or display names.
+            let mut graph_structure: Vec<_> = subgraphs.iter().map(|g| serde_json::json!({
+                "id":g["id"],"entryNodeId":g["entryNodeId"]})).collect();
+            let mut node_structure: Vec<_> = subnodes.iter().map(|n| serde_json::json!({
+                "id":n["id"],"graphId":n["graphId"],"kind":n["kind"],
+                "choices":n["choices"].as_array().map(|c| c.iter().map(|v| v["id"].clone()).collect::<Vec<_>>())})).collect();
+            let mut edge_structure: Vec<_> = edges.iter().map(|e| serde_json::json!({
+                "from":e["from"],"to":e["to"],"port":e["port"]})).collect();
+            for rows in [&mut graph_structure,&mut node_structure,&mut edge_structure] {
+                rows.sort_by_key(|v| v.to_string());
+            }
+            let structure = serde_json::json!({"graphs":graph_structure,"nodes":node_structure,"edges":edge_structure});
+            let generated: serde_json::Map<String, Value> = files.into_iter()
+                .filter(|(path, _)| path.starts_with("storyflow_generated/"))
+                .map(|(path, source)| (format!("game/{path}"), Value::String(source))).collect();
+            let bundle = serde_json::json!({"projectId":project.value()["id"],"files":generated,
+                "sourceMap":map,"subgraphStructure":structure});
+    Ok(bundle)
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;

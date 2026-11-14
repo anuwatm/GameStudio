@@ -21,3 +21,5 @@ Thai wrapping: config.replace_text เติมจุดแบ่งเฉพา
 ใบอนุญาต Apache-2.0 อยู่ใน game/python-packages/PyThaiNLP-LICENSE.txt
 Template init offset=-100 ให้หน้าจอของผู้ใช้ override ได้ตามปกติ
 
+
+Phase1.6 Web Studio ใช้templateชุดนี้กับเกมใหม่ที่ไม่มีสคริปต์และไม่ชนชื่อไฟล์เท่านั้น ติดตั้งแยกก่อนgenerated export ไม่ทับไฟล์ของเกมเดิม script.rpyในtemplateเรียกsf_entry การติดตั้งที่ถูกปิดค้างต้องตรวจไฟล์ก่อนลองซ้ำ ไม่ใช่transactionrollbackชุดgenerated

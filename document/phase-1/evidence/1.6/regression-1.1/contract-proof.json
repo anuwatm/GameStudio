@@ -1,0 +1,5046 @@
+{
+  "passed": true,
+  "requests": [
+    {
+      "contractVersion": 1,
+      "requestId": "1",
+      "kind": "query",
+      "name": "getProject",
+      "payload": {}
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "2",
+      "kind": "query",
+      "name": "buildExport",
+      "payload": {}
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "3",
+      "kind": "command",
+      "name": "openProject",
+      "payload": {
+        "project": {
+          "schemaVersion": 1,
+          "id": "00000000-0000-4000-8000-000000000001",
+          "name": "Summer House",
+          "entryGraphId": "00000000-0000-4000-8000-000000000002",
+          "characters": [],
+          "variables": [
+            {
+              "id": "00000000-0000-4000-8000-000000000010",
+              "name": "affection",
+              "type": "int",
+              "initial": 0,
+              "min": 0,
+              "max": 100
+            },
+            {
+              "id": "00000000-0000-4000-8000-000000000011",
+              "name": "energy",
+              "type": "int",
+              "initial": 100,
+              "min": 0,
+              "max": 100
+            },
+            {
+              "id": "00000000-0000-4000-8000-000000000204",
+              "name": "boundsProbe",
+              "type": "int",
+              "initial": 0
+            }
+          ],
+          "assets": [],
+          "graphs": [
+            {
+              "id": "00000000-0000-4000-8000-000000000002",
+              "kind": "main",
+              "entryNodeId": "00000000-0000-4000-8000-000000000003"
+            },
+            {
+              "id": "00000000-0000-4000-8000-000000000007",
+              "kind": "subgraph",
+              "entryNodeId": "00000000-0000-4000-8000-000000000006"
+            }
+          ],
+          "nodes": [
+            {
+              "kind": "scene",
+              "id": "00000000-0000-4000-8000-000000000003",
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "lines": [
+                {
+                  "text": "Summer House",
+                  "characterId": null
+                }
+              ],
+              "assetIds": [],
+              "effects": [],
+              "choices": []
+            },
+            {
+              "kind": "schedule",
+              "id": "00000000-0000-4000-8000-000000000004",
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "startDay": 1,
+              "lastDay": 3,
+              "activityIds": [
+                "00000000-0000-4000-8000-000000000012",
+                "00000000-0000-4000-8000-000000000013"
+              ],
+              "eventIds": [
+                "00000000-0000-4000-8000-000000000014"
+              ]
+            },
+            {
+              "kind": "end",
+              "id": "00000000-0000-4000-8000-000000000005",
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "mode": "ending"
+            },
+            {
+              "kind": "scene",
+              "id": "00000000-0000-4000-8000-000000000006",
+              "graphId": "00000000-0000-4000-8000-000000000007",
+              "lines": [
+                {
+                  "text": "Summer House",
+                  "characterId": null
+                }
+              ],
+              "assetIds": [],
+              "effects": [],
+              "choices": [
+                {
+                  "id": "00000000-0000-4000-8000-000000000015",
+                  "text": "Accept",
+                  "visibleIf": {
+                    "kind": "compare",
+                    "operator": "ge",
+                    "left": {
+                      "kind": "variable",
+                      "variableId": "00000000-0000-4000-8000-000000000010"
+                    },
+                    "right": {
+                      "kind": "literal",
+                      "value": 20
+                    }
+                  },
+                  "effects": []
+                },
+                {
+                  "id": "00000000-0000-4000-8000-000000000016",
+                  "text": "Decline",
+                  "visibleIf": {
+                    "kind": "compare",
+                    "operator": "ge",
+                    "left": {
+                      "kind": "variable",
+                      "variableId": "00000000-0000-4000-8000-000000000010"
+                    },
+                    "right": {
+                      "kind": "literal",
+                      "value": 20
+                    }
+                  },
+                  "effects": []
+                }
+              ]
+            },
+            {
+              "kind": "end",
+              "id": "00000000-0000-4000-8000-000000000009",
+              "graphId": "00000000-0000-4000-8000-000000000007",
+              "mode": "ending"
+            },
+            {
+              "kind": "end",
+              "id": "00000000-0000-4000-8000-000000000008",
+              "graphId": "00000000-0000-4000-8000-000000000007",
+              "mode": "return"
+            },
+            {
+              "kind": "branch",
+              "id": "00000000-0000-4000-8000-000000000201",
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "condition": {
+                "kind": "compare",
+                "operator": "ge",
+                "left": {
+                  "kind": "variable",
+                  "variableId": "00000000-0000-4000-8000-000000000010"
+                },
+                "right": {
+                  "kind": "literal",
+                  "value": 0
+                }
+              }
+            },
+            {
+              "kind": "effect",
+              "id": "00000000-0000-4000-8000-000000000202",
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "effects": [
+                {
+                  "variableId": "00000000-0000-4000-8000-000000000204",
+                  "op": "subtract",
+                  "value": 1
+                },
+                {
+                  "variableId": "00000000-0000-4000-8000-000000000204",
+                  "op": "add",
+                  "value": 1
+                }
+              ]
+            },
+            {
+              "kind": "effect",
+              "id": "00000000-0000-4000-8000-000000000203",
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "effects": [
+                {
+                  "variableId": "00000000-0000-4000-8000-000000000204",
+                  "op": "add",
+                  "value": 1
+                },
+                {
+                  "variableId": "00000000-0000-4000-8000-000000000204",
+                  "op": "subtract",
+                  "value": 1
+                }
+              ]
+            }
+          ],
+          "edges": [
+            {
+              "id": "00000000-0000-4000-8000-000000000101",
+              "from": "00000000-0000-4000-8000-000000000003",
+              "port": "next",
+              "to": "00000000-0000-4000-8000-000000000201"
+            },
+            {
+              "id": "00000000-0000-4000-8000-000000000102",
+              "from": "00000000-0000-4000-8000-000000000004",
+              "port": "onComplete",
+              "to": "00000000-0000-4000-8000-000000000005"
+            },
+            {
+              "id": "00000000-0000-4000-8000-000000000103",
+              "from": "00000000-0000-4000-8000-000000000006",
+              "port": "00000000-0000-4000-8000-000000000015",
+              "to": "00000000-0000-4000-8000-000000000009"
+            },
+            {
+              "id": "00000000-0000-4000-8000-000000000104",
+              "from": "00000000-0000-4000-8000-000000000006",
+              "port": "00000000-0000-4000-8000-000000000016",
+              "to": "00000000-0000-4000-8000-000000000008"
+            },
+            {
+              "id": "00000000-0000-4000-8000-000000000105",
+              "from": "00000000-0000-4000-8000-000000000006",
+              "port": "fallback",
+              "to": "00000000-0000-4000-8000-000000000008"
+            },
+            {
+              "id": "00000000-0000-4000-8000-000000000205",
+              "from": "00000000-0000-4000-8000-000000000201",
+              "port": "true",
+              "to": "00000000-0000-4000-8000-000000000202"
+            },
+            {
+              "id": "00000000-0000-4000-8000-000000000206",
+              "from": "00000000-0000-4000-8000-000000000201",
+              "port": "false",
+              "to": "00000000-0000-4000-8000-000000000203"
+            },
+            {
+              "id": "00000000-0000-4000-8000-000000000207",
+              "from": "00000000-0000-4000-8000-000000000202",
+              "port": "next",
+              "to": "00000000-0000-4000-8000-000000000004"
+            },
+            {
+              "id": "00000000-0000-4000-8000-000000000208",
+              "from": "00000000-0000-4000-8000-000000000203",
+              "port": "next",
+              "to": "00000000-0000-4000-8000-000000000004"
+            }
+          ],
+          "activities": [
+            {
+              "id": "00000000-0000-4000-8000-000000000012",
+              "name": "Help Mina",
+              "condition": {
+                "kind": "compare",
+                "operator": "ge",
+                "left": {
+                  "kind": "variable",
+                  "variableId": "00000000-0000-4000-8000-000000000011"
+                },
+                "right": {
+                  "kind": "literal",
+                  "value": 20
+                }
+              },
+              "effects": [
+                {
+                  "variableId": "00000000-0000-4000-8000-000000000010",
+                  "op": "add",
+                  "value": 10
+                },
+                {
+                  "variableId": "00000000-0000-4000-8000-000000000011",
+                  "op": "subtract",
+                  "value": 20
+                }
+              ],
+              "subgraphId": null
+            },
+            {
+              "id": "00000000-0000-4000-8000-000000000013",
+              "name": "Rest",
+              "condition": null,
+              "effects": [
+                {
+                  "variableId": "00000000-0000-4000-8000-000000000011",
+                  "op": "add",
+                  "value": 20
+                }
+              ],
+              "subgraphId": null
+            }
+          ],
+          "events": [
+            {
+              "id": "00000000-0000-4000-8000-000000000014",
+              "phase": "after_activity",
+              "priority": 1,
+              "order": 0,
+              "once": true,
+              "condition": {
+                "kind": "all",
+                "conditions": [
+                  {
+                    "kind": "compare",
+                    "operator": "ge",
+                    "left": {
+                      "kind": "day"
+                    },
+                    "right": {
+                      "kind": "literal",
+                      "value": 3
+                    }
+                  },
+                  {
+                    "kind": "compare",
+                    "operator": "ge",
+                    "left": {
+                      "kind": "variable",
+                      "variableId": "00000000-0000-4000-8000-000000000010"
+                    },
+                    "right": {
+                      "kind": "literal",
+                      "value": 20
+                    }
+                  }
+                ]
+              },
+              "subgraphId": "00000000-0000-4000-8000-000000000007"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "4",
+      "kind": "query",
+      "name": "validate",
+      "payload": {}
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "5",
+      "kind": "query",
+      "name": "buildExport",
+      "payload": {}
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "6",
+      "kind": "query",
+      "name": "getProject",
+      "payload": {}
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "7",
+      "kind": "command",
+      "name": "applyEdit",
+      "payload": {
+        "patch": [
+          {
+            "op": "replace",
+            "path": "/name",
+            "value": "Transport proof"
+          }
+        ]
+      }
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "8",
+      "kind": "command",
+      "name": "undo",
+      "payload": {}
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "9",
+      "kind": "command",
+      "name": "redo",
+      "payload": {}
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "10",
+      "kind": "command",
+      "name": "applyEdit",
+      "payload": {
+        "patch": [
+          {
+            "op": "replace",
+            "path": "/schemaVersion",
+            "value": 999
+          }
+        ]
+      }
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "11",
+      "kind": "query",
+      "name": "getProject",
+      "payload": {}
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "12",
+      "kind": "command",
+      "name": "startPlaytest",
+      "payload": {}
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "13",
+      "kind": "command",
+      "name": "setVar",
+      "payload": {
+        "variableId": "00000000-0000-4000-8000-000000000011",
+        "value": 19
+      }
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "14",
+      "kind": "command",
+      "name": "rewind",
+      "payload": {
+        "steps": 1
+      }
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "15",
+      "kind": "command",
+      "name": "choose",
+      "payload": {
+        "choiceId": "00000000-0000-4000-8000-000000000012"
+      }
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "16",
+      "kind": "command",
+      "name": "choose",
+      "payload": {
+        "choiceId": "00000000-0000-4000-8000-000000000012"
+      }
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "17",
+      "kind": "command",
+      "name": "choose",
+      "payload": {
+        "choiceId": "00000000-0000-4000-8000-000000000013"
+      }
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "18",
+      "kind": "command",
+      "name": "choose",
+      "payload": {
+        "choiceId": "00000000-0000-4000-8000-000000000015"
+      }
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "19",
+      "kind": "query",
+      "name": "getTrace",
+      "payload": {}
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "20",
+      "kind": "command",
+      "name": "choose",
+      "payload": {
+        "choiceId": "00000000-0000-4000-8000-000000000012"
+      }
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "21",
+      "kind": "command",
+      "name": "rewind",
+      "payload": {
+        "steps": 999
+      }
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "22",
+      "kind": "command",
+      "name": "setVar",
+      "payload": {
+        "variableId": "00000000-0000-4000-8000-000000000011",
+        "value": "invalid type"
+      }
+    }
+  ],
+  "responses": [
+    {
+      "contractVersion": 1,
+      "requestId": "1",
+      "kind": "error",
+      "error": {
+        "code": "CORE_ERROR",
+        "message": "No open project"
+      }
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "2",
+      "kind": "error",
+      "error": {
+        "code": "CORE_ERROR",
+        "message": "No open project"
+      }
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "3",
+      "kind": "result",
+      "name": "openProject",
+      "value": {
+        "project": {
+          "activities": [
+            {
+              "condition": {
+                "kind": "compare",
+                "left": {
+                  "kind": "variable",
+                  "variableId": "00000000-0000-4000-8000-000000000011"
+                },
+                "operator": "ge",
+                "right": {
+                  "kind": "literal",
+                  "value": 20
+                }
+              },
+              "effects": [
+                {
+                  "op": "add",
+                  "value": 10,
+                  "variableId": "00000000-0000-4000-8000-000000000010"
+                },
+                {
+                  "op": "subtract",
+                  "value": 20,
+                  "variableId": "00000000-0000-4000-8000-000000000011"
+                }
+              ],
+              "id": "00000000-0000-4000-8000-000000000012",
+              "name": "Help Mina",
+              "subgraphId": null
+            },
+            {
+              "condition": null,
+              "effects": [
+                {
+                  "op": "add",
+                  "value": 20,
+                  "variableId": "00000000-0000-4000-8000-000000000011"
+                }
+              ],
+              "id": "00000000-0000-4000-8000-000000000013",
+              "name": "Rest",
+              "subgraphId": null
+            }
+          ],
+          "assets": [],
+          "characters": [],
+          "edges": [
+            {
+              "from": "00000000-0000-4000-8000-000000000003",
+              "id": "00000000-0000-4000-8000-000000000101",
+              "port": "next",
+              "to": "00000000-0000-4000-8000-000000000201"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000004",
+              "id": "00000000-0000-4000-8000-000000000102",
+              "port": "onComplete",
+              "to": "00000000-0000-4000-8000-000000000005"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000006",
+              "id": "00000000-0000-4000-8000-000000000103",
+              "port": "00000000-0000-4000-8000-000000000015",
+              "to": "00000000-0000-4000-8000-000000000009"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000006",
+              "id": "00000000-0000-4000-8000-000000000104",
+              "port": "00000000-0000-4000-8000-000000000016",
+              "to": "00000000-0000-4000-8000-000000000008"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000006",
+              "id": "00000000-0000-4000-8000-000000000105",
+              "port": "fallback",
+              "to": "00000000-0000-4000-8000-000000000008"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000201",
+              "id": "00000000-0000-4000-8000-000000000205",
+              "port": "true",
+              "to": "00000000-0000-4000-8000-000000000202"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000201",
+              "id": "00000000-0000-4000-8000-000000000206",
+              "port": "false",
+              "to": "00000000-0000-4000-8000-000000000203"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000202",
+              "id": "00000000-0000-4000-8000-000000000207",
+              "port": "next",
+              "to": "00000000-0000-4000-8000-000000000004"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000203",
+              "id": "00000000-0000-4000-8000-000000000208",
+              "port": "next",
+              "to": "00000000-0000-4000-8000-000000000004"
+            }
+          ],
+          "entryGraphId": "00000000-0000-4000-8000-000000000002",
+          "events": [
+            {
+              "condition": {
+                "conditions": [
+                  {
+                    "kind": "compare",
+                    "left": {
+                      "kind": "day"
+                    },
+                    "operator": "ge",
+                    "right": {
+                      "kind": "literal",
+                      "value": 3
+                    }
+                  },
+                  {
+                    "kind": "compare",
+                    "left": {
+                      "kind": "variable",
+                      "variableId": "00000000-0000-4000-8000-000000000010"
+                    },
+                    "operator": "ge",
+                    "right": {
+                      "kind": "literal",
+                      "value": 20
+                    }
+                  }
+                ],
+                "kind": "all"
+              },
+              "id": "00000000-0000-4000-8000-000000000014",
+              "once": true,
+              "order": 0,
+              "phase": "after_activity",
+              "priority": 1,
+              "subgraphId": "00000000-0000-4000-8000-000000000007"
+            }
+          ],
+          "graphs": [
+            {
+              "entryNodeId": "00000000-0000-4000-8000-000000000003",
+              "id": "00000000-0000-4000-8000-000000000002",
+              "kind": "main"
+            },
+            {
+              "entryNodeId": "00000000-0000-4000-8000-000000000006",
+              "id": "00000000-0000-4000-8000-000000000007",
+              "kind": "subgraph"
+            }
+          ],
+          "id": "00000000-0000-4000-8000-000000000001",
+          "name": "Summer House",
+          "nodes": [
+            {
+              "assetIds": [],
+              "choices": [],
+              "effects": [],
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "id": "00000000-0000-4000-8000-000000000003",
+              "kind": "scene",
+              "lines": [
+                {
+                  "characterId": null,
+                  "text": "Summer House"
+                }
+              ]
+            },
+            {
+              "activityIds": [
+                "00000000-0000-4000-8000-000000000012",
+                "00000000-0000-4000-8000-000000000013"
+              ],
+              "eventIds": [
+                "00000000-0000-4000-8000-000000000014"
+              ],
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "id": "00000000-0000-4000-8000-000000000004",
+              "kind": "schedule",
+              "lastDay": 3,
+              "startDay": 1
+            },
+            {
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "id": "00000000-0000-4000-8000-000000000005",
+              "kind": "end",
+              "mode": "ending"
+            },
+            {
+              "assetIds": [],
+              "choices": [
+                {
+                  "effects": [],
+                  "id": "00000000-0000-4000-8000-000000000015",
+                  "text": "Accept",
+                  "visibleIf": {
+                    "kind": "compare",
+                    "left": {
+                      "kind": "variable",
+                      "variableId": "00000000-0000-4000-8000-000000000010"
+                    },
+                    "operator": "ge",
+                    "right": {
+                      "kind": "literal",
+                      "value": 20
+                    }
+                  }
+                },
+                {
+                  "effects": [],
+                  "id": "00000000-0000-4000-8000-000000000016",
+                  "text": "Decline",
+                  "visibleIf": {
+                    "kind": "compare",
+                    "left": {
+                      "kind": "variable",
+                      "variableId": "00000000-0000-4000-8000-000000000010"
+                    },
+                    "operator": "ge",
+                    "right": {
+                      "kind": "literal",
+                      "value": 20
+                    }
+                  }
+                }
+              ],
+              "effects": [],
+              "graphId": "00000000-0000-4000-8000-000000000007",
+              "id": "00000000-0000-4000-8000-000000000006",
+              "kind": "scene",
+              "lines": [
+                {
+                  "characterId": null,
+                  "text": "Summer House"
+                }
+              ]
+            },
+            {
+              "graphId": "00000000-0000-4000-8000-000000000007",
+              "id": "00000000-0000-4000-8000-000000000009",
+              "kind": "end",
+              "mode": "ending"
+            },
+            {
+              "graphId": "00000000-0000-4000-8000-000000000007",
+              "id": "00000000-0000-4000-8000-000000000008",
+              "kind": "end",
+              "mode": "return"
+            },
+            {
+              "condition": {
+                "kind": "compare",
+                "left": {
+                  "kind": "variable",
+                  "variableId": "00000000-0000-4000-8000-000000000010"
+                },
+                "operator": "ge",
+                "right": {
+                  "kind": "literal",
+                  "value": 0
+                }
+              },
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "id": "00000000-0000-4000-8000-000000000201",
+              "kind": "branch"
+            },
+            {
+              "effects": [
+                {
+                  "op": "subtract",
+                  "value": 1,
+                  "variableId": "00000000-0000-4000-8000-000000000204"
+                },
+                {
+                  "op": "add",
+                  "value": 1,
+                  "variableId": "00000000-0000-4000-8000-000000000204"
+                }
+              ],
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "id": "00000000-0000-4000-8000-000000000202",
+              "kind": "effect"
+            },
+            {
+              "effects": [
+                {
+                  "op": "add",
+                  "value": 1,
+                  "variableId": "00000000-0000-4000-8000-000000000204"
+                },
+                {
+                  "op": "subtract",
+                  "value": 1,
+                  "variableId": "00000000-0000-4000-8000-000000000204"
+                }
+              ],
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "id": "00000000-0000-4000-8000-000000000203",
+              "kind": "effect"
+            }
+          ],
+          "schemaVersion": 1,
+          "variables": [
+            {
+              "id": "00000000-0000-4000-8000-000000000010",
+              "initial": 0,
+              "max": 100,
+              "min": 0,
+              "name": "affection",
+              "type": "int"
+            },
+            {
+              "id": "00000000-0000-4000-8000-000000000011",
+              "initial": 100,
+              "max": 100,
+              "min": 0,
+              "name": "energy",
+              "type": "int"
+            },
+            {
+              "id": "00000000-0000-4000-8000-000000000204",
+              "initial": 0,
+              "name": "boundsProbe",
+              "type": "int"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "4",
+      "kind": "result",
+      "name": "validate",
+      "value": {
+        "issues": []
+      }
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "5",
+      "kind": "result",
+      "name": "buildExport",
+      "value": {
+        "files": {
+          "game/storyflow_generated/sf_runtime.rpy": "init python:\n    def sf_clamp(value, lower, upper):\n        return min(max(value, lower), upper)\n",
+          "game/storyflow_generated/sf_schedule.rpy": "label sf_schedule_000000000004:\n    $ sf_day = 1\n    while sf_day <= 3:\n        # phase before_activity\n        # phase activity\n        menu:\n            \"Help Mina\" if (sf_variable_000000000011 >= 20):\n                $ sf_variable_000000000010 = sf_clamp(sf_variable_000000000010 + 10, 0, 100)\n                $ sf_variable_000000000011 = sf_clamp(sf_variable_000000000011 - 20, 0, 100)\n                pass\n            \"Rest\" if True:\n                $ sf_variable_000000000011 = sf_clamp(sf_variable_000000000011 + 20, 0, 100)\n                pass\n        # phase after_activity\n        if ((sf_day >= 3) and (sf_variable_000000000010 >= 20)) and \"00000000-0000-4000-8000-000000000014\" not in sf_fired:\n            $ sf_fired = sf_fired + [\"00000000-0000-4000-8000-000000000014\"]\n            call sf_scene_000000000006\n            if sf_ending is not None:\n                return\n        # phase end_of_day\n        if sf_day == 3:\n            # phase schedule_complete\n            jump sf_end_000000000005\n        $ sf_day += 1\n    return\n\n",
+          "game/storyflow_generated/sf_story.rpy": "label sf_entry:\n    call sf_scene_000000000003\n    return\n\nlabel sf_scene_000000000003:\n    \"Summer House\"\n    jump sf_branch_000000000201\n\nlabel sf_end_000000000005:\n    $ sf_ending = \"00000000-0000-4000-8000-000000000005\"\n    return\n\nlabel sf_scene_000000000006:\n    \"Summer House\"\n    if not ((sf_variable_000000000010 >= 20) or (sf_variable_000000000010 >= 20)):\n        jump sf_end_000000000008\n    menu:\n        \"Accept\" if (sf_variable_000000000010 >= 20):\n            jump sf_end_000000000009\n        \"Decline\" if (sf_variable_000000000010 >= 20):\n            jump sf_end_000000000008\n\nlabel sf_end_000000000009:\n    $ sf_ending = \"00000000-0000-4000-8000-000000000009\"\n    return\n\nlabel sf_end_000000000008:\n    return\n\nlabel sf_branch_000000000201:\n    if (sf_variable_000000000010 >= 0):\n        jump sf_effect_000000000202\n    else:\n        jump sf_effect_000000000203\n\nlabel sf_effect_000000000202:\n    $ sf_variable_000000000204 = sf_clamp(sf_variable_000000000204 - 1, -2147483648, 2147483647)\n    $ sf_variable_000000000204 = sf_clamp(sf_variable_000000000204 + 1, -2147483648, 2147483647)\n    jump sf_schedule_000000000004\n\nlabel sf_effect_000000000203:\n    $ sf_variable_000000000204 = sf_clamp(sf_variable_000000000204 + 1, -2147483648, 2147483647)\n    $ sf_variable_000000000204 = sf_clamp(sf_variable_000000000204 - 1, -2147483648, 2147483647)\n    jump sf_schedule_000000000004\n\n",
+          "game/storyflow_generated/sf_variables.rpy": "default sf_day = 1\ndefault sf_fired = []\ndefault sf_ending = None\ndefault sf_variable_000000000010 = 0\ndefault sf_variable_000000000011 = 100\ndefault sf_variable_000000000204 = 0\n"
+        },
+        "projectId": "00000000-0000-4000-8000-000000000001",
+        "sourceMap": {
+          "files": {
+            "game/storyflow_generated/sf_schedule.rpy": {
+              "1": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000004"
+              },
+              "2": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000004"
+              },
+              "3": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000004"
+              },
+              "4": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000004"
+              },
+              "5": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000004"
+              },
+              "6": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000004"
+              },
+              "7": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000004"
+              },
+              "8": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000004"
+              },
+              "9": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000004"
+              },
+              "10": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000004"
+              },
+              "11": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000004"
+              },
+              "12": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000004"
+              },
+              "13": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000004"
+              },
+              "14": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000004"
+              },
+              "15": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000004"
+              },
+              "16": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000004"
+              },
+              "17": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000004"
+              },
+              "18": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000004"
+              },
+              "19": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000004"
+              },
+              "20": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000004"
+              },
+              "21": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000004"
+              },
+              "22": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000004"
+              },
+              "23": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000004"
+              },
+              "24": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000004"
+              },
+              "25": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000004"
+              },
+              "26": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000004"
+              }
+            },
+            "game/storyflow_generated/sf_story.rpy": {
+              "5": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000003"
+              },
+              "6": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000003"
+              },
+              "7": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000003"
+              },
+              "8": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000003"
+              },
+              "9": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000005"
+              },
+              "10": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000005"
+              },
+              "11": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000005"
+              },
+              "12": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000005"
+              },
+              "13": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000006"
+              },
+              "14": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000006"
+              },
+              "15": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000006"
+              },
+              "16": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000006"
+              },
+              "17": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000006"
+              },
+              "18": {
+                "choiceId": "00000000-0000-4000-8000-000000000015",
+                "nodeId": "00000000-0000-4000-8000-000000000006"
+              },
+              "19": {
+                "choiceId": "00000000-0000-4000-8000-000000000015",
+                "nodeId": "00000000-0000-4000-8000-000000000006"
+              },
+              "20": {
+                "choiceId": "00000000-0000-4000-8000-000000000016",
+                "nodeId": "00000000-0000-4000-8000-000000000006"
+              },
+              "21": {
+                "choiceId": "00000000-0000-4000-8000-000000000016",
+                "nodeId": "00000000-0000-4000-8000-000000000006"
+              },
+              "22": {
+                "choiceId": "00000000-0000-4000-8000-000000000016",
+                "nodeId": "00000000-0000-4000-8000-000000000006"
+              },
+              "23": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000009"
+              },
+              "24": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000009"
+              },
+              "25": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000009"
+              },
+              "26": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000009"
+              },
+              "27": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000008"
+              },
+              "28": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000008"
+              },
+              "29": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000008"
+              },
+              "30": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000201"
+              },
+              "31": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000201"
+              },
+              "32": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000201"
+              },
+              "33": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000201"
+              },
+              "34": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000201"
+              },
+              "35": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000201"
+              },
+              "36": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000202"
+              },
+              "37": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000202"
+              },
+              "38": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000202"
+              },
+              "39": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000202"
+              },
+              "40": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000202"
+              },
+              "41": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000203"
+              },
+              "42": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000203"
+              },
+              "43": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000203"
+              },
+              "44": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000203"
+              },
+              "45": {
+                "choiceId": null,
+                "nodeId": "00000000-0000-4000-8000-000000000203"
+              }
+            }
+          },
+          "version": 1
+        },
+        "subgraphStructure": {
+          "edges": [
+            {
+              "from": "00000000-0000-4000-8000-000000000006",
+              "port": "00000000-0000-4000-8000-000000000015",
+              "to": "00000000-0000-4000-8000-000000000009"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000006",
+              "port": "00000000-0000-4000-8000-000000000016",
+              "to": "00000000-0000-4000-8000-000000000008"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000006",
+              "port": "fallback",
+              "to": "00000000-0000-4000-8000-000000000008"
+            }
+          ],
+          "graphs": [
+            {
+              "entryNodeId": "00000000-0000-4000-8000-000000000006",
+              "id": "00000000-0000-4000-8000-000000000007"
+            }
+          ],
+          "nodes": [
+            {
+              "choices": [
+                "00000000-0000-4000-8000-000000000015",
+                "00000000-0000-4000-8000-000000000016"
+              ],
+              "graphId": "00000000-0000-4000-8000-000000000007",
+              "id": "00000000-0000-4000-8000-000000000006",
+              "kind": "scene"
+            },
+            {
+              "choices": null,
+              "graphId": "00000000-0000-4000-8000-000000000007",
+              "id": "00000000-0000-4000-8000-000000000008",
+              "kind": "end"
+            },
+            {
+              "choices": null,
+              "graphId": "00000000-0000-4000-8000-000000000007",
+              "id": "00000000-0000-4000-8000-000000000009",
+              "kind": "end"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "6",
+      "kind": "result",
+      "name": "getProject",
+      "value": {
+        "project": {
+          "activities": [
+            {
+              "condition": {
+                "kind": "compare",
+                "left": {
+                  "kind": "variable",
+                  "variableId": "00000000-0000-4000-8000-000000000011"
+                },
+                "operator": "ge",
+                "right": {
+                  "kind": "literal",
+                  "value": 20
+                }
+              },
+              "effects": [
+                {
+                  "op": "add",
+                  "value": 10,
+                  "variableId": "00000000-0000-4000-8000-000000000010"
+                },
+                {
+                  "op": "subtract",
+                  "value": 20,
+                  "variableId": "00000000-0000-4000-8000-000000000011"
+                }
+              ],
+              "id": "00000000-0000-4000-8000-000000000012",
+              "name": "Help Mina",
+              "subgraphId": null
+            },
+            {
+              "condition": null,
+              "effects": [
+                {
+                  "op": "add",
+                  "value": 20,
+                  "variableId": "00000000-0000-4000-8000-000000000011"
+                }
+              ],
+              "id": "00000000-0000-4000-8000-000000000013",
+              "name": "Rest",
+              "subgraphId": null
+            }
+          ],
+          "assets": [],
+          "characters": [],
+          "edges": [
+            {
+              "from": "00000000-0000-4000-8000-000000000003",
+              "id": "00000000-0000-4000-8000-000000000101",
+              "port": "next",
+              "to": "00000000-0000-4000-8000-000000000201"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000004",
+              "id": "00000000-0000-4000-8000-000000000102",
+              "port": "onComplete",
+              "to": "00000000-0000-4000-8000-000000000005"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000006",
+              "id": "00000000-0000-4000-8000-000000000103",
+              "port": "00000000-0000-4000-8000-000000000015",
+              "to": "00000000-0000-4000-8000-000000000009"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000006",
+              "id": "00000000-0000-4000-8000-000000000104",
+              "port": "00000000-0000-4000-8000-000000000016",
+              "to": "00000000-0000-4000-8000-000000000008"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000006",
+              "id": "00000000-0000-4000-8000-000000000105",
+              "port": "fallback",
+              "to": "00000000-0000-4000-8000-000000000008"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000201",
+              "id": "00000000-0000-4000-8000-000000000205",
+              "port": "true",
+              "to": "00000000-0000-4000-8000-000000000202"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000201",
+              "id": "00000000-0000-4000-8000-000000000206",
+              "port": "false",
+              "to": "00000000-0000-4000-8000-000000000203"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000202",
+              "id": "00000000-0000-4000-8000-000000000207",
+              "port": "next",
+              "to": "00000000-0000-4000-8000-000000000004"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000203",
+              "id": "00000000-0000-4000-8000-000000000208",
+              "port": "next",
+              "to": "00000000-0000-4000-8000-000000000004"
+            }
+          ],
+          "entryGraphId": "00000000-0000-4000-8000-000000000002",
+          "events": [
+            {
+              "condition": {
+                "conditions": [
+                  {
+                    "kind": "compare",
+                    "left": {
+                      "kind": "day"
+                    },
+                    "operator": "ge",
+                    "right": {
+                      "kind": "literal",
+                      "value": 3
+                    }
+                  },
+                  {
+                    "kind": "compare",
+                    "left": {
+                      "kind": "variable",
+                      "variableId": "00000000-0000-4000-8000-000000000010"
+                    },
+                    "operator": "ge",
+                    "right": {
+                      "kind": "literal",
+                      "value": 20
+                    }
+                  }
+                ],
+                "kind": "all"
+              },
+              "id": "00000000-0000-4000-8000-000000000014",
+              "once": true,
+              "order": 0,
+              "phase": "after_activity",
+              "priority": 1,
+              "subgraphId": "00000000-0000-4000-8000-000000000007"
+            }
+          ],
+          "graphs": [
+            {
+              "entryNodeId": "00000000-0000-4000-8000-000000000003",
+              "id": "00000000-0000-4000-8000-000000000002",
+              "kind": "main"
+            },
+            {
+              "entryNodeId": "00000000-0000-4000-8000-000000000006",
+              "id": "00000000-0000-4000-8000-000000000007",
+              "kind": "subgraph"
+            }
+          ],
+          "id": "00000000-0000-4000-8000-000000000001",
+          "name": "Summer House",
+          "nodes": [
+            {
+              "assetIds": [],
+              "choices": [],
+              "effects": [],
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "id": "00000000-0000-4000-8000-000000000003",
+              "kind": "scene",
+              "lines": [
+                {
+                  "characterId": null,
+                  "text": "Summer House"
+                }
+              ]
+            },
+            {
+              "activityIds": [
+                "00000000-0000-4000-8000-000000000012",
+                "00000000-0000-4000-8000-000000000013"
+              ],
+              "eventIds": [
+                "00000000-0000-4000-8000-000000000014"
+              ],
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "id": "00000000-0000-4000-8000-000000000004",
+              "kind": "schedule",
+              "lastDay": 3,
+              "startDay": 1
+            },
+            {
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "id": "00000000-0000-4000-8000-000000000005",
+              "kind": "end",
+              "mode": "ending"
+            },
+            {
+              "assetIds": [],
+              "choices": [
+                {
+                  "effects": [],
+                  "id": "00000000-0000-4000-8000-000000000015",
+                  "text": "Accept",
+                  "visibleIf": {
+                    "kind": "compare",
+                    "left": {
+                      "kind": "variable",
+                      "variableId": "00000000-0000-4000-8000-000000000010"
+                    },
+                    "operator": "ge",
+                    "right": {
+                      "kind": "literal",
+                      "value": 20
+                    }
+                  }
+                },
+                {
+                  "effects": [],
+                  "id": "00000000-0000-4000-8000-000000000016",
+                  "text": "Decline",
+                  "visibleIf": {
+                    "kind": "compare",
+                    "left": {
+                      "kind": "variable",
+                      "variableId": "00000000-0000-4000-8000-000000000010"
+                    },
+                    "operator": "ge",
+                    "right": {
+                      "kind": "literal",
+                      "value": 20
+                    }
+                  }
+                }
+              ],
+              "effects": [],
+              "graphId": "00000000-0000-4000-8000-000000000007",
+              "id": "00000000-0000-4000-8000-000000000006",
+              "kind": "scene",
+              "lines": [
+                {
+                  "characterId": null,
+                  "text": "Summer House"
+                }
+              ]
+            },
+            {
+              "graphId": "00000000-0000-4000-8000-000000000007",
+              "id": "00000000-0000-4000-8000-000000000009",
+              "kind": "end",
+              "mode": "ending"
+            },
+            {
+              "graphId": "00000000-0000-4000-8000-000000000007",
+              "id": "00000000-0000-4000-8000-000000000008",
+              "kind": "end",
+              "mode": "return"
+            },
+            {
+              "condition": {
+                "kind": "compare",
+                "left": {
+                  "kind": "variable",
+                  "variableId": "00000000-0000-4000-8000-000000000010"
+                },
+                "operator": "ge",
+                "right": {
+                  "kind": "literal",
+                  "value": 0
+                }
+              },
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "id": "00000000-0000-4000-8000-000000000201",
+              "kind": "branch"
+            },
+            {
+              "effects": [
+                {
+                  "op": "subtract",
+                  "value": 1,
+                  "variableId": "00000000-0000-4000-8000-000000000204"
+                },
+                {
+                  "op": "add",
+                  "value": 1,
+                  "variableId": "00000000-0000-4000-8000-000000000204"
+                }
+              ],
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "id": "00000000-0000-4000-8000-000000000202",
+              "kind": "effect"
+            },
+            {
+              "effects": [
+                {
+                  "op": "add",
+                  "value": 1,
+                  "variableId": "00000000-0000-4000-8000-000000000204"
+                },
+                {
+                  "op": "subtract",
+                  "value": 1,
+                  "variableId": "00000000-0000-4000-8000-000000000204"
+                }
+              ],
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "id": "00000000-0000-4000-8000-000000000203",
+              "kind": "effect"
+            }
+          ],
+          "schemaVersion": 1,
+          "variables": [
+            {
+              "id": "00000000-0000-4000-8000-000000000010",
+              "initial": 0,
+              "max": 100,
+              "min": 0,
+              "name": "affection",
+              "type": "int"
+            },
+            {
+              "id": "00000000-0000-4000-8000-000000000011",
+              "initial": 100,
+              "max": 100,
+              "min": 0,
+              "name": "energy",
+              "type": "int"
+            },
+            {
+              "id": "00000000-0000-4000-8000-000000000204",
+              "initial": 0,
+              "name": "boundsProbe",
+              "type": "int"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "7",
+      "kind": "result",
+      "name": "applyEdit",
+      "value": {
+        "project": {
+          "activities": [
+            {
+              "condition": {
+                "kind": "compare",
+                "left": {
+                  "kind": "variable",
+                  "variableId": "00000000-0000-4000-8000-000000000011"
+                },
+                "operator": "ge",
+                "right": {
+                  "kind": "literal",
+                  "value": 20
+                }
+              },
+              "effects": [
+                {
+                  "op": "add",
+                  "value": 10,
+                  "variableId": "00000000-0000-4000-8000-000000000010"
+                },
+                {
+                  "op": "subtract",
+                  "value": 20,
+                  "variableId": "00000000-0000-4000-8000-000000000011"
+                }
+              ],
+              "id": "00000000-0000-4000-8000-000000000012",
+              "name": "Help Mina",
+              "subgraphId": null
+            },
+            {
+              "condition": null,
+              "effects": [
+                {
+                  "op": "add",
+                  "value": 20,
+                  "variableId": "00000000-0000-4000-8000-000000000011"
+                }
+              ],
+              "id": "00000000-0000-4000-8000-000000000013",
+              "name": "Rest",
+              "subgraphId": null
+            }
+          ],
+          "assets": [],
+          "characters": [],
+          "edges": [
+            {
+              "from": "00000000-0000-4000-8000-000000000003",
+              "id": "00000000-0000-4000-8000-000000000101",
+              "port": "next",
+              "to": "00000000-0000-4000-8000-000000000201"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000004",
+              "id": "00000000-0000-4000-8000-000000000102",
+              "port": "onComplete",
+              "to": "00000000-0000-4000-8000-000000000005"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000006",
+              "id": "00000000-0000-4000-8000-000000000103",
+              "port": "00000000-0000-4000-8000-000000000015",
+              "to": "00000000-0000-4000-8000-000000000009"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000006",
+              "id": "00000000-0000-4000-8000-000000000104",
+              "port": "00000000-0000-4000-8000-000000000016",
+              "to": "00000000-0000-4000-8000-000000000008"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000006",
+              "id": "00000000-0000-4000-8000-000000000105",
+              "port": "fallback",
+              "to": "00000000-0000-4000-8000-000000000008"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000201",
+              "id": "00000000-0000-4000-8000-000000000205",
+              "port": "true",
+              "to": "00000000-0000-4000-8000-000000000202"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000201",
+              "id": "00000000-0000-4000-8000-000000000206",
+              "port": "false",
+              "to": "00000000-0000-4000-8000-000000000203"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000202",
+              "id": "00000000-0000-4000-8000-000000000207",
+              "port": "next",
+              "to": "00000000-0000-4000-8000-000000000004"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000203",
+              "id": "00000000-0000-4000-8000-000000000208",
+              "port": "next",
+              "to": "00000000-0000-4000-8000-000000000004"
+            }
+          ],
+          "entryGraphId": "00000000-0000-4000-8000-000000000002",
+          "events": [
+            {
+              "condition": {
+                "conditions": [
+                  {
+                    "kind": "compare",
+                    "left": {
+                      "kind": "day"
+                    },
+                    "operator": "ge",
+                    "right": {
+                      "kind": "literal",
+                      "value": 3
+                    }
+                  },
+                  {
+                    "kind": "compare",
+                    "left": {
+                      "kind": "variable",
+                      "variableId": "00000000-0000-4000-8000-000000000010"
+                    },
+                    "operator": "ge",
+                    "right": {
+                      "kind": "literal",
+                      "value": 20
+                    }
+                  }
+                ],
+                "kind": "all"
+              },
+              "id": "00000000-0000-4000-8000-000000000014",
+              "once": true,
+              "order": 0,
+              "phase": "after_activity",
+              "priority": 1,
+              "subgraphId": "00000000-0000-4000-8000-000000000007"
+            }
+          ],
+          "graphs": [
+            {
+              "entryNodeId": "00000000-0000-4000-8000-000000000003",
+              "id": "00000000-0000-4000-8000-000000000002",
+              "kind": "main"
+            },
+            {
+              "entryNodeId": "00000000-0000-4000-8000-000000000006",
+              "id": "00000000-0000-4000-8000-000000000007",
+              "kind": "subgraph"
+            }
+          ],
+          "id": "00000000-0000-4000-8000-000000000001",
+          "name": "Transport proof",
+          "nodes": [
+            {
+              "assetIds": [],
+              "choices": [],
+              "effects": [],
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "id": "00000000-0000-4000-8000-000000000003",
+              "kind": "scene",
+              "lines": [
+                {
+                  "characterId": null,
+                  "text": "Summer House"
+                }
+              ]
+            },
+            {
+              "activityIds": [
+                "00000000-0000-4000-8000-000000000012",
+                "00000000-0000-4000-8000-000000000013"
+              ],
+              "eventIds": [
+                "00000000-0000-4000-8000-000000000014"
+              ],
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "id": "00000000-0000-4000-8000-000000000004",
+              "kind": "schedule",
+              "lastDay": 3,
+              "startDay": 1
+            },
+            {
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "id": "00000000-0000-4000-8000-000000000005",
+              "kind": "end",
+              "mode": "ending"
+            },
+            {
+              "assetIds": [],
+              "choices": [
+                {
+                  "effects": [],
+                  "id": "00000000-0000-4000-8000-000000000015",
+                  "text": "Accept",
+                  "visibleIf": {
+                    "kind": "compare",
+                    "left": {
+                      "kind": "variable",
+                      "variableId": "00000000-0000-4000-8000-000000000010"
+                    },
+                    "operator": "ge",
+                    "right": {
+                      "kind": "literal",
+                      "value": 20
+                    }
+                  }
+                },
+                {
+                  "effects": [],
+                  "id": "00000000-0000-4000-8000-000000000016",
+                  "text": "Decline",
+                  "visibleIf": {
+                    "kind": "compare",
+                    "left": {
+                      "kind": "variable",
+                      "variableId": "00000000-0000-4000-8000-000000000010"
+                    },
+                    "operator": "ge",
+                    "right": {
+                      "kind": "literal",
+                      "value": 20
+                    }
+                  }
+                }
+              ],
+              "effects": [],
+              "graphId": "00000000-0000-4000-8000-000000000007",
+              "id": "00000000-0000-4000-8000-000000000006",
+              "kind": "scene",
+              "lines": [
+                {
+                  "characterId": null,
+                  "text": "Summer House"
+                }
+              ]
+            },
+            {
+              "graphId": "00000000-0000-4000-8000-000000000007",
+              "id": "00000000-0000-4000-8000-000000000009",
+              "kind": "end",
+              "mode": "ending"
+            },
+            {
+              "graphId": "00000000-0000-4000-8000-000000000007",
+              "id": "00000000-0000-4000-8000-000000000008",
+              "kind": "end",
+              "mode": "return"
+            },
+            {
+              "condition": {
+                "kind": "compare",
+                "left": {
+                  "kind": "variable",
+                  "variableId": "00000000-0000-4000-8000-000000000010"
+                },
+                "operator": "ge",
+                "right": {
+                  "kind": "literal",
+                  "value": 0
+                }
+              },
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "id": "00000000-0000-4000-8000-000000000201",
+              "kind": "branch"
+            },
+            {
+              "effects": [
+                {
+                  "op": "subtract",
+                  "value": 1,
+                  "variableId": "00000000-0000-4000-8000-000000000204"
+                },
+                {
+                  "op": "add",
+                  "value": 1,
+                  "variableId": "00000000-0000-4000-8000-000000000204"
+                }
+              ],
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "id": "00000000-0000-4000-8000-000000000202",
+              "kind": "effect"
+            },
+            {
+              "effects": [
+                {
+                  "op": "add",
+                  "value": 1,
+                  "variableId": "00000000-0000-4000-8000-000000000204"
+                },
+                {
+                  "op": "subtract",
+                  "value": 1,
+                  "variableId": "00000000-0000-4000-8000-000000000204"
+                }
+              ],
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "id": "00000000-0000-4000-8000-000000000203",
+              "kind": "effect"
+            }
+          ],
+          "schemaVersion": 1,
+          "variables": [
+            {
+              "id": "00000000-0000-4000-8000-000000000010",
+              "initial": 0,
+              "max": 100,
+              "min": 0,
+              "name": "affection",
+              "type": "int"
+            },
+            {
+              "id": "00000000-0000-4000-8000-000000000011",
+              "initial": 100,
+              "max": 100,
+              "min": 0,
+              "name": "energy",
+              "type": "int"
+            },
+            {
+              "id": "00000000-0000-4000-8000-000000000204",
+              "initial": 0,
+              "name": "boundsProbe",
+              "type": "int"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "8",
+      "kind": "result",
+      "name": "undo",
+      "value": {
+        "project": {
+          "activities": [
+            {
+              "condition": {
+                "kind": "compare",
+                "left": {
+                  "kind": "variable",
+                  "variableId": "00000000-0000-4000-8000-000000000011"
+                },
+                "operator": "ge",
+                "right": {
+                  "kind": "literal",
+                  "value": 20
+                }
+              },
+              "effects": [
+                {
+                  "op": "add",
+                  "value": 10,
+                  "variableId": "00000000-0000-4000-8000-000000000010"
+                },
+                {
+                  "op": "subtract",
+                  "value": 20,
+                  "variableId": "00000000-0000-4000-8000-000000000011"
+                }
+              ],
+              "id": "00000000-0000-4000-8000-000000000012",
+              "name": "Help Mina",
+              "subgraphId": null
+            },
+            {
+              "condition": null,
+              "effects": [
+                {
+                  "op": "add",
+                  "value": 20,
+                  "variableId": "00000000-0000-4000-8000-000000000011"
+                }
+              ],
+              "id": "00000000-0000-4000-8000-000000000013",
+              "name": "Rest",
+              "subgraphId": null
+            }
+          ],
+          "assets": [],
+          "characters": [],
+          "edges": [
+            {
+              "from": "00000000-0000-4000-8000-000000000003",
+              "id": "00000000-0000-4000-8000-000000000101",
+              "port": "next",
+              "to": "00000000-0000-4000-8000-000000000201"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000004",
+              "id": "00000000-0000-4000-8000-000000000102",
+              "port": "onComplete",
+              "to": "00000000-0000-4000-8000-000000000005"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000006",
+              "id": "00000000-0000-4000-8000-000000000103",
+              "port": "00000000-0000-4000-8000-000000000015",
+              "to": "00000000-0000-4000-8000-000000000009"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000006",
+              "id": "00000000-0000-4000-8000-000000000104",
+              "port": "00000000-0000-4000-8000-000000000016",
+              "to": "00000000-0000-4000-8000-000000000008"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000006",
+              "id": "00000000-0000-4000-8000-000000000105",
+              "port": "fallback",
+              "to": "00000000-0000-4000-8000-000000000008"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000201",
+              "id": "00000000-0000-4000-8000-000000000205",
+              "port": "true",
+              "to": "00000000-0000-4000-8000-000000000202"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000201",
+              "id": "00000000-0000-4000-8000-000000000206",
+              "port": "false",
+              "to": "00000000-0000-4000-8000-000000000203"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000202",
+              "id": "00000000-0000-4000-8000-000000000207",
+              "port": "next",
+              "to": "00000000-0000-4000-8000-000000000004"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000203",
+              "id": "00000000-0000-4000-8000-000000000208",
+              "port": "next",
+              "to": "00000000-0000-4000-8000-000000000004"
+            }
+          ],
+          "entryGraphId": "00000000-0000-4000-8000-000000000002",
+          "events": [
+            {
+              "condition": {
+                "conditions": [
+                  {
+                    "kind": "compare",
+                    "left": {
+                      "kind": "day"
+                    },
+                    "operator": "ge",
+                    "right": {
+                      "kind": "literal",
+                      "value": 3
+                    }
+                  },
+                  {
+                    "kind": "compare",
+                    "left": {
+                      "kind": "variable",
+                      "variableId": "00000000-0000-4000-8000-000000000010"
+                    },
+                    "operator": "ge",
+                    "right": {
+                      "kind": "literal",
+                      "value": 20
+                    }
+                  }
+                ],
+                "kind": "all"
+              },
+              "id": "00000000-0000-4000-8000-000000000014",
+              "once": true,
+              "order": 0,
+              "phase": "after_activity",
+              "priority": 1,
+              "subgraphId": "00000000-0000-4000-8000-000000000007"
+            }
+          ],
+          "graphs": [
+            {
+              "entryNodeId": "00000000-0000-4000-8000-000000000003",
+              "id": "00000000-0000-4000-8000-000000000002",
+              "kind": "main"
+            },
+            {
+              "entryNodeId": "00000000-0000-4000-8000-000000000006",
+              "id": "00000000-0000-4000-8000-000000000007",
+              "kind": "subgraph"
+            }
+          ],
+          "id": "00000000-0000-4000-8000-000000000001",
+          "name": "Summer House",
+          "nodes": [
+            {
+              "assetIds": [],
+              "choices": [],
+              "effects": [],
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "id": "00000000-0000-4000-8000-000000000003",
+              "kind": "scene",
+              "lines": [
+                {
+                  "characterId": null,
+                  "text": "Summer House"
+                }
+              ]
+            },
+            {
+              "activityIds": [
+                "00000000-0000-4000-8000-000000000012",
+                "00000000-0000-4000-8000-000000000013"
+              ],
+              "eventIds": [
+                "00000000-0000-4000-8000-000000000014"
+              ],
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "id": "00000000-0000-4000-8000-000000000004",
+              "kind": "schedule",
+              "lastDay": 3,
+              "startDay": 1
+            },
+            {
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "id": "00000000-0000-4000-8000-000000000005",
+              "kind": "end",
+              "mode": "ending"
+            },
+            {
+              "assetIds": [],
+              "choices": [
+                {
+                  "effects": [],
+                  "id": "00000000-0000-4000-8000-000000000015",
+                  "text": "Accept",
+                  "visibleIf": {
+                    "kind": "compare",
+                    "left": {
+                      "kind": "variable",
+                      "variableId": "00000000-0000-4000-8000-000000000010"
+                    },
+                    "operator": "ge",
+                    "right": {
+                      "kind": "literal",
+                      "value": 20
+                    }
+                  }
+                },
+                {
+                  "effects": [],
+                  "id": "00000000-0000-4000-8000-000000000016",
+                  "text": "Decline",
+                  "visibleIf": {
+                    "kind": "compare",
+                    "left": {
+                      "kind": "variable",
+                      "variableId": "00000000-0000-4000-8000-000000000010"
+                    },
+                    "operator": "ge",
+                    "right": {
+                      "kind": "literal",
+                      "value": 20
+                    }
+                  }
+                }
+              ],
+              "effects": [],
+              "graphId": "00000000-0000-4000-8000-000000000007",
+              "id": "00000000-0000-4000-8000-000000000006",
+              "kind": "scene",
+              "lines": [
+                {
+                  "characterId": null,
+                  "text": "Summer House"
+                }
+              ]
+            },
+            {
+              "graphId": "00000000-0000-4000-8000-000000000007",
+              "id": "00000000-0000-4000-8000-000000000009",
+              "kind": "end",
+              "mode": "ending"
+            },
+            {
+              "graphId": "00000000-0000-4000-8000-000000000007",
+              "id": "00000000-0000-4000-8000-000000000008",
+              "kind": "end",
+              "mode": "return"
+            },
+            {
+              "condition": {
+                "kind": "compare",
+                "left": {
+                  "kind": "variable",
+                  "variableId": "00000000-0000-4000-8000-000000000010"
+                },
+                "operator": "ge",
+                "right": {
+                  "kind": "literal",
+                  "value": 0
+                }
+              },
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "id": "00000000-0000-4000-8000-000000000201",
+              "kind": "branch"
+            },
+            {
+              "effects": [
+                {
+                  "op": "subtract",
+                  "value": 1,
+                  "variableId": "00000000-0000-4000-8000-000000000204"
+                },
+                {
+                  "op": "add",
+                  "value": 1,
+                  "variableId": "00000000-0000-4000-8000-000000000204"
+                }
+              ],
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "id": "00000000-0000-4000-8000-000000000202",
+              "kind": "effect"
+            },
+            {
+              "effects": [
+                {
+                  "op": "add",
+                  "value": 1,
+                  "variableId": "00000000-0000-4000-8000-000000000204"
+                },
+                {
+                  "op": "subtract",
+                  "value": 1,
+                  "variableId": "00000000-0000-4000-8000-000000000204"
+                }
+              ],
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "id": "00000000-0000-4000-8000-000000000203",
+              "kind": "effect"
+            }
+          ],
+          "schemaVersion": 1,
+          "variables": [
+            {
+              "id": "00000000-0000-4000-8000-000000000010",
+              "initial": 0,
+              "max": 100,
+              "min": 0,
+              "name": "affection",
+              "type": "int"
+            },
+            {
+              "id": "00000000-0000-4000-8000-000000000011",
+              "initial": 100,
+              "max": 100,
+              "min": 0,
+              "name": "energy",
+              "type": "int"
+            },
+            {
+              "id": "00000000-0000-4000-8000-000000000204",
+              "initial": 0,
+              "name": "boundsProbe",
+              "type": "int"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "9",
+      "kind": "result",
+      "name": "redo",
+      "value": {
+        "project": {
+          "activities": [
+            {
+              "condition": {
+                "kind": "compare",
+                "left": {
+                  "kind": "variable",
+                  "variableId": "00000000-0000-4000-8000-000000000011"
+                },
+                "operator": "ge",
+                "right": {
+                  "kind": "literal",
+                  "value": 20
+                }
+              },
+              "effects": [
+                {
+                  "op": "add",
+                  "value": 10,
+                  "variableId": "00000000-0000-4000-8000-000000000010"
+                },
+                {
+                  "op": "subtract",
+                  "value": 20,
+                  "variableId": "00000000-0000-4000-8000-000000000011"
+                }
+              ],
+              "id": "00000000-0000-4000-8000-000000000012",
+              "name": "Help Mina",
+              "subgraphId": null
+            },
+            {
+              "condition": null,
+              "effects": [
+                {
+                  "op": "add",
+                  "value": 20,
+                  "variableId": "00000000-0000-4000-8000-000000000011"
+                }
+              ],
+              "id": "00000000-0000-4000-8000-000000000013",
+              "name": "Rest",
+              "subgraphId": null
+            }
+          ],
+          "assets": [],
+          "characters": [],
+          "edges": [
+            {
+              "from": "00000000-0000-4000-8000-000000000003",
+              "id": "00000000-0000-4000-8000-000000000101",
+              "port": "next",
+              "to": "00000000-0000-4000-8000-000000000201"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000004",
+              "id": "00000000-0000-4000-8000-000000000102",
+              "port": "onComplete",
+              "to": "00000000-0000-4000-8000-000000000005"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000006",
+              "id": "00000000-0000-4000-8000-000000000103",
+              "port": "00000000-0000-4000-8000-000000000015",
+              "to": "00000000-0000-4000-8000-000000000009"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000006",
+              "id": "00000000-0000-4000-8000-000000000104",
+              "port": "00000000-0000-4000-8000-000000000016",
+              "to": "00000000-0000-4000-8000-000000000008"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000006",
+              "id": "00000000-0000-4000-8000-000000000105",
+              "port": "fallback",
+              "to": "00000000-0000-4000-8000-000000000008"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000201",
+              "id": "00000000-0000-4000-8000-000000000205",
+              "port": "true",
+              "to": "00000000-0000-4000-8000-000000000202"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000201",
+              "id": "00000000-0000-4000-8000-000000000206",
+              "port": "false",
+              "to": "00000000-0000-4000-8000-000000000203"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000202",
+              "id": "00000000-0000-4000-8000-000000000207",
+              "port": "next",
+              "to": "00000000-0000-4000-8000-000000000004"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000203",
+              "id": "00000000-0000-4000-8000-000000000208",
+              "port": "next",
+              "to": "00000000-0000-4000-8000-000000000004"
+            }
+          ],
+          "entryGraphId": "00000000-0000-4000-8000-000000000002",
+          "events": [
+            {
+              "condition": {
+                "conditions": [
+                  {
+                    "kind": "compare",
+                    "left": {
+                      "kind": "day"
+                    },
+                    "operator": "ge",
+                    "right": {
+                      "kind": "literal",
+                      "value": 3
+                    }
+                  },
+                  {
+                    "kind": "compare",
+                    "left": {
+                      "kind": "variable",
+                      "variableId": "00000000-0000-4000-8000-000000000010"
+                    },
+                    "operator": "ge",
+                    "right": {
+                      "kind": "literal",
+                      "value": 20
+                    }
+                  }
+                ],
+                "kind": "all"
+              },
+              "id": "00000000-0000-4000-8000-000000000014",
+              "once": true,
+              "order": 0,
+              "phase": "after_activity",
+              "priority": 1,
+              "subgraphId": "00000000-0000-4000-8000-000000000007"
+            }
+          ],
+          "graphs": [
+            {
+              "entryNodeId": "00000000-0000-4000-8000-000000000003",
+              "id": "00000000-0000-4000-8000-000000000002",
+              "kind": "main"
+            },
+            {
+              "entryNodeId": "00000000-0000-4000-8000-000000000006",
+              "id": "00000000-0000-4000-8000-000000000007",
+              "kind": "subgraph"
+            }
+          ],
+          "id": "00000000-0000-4000-8000-000000000001",
+          "name": "Transport proof",
+          "nodes": [
+            {
+              "assetIds": [],
+              "choices": [],
+              "effects": [],
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "id": "00000000-0000-4000-8000-000000000003",
+              "kind": "scene",
+              "lines": [
+                {
+                  "characterId": null,
+                  "text": "Summer House"
+                }
+              ]
+            },
+            {
+              "activityIds": [
+                "00000000-0000-4000-8000-000000000012",
+                "00000000-0000-4000-8000-000000000013"
+              ],
+              "eventIds": [
+                "00000000-0000-4000-8000-000000000014"
+              ],
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "id": "00000000-0000-4000-8000-000000000004",
+              "kind": "schedule",
+              "lastDay": 3,
+              "startDay": 1
+            },
+            {
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "id": "00000000-0000-4000-8000-000000000005",
+              "kind": "end",
+              "mode": "ending"
+            },
+            {
+              "assetIds": [],
+              "choices": [
+                {
+                  "effects": [],
+                  "id": "00000000-0000-4000-8000-000000000015",
+                  "text": "Accept",
+                  "visibleIf": {
+                    "kind": "compare",
+                    "left": {
+                      "kind": "variable",
+                      "variableId": "00000000-0000-4000-8000-000000000010"
+                    },
+                    "operator": "ge",
+                    "right": {
+                      "kind": "literal",
+                      "value": 20
+                    }
+                  }
+                },
+                {
+                  "effects": [],
+                  "id": "00000000-0000-4000-8000-000000000016",
+                  "text": "Decline",
+                  "visibleIf": {
+                    "kind": "compare",
+                    "left": {
+                      "kind": "variable",
+                      "variableId": "00000000-0000-4000-8000-000000000010"
+                    },
+                    "operator": "ge",
+                    "right": {
+                      "kind": "literal",
+                      "value": 20
+                    }
+                  }
+                }
+              ],
+              "effects": [],
+              "graphId": "00000000-0000-4000-8000-000000000007",
+              "id": "00000000-0000-4000-8000-000000000006",
+              "kind": "scene",
+              "lines": [
+                {
+                  "characterId": null,
+                  "text": "Summer House"
+                }
+              ]
+            },
+            {
+              "graphId": "00000000-0000-4000-8000-000000000007",
+              "id": "00000000-0000-4000-8000-000000000009",
+              "kind": "end",
+              "mode": "ending"
+            },
+            {
+              "graphId": "00000000-0000-4000-8000-000000000007",
+              "id": "00000000-0000-4000-8000-000000000008",
+              "kind": "end",
+              "mode": "return"
+            },
+            {
+              "condition": {
+                "kind": "compare",
+                "left": {
+                  "kind": "variable",
+                  "variableId": "00000000-0000-4000-8000-000000000010"
+                },
+                "operator": "ge",
+                "right": {
+                  "kind": "literal",
+                  "value": 0
+                }
+              },
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "id": "00000000-0000-4000-8000-000000000201",
+              "kind": "branch"
+            },
+            {
+              "effects": [
+                {
+                  "op": "subtract",
+                  "value": 1,
+                  "variableId": "00000000-0000-4000-8000-000000000204"
+                },
+                {
+                  "op": "add",
+                  "value": 1,
+                  "variableId": "00000000-0000-4000-8000-000000000204"
+                }
+              ],
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "id": "00000000-0000-4000-8000-000000000202",
+              "kind": "effect"
+            },
+            {
+              "effects": [
+                {
+                  "op": "add",
+                  "value": 1,
+                  "variableId": "00000000-0000-4000-8000-000000000204"
+                },
+                {
+                  "op": "subtract",
+                  "value": 1,
+                  "variableId": "00000000-0000-4000-8000-000000000204"
+                }
+              ],
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "id": "00000000-0000-4000-8000-000000000203",
+              "kind": "effect"
+            }
+          ],
+          "schemaVersion": 1,
+          "variables": [
+            {
+              "id": "00000000-0000-4000-8000-000000000010",
+              "initial": 0,
+              "max": 100,
+              "min": 0,
+              "name": "affection",
+              "type": "int"
+            },
+            {
+              "id": "00000000-0000-4000-8000-000000000011",
+              "initial": 100,
+              "max": 100,
+              "min": 0,
+              "name": "energy",
+              "type": "int"
+            },
+            {
+              "id": "00000000-0000-4000-8000-000000000204",
+              "initial": 0,
+              "name": "boundsProbe",
+              "type": "int"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "10",
+      "kind": "error",
+      "error": {
+        "code": "CORE_ERROR",
+        "message": "unsupported project schema version"
+      }
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "11",
+      "kind": "result",
+      "name": "getProject",
+      "value": {
+        "project": {
+          "activities": [
+            {
+              "condition": {
+                "kind": "compare",
+                "left": {
+                  "kind": "variable",
+                  "variableId": "00000000-0000-4000-8000-000000000011"
+                },
+                "operator": "ge",
+                "right": {
+                  "kind": "literal",
+                  "value": 20
+                }
+              },
+              "effects": [
+                {
+                  "op": "add",
+                  "value": 10,
+                  "variableId": "00000000-0000-4000-8000-000000000010"
+                },
+                {
+                  "op": "subtract",
+                  "value": 20,
+                  "variableId": "00000000-0000-4000-8000-000000000011"
+                }
+              ],
+              "id": "00000000-0000-4000-8000-000000000012",
+              "name": "Help Mina",
+              "subgraphId": null
+            },
+            {
+              "condition": null,
+              "effects": [
+                {
+                  "op": "add",
+                  "value": 20,
+                  "variableId": "00000000-0000-4000-8000-000000000011"
+                }
+              ],
+              "id": "00000000-0000-4000-8000-000000000013",
+              "name": "Rest",
+              "subgraphId": null
+            }
+          ],
+          "assets": [],
+          "characters": [],
+          "edges": [
+            {
+              "from": "00000000-0000-4000-8000-000000000003",
+              "id": "00000000-0000-4000-8000-000000000101",
+              "port": "next",
+              "to": "00000000-0000-4000-8000-000000000201"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000004",
+              "id": "00000000-0000-4000-8000-000000000102",
+              "port": "onComplete",
+              "to": "00000000-0000-4000-8000-000000000005"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000006",
+              "id": "00000000-0000-4000-8000-000000000103",
+              "port": "00000000-0000-4000-8000-000000000015",
+              "to": "00000000-0000-4000-8000-000000000009"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000006",
+              "id": "00000000-0000-4000-8000-000000000104",
+              "port": "00000000-0000-4000-8000-000000000016",
+              "to": "00000000-0000-4000-8000-000000000008"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000006",
+              "id": "00000000-0000-4000-8000-000000000105",
+              "port": "fallback",
+              "to": "00000000-0000-4000-8000-000000000008"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000201",
+              "id": "00000000-0000-4000-8000-000000000205",
+              "port": "true",
+              "to": "00000000-0000-4000-8000-000000000202"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000201",
+              "id": "00000000-0000-4000-8000-000000000206",
+              "port": "false",
+              "to": "00000000-0000-4000-8000-000000000203"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000202",
+              "id": "00000000-0000-4000-8000-000000000207",
+              "port": "next",
+              "to": "00000000-0000-4000-8000-000000000004"
+            },
+            {
+              "from": "00000000-0000-4000-8000-000000000203",
+              "id": "00000000-0000-4000-8000-000000000208",
+              "port": "next",
+              "to": "00000000-0000-4000-8000-000000000004"
+            }
+          ],
+          "entryGraphId": "00000000-0000-4000-8000-000000000002",
+          "events": [
+            {
+              "condition": {
+                "conditions": [
+                  {
+                    "kind": "compare",
+                    "left": {
+                      "kind": "day"
+                    },
+                    "operator": "ge",
+                    "right": {
+                      "kind": "literal",
+                      "value": 3
+                    }
+                  },
+                  {
+                    "kind": "compare",
+                    "left": {
+                      "kind": "variable",
+                      "variableId": "00000000-0000-4000-8000-000000000010"
+                    },
+                    "operator": "ge",
+                    "right": {
+                      "kind": "literal",
+                      "value": 20
+                    }
+                  }
+                ],
+                "kind": "all"
+              },
+              "id": "00000000-0000-4000-8000-000000000014",
+              "once": true,
+              "order": 0,
+              "phase": "after_activity",
+              "priority": 1,
+              "subgraphId": "00000000-0000-4000-8000-000000000007"
+            }
+          ],
+          "graphs": [
+            {
+              "entryNodeId": "00000000-0000-4000-8000-000000000003",
+              "id": "00000000-0000-4000-8000-000000000002",
+              "kind": "main"
+            },
+            {
+              "entryNodeId": "00000000-0000-4000-8000-000000000006",
+              "id": "00000000-0000-4000-8000-000000000007",
+              "kind": "subgraph"
+            }
+          ],
+          "id": "00000000-0000-4000-8000-000000000001",
+          "name": "Transport proof",
+          "nodes": [
+            {
+              "assetIds": [],
+              "choices": [],
+              "effects": [],
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "id": "00000000-0000-4000-8000-000000000003",
+              "kind": "scene",
+              "lines": [
+                {
+                  "characterId": null,
+                  "text": "Summer House"
+                }
+              ]
+            },
+            {
+              "activityIds": [
+                "00000000-0000-4000-8000-000000000012",
+                "00000000-0000-4000-8000-000000000013"
+              ],
+              "eventIds": [
+                "00000000-0000-4000-8000-000000000014"
+              ],
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "id": "00000000-0000-4000-8000-000000000004",
+              "kind": "schedule",
+              "lastDay": 3,
+              "startDay": 1
+            },
+            {
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "id": "00000000-0000-4000-8000-000000000005",
+              "kind": "end",
+              "mode": "ending"
+            },
+            {
+              "assetIds": [],
+              "choices": [
+                {
+                  "effects": [],
+                  "id": "00000000-0000-4000-8000-000000000015",
+                  "text": "Accept",
+                  "visibleIf": {
+                    "kind": "compare",
+                    "left": {
+                      "kind": "variable",
+                      "variableId": "00000000-0000-4000-8000-000000000010"
+                    },
+                    "operator": "ge",
+                    "right": {
+                      "kind": "literal",
+                      "value": 20
+                    }
+                  }
+                },
+                {
+                  "effects": [],
+                  "id": "00000000-0000-4000-8000-000000000016",
+                  "text": "Decline",
+                  "visibleIf": {
+                    "kind": "compare",
+                    "left": {
+                      "kind": "variable",
+                      "variableId": "00000000-0000-4000-8000-000000000010"
+                    },
+                    "operator": "ge",
+                    "right": {
+                      "kind": "literal",
+                      "value": 20
+                    }
+                  }
+                }
+              ],
+              "effects": [],
+              "graphId": "00000000-0000-4000-8000-000000000007",
+              "id": "00000000-0000-4000-8000-000000000006",
+              "kind": "scene",
+              "lines": [
+                {
+                  "characterId": null,
+                  "text": "Summer House"
+                }
+              ]
+            },
+            {
+              "graphId": "00000000-0000-4000-8000-000000000007",
+              "id": "00000000-0000-4000-8000-000000000009",
+              "kind": "end",
+              "mode": "ending"
+            },
+            {
+              "graphId": "00000000-0000-4000-8000-000000000007",
+              "id": "00000000-0000-4000-8000-000000000008",
+              "kind": "end",
+              "mode": "return"
+            },
+            {
+              "condition": {
+                "kind": "compare",
+                "left": {
+                  "kind": "variable",
+                  "variableId": "00000000-0000-4000-8000-000000000010"
+                },
+                "operator": "ge",
+                "right": {
+                  "kind": "literal",
+                  "value": 0
+                }
+              },
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "id": "00000000-0000-4000-8000-000000000201",
+              "kind": "branch"
+            },
+            {
+              "effects": [
+                {
+                  "op": "subtract",
+                  "value": 1,
+                  "variableId": "00000000-0000-4000-8000-000000000204"
+                },
+                {
+                  "op": "add",
+                  "value": 1,
+                  "variableId": "00000000-0000-4000-8000-000000000204"
+                }
+              ],
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "id": "00000000-0000-4000-8000-000000000202",
+              "kind": "effect"
+            },
+            {
+              "effects": [
+                {
+                  "op": "add",
+                  "value": 1,
+                  "variableId": "00000000-0000-4000-8000-000000000204"
+                },
+                {
+                  "op": "subtract",
+                  "value": 1,
+                  "variableId": "00000000-0000-4000-8000-000000000204"
+                }
+              ],
+              "graphId": "00000000-0000-4000-8000-000000000002",
+              "id": "00000000-0000-4000-8000-000000000203",
+              "kind": "effect"
+            }
+          ],
+          "schemaVersion": 1,
+          "variables": [
+            {
+              "id": "00000000-0000-4000-8000-000000000010",
+              "initial": 0,
+              "max": 100,
+              "min": 0,
+              "name": "affection",
+              "type": "int"
+            },
+            {
+              "id": "00000000-0000-4000-8000-000000000011",
+              "initial": 100,
+              "max": 100,
+              "min": 0,
+              "name": "energy",
+              "type": "int"
+            },
+            {
+              "id": "00000000-0000-4000-8000-000000000204",
+              "initial": 0,
+              "name": "boundsProbe",
+              "type": "int"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "12",
+      "kind": "result",
+      "name": "startPlaytest",
+      "value": {
+        "conditions": [
+          {
+            "expression": "{\"kind\":\"compare\",\"left\":{\"kind\":\"variable\",\"variableId\":\"00000000-0000-4000-8000-000000000011\"},\"operator\":\"ge\",\"right\":{\"kind\":\"literal\",\"value\":20}}",
+            "operands": [
+              100,
+              20
+            ],
+            "passed": true
+          }
+        ],
+        "runState": {
+          "day": 1,
+          "firedEventIds": [],
+          "nodeId": "00000000-0000-4000-8000-000000000004",
+          "vars": {
+            "00000000-0000-4000-8000-000000000010": 0,
+            "00000000-0000-4000-8000-000000000011": 100,
+            "00000000-0000-4000-8000-000000000204": 0
+          }
+        },
+        "trace": [
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000003",
+            "phase": "scene",
+            "step": 1,
+            "transition": "00000000-0000-4000-8000-000000000201",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {
+              "00000000-0000-4000-8000-000000000201": true
+            },
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000201",
+            "phase": "branch",
+            "step": 2,
+            "transition": "00000000-0000-4000-8000-000000000202",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000202",
+            "phase": "effect",
+            "step": 3,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "before_activity",
+            "step": 4,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          }
+        ],
+        "visibleChoices": [
+          "00000000-0000-4000-8000-000000000012",
+          "00000000-0000-4000-8000-000000000013"
+        ]
+      }
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "13",
+      "kind": "result",
+      "name": "setVar",
+      "value": {
+        "conditions": [
+          {
+            "expression": "{\"kind\":\"compare\",\"left\":{\"kind\":\"variable\",\"variableId\":\"00000000-0000-4000-8000-000000000011\"},\"operator\":\"ge\",\"right\":{\"kind\":\"literal\",\"value\":20}}",
+            "operands": [
+              19,
+              20
+            ],
+            "passed": false
+          }
+        ],
+        "runState": {
+          "day": 1,
+          "firedEventIds": [],
+          "nodeId": "00000000-0000-4000-8000-000000000004",
+          "vars": {
+            "00000000-0000-4000-8000-000000000010": 0,
+            "00000000-0000-4000-8000-000000000011": 19,
+            "00000000-0000-4000-8000-000000000204": 0
+          }
+        },
+        "trace": [
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000003",
+            "phase": "scene",
+            "step": 1,
+            "transition": "00000000-0000-4000-8000-000000000201",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {
+              "00000000-0000-4000-8000-000000000201": true
+            },
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000201",
+            "phase": "branch",
+            "step": 2,
+            "transition": "00000000-0000-4000-8000-000000000202",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000202",
+            "phase": "effect",
+            "step": 3,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "before_activity",
+            "step": 4,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          }
+        ],
+        "visibleChoices": [
+          "00000000-0000-4000-8000-000000000013"
+        ]
+      }
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "14",
+      "kind": "result",
+      "name": "rewind",
+      "value": {
+        "conditions": [
+          {
+            "expression": "{\"kind\":\"compare\",\"left\":{\"kind\":\"variable\",\"variableId\":\"00000000-0000-4000-8000-000000000011\"},\"operator\":\"ge\",\"right\":{\"kind\":\"literal\",\"value\":20}}",
+            "operands": [
+              100,
+              20
+            ],
+            "passed": true
+          }
+        ],
+        "runState": {
+          "day": 1,
+          "firedEventIds": [],
+          "nodeId": "00000000-0000-4000-8000-000000000004",
+          "vars": {
+            "00000000-0000-4000-8000-000000000010": 0,
+            "00000000-0000-4000-8000-000000000011": 100,
+            "00000000-0000-4000-8000-000000000204": 0
+          }
+        },
+        "trace": [
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000003",
+            "phase": "scene",
+            "step": 1,
+            "transition": "00000000-0000-4000-8000-000000000201",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {
+              "00000000-0000-4000-8000-000000000201": true
+            },
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000201",
+            "phase": "branch",
+            "step": 2,
+            "transition": "00000000-0000-4000-8000-000000000202",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000202",
+            "phase": "effect",
+            "step": 3,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "before_activity",
+            "step": 4,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          }
+        ],
+        "visibleChoices": [
+          "00000000-0000-4000-8000-000000000012",
+          "00000000-0000-4000-8000-000000000013"
+        ]
+      }
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "15",
+      "kind": "result",
+      "name": "choose",
+      "value": {
+        "conditions": [
+          {
+            "expression": "{\"kind\":\"compare\",\"left\":{\"kind\":\"variable\",\"variableId\":\"00000000-0000-4000-8000-000000000011\"},\"operator\":\"ge\",\"right\":{\"kind\":\"literal\",\"value\":20}}",
+            "operands": [
+              80,
+              20
+            ],
+            "passed": true
+          }
+        ],
+        "runState": {
+          "day": 2,
+          "firedEventIds": [],
+          "nodeId": "00000000-0000-4000-8000-000000000004",
+          "vars": {
+            "00000000-0000-4000-8000-000000000010": 10,
+            "00000000-0000-4000-8000-000000000011": 80,
+            "00000000-0000-4000-8000-000000000204": 0
+          }
+        },
+        "trace": [
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000003",
+            "phase": "scene",
+            "step": 1,
+            "transition": "00000000-0000-4000-8000-000000000201",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {
+              "00000000-0000-4000-8000-000000000201": true
+            },
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000201",
+            "phase": "branch",
+            "step": 2,
+            "transition": "00000000-0000-4000-8000-000000000202",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000202",
+            "phase": "effect",
+            "step": 3,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "before_activity",
+            "step": 4,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": "00000000-0000-4000-8000-000000000012",
+            "conditionResults": {
+              "00000000-0000-4000-8000-000000000012": true,
+              "00000000-0000-4000-8000-000000000013": true
+            },
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "activity",
+            "step": 5,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 10,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": [
+              "00000000-0000-4000-8000-000000000012",
+              "00000000-0000-4000-8000-000000000013"
+            ]
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {
+              "00000000-0000-4000-8000-000000000014": false
+            },
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "after_activity",
+            "step": 6,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 10,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 10,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "end_of_day",
+            "step": 7,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 10,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 10,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 2,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "before_activity",
+            "step": 8,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 10,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 10,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          }
+        ],
+        "visibleChoices": [
+          "00000000-0000-4000-8000-000000000012",
+          "00000000-0000-4000-8000-000000000013"
+        ]
+      }
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "16",
+      "kind": "result",
+      "name": "choose",
+      "value": {
+        "conditions": [
+          {
+            "expression": "{\"kind\":\"compare\",\"left\":{\"kind\":\"variable\",\"variableId\":\"00000000-0000-4000-8000-000000000011\"},\"operator\":\"ge\",\"right\":{\"kind\":\"literal\",\"value\":20}}",
+            "operands": [
+              60,
+              20
+            ],
+            "passed": true
+          }
+        ],
+        "runState": {
+          "day": 3,
+          "firedEventIds": [],
+          "nodeId": "00000000-0000-4000-8000-000000000004",
+          "vars": {
+            "00000000-0000-4000-8000-000000000010": 20,
+            "00000000-0000-4000-8000-000000000011": 60,
+            "00000000-0000-4000-8000-000000000204": 0
+          }
+        },
+        "trace": [
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000003",
+            "phase": "scene",
+            "step": 1,
+            "transition": "00000000-0000-4000-8000-000000000201",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {
+              "00000000-0000-4000-8000-000000000201": true
+            },
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000201",
+            "phase": "branch",
+            "step": 2,
+            "transition": "00000000-0000-4000-8000-000000000202",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000202",
+            "phase": "effect",
+            "step": 3,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "before_activity",
+            "step": 4,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": "00000000-0000-4000-8000-000000000012",
+            "conditionResults": {
+              "00000000-0000-4000-8000-000000000012": true,
+              "00000000-0000-4000-8000-000000000013": true
+            },
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "activity",
+            "step": 5,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 10,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": [
+              "00000000-0000-4000-8000-000000000012",
+              "00000000-0000-4000-8000-000000000013"
+            ]
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {
+              "00000000-0000-4000-8000-000000000014": false
+            },
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "after_activity",
+            "step": 6,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 10,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 10,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "end_of_day",
+            "step": 7,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 10,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 10,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 2,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "before_activity",
+            "step": 8,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 10,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 10,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": "00000000-0000-4000-8000-000000000012",
+            "conditionResults": {
+              "00000000-0000-4000-8000-000000000012": true,
+              "00000000-0000-4000-8000-000000000013": true
+            },
+            "day": 2,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "activity",
+            "step": 9,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 60,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 10,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": [
+              "00000000-0000-4000-8000-000000000012",
+              "00000000-0000-4000-8000-000000000013"
+            ]
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {
+              "00000000-0000-4000-8000-000000000014": false
+            },
+            "day": 2,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "after_activity",
+            "step": 10,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 60,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 60,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 2,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "end_of_day",
+            "step": 11,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 60,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 60,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 3,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "before_activity",
+            "step": 12,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 60,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 60,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          }
+        ],
+        "visibleChoices": [
+          "00000000-0000-4000-8000-000000000012",
+          "00000000-0000-4000-8000-000000000013"
+        ]
+      }
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "17",
+      "kind": "result",
+      "name": "choose",
+      "value": {
+        "conditions": [
+          {
+            "expression": "{\"kind\":\"compare\",\"left\":{\"kind\":\"variable\",\"variableId\":\"00000000-0000-4000-8000-000000000010\"},\"operator\":\"ge\",\"right\":{\"kind\":\"literal\",\"value\":20}}",
+            "operands": [
+              20,
+              20
+            ],
+            "passed": true
+          },
+          {
+            "expression": "{\"kind\":\"compare\",\"left\":{\"kind\":\"variable\",\"variableId\":\"00000000-0000-4000-8000-000000000010\"},\"operator\":\"ge\",\"right\":{\"kind\":\"literal\",\"value\":20}}",
+            "operands": [
+              20,
+              20
+            ],
+            "passed": true
+          }
+        ],
+        "runState": {
+          "day": 3,
+          "firedEventIds": [
+            "00000000-0000-4000-8000-000000000014"
+          ],
+          "nodeId": "00000000-0000-4000-8000-000000000006",
+          "vars": {
+            "00000000-0000-4000-8000-000000000010": 20,
+            "00000000-0000-4000-8000-000000000011": 80,
+            "00000000-0000-4000-8000-000000000204": 0
+          }
+        },
+        "trace": [
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000003",
+            "phase": "scene",
+            "step": 1,
+            "transition": "00000000-0000-4000-8000-000000000201",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {
+              "00000000-0000-4000-8000-000000000201": true
+            },
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000201",
+            "phase": "branch",
+            "step": 2,
+            "transition": "00000000-0000-4000-8000-000000000202",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000202",
+            "phase": "effect",
+            "step": 3,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "before_activity",
+            "step": 4,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": "00000000-0000-4000-8000-000000000012",
+            "conditionResults": {
+              "00000000-0000-4000-8000-000000000012": true,
+              "00000000-0000-4000-8000-000000000013": true
+            },
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "activity",
+            "step": 5,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 10,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": [
+              "00000000-0000-4000-8000-000000000012",
+              "00000000-0000-4000-8000-000000000013"
+            ]
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {
+              "00000000-0000-4000-8000-000000000014": false
+            },
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "after_activity",
+            "step": 6,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 10,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 10,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "end_of_day",
+            "step": 7,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 10,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 10,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 2,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "before_activity",
+            "step": 8,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 10,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 10,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": "00000000-0000-4000-8000-000000000012",
+            "conditionResults": {
+              "00000000-0000-4000-8000-000000000012": true,
+              "00000000-0000-4000-8000-000000000013": true
+            },
+            "day": 2,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "activity",
+            "step": 9,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 60,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 10,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": [
+              "00000000-0000-4000-8000-000000000012",
+              "00000000-0000-4000-8000-000000000013"
+            ]
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {
+              "00000000-0000-4000-8000-000000000014": false
+            },
+            "day": 2,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "after_activity",
+            "step": 10,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 60,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 60,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 2,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "end_of_day",
+            "step": 11,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 60,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 60,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 3,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "before_activity",
+            "step": 12,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 60,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 60,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": "00000000-0000-4000-8000-000000000013",
+            "conditionResults": {
+              "00000000-0000-4000-8000-000000000012": true,
+              "00000000-0000-4000-8000-000000000013": true
+            },
+            "day": 3,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "activity",
+            "step": 13,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 60,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": [
+              "00000000-0000-4000-8000-000000000012",
+              "00000000-0000-4000-8000-000000000013"
+            ]
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {
+              "00000000-0000-4000-8000-000000000014": true
+            },
+            "day": 3,
+            "ending": null,
+            "eventId": "00000000-0000-4000-8000-000000000014",
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "after_activity",
+            "step": 14,
+            "transition": "00000000-0000-4000-8000-000000000006",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          }
+        ],
+        "visibleChoices": [
+          "00000000-0000-4000-8000-000000000015",
+          "00000000-0000-4000-8000-000000000016"
+        ]
+      }
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "18",
+      "kind": "result",
+      "name": "choose",
+      "value": {
+        "conditions": [],
+        "runState": {
+          "day": 3,
+          "firedEventIds": [
+            "00000000-0000-4000-8000-000000000014"
+          ],
+          "nodeId": "00000000-0000-4000-8000-000000000009",
+          "vars": {
+            "00000000-0000-4000-8000-000000000010": 20,
+            "00000000-0000-4000-8000-000000000011": 80,
+            "00000000-0000-4000-8000-000000000204": 0
+          }
+        },
+        "trace": [
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000003",
+            "phase": "scene",
+            "step": 1,
+            "transition": "00000000-0000-4000-8000-000000000201",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {
+              "00000000-0000-4000-8000-000000000201": true
+            },
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000201",
+            "phase": "branch",
+            "step": 2,
+            "transition": "00000000-0000-4000-8000-000000000202",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000202",
+            "phase": "effect",
+            "step": 3,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "before_activity",
+            "step": 4,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": "00000000-0000-4000-8000-000000000012",
+            "conditionResults": {
+              "00000000-0000-4000-8000-000000000012": true,
+              "00000000-0000-4000-8000-000000000013": true
+            },
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "activity",
+            "step": 5,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 10,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": [
+              "00000000-0000-4000-8000-000000000012",
+              "00000000-0000-4000-8000-000000000013"
+            ]
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {
+              "00000000-0000-4000-8000-000000000014": false
+            },
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "after_activity",
+            "step": 6,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 10,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 10,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "end_of_day",
+            "step": 7,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 10,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 10,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 2,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "before_activity",
+            "step": 8,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 10,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 10,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": "00000000-0000-4000-8000-000000000012",
+            "conditionResults": {
+              "00000000-0000-4000-8000-000000000012": true,
+              "00000000-0000-4000-8000-000000000013": true
+            },
+            "day": 2,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "activity",
+            "step": 9,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 60,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 10,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": [
+              "00000000-0000-4000-8000-000000000012",
+              "00000000-0000-4000-8000-000000000013"
+            ]
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {
+              "00000000-0000-4000-8000-000000000014": false
+            },
+            "day": 2,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "after_activity",
+            "step": 10,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 60,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 60,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 2,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "end_of_day",
+            "step": 11,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 60,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 60,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 3,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "before_activity",
+            "step": 12,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 60,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 60,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": "00000000-0000-4000-8000-000000000013",
+            "conditionResults": {
+              "00000000-0000-4000-8000-000000000012": true,
+              "00000000-0000-4000-8000-000000000013": true
+            },
+            "day": 3,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "activity",
+            "step": 13,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 60,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": [
+              "00000000-0000-4000-8000-000000000012",
+              "00000000-0000-4000-8000-000000000013"
+            ]
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {
+              "00000000-0000-4000-8000-000000000014": true
+            },
+            "day": 3,
+            "ending": null,
+            "eventId": "00000000-0000-4000-8000-000000000014",
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "after_activity",
+            "step": 14,
+            "transition": "00000000-0000-4000-8000-000000000006",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": "00000000-0000-4000-8000-000000000015",
+            "conditionResults": {
+              "00000000-0000-4000-8000-000000000015": true,
+              "00000000-0000-4000-8000-000000000016": true
+            },
+            "day": 3,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000006",
+            "phase": "scene",
+            "step": 15,
+            "transition": "00000000-0000-4000-8000-000000000009",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": [
+              "00000000-0000-4000-8000-000000000015",
+              "00000000-0000-4000-8000-000000000016"
+            ]
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 3,
+            "ending": "00000000-0000-4000-8000-000000000009",
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000009",
+            "phase": "end",
+            "step": 16,
+            "transition": "ending:00000000-0000-4000-8000-000000000009",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          }
+        ],
+        "visibleChoices": []
+      }
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "19",
+      "kind": "result",
+      "name": "getTrace",
+      "value": {
+        "trace": [
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000003",
+            "phase": "scene",
+            "step": 1,
+            "transition": "00000000-0000-4000-8000-000000000201",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {
+              "00000000-0000-4000-8000-000000000201": true
+            },
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000201",
+            "phase": "branch",
+            "step": 2,
+            "transition": "00000000-0000-4000-8000-000000000202",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000202",
+            "phase": "effect",
+            "step": 3,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "before_activity",
+            "step": 4,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": "00000000-0000-4000-8000-000000000012",
+            "conditionResults": {
+              "00000000-0000-4000-8000-000000000012": true,
+              "00000000-0000-4000-8000-000000000013": true
+            },
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "activity",
+            "step": 5,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 10,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 0,
+              "00000000-0000-4000-8000-000000000011": 100,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": [
+              "00000000-0000-4000-8000-000000000012",
+              "00000000-0000-4000-8000-000000000013"
+            ]
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {
+              "00000000-0000-4000-8000-000000000014": false
+            },
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "after_activity",
+            "step": 6,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 10,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 10,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 1,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "end_of_day",
+            "step": 7,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 10,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 10,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 2,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "before_activity",
+            "step": 8,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 10,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 10,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": "00000000-0000-4000-8000-000000000012",
+            "conditionResults": {
+              "00000000-0000-4000-8000-000000000012": true,
+              "00000000-0000-4000-8000-000000000013": true
+            },
+            "day": 2,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "activity",
+            "step": 9,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 60,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 10,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": [
+              "00000000-0000-4000-8000-000000000012",
+              "00000000-0000-4000-8000-000000000013"
+            ]
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {
+              "00000000-0000-4000-8000-000000000014": false
+            },
+            "day": 2,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "after_activity",
+            "step": 10,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 60,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 60,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 2,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "end_of_day",
+            "step": 11,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 60,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 60,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 3,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "before_activity",
+            "step": 12,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 60,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 60,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": "00000000-0000-4000-8000-000000000013",
+            "conditionResults": {
+              "00000000-0000-4000-8000-000000000012": true,
+              "00000000-0000-4000-8000-000000000013": true
+            },
+            "day": 3,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "activity",
+            "step": 13,
+            "transition": "00000000-0000-4000-8000-000000000004",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 60,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": [
+              "00000000-0000-4000-8000-000000000012",
+              "00000000-0000-4000-8000-000000000013"
+            ]
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {
+              "00000000-0000-4000-8000-000000000014": true
+            },
+            "day": 3,
+            "ending": null,
+            "eventId": "00000000-0000-4000-8000-000000000014",
+            "nodeId": "00000000-0000-4000-8000-000000000004",
+            "phase": "after_activity",
+            "step": 14,
+            "transition": "00000000-0000-4000-8000-000000000006",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          },
+          {
+            "choiceId": "00000000-0000-4000-8000-000000000015",
+            "conditionResults": {
+              "00000000-0000-4000-8000-000000000015": true,
+              "00000000-0000-4000-8000-000000000016": true
+            },
+            "day": 3,
+            "ending": null,
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000006",
+            "phase": "scene",
+            "step": 15,
+            "transition": "00000000-0000-4000-8000-000000000009",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": [
+              "00000000-0000-4000-8000-000000000015",
+              "00000000-0000-4000-8000-000000000016"
+            ]
+          },
+          {
+            "choiceId": null,
+            "conditionResults": {},
+            "day": 3,
+            "ending": "00000000-0000-4000-8000-000000000009",
+            "eventId": null,
+            "nodeId": "00000000-0000-4000-8000-000000000009",
+            "phase": "end",
+            "step": 16,
+            "transition": "ending:00000000-0000-4000-8000-000000000009",
+            "varsAfter": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "varsBefore": {
+              "00000000-0000-4000-8000-000000000010": 20,
+              "00000000-0000-4000-8000-000000000011": 80,
+              "00000000-0000-4000-8000-000000000204": 0
+            },
+            "visibleChoices": []
+          }
+        ]
+      }
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "20",
+      "kind": "error",
+      "error": {
+        "code": "CORE_ERROR",
+        "message": "Input after ending"
+      }
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "21",
+      "kind": "error",
+      "error": {
+        "code": "CORE_ERROR",
+        "message": "Insufficient rewind history"
+      }
+    },
+    {
+      "contractVersion": 1,
+      "requestId": "22",
+      "kind": "error",
+      "error": {
+        "code": "CORE_ERROR",
+        "message": "Invalid variable value: 00000000-0000-4000-8000-000000000011"
+      }
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "checks": [
+    "CoreClient: 22 requests match native CLI, including rejected patches and playtest",
+    "Production UI: fixture → graph/Inspector → Unicode Patch → Undo/Redo → Validate → subgraph",
+    "No horizontal overflow at 1440 / 1000 / 700 pixels",
+    "Reload returns to Project with persisted draft offer and explicit folder/memory distinction",
+    "Missing File System Access API blocks open and explains requirements",
+    "WASM HTTP failure shown; restart recovers without replaying commands",
+    "No uncaught page errors in normal production/proof flows"
+  ],
+  "errors": [],
+  "browser": "157.0.4341.46"
+}

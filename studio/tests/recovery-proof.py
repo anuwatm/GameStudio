@@ -1,8 +1,8 @@
 """Phase1.5 real IndexedDB/Web Locks/OPFS, production UI + WASM. Native OS prompt not claimed."""
-import functools,http.server,json,pathlib,threading,sys,copy,uuid,time
+import os,functools,http.server,json,pathlib,threading,sys,copy,uuid,time
 from playwright.sync_api import sync_playwright,expect
 sys.stdout.reconfigure(encoding='utf-8')
-ROOT=pathlib.Path(__file__).resolve().parents[2];OUT=ROOT/'document/phase-1/evidence/1.5';OUT.mkdir(parents=True,exist_ok=True)
+ROOT=pathlib.Path(__file__).resolve().parents[2];OUT=ROOT/os.environ.get('SF_RECOVERY_PROOF_OUT','document/phase-1/evidence/1.5');OUT.mkdir(parents=True,exist_ok=True)
 fixture=json.loads((ROOT/'contract/fixtures/summer-house.json').read_text(encoding='utf-8'))
 class Handler(http.server.SimpleHTTPRequestHandler):
  extensions_map={**http.server.SimpleHTTPRequestHandler.extensions_map,'.js':'text/javascript','.mjs':'text/javascript','.wasm':'application/wasm'}
@@ -19,6 +19,10 @@ try:
   def settled(p=None):expect((p or page).locator('.session-status')).to_have_text('Core พร้อมใช้งาน')
   def click(name,p=None):(p or page).get_by_role('button',name=name,exact=True).click();settled(p)
   def nav(name,p=None):(p or page).get_by_role('navigation').get_by_role('button',name=name,exact=True).click()
+  def title(name):
+   try:expect(page.locator('.project-name')).to_have_text(name)
+   except Exception:
+    page.screenshot(path=str(OUT/'recovery-failure.png'),full_page=True);(OUT/'recovery-failure.txt').write_text(page.locator('body').inner_text(),encoding='utf-8');(OUT/'recovery-locks.json').write_text(json.dumps(page.evaluate('navigator.locks.query()'),indent=2),encoding='utf-8');raise
   def install(rootname,p=None):
    (p or page).evaluate("""async name=>{window.testRoot=await(await navigator.storage.getDirectory()).getDirectoryHandle(name,{create:true});window.showDirectoryPicker=async()=>window.testRoot;}""",rootname)
   def load():
@@ -32,7 +36,7 @@ try:
   original,root=load();edit('ร่างแรก');first=next(r for r in rows() if r['project']['id']==original['id']);assert first['sourceRevision'] and first['revision'];assert disk()['name']==original['name']
   edit('ร่างล่าสุด');second=next(r for r in rows() if r['project']['id']==original['id']);assert second['revision']!=first['revision'];page.wait_for_timeout(600);assert disk()['name']==original['name'];saved('ร่างล่าสุด');assert not any(r['project']['id']==original['id'] for r in rows())
   passed('Debounced Autosave writes latest acknowledged edit after ~2s; IDB precedes disk and clears committed draft')
-  edit('กู้หลังปิดหน้า');assert any(r['project']['name']=='กู้หลังปิดหน้า' for r in rows());page.close();page=newpage();install(root);page.get_by_text('ร่างที่กู้คืนได้',exact=False).click();click('กู้คืนร่าง');expect(page.locator('.project-name')).to_have_text('กู้หลังปิดหน้า');saved('กู้หลังปิดหน้า')
+  edit('กู้หลังปิดหน้า');assert any(r['project']['name']=='กู้หลังปิดหน้า' for r in rows());page.close();page=newpage();install(root);page.get_by_text('ร่างที่กู้คืนได้',exact=False).click();click('กู้คืนร่าง');title('กู้หลังปิดหน้า');saved('กู้หลังปิดหน้า')
   passed('Real page close before debounce → persisted IndexedDB draft and folder handle → recovery to unchanged source revision')
   # A second tab cannot open same Project ID, even if it picked the same folder itself.
   other=newpage();install(root,other);click('เปิดโฟลเดอร์โปรเจกต์',other);expect(other.get_by_role('alert')).to_contain_text('เปิดอยู่ในแท็บอื่น');assert disk(other)['name']=='กู้หลังปิดหน้า';page.close();page=other;click('เปิดโฟลเดอร์โปรเจกต์');expect(page.locator('.react-flow__node')).to_have_count(6)

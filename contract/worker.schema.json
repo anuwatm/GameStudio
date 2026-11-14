@@ -903,6 +903,90 @@
         "error"
       ],
       "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contractVersion": {
+          "const": 1
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "kind": {
+          "const": "query"
+        },
+        "name": {
+          "const": "buildExport"
+        },
+        "payload": {
+          "type": "object",
+          "properties": {},
+          "required": [],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "contractVersion",
+        "requestId",
+        "kind",
+        "name",
+        "payload"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "contractVersion": {
+          "const": 1
+        },
+        "requestId": {
+          "type": "string"
+        },
+        "kind": {
+          "const": "result"
+        },
+        "name": {
+          "const": "buildExport"
+        },
+        "value": {
+          "type": "object",
+          "required": [
+            "projectId",
+            "files",
+            "sourceMap",
+            "subgraphStructure"
+          ],
+          "properties": {
+            "projectId": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "files": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "sourceMap": {
+              "type": "object"
+            },
+            "subgraphStructure": {
+              "type": "object"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "contractVersion",
+        "requestId",
+        "kind",
+        "name",
+        "value"
+      ],
+      "additionalProperties": false
     }
   ],
   "$defs": {

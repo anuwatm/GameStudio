@@ -1,0 +1,49 @@
+{
+  "passed": true,
+  "sdk": "8.3.7.25031702",
+  "mode": "Windows desktop; SDL_VIDEODRIVER removed; test-only entry wrapper after actual start, generated files unchanged",
+  "games": [
+    {
+      "mode": "existing",
+      "path": "C:\\LocalDevine\\www\\GameStudio\\temp\\phase-1.6-sdk-existing-bf870265-e7c4-47ba-9841-5b8654db81f9",
+      "lintExit": 0,
+      "runExit": 0,
+      "result": {
+        "ending": "00000000-0000-4000-8000-000000000009",
+        "day": 3,
+        "vars": {
+          "sf_variable_000000000010": 20,
+          "sf_variable_000000000011": 80,
+          "sf_variable_000000000204": 0
+        }
+      },
+      "generatedHashesBefore": {
+        "sf_runtime.rpy": "d65775b0088329110a8942125481ece2680e4fc674cc38c1b8e25a04dce37cd3",
+        "sf_schedule.rpy": "8a47fe0090ffe720be19a8322bb93d7cbcda9fb58c24eb908acf10d4f5b7b64b",
+        "sf_story.rpy": "db5df921d464d21f85a54e6f4170f4a97ad6a30eb2264fbfe83c6c445f81547e",
+        "sf_variables.rpy": "92c634ad0dd314097d2029f1e130e1b9b6e5cd45fbf64cc92231cf3937b2805e"
+      },
+      "generatedUnchanged": true
+    },
+    {
+      "mode": "new",
+      "path": "C:\\LocalDevine\\www\\GameStudio\\temp\\phase-1.6-sdk-new-9f6ab04d-02ad-495b-b23d-0787c31e9814",
+      "lintExit": 0,
+      "runExit": 0,
+      "result": {
+        "ending": "45a59873-e1a8-4255-9500-22bddc0f7da0",
+        "day": 1,
+        "vars": {
+          "sf_variable_51c2c5403fca": 7
+        }
+      },
+      "generatedHashesBefore": {
+        "sf_runtime.rpy": "d65775b0088329110a8942125481ece2680e4fc674cc38c1b8e25a04dce37cd3",
+        "sf_schedule.rpy": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "sf_story.rpy": "21518f79f42a165fc6052e627c87f703579ebc0c7071445adc8d3dad9a2eaac5",
+        "sf_variables.rpy": "c64ad862e84dc9c0daf46f5cd014531c49547422a95ebd5d5bd4fb9a47d53e63"
+      },
+      "generatedUnchanged": true
+    }
+  ]
+}

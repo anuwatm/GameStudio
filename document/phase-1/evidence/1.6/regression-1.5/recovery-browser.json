@@ -1,0 +1,16 @@
+{
+  "passed": true,
+  "mode": "production UI + real Worker/IndexedDB/Web Locks/OPFS; injected picker, write and IDB faults",
+  "checks": [
+    "Debounced Autosave writes latest acknowledged edit after ~2s; IDB precedes disk and clears committed draft",
+    "Real page close before debounce → persisted IndexedDB draft and folder handle → recovery to unchanged source revision",
+    "Session Web Lock blocks duplicate tab before editing; page close releases ownership and next tab opens",
+    "Write permission loss pauses Autosave with recoverable draft; user regrant action retries successfully",
+    "External hash conflict never overwrites file; copy gets new Project ID and detached folder",
+    "Recovery detects revision changed while page was closed; opens detached copy without writing external source",
+    "IDB quota failure retains acknowledged memory, blocks disk Autosave and exposes retry without false recoverable status",
+    "Undo to saved baseline removes obsolete draft and does not resurrect undone edits"
+  ],
+  "pageErrors": [],
+  "browser": "157.0.4341.46"
+}

@@ -35,3 +35,6 @@
 | V019 | return ใน main | valid ไม่มีรหัสนี้, invalid ได้ error | ผ่าน 0a.4 |
 | V020 | initial อยู่นอกขอบเขต | valid ไม่มีรหัสนี้, invalid ได้ error | ผ่าน 0a.4 |
 | V021 | shortId ชน | valid ไม่มีรหัสนี้, invalid ได้ error | ผ่าน 0a.4 |
+
+## ส่วนขยาย Export query · Phase1.6
+Contract v1 เพิ่ม query `buildExport` payload `{}` ผลคืน `{projectId, files, sourceMap, subgraphStructure}` ใช้ pure `sf_core::export::export_bundle` ฟังก์ชันเดียวกับ CLI bundle ไม่เขียนไฟล์และไม่แก้ Project/RunState ถ้า Core Validate มี error จะคืน CORE_ERROR Transaction/manifest/hash/permission เป็นหน้าที่ Storage เดิม Schema request/result และ TS types เพิ่มตามนี้ ไม่มีการเปลี่ยนกติกาจำลองเดิม

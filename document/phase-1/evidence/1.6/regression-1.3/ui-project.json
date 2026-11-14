@@ -1,0 +1,330 @@
+{
+  "activities": [
+    {
+      "condition": {
+        "kind": "compare",
+        "left": {
+          "kind": "variable",
+          "variableId": "70403f1a-3036-40f8-b1e2-0dc120bd8bd7"
+        },
+        "operator": "ge",
+        "right": {
+          "kind": "literal",
+          "value": 20
+        }
+      },
+      "effects": [
+        {
+          "op": "add",
+          "value": 10,
+          "variableId": "5ab0d599-2b10-4bc4-b68a-a893113b7039"
+        },
+        {
+          "op": "subtract",
+          "value": 20,
+          "variableId": "70403f1a-3036-40f8-b1e2-0dc120bd8bd7"
+        }
+      ],
+      "id": "c3a990df-3c2b-4ef5-b34c-c938db46a8db",
+      "name": "Help Mina",
+      "subgraphId": null
+    },
+    {
+      "condition": null,
+      "effects": [
+        {
+          "op": "add",
+          "value": 20,
+          "variableId": "70403f1a-3036-40f8-b1e2-0dc120bd8bd7"
+        }
+      ],
+      "id": "49324a66-1bf4-49a0-a0f5-aca81d4b668d",
+      "name": "Rest",
+      "subgraphId": null
+    }
+  ],
+  "assets": [],
+  "characters": [],
+  "edges": [
+    {
+      "from": "00000000-0000-4000-8000-000000000003",
+      "id": "00000000-0000-4000-8000-000000000101",
+      "port": "next",
+      "to": "00000000-0000-4000-8000-000000000201"
+    },
+    {
+      "from": "00000000-0000-4000-8000-000000000004",
+      "id": "00000000-0000-4000-8000-000000000102",
+      "port": "onComplete",
+      "to": "00000000-0000-4000-8000-000000000005"
+    },
+    {
+      "from": "00000000-0000-4000-8000-000000000006",
+      "id": "00000000-0000-4000-8000-000000000103",
+      "port": "00000000-0000-4000-8000-000000000015",
+      "to": "00000000-0000-4000-8000-000000000009"
+    },
+    {
+      "from": "00000000-0000-4000-8000-000000000006",
+      "id": "00000000-0000-4000-8000-000000000104",
+      "port": "00000000-0000-4000-8000-000000000016",
+      "to": "00000000-0000-4000-8000-000000000008"
+    },
+    {
+      "from": "00000000-0000-4000-8000-000000000006",
+      "id": "00000000-0000-4000-8000-000000000105",
+      "port": "fallback",
+      "to": "00000000-0000-4000-8000-000000000008"
+    },
+    {
+      "from": "00000000-0000-4000-8000-000000000201",
+      "id": "00000000-0000-4000-8000-000000000205",
+      "port": "true",
+      "to": "00000000-0000-4000-8000-000000000202"
+    },
+    {
+      "from": "00000000-0000-4000-8000-000000000201",
+      "id": "00000000-0000-4000-8000-000000000206",
+      "port": "false",
+      "to": "00000000-0000-4000-8000-000000000203"
+    },
+    {
+      "from": "00000000-0000-4000-8000-000000000202",
+      "id": "00000000-0000-4000-8000-000000000207",
+      "port": "next",
+      "to": "00000000-0000-4000-8000-000000000004"
+    },
+    {
+      "from": "00000000-0000-4000-8000-000000000203",
+      "id": "00000000-0000-4000-8000-000000000208",
+      "port": "next",
+      "to": "00000000-0000-4000-8000-000000000004"
+    }
+  ],
+  "entryGraphId": "00000000-0000-4000-8000-000000000002",
+  "events": [
+    {
+      "condition": {
+        "conditions": [
+          {
+            "kind": "compare",
+            "left": {
+              "kind": "day"
+            },
+            "operator": "ge",
+            "right": {
+              "kind": "literal",
+              "value": 3
+            }
+          },
+          {
+            "kind": "compare",
+            "left": {
+              "kind": "variable",
+              "variableId": "5ab0d599-2b10-4bc4-b68a-a893113b7039"
+            },
+            "operator": "ge",
+            "right": {
+              "kind": "literal",
+              "value": 20
+            }
+          }
+        ],
+        "kind": "all"
+      },
+      "id": "c22ca8ba-70e4-454b-8c27-1fda63ed79cf",
+      "once": true,
+      "order": 0,
+      "phase": "after_activity",
+      "priority": 1,
+      "subgraphId": "00000000-0000-4000-8000-000000000007"
+    }
+  ],
+  "graphs": [
+    {
+      "entryNodeId": "00000000-0000-4000-8000-000000000003",
+      "id": "00000000-0000-4000-8000-000000000002",
+      "kind": "main"
+    },
+    {
+      "entryNodeId": "00000000-0000-4000-8000-000000000006",
+      "id": "00000000-0000-4000-8000-000000000007",
+      "kind": "subgraph"
+    }
+  ],
+  "id": "00000000-0000-4000-8000-000000000001",
+  "name": "Summer House",
+  "nodes": [
+    {
+      "assetIds": [],
+      "choices": [],
+      "effects": [],
+      "graphId": "00000000-0000-4000-8000-000000000002",
+      "id": "00000000-0000-4000-8000-000000000003",
+      "kind": "scene",
+      "lines": [
+        {
+          "characterId": null,
+          "text": "Summer House"
+        }
+      ]
+    },
+    {
+      "activityIds": [
+        "c3a990df-3c2b-4ef5-b34c-c938db46a8db",
+        "49324a66-1bf4-49a0-a0f5-aca81d4b668d"
+      ],
+      "eventIds": [
+        "c22ca8ba-70e4-454b-8c27-1fda63ed79cf"
+      ],
+      "graphId": "00000000-0000-4000-8000-000000000002",
+      "id": "00000000-0000-4000-8000-000000000004",
+      "kind": "schedule",
+      "lastDay": 3,
+      "startDay": 1
+    },
+    {
+      "graphId": "00000000-0000-4000-8000-000000000002",
+      "id": "00000000-0000-4000-8000-000000000005",
+      "kind": "end",
+      "mode": "ending"
+    },
+    {
+      "assetIds": [],
+      "choices": [
+        {
+          "effects": [],
+          "id": "00000000-0000-4000-8000-000000000015",
+          "text": "Accept",
+          "visibleIf": {
+            "kind": "compare",
+            "left": {
+              "kind": "variable",
+              "variableId": "5ab0d599-2b10-4bc4-b68a-a893113b7039"
+            },
+            "operator": "ge",
+            "right": {
+              "kind": "literal",
+              "value": 20
+            }
+          }
+        },
+        {
+          "effects": [],
+          "id": "00000000-0000-4000-8000-000000000016",
+          "text": "Decline",
+          "visibleIf": {
+            "kind": "compare",
+            "left": {
+              "kind": "variable",
+              "variableId": "5ab0d599-2b10-4bc4-b68a-a893113b7039"
+            },
+            "operator": "ge",
+            "right": {
+              "kind": "literal",
+              "value": 20
+            }
+          }
+        }
+      ],
+      "effects": [],
+      "graphId": "00000000-0000-4000-8000-000000000007",
+      "id": "00000000-0000-4000-8000-000000000006",
+      "kind": "scene",
+      "lines": [
+        {
+          "characterId": null,
+          "text": "Summer House"
+        }
+      ]
+    },
+    {
+      "graphId": "00000000-0000-4000-8000-000000000007",
+      "id": "00000000-0000-4000-8000-000000000009",
+      "kind": "end",
+      "mode": "ending"
+    },
+    {
+      "graphId": "00000000-0000-4000-8000-000000000007",
+      "id": "00000000-0000-4000-8000-000000000008",
+      "kind": "end",
+      "mode": "return"
+    },
+    {
+      "condition": {
+        "kind": "compare",
+        "left": {
+          "kind": "variable",
+          "variableId": "5ab0d599-2b10-4bc4-b68a-a893113b7039"
+        },
+        "operator": "ge",
+        "right": {
+          "kind": "literal",
+          "value": 0
+        }
+      },
+      "graphId": "00000000-0000-4000-8000-000000000002",
+      "id": "00000000-0000-4000-8000-000000000201",
+      "kind": "branch"
+    },
+    {
+      "effects": [
+        {
+          "op": "subtract",
+          "value": 1,
+          "variableId": "d7c1daee-fad1-49e5-a56a-642bbb45c7b4"
+        },
+        {
+          "op": "add",
+          "value": 1,
+          "variableId": "d7c1daee-fad1-49e5-a56a-642bbb45c7b4"
+        }
+      ],
+      "graphId": "00000000-0000-4000-8000-000000000002",
+      "id": "00000000-0000-4000-8000-000000000202",
+      "kind": "effect"
+    },
+    {
+      "effects": [
+        {
+          "op": "add",
+          "value": 1,
+          "variableId": "d7c1daee-fad1-49e5-a56a-642bbb45c7b4"
+        },
+        {
+          "op": "subtract",
+          "value": 1,
+          "variableId": "d7c1daee-fad1-49e5-a56a-642bbb45c7b4"
+        }
+      ],
+      "graphId": "00000000-0000-4000-8000-000000000002",
+      "id": "00000000-0000-4000-8000-000000000203",
+      "kind": "effect"
+    }
+  ],
+  "schemaVersion": 1,
+  "variables": [
+    {
+      "id": "5ab0d599-2b10-4bc4-b68a-a893113b7039",
+      "initial": 0,
+      "max": 100,
+      "min": 0,
+      "name": "affection",
+      "type": "int"
+    },
+    {
+      "id": "70403f1a-3036-40f8-b1e2-0dc120bd8bd7",
+      "initial": 100,
+      "max": 100,
+      "min": 0,
+      "name": "energy",
+      "type": "int"
+    },
+    {
+      "id": "d7c1daee-fad1-49e5-a56a-642bbb45c7b4",
+      "initial": 0,
+      "name": "boundsProbe",
+      "type": "int"
+    }
+  ]
+}
