@@ -1,15 +1,21 @@
-import {useState} from 'react';
+import {useEffect,useState} from 'react';
+import {kindNames} from './StoryCard';
 import {ConditionField,EffectsField} from './RuleFields';
 import {ScheduleFields} from './ScheduleFields';
 import {compareDefault} from '../core/rules';
 import type {Project,StoryNode,Patch} from '../core/types';
-import {nodePatch,deleteNodePatch,ports,uuid,connectPatch,fieldsPatch} from '../core/editor';
-type Props={project:Project;node:StoryNode;locked:boolean;apply:(patch:Patch[])=>Promise<void>;move:(id:string,x:number,y:number)=>void;position:{x:number;y:number}};
-export function NodeInspector({project,node,locked,apply,move,position}:Props){
- const [draft,setDraft]=useState(()=>structuredClone(node)),[port,setPort]=useState(ports(node)[0]??''),[target,setTarget]=useState(''),[replacement,setReplacement]=useState(''),[message,setMessage]=useState(''),[targetOptionsOpen,setTargetOptionsOpen]=useState(false);
+import {nodePatch,deleteNodePatch,ports,uuid,connectPatch,fieldsPatch,stableJSON} from '../core/editor';
+export type InspectorDraft={baseline:string;draft:StoryNode};
+type Props={draftCache:Map<string,InspectorDraft>;project:Project;node:StoryNode;locked:boolean;apply:(patch:Patch[])=>Promise<void>;move:(id:string,x:number,y:number)=>void;position:{x:number;y:number}};
+export function NodeInspector({project,node,draftCache,locked,apply,move,position}:Props){
+ const [draft,setDraft]=useState(()=>structuredClone(draftCache.get(node.id)?.draft??node)),[port,setPort]=useState(ports(node)[0]??''),[target,setTarget]=useState(''),[replacement,setReplacement]=useState(''),[message,setMessage]=useState(''),[targetOptionsOpen,setTargetOptionsOpen]=useState(false);
+ const baseline=stableJSON(node),dirty=stableJSON(draft)!==baseline;
+ const [conflict,setConflict]=useState(()=>!!draftCache.get(node.id)&&draftCache.get(node.id)!.baseline!==baseline&&stableJSON(draftCache.get(node.id)!.draft)!==baseline);
+ useEffect(()=>{if(dirty)draftCache.set(node.id,{baseline:draftCache.get(node.id)?.baseline??baseline,draft:structuredClone(draft)});else draftCache.delete(node.id);},[draft,dirty,baseline,draftCache,node.id]);
+ function cancel(){draftCache.delete(node.id);setDraft(structuredClone(node));setConflict(false);setMessage('');}
  const others=project.nodes.filter(n=>n.graphId===node.graphId&&n.id!==node.id),graph=project.graphs.find(g=>g.id===node.graphId)!;
  function submit(){setMessage('');try{void apply(nodePatch(project,draft));}catch(e){setMessage(String(e));}}
- return <div className="node-inspector"><h2>Inspector · {node.kind}</h2><code>{node.id}</code>
+ return <div className="node-inspector"><h2 id="node-inspector-title" tabIndex={-1}>Inspector · {node.kind}</h2><code>{node.id}</code><p className="inspector-intro">{kindNames[node.kind]} · {dirty?'ร่างยังไม่ Apply · เก็บระหว่างสลับโหนด':'ตรงกับข้อมูลที่ Core ยืนยัน'}</p>{conflict&&<div role="alert"><p>ข้อมูลโหนดเปลี่ยนหลังเก็บร่าง ตรวจร่างก่อนใช้กับข้อมูลล่าสุด หรือยกเลิกเพื่อโหลดค่าปัจจุบัน</p><button disabled={locked} onClick={()=>setConflict(false)}>ยืนยันใช้ร่างกับข้อมูลล่าสุด</button></div>}
   <fieldset disabled={locked}><legend>เนื้อหาโหนด</legend>
   {draft.kind==='scene'&&<>
    <h3>บทพูด</h3>{(draft.lines??[]).map((line,i)=><div className="line-row" key={i}>
@@ -24,7 +30,7 @@ export function NodeInspector({project,node,locked,apply,move,position}:Props){
   {draft.kind==='schedule'&&<ScheduleFields project={project} node={draft} onChange={setDraft}/>}
   {draft.kind==='end'&&<><label>mode<select aria-label="mode" value={draft.mode} onChange={e=>{const next={...draft,mode:e.target.value as StoryNode['mode']};if(next.mode!=='jump')delete next.targetGraphId;else next.targetGraphId=project.graphs[0].id;setDraft(next);}}><option value="ending">ending</option><option value="return">return</option><option value="jump">jump</option></select></label>{draft.mode==='jump'&&<label>targetGraphId<select aria-label="targetGraphId" value={draft.targetGraphId??''} onChange={e=>setDraft({...draft,targetGraphId:e.target.value})}>{project.graphs.map(g=><option key={g.id} value={g.id}>{g.kind} · {g.id.slice(-4)}</option>)}</select></label>}</>}
   {draft.kind==='branch'&&<ConditionField label="Branch condition" value={draft.condition??compareDefault()} variables={project.variables} onChange={condition=>{if(condition)setDraft({...draft,condition});}}/>}{draft.kind==='effect'&&<EffectsField label="Node Effects" value={draft.effects??[]} variables={project.variables} onChange={effects=>setDraft({...draft,effects})}/>}
-  <button className="primary" onClick={submit} disabled={JSON.stringify(draft)===JSON.stringify(node)}>ใช้การแก้ไขโหนด</button>
+  <button className="primary" onClick={submit} disabled={!dirty||conflict}>ใช้การแก้ไขโหนด</button><button disabled={!dirty&&!conflict} onClick={cancel}>ยกเลิกการแก้ไขโหนด</button>
   </fieldset>
   {message&&<p role="alert">{message}</p>}
   <h3>เชื่อมต่อผ่านฟอร์ม</h3><fieldset disabled={locked||!ports(node).length}><label>พอร์ต<select aria-label="พอร์ต" value={port} onChange={e=>setPort(e.target.value)}>{ports(node).map(p=><option key={p} value={p}>{node.choices?.find(c=>c.id===p)?.text??p}</option>)}</select></label><label>โหนดปลายทาง<select aria-label="โหนดปลายทาง" onFocus={()=>setTargetOptionsOpen(true)} onPointerDown={()=>setTargetOptionsOpen(true)} value={target} onChange={e=>setTarget(e.target.value)}><option value="">เลือกปลายทาง</option>{project.nodes.filter(n=>n.graphId===node.graphId&&(targetOptionsOpen||n.id===target)).map(n=><option key={n.id} value={n.id}>{n.kind} · {n.id.slice(-4)}</option>)}</select></label><button disabled={!target} onClick={()=>apply(connectPatch(project,node.id,port,target))}>เชื่อมพอร์ต</button></fieldset>

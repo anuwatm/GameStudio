@@ -10,7 +10,7 @@
 
 ตัวอย่างงานจริง: เปิดฉากคาเฟ่ → วางตัวละครด้านซ้าย → เริ่มเพลง → แสดงบทพูดพร้อมเสียงพากย์ → เลือกคำตอบ → ไปฉากถัดไป ผู้สร้างใช้ Preset ฉากเดิมต่อได้โดยไม่คัดลอก UUID หรือ reference ผิด
 
-ความต้องการใหม่ที่ไม่อยู่ใน Phase 1: scene composition, cue timing, music/voice channels และ preview สื่อ ผู้ใช้เลือกขอบเขตนี้เพื่อวางแผน อนุมัติเพิ่มขอบเขตเป็น1.8แล้ว แต่ยังต้องยืนยัน schema/semantics ใน1.8.1 ก่อน implement ส่วนที่พึ่งพา
+ความต้องการใหม่ที่ไม่อยู่ใน Phase 1: scene composition, cue timing, music/voice channels และ preview สื่อ ผู้ใช้เลือกขอบเขตนี้เพื่อวางแผน อนุมัติเพิ่มขอบเขตเป็น1.8แล้ว แต่ยังต้องยืนยัน schema/semantics ใน1.8.2 ก่อน implement ส่วนที่พึ่งพา
 
 ## ช่องว่างของระบบปัจจุบัน
 
@@ -56,14 +56,15 @@ Scene Inspector มีส่วน **ฉาก**, **ตัวละคร**, **�
 
 | ระยะ | งานก่อนลงมือ | เกณฑ์ตรวจรับ |
 |---|---|---|
-| 1.8.1 ล็อกขอบเขต | [ ] ทำตัวอย่างฉากจริง 3 แบบ: บทสนทนา 2 ตัวละคร, ฉากมีเสียงพากย์, cutscene [ ] ตกลง semantics และ schema [ ] ยืนยัน mockup/fixture | เจ้าของรับ workflow, defaults, compatibility และรายการนอกขอบเขต |
-| 1.8.2 Contract / migration | [ ] typed presentation + validator [ ] backup/migration [ ] stable cue/line IDs [ ] metadata persistence ที่ตกลง | เกมเก่าเปิด/Export/trace เดิม; field ผิดถูกปฏิเสธ; migration ล้มเหลวไม่ทับต้นฉบับ |
-| 1.8.3 ภาพและ Stage | [ ] background + หลาย character layers [ ] position/scale/order [ ] keyboard controls [ ] Apply/Undo/Save/reopen | ฉาก 2 ตัวละครจัดได้โดยไม่เขียนโค้ด เปิดใหม่คงค่า; SDK แสดงถูกตาม fixture |
-| 1.8.4 เสียงและ Voice | [ ] Music/SFX/Voice [ ] cue ต่อบทพูด [ ] stop/loop/volume [ ] preview cleanup | เปลี่ยน Scene แล้วไม่มีเสียงรั่ว/เล่นซ้อนที่ไม่ได้กำหนด; skip/replay ทำตามมติ; SDK ทดสอบเสียงจริง |
-| 1.8.5 Video | [ ] WebM cutscene [ ] playback/skip policy [ ] ข้อผิดพลาด/permission [ ] cue ต่อฉาก | จบ/ข้าม/เสียหาย/ไม่มีสิทธิ์ไม่ทำให้ flow ค้าง; ไฟล์เดิมไม่ถูก copy ตอน Export |
-| 1.8.6 Presets / preview / ตรวจรับ | [ ] Preset ฉาก [ ] preview จากข้อมูลเดียวกัน [ ] SDK fixtures [ ] regression เดิม [ ] ตัวชี้วัดเพิ่มและผู้ใช้จริง | Preset ไม่ทำให้ ID ชน; logic trace เดิม; P1–P8 เดิมไม่ถอย; ผู้สร้างทำตัวอย่างครบได้ |
+| 1.8.1 Node UI | [ ] การ์ดและInspectorของnode5ชนิดตามmockup [ ] พอร์ต/keyboard/validation/draft [ ] regressionบนContractเดิม | ใช้งานข้อมูลเดิมได้จริง; ไม่แสดงpresentationที่ยังไม่มีเป็นผลจริง; ผ่านEditor regressionและresponsive |
+| 1.8.2 ล็อกขอบเขต | [ ] ทำตัวอย่างฉากจริง 3 แบบ: บทสนทนา 2 ตัวละคร, ฉากมีเสียงพากย์, cutscene [ ] ตกลง semantics และ schema [ ] ยืนยัน mockup/fixture | เจ้าของรับ workflow, defaults, compatibility และรายการนอกขอบเขต |
+| 1.8.3 Contract / migration | [ ] typed presentation + validator [ ] backup/migration [ ] stable cue/line IDs [ ] metadata persistence ที่ตกลง | เกมเก่าเปิด/Export/trace เดิม; field ผิดถูกปฏิเสธ; migration ล้มเหลวไม่ทับต้นฉบับ |
+| 1.8.4 ภาพและ Stage | [ ] background + หลาย character layers [ ] position/scale/order [ ] keyboard controls [ ] Apply/Undo/Save/reopen | ฉาก 2 ตัวละครจัดได้โดยไม่เขียนโค้ด เปิดใหม่คงค่า; SDK แสดงถูกตาม fixture |
+| 1.8.5 เสียงและ Voice | [ ] Music/SFX/Voice [ ] cue ต่อบทพูด [ ] stop/loop/volume [ ] preview cleanup | เปลี่ยน Scene แล้วไม่มีเสียงรั่ว/เล่นซ้อนที่ไม่ได้กำหนด; skip/replay ทำตามมติ; SDK ทดสอบเสียงจริง |
+| 1.8.6 Video | [ ] WebM cutscene [ ] playback/skip policy [ ] ข้อผิดพลาด/permission [ ] cue ต่อฉาก | จบ/ข้าม/เสียหาย/ไม่มีสิทธิ์ไม่ทำให้ flow ค้าง; ไฟล์เดิมไม่ถูก copy ตอน Export |
+| 1.8.7 Presets / preview / ตรวจรับ | [ ] Preset ฉาก [ ] preview จากข้อมูลเดียวกัน [ ] SDK fixtures [ ] regression เดิม [ ] ตัวชี้วัดเพิ่มและผู้ใช้จริง | Preset ไม่ทำให้ ID ชน; logic trace เดิม; P1–P8 เดิมไม่ถอย; ผู้สร้างทำตัวอย่างครบได้ |
 
-ลำดับแนะนำ: 1.8.1 → 1.8.2 → 1.8.3 → 1.8.4 → 1.8.5 → 1.8.6 ตรวจรับและ cleanup แต่ละระยะตาม AGENTS.md ก่อนขึ้นระยะถัดไป
+ลำดับแนะนำ: 1.8.1 → 1.8.2 → 1.8.3 → 1.8.4 → 1.8.5 → 1.8.6 → 1.8.7 ตรวจรับและ cleanup แต่ละระยะตาม AGENTS.md ก่อนขึ้นระยะถัดไป
 
 ## ชุดตรวจรับสำหรับใช้งานจริง
 
@@ -78,25 +79,38 @@ Scene Inspector มีส่วน **ฉาก**, **ตัวละคร**, **�
 
 ## การตัดสินใจที่ขอเมื่อเริ่มพัฒนา
 
-เริ่มจาก 1.8.1 เพื่อล็อก workflow จากนั้นยืนยัน schema และ semantics ก่อน 1.8.2 ไม่เปลี่ยน Contract ในขั้นร่างแผน เสนอทำ 1.8.3–1.8.5 เป็นชุดใช้งานแรก; animation timeline, lip-sync, video background, shader และ node logic ใหม่แยกไว้พิจารณาภายหลัง ระยะเวลาประเมินหลัง 1.8.1 เพื่อลดการเดาจากจำนวนฟีเจอร์
+เริ่มปรับ Node UI ใน1.8.1บนContractปัจจุบัน แล้วทำ1.8.2เพื่อล็อก workflow จากนั้นยืนยัน schema และ semantics ก่อน 1.8.3 ไม่เปลี่ยน Contract ในขั้นร่างแผน เสนอทำ 1.8.4–1.8.6 เป็นชุดใช้งานแรก; animation timeline, lip-sync, video background, shader และ node logic ใหม่แยกไว้พิจารณาภายหลัง ระยะเวลาประเมินหลัง 1.8.2 เพื่อลดการเดาจากจำนวนฟีเจอร์
 
 ---
 
-## ข้อเสนอแนะและเกณฑ์กำกับจาก Gemini (2026-11-14) เพื่อให้ GPT/Codex ดำเนินการใน 1.8.1–1.8.6
+## ข้อเสนอแนะและเกณฑ์กำกับจาก Gemini (2026-11-14) เพื่อให้ GPT/Codex ดำเนินการใน 1.8.1–1.8.7
 
-1. **Voice Cue Stability (1.8.1, 1.8.4):**
+1. **Voice Cue Stability (1.8.2, 1.8.5):**
    * บรรทัดบทพูด (`line`) ต้องมี `line.id` (UUID ถาวร) สำหรับผูกไฟล์เสียงพากย์ (`voiceId`)
    * ห้ามผูกด้วย array index เพราะเมื่อผู้เขียนเพิ่ม/ลบ/สลับบรรทัดใน Inspector จะทำให้เสียงพากย์เลื่อนผิดตำแหน่ง
-2. **Audio Lifecycle ชัดเจน 3 สถานะ (1.8.1, 1.8.4):**
+2. **Audio Lifecycle ชัดเจน 3 สถานะ (1.8.2, 1.8.5):**
    * ใน Scene Inspector ต้องมีตัวเลือกสถานะ BGM ชัดเจน:
      - `keep` (เล่นเพลงเดิมต่อเนื่องข้ามฉาก - ค่าเริ่มต้น)
      - `play` (เปลี่ยนเพลงใหม่และวนลูป)
      - `stop` (หยุดเพลงเดิม)
    * เพื่อให้พฤติกรรมใน Ren'Py (`play music` vs ละเว้น vs `stop music`) เป็นไปอย่างแม่นยำ ไม่หยุดกะทันหันหรือรีสตาร์ตเพลงซ้ำทุกฉาก
-3. **Lazy-loading & Media Lifecycle Cleanup (1.8.4, 1.8.6):**
+3. **Lazy-loading & Media Lifecycle Cleanup (1.8.5, 1.8.7):**
    * บนโปรเจกต์ขนาดใหญ่ (เช่น baseline 2,000 โหนด) ห้ามสร้างหรือโหลด `<audio>` / `<video>` ล่วงหน้าทุกโหนด
    * ให้สร้าง single instance หรือโหลดเฉพาะฉากที่เปิดใน Inspector/Playtest และต้องเรียก `.pause()`, ล้าง `src` และ revoke Blob URL ทันทีเมื่อปิดหรือเปลี่ยนโหนด เพื่อป้องกันการชนเพดาน Browser AudioContext และ memory leak
-4. **ความเข้ากันได้ย้อนหลัง 100% กับ Summer House (1.8.2):**
+4. **ความเข้ากันได้ย้อนหลัง 100% กับ Summer House (1.8.3):**
    * ฉากที่ไม่มีฟิลด์ `presentation` ใหม่ ต้องรันตาม `assetIds` เดิม 100% และระบบต้องไม่เดาแปลงภาพเดิมเป็น sprite เว้นแต่ผู้ใช้จะเปิดแก้ใน Scene Composer
-5. **Source Map Granularity (1.8.6):**
+5. **Source Map Granularity (1.8.7):**
    * Source map ต้องแมปกลับมาได้ถึงระดับ `lineId` และ `voiceCue` เมื่อ Ren'Py รายงานข้อผิดพลาดในฉากที่มีการจัดเลเยอร์ซับซ้อน
+
+## เพิ่มขอบเขต Node UI ตามคำสั่งเจ้าของ · 2026-11-15
+
+รวมใน1.8.1: ปรับการ์ดและInspectorของScene/Branch/Effect/Schedule/Endให้ใช้งานจริง อ้างอิง [ภาพและรายละเอียด Node UI](demo%20screen/Node-UI-1.8.md) และchecklistกลาง1.8.1/1.8.7
+
+การ์ดแสดงข้อมูลสรุปที่ใช้ตัดสินใจ; รายละเอียดแก้ในInspector พอร์ตต้องตรงContractเดิม ไม่มีnodeชนิดใหม่ ตรวจkeyboard/focus/validation/Apply-Cancel/Undo-Redoและจอ1440/1000/700pxพร้อมperformance2,000nodes
+
+ภาพเป็นข้อเสนอที่ต้องยืนยันองค์ประกอบก่อนimplement แก้จำนวนlayersเป็น3เมื่อมีBackground+2characters และใช้fallbackเฉพาะเมื่อไม่มีChoiceผ่านvisibleIf การเพิ่มชื่อnodeที่แก้ได้ต้องล็อกmodel/persistenceใน1.8.3ก่อน ไม่ใช่fieldที่มีอยู่แล้ว
+
+## เปลี่ยนลำดับตามเจ้าของ · 2026-11-15
+1.8.1=Node UI; 1.8.2=workflow/semantics; 1.8.3=Contract/migration; 1.8.4=Scene Composer; 1.8.5=Audio; 1.8.6=Video; 1.8.7=Presets/ตรวจรับรวม
+
+NodeUIระยะแรกใช้ข้อมูลเดิมและไม่เปลี่ยนschema แสดงmedia controlsที่ใช้ข้อมูลใหม่เมื่อขั้นที่พึ่งพาพร้อมเท่านั้น ชื่อeditableและข้อมูลpresentationไม่ถูกเพิ่มเข้าContractก่อนยืนยันใน1.8.2 ส่วนข้อเสนอในgemini.mdใช้เลขเดิม ณ วันที่เขียน ให้เทียบmappingนี้เมื่อดำเนินงาน

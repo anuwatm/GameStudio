@@ -2,7 +2,7 @@
 
 อ้างอิง [Concept v2](StoryFlow-Game-Studio-Concept.md), [AGENTS.md](AGENTS.md), [gpt.md](gpt.md) และ [gemini.md](gemini.md)
 
-**สถานะล่าสุด:** 1.1–1.7 และ Gate 1 เดิมตรวจรับร่วมแล้ว (2026-11-14); เจ้าของเพิ่ม **1.8 Customize node สำหรับภาพ เสียง วิดีโอ และ Scene Composer** เป็นส่วนขยาย Phase 1 แล้ว ยังไม่เริ่มพัฒนา/ยังไม่ตรวจรับส่วนเพิ่ม ก่อนเริ่ม Phase 2 ให้ปิด Gate 1.8
+**สถานะล่าสุด:** 1.1–1.7 และ Gate 1 เดิมตรวจรับร่วมแล้ว (2026-11-14); เจ้าของเพิ่ม **1.8 Customize node สำหรับภาพ เสียง วิดีโอ และ Scene Composer** เป็นส่วนขยาย Phase 1 แล้ว 1.8.1พัฒนาเสร็จและผ่านCodex รอGeminiตรวจรับ; 1.8.2–1.8.7ยังไม่เริ่ม ก่อนเริ่ม Phase 2 ให้ปิด Gate 1.8
 
 ## วิธีใช้
 
@@ -65,10 +65,11 @@
 | 1.5 | **ทำ Autosave และ Recovery** debounce, snapshot ใน IndexedDB ผูก Project ID/revision, Web Locks, ตรวจไฟล์ภายนอกและสิทธิ์หลุด แสดงสถานะ และเปิดร่างเป็นสำเนาเมื่อขัดแย้ง | ผ่านการทดสอบกู้คืนร่างจาก IndexedDB, การบล็อกแท็บซ้อน และการป้องกันการเขียนทับเมื่อไฟล์ถูกแก้จากภายนอก | ☑ | ☑ | [ผล 1.5](document/phase-1/recovery-1.5.md) · Codex และ Gemini ตรวจรับผ่านตรงกัน: build/unit 13/13, Edge 157 ผ่านกลุ่ม D ครบ 8 กรณี (0 errors), Web Lock สองแท็บ, IDB debounce ~2s, กู้คืนหลังปิดหน้าจริง 100%, แยกสำเนาเมื่อ hash conflict และ Regression 1.1–1.4 ผ่านสมบูรณ์ ตรวจรับปิดขั้นสมบูรณ์ (2026-11-14) |
 | 1.6 | **ทำหน้าส่งออก** ใช้กลไกที่ผ่าน 0b แสดง conflict และ recovery ใช้ source map ผูก error กับโหนด บล็อก Export เมื่อมี Error หรือ hash ขัดแย้งและแสดงไฟล์ที่ต้องตรวจ ตรวจเกมใหม่และเกมเดิม และแสดงข้อจำกัด Save เมื่อโครงสร้างกราฟเปลี่ยน | ส่งออกและแจ้งเตือนสถานะความขัดแย้งหรือข้อจำกัดของ Save ได้ครบถ้วน | ☑ | ☑ | [ผล 1.6](document/phase-1/export-1.6.md) · Codex และ Gemini ตรวจรับผ่านตรงกัน: TS unit 13/13, Rust 13/13, Edge 157 ผ่าน 8 กลุ่มตรวจ (0 errors), Native bundle/Source Map ตรง CLI 100%, Ren'Py SDK 8.3.7 เล่นจบ exit 0 ทั้งเกมเดิม/เกมใหม่, hash ไฟล์นอก generated เท่ากัน 100% และ Regression 1.1–1.5 ผ่านสมบูรณ์ ตรวจรับปิดขั้นสมบูรณ์ (2026-11-14) |
 | 1.7 | **ตรวจครบเส้นทาง** สร้าง Summer House จาก UI → บันทึกและเปิดใหม่ → Playtest → ส่งออก → รันใน SDK ตรวจ A–C ซ้ำและกลุ่ม D ทั้งกู้ร่าง ล็อกสองแท็บ และไฟล์แก้ภายนอก วัด Core, กราฟ และพรีวิวแยกกัน | ผ่านกรณีทดสอบ A–D ครบทุกข้อและตัวเลขประสิทธิภาพผ่านเกณฑ์ที่ล็อกไว้ในขั้น `0b.5` | ☑ | ☑ | [ผล 1.7](document/phase-1/end-to-end-1.7.md) · Codex และ Gemini ตรวจรับผ่าน 1.7.1–1.7.3 ครบถ้วน, ชุดทดสอบ A–D ผ่าน, และตัวเลขประสิทธิภาพ P1–P8 ผ่านเกณฑ์ครบทั้ง 8 ข้อ (รวม P8 native folder median 1,631.7 ms) ตรวจรับปิดขั้นสมบูรณ์ (2026-11-14) |
-| 1.8 | **Customize node เพื่อจัดฉากใช้งานจริง** ขยาย Scene node เดิม: background/character layers, Music/SFX/Voice, WebM cutscene, cue, preview และ Presets พร้อม Save/recovery/export | สร้างฉากจริง 3 แบบผ่าน UI; เปิดใหม่คงค่า; SDK แสดงภาพเสียงถูก; โปรเจกต์เดิมและ P1–P8 ไม่ถอย ตาม checklist 1.8.1–1.8.6 | ☐ | ☐ | [แผน 1.8](document/node-media-customization-plan.md) · อนุมัติเพิ่มขอบเขตแล้ว; schema/semantics ต้องยืนยันใน 1.8.1 ก่อนขั้นที่พึ่งพา |
+| 1.8 | **Customize node เพื่อจัดฉากใช้งานจริง** ปรับการ์ดและ Inspector ของ node ทั้ง5ประเภท; ขยาย Scene node เดิม: background/character layers, Music/SFX/Voice, WebM cutscene, cue, preview และ Presets พร้อม Save/recovery/export | สร้างฉากจริง 3 แบบผ่าน UI; เปิดใหม่คงค่า; SDK แสดงภาพเสียงถูก; โปรเจกต์เดิมและ P1–P8 ไม่ถอย ตาม checklist 1.8.1–1.8.7 | ◐ | ☐ | [แผน 1.8](document/node-media-customization-plan.md) · อนุมัติเพิ่มขอบเขตแล้ว; schema/semantics ต้องยืนยันใน 1.8.2 ก่อนขั้นที่พึ่งพา |
+| 1.8.1 | **Node UI ทั้ง5ประเภทบนContractเดิม** | การ์ด/Inspector/ports/draft/keyboard/responsive และregressionผ่าน | ☑ | ☑ | [ผล1.8.1](document/phase-1/node-ui-1.8.1.md) · Codex และ Gemini ตรวจรับผ่านร่วมกัน (2026-11-15): build ผ่าน, unit 15/15, Node UI 6/6, Editor regression 11/11, P1–P7 ผ่านครบถ้วน |
 | Gate 1 | ปิด Phase | เส้นทาง MVP ครบ กลุ่ม D ผ่าน และผลวัดผ่านเป้าที่ล็อกใน 0b.5 | ☑ | ☑ | [Gate 1](document/phase-1/end-to-end-1.7.md) · Codex และ Gemini ตรวจรับผ่านครบทุกเกณฑ์ 1.1–1.7 ปิด Phase 1 Web Studio MVP อย่างเป็นทางการสมบูรณ์ (2026-11-14) |
 
-| Gate 1.8 | ปิดส่วนขยาย Phase 1 | 1.8.1–1.8.6 ผ่านร่วม; fixtures ฉากจริง/SDK และ regression ผ่าน; ข้อจำกัดบันทึกครบ | ☐ | ☐ | รับเพิ่มแยกจาก Gate 1 เดิม ไม่ลบผลตรวจรับเดิม |
+| Gate 1.8 | ปิดส่วนขยาย Phase 1 | 1.8.1–1.8.7 ผ่านร่วม; fixtures ฉากจริง/SDK และ regression ผ่าน; ข้อจำกัดบันทึกครบ | ☐ | ☐ | รับเพิ่มแยกจาก Gate 1 เดิม ไม่ลบผลตรวจรับเดิม |
 
 ## Phase 2 · ความทนทานและทดลองใช้จริง
 
@@ -256,38 +257,59 @@
 
 ### 1.8 · Customize node สำหรับภาพ เสียง วิดีโอ และจัดฉาก
 
-เจ้าของเพิ่มขอบเขตแล้ว 2026-11-14; ใช้ Scene node เดิมและ node kinds เดิม 5 ชนิด รายละเอียดใน [แผน 1.8](document/node-media-customization-plan.md) การเพิ่ม schema/semantics ต้องยืนยันก่อนใช้จริง ไม่ถือว่าค่าที่เสนอในแผนอนุมัติทั้งหมดแล้ว
+เจ้าของเพิ่มขอบเขตแล้ว 2026-11-14; ใช้ Scene node เดิมและ node kinds เดิม 5 ชนิด ลำดับใหม่: Node UI → workflow/semantics → Contract → Composer → Audio → Video → ตรวจรับรวม รายละเอียดใน [แผน 1.8](document/node-media-customization-plan.md) การเพิ่ม schema/semantics ต้องยืนยันก่อนใช้จริง ไม่ถือว่าค่าที่เสนอในแผนอนุมัติทั้งหมดแล้ว
 
-- [ ] **1.8.1 ล็อก workflow และพฤติกรรม**
+- [x] **1.8.1 ปรับ Node UI ทั้ง 5 ประเภทสำหรับใช้งานจริง**
+  - [x] อ้างอิง [Node UI mockup และข้อแก้ไข](document/demo%20screen/Node-UI-1.8.md); ยืนยันองค์ประกอบร่วมตาม DESIGN.md ก่อนพัฒนา ไม่ใช้ภาพแทนนิยาม Contract
+  - [x] การ์ดร่วมมีชนิด/ชื่อที่อ่านได้, UUID เป็นข้อมูลรอง, selected/focus/validation state พร้อมข้อความ และปุ่มเปิด Inspector; ระยะแรกใช้ชนิด+UUIDเดิม; ชื่อที่แก้ได้ต้องกำหนด persistence ใน1.8.3ก่อน ไม่เปลี่ยนชื่อเกม/UUIDแทนกัน
+  - [x] **Scene UI:** ภาพย่อแบบ lazy, สรุปบทพูด/Choices จากข้อมูลเดิม; layers/Music/Voice และปุ่มเปิด Composer เชื่อมจริงหลัง1.8.3–1.8.5ผ่าน ไม่แสดงค่าตัวอย่างเป็นข้อมูลจริง; ไม่มี Choice แสดง next, มี Choice แสดงพอร์ต UUID ของแต่ละ Choice + fallback เท่านั้น
+  - [x] **Branch UI:** สรุป Condition พร้อม AND/OR และกลุ่มซ้อน เปิดแก้ AST ใน Inspector; มีพอร์ต true/false ชัดเจน ไม่ evaluate เงื่อนไขเองใน React
+  - [x] **Effect UI:** แสดง Effects ตามลำดับ operator/value และขอบเขต clamp; แก้ผ่าน Inspector และออกพอร์ต next
+  - [x] **Schedule UI:** แสดง startDay–lastDay แบบ inclusive พร้อมสรุป Activities/Events; เปิดฟอร์มตั้งค่าเดิมและออกพอร์ต onComplete ไม่สร้างพอร์ตตามวันหรือ Event
+  - [x] **End UI:** แสดง mode ending/return/jump และ targetGraphId เมื่อ jump; ไม่มีพอร์ตออกและไม่สร้าง outgoing edge เพื่อแทน jump
+  - [x] ฟอร์มและการ์ดใช้ snapshot เดียวกัน; Apply/Cancel/Undo/Redo ถูกต้องเมื่อสลับ selection; ไม่ทำ draft หายหรือเขียน canonical จากการเปิด preview
+  - [x] แก้ความคลาดเคลื่อน mockup: Background+2characters=3layers; fallback คือไม่มี Choice ผ่าน visibleIf ไม่ใช่ผู้ใช้ไม่เลือก
+  - [x] ใช้คีย์บอร์ดเลือก/เปิด/แก้/เชื่อม node ได้, focus ชัด, มีชื่อ accessible สำหรับพอร์ต/ปุ่ม; จอแคบเข้าถึง Inspector/Apply ได้โดยเก็บ selection/draft
+  - [x] ตรวจรับ UI บน Contract ปัจจุบัน: build/unit/Editor regression, keyboard, Apply/Cancel และไม่มี page overflow ที่1440/1000/700px; ไม่เปลี่ยนschemaหรือเพิ่มpresentation logicในขั้นนี้
+  - ผลตรวจรับร่วมผ่าน (2026-11-15): Codex และ Gemini ตรวจรับผ่านตรงกัน [Node UI 1.8.1](document/phase-1/node-ui-1.8.1.md) · build ผ่าน, unit 15/15, Edge 157 Node UI 6/6, Editor regression 11/11, P1–P7 ผ่านครบถ้วน ไม่กระทบ baseline 1.7 เดิม
+- [ ] **1.8.2 ล็อก workflow และพฤติกรรม**
   - [ ] กำหนด fixtures: บทสนทนา 2 ตัวละคร, ฉากเสียงพากย์, WebM cutscene พร้อมผลคาดหวัง
   - [ ] ทำ mockup Stage/Inspector/asset picker ให้เลือกและกรอกค่าด้วยคีย์บอร์ดได้
   - [ ] ตกลงพิกัด/anchor/layer order, การรับช่วงฉากและเสียง (Music lifecycle: keep เล่นต่อ / play เปลี่ยนเพลงวนลูป / stop หยุดเพลง), cue timing, skip/Rewind และไฟล์หาย
   - [ ] กำหนด Stable Identifier (UUID) ประจำบรรทัดบทพูด เพื่อผูก Voice Cue อย่างถาวร ไม่ให้เลื่อนหลุดเมื่อเพิ่ม/ลบ/สลับบรรทัดบทสนทนา
-  - [ ] เจ้าของยืนยัน defaults/schema/compatibility และเกณฑ์ตรวจรับก่อนเริ่ม 1.8.2
-- [ ] **1.8.2 Contract, persistence และ migration**
+  - [ ] ระบุ `line.id` เป็น UUID ถาวร; ห้ามผูก Voice ด้วย array index หรือข้อความบทพูด; ทดสอบเพิ่ม/ลบ/สลับบรรทัดแล้ว cue ของบรรทัดอื่นยังถูกต้อง
+  - [ ] เจ้าของยืนยัน defaults/schema/compatibility และเกณฑ์ตรวจรับก่อนเริ่ม 1.8.3
+- [ ] **1.8.3 Contract, persistence และ migration**
   - [ ] ออกแบบ typed presentation/asset references/cue identity ใน canonical project.storyflow.json; แยก editor metadata ที่ไม่มีผลเกมไว้ใน sidecar (.storyflow/editor.json)
+  - [ ] ตรวจว่า background/character layers/music/voice cues อยู่ใน canonical Project และ Export ไม่พึ่ง sidecar; ชื่อ/version/วิธีบันทึก sidecar ให้ล็อกใน 1.8.2 ก่อนเริ่มขั้นนี้
   - [ ] ปรับ schema/Core/validator/Worker/CLI/WASM/exporter สอดคล้องกัน พร้อม fixtures ถูก/ผิด
   - [ ] backup ก่อน migration; รักษาลำดับ assetIds ของเก่า; ห้ามเดาแปลงภาพเป็น sprite หรือเสียงเป็น Music
+  - [ ] Scene ที่ไม่มี presentation ใช้ legacy assetIds ตามลำดับและพฤติกรรมเดิม; ตรวจ Summer House trace/Export semantics ไม่เปลี่ยนจากการเพิ่มความสามารถใหม่
   - [ ] ตรวจ old-project parity, migration failure ไม่ทับต้นฉบับ และการเปิดด้วยแอปรุ่นเก่า
-- [ ] **1.8.3 ภาพและ Scene Composer**
+- [ ] **1.8.4 ภาพและ Scene Composer**
   - [ ] Background + หลาย character layers; position/scale/order และ keyboard controls
   - [ ] แยก draft preview จาก Apply; Undo/Redo เป็นชุด; Save/reopen/recovery คงองค์ประกอบ
   - [ ] ตรวจฉาก 2 ตัวละครจริงบน SDK: layer/anchor/ตำแหน่งตรงข้อมูล
-- [ ] **1.8.4 Music, SFX และ Voice**
+- [ ] **1.8.5 Music, SFX และ Voice**
   - [ ] Asset picker ตามบทบาท; Music lifecycle 3 สถานะ (keep/play/stop), volume/loop ตามพฤติกรรมที่ยืนยัน
+  - [ ] ตรวจ keep ไม่หยุดหรือเริ่มเพลงใหม่, play เริ่ม/เปลี่ยนเพลงตาม loop policy ที่ตกลง, stop หยุดเพลง; defaults และพฤติกรรมกรณีเพลงเดิมต้องได้มติจาก 1.8.2
   - [ ] Voice cue อ้างบทพูดด้วย Stable Line ID ถูกต้องเสมอเมื่อ insert/delete/reorder
+  - [ ] Voice อ้าง asset ID ที่มีอยู่จริงและเป็นชนิดที่รองรับ; ตรวจ dangling line/asset references รวมกรณีลบบทพูดหรือไฟล์เสียง พร้อมผลแจ้งเตือนตามเกณฑ์ที่ตกลง
   - [ ] preview ต้องมี user gesture, lazy-loading และ cleanup resource ทันที; ห้าม instantiate audio ทุกโหนดบนกราฟ 2,000 โหนด และไม่ให้เสียงค้าง/ซ้อนที่ไม่ได้กำหนด
+  - [ ] ตรวจทั้ง audio/video โหลดเฉพาะฉากที่ใช้งาน; เมื่อเลิกใช้ต้อง pause, ตัด media source และ revoke Blob URL ที่ไม่มีผู้ใช้งานแล้ว; ตรวจสลับฉากซ้ำว่า media elements/listeners/URLs ไม่สะสม
   - [ ] ตรวจ SDK เสียงจริง รวมเปลี่ยนฉาก/skip/replay/Rewind ตามมติ
-- [ ] **1.8.5 Video cutscene**
+- [ ] **1.8.6 Video cutscene**
   - [ ] WebM ก่อนบทพูดพร้อม playback/skip policy และ cue ตามมติ
   - [ ] รับมือคลิปจบ/เสียหาย/สื่อหาย/permission โดย flow ไม่ค้างและไม่แจ้งสำเร็จผิด
   - [ ] ตรวจ SDK จริงและ Zero-Copy: สื่อเดิมไม่ถูกคัดลอกซ้ำตอน Export
-- [ ] **1.8.6 Presets, preview และตรวจรับรวม**
+- [ ] **1.8.7 Presets, preview และตรวจรับรวม**
   - [ ] Preset เก็บองค์ประกอบ/asset references; entities ที่ต้องมี identity ได้ UUID ใหม่ ไม่ชนต้นฉบับ
   - [ ] preview ใช้ข้อมูล presentation เดียวกันและแจ้งข้อจำกัด renderer; ไม่ทำ logic evaluator ซ้ำ Core
   - [ ] Source Map กลับไป node/cue/lineId เมื่อ Ren'Py error; Export deterministic; user files ไม่ถูกทับ
+  - [ ] จำลอง SDK error ที่บรรทัดบทพูดและคำสั่ง Voice แล้ว Source Map ชี้ nodeId/lineId/cue ที่ถูกต้อง; ไม่มี cue ต้องไม่อ้างไป cue อื่น
   - [ ] สื่อหาย/ใหญ่/สิทธิ์/quota/หลายแท็บ/Recovery และ Export กลางคันผ่านตามรายการที่กำหนด
   - [ ] ไม่ preload สื่อทุก node; ตรวจ P1–P8 เดิมและกำหนดการวัดเพิ่มก่อนทดสอบ
+  - [ ] ตรวจ Node UI ทั้ง5ชนิดบน1440/1000/700px รวมชื่อยาว/Choicesมาก/Conditionซ้อน/Errors; ไม่มี page overflow และ viewport rendering ยังทำงานบนกราฟ2,000nodes
   - [ ] ผู้สร้างทำ fixtures ฉากจริงครบโดยไม่เขียนโค้ด; UI→Save/reopen→Playtest→Export→SDK ผ่าน
   - [ ] Codex/Gemini ตรวจรับตามข้อและลงผลแยก ก่อนปิด Gate 1.8
 
@@ -350,4 +372,4 @@ animation timeline, lip-sync, video background, shader, custom script และ 
 ## ตรวจรับรวมเพื่อใช้งานจริง · 2026-11-14
 ผ่าน Phase 1 MVP/Gate 1 ร่วมแล้ว; รอบ Codex ยืนยัน build/unit15/Editor11 และหลักฐาน16รายงาน รวม native disk hashes ดู [ผลตรวจรับรวม](document/phase-1/acceptance-phase-1.md) พร้อมใช้วงทดลองบน Windows/Edge; Phase2ยังต้องทำตามแผนเดิม
 
-แผน customize ที่ผู้ใช้ขอเน้นภาพ/เสียง/วิดีโอ/จัดฉาก: [ข้อเสนอ Scene Composer](document/node-media-customization-plan.md) เจ้าของอนุมัติเพิ่มเป็น Phase 1.8 แล้ว; ยังไม่เริ่มพัฒนา และต้องยืนยัน schema/semantics ใน1.8.1
+แผน customize ที่ผู้ใช้ขอเน้นภาพ/เสียง/วิดีโอ/จัดฉาก: [ข้อเสนอ Scene Composer](document/node-media-customization-plan.md) เจ้าของอนุมัติเพิ่มเป็น Phase 1.8 แล้ว; ยังไม่เริ่มพัฒนา และต้องยืนยัน schema/semantics ใน1.8.2

@@ -1,0 +1,21 @@
+{
+  "passed": true,
+  "checks": [
+    "Inspector draft survives selection changes; Cancel restores canonical; no draft Autosave before Apply; selected thumbnail URL released",
+    "Inline card draft survives graph unmount/remount and Cancel leaves canonical disk unchanged",
+    "Apply and Undo/Redo synchronize graph/Inspector without false draft conflicts",
+    "All five node cards expose correct Contract ports; keyboard opens and focuses Inspector; End has no outgoing handle",
+    "Choice UUID and fallback replace next; fallback copy is accurate; Core validation issues appear on affected cards",
+    "Long Thai content and controls remain accessible without page overflow at 1440/1000/700"
+  ],
+  "errors": [],
+  "mode": "production Worker/OPFS; injected picker",
+  "nodeIds": {
+    "scene": "4499d922-c581-4a74-9e7d-6ff560300573",
+    "branch": "d67e9376-fbff-4987-818a-9f90aa7ef24f",
+    "effect": "74af5401-09fc-4e31-bfbc-859203580483",
+    "schedule": "d9313f38-73e7-4ea8-a347-844ba8425b23",
+    "end": "863133c4-5433-4b14-999d-d65ee24087d3"
+  },
+  "browser": "157.0.4341.60"
+}

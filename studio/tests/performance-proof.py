@@ -1,7 +1,7 @@
 """P1–P7 on production Edge; P8 deliberately excluded until native-folder user grant."""
-import functools,http.server,json,pathlib,threading,sys,hashlib,statistics,subprocess,base64,platform
+import functools,http.server,json,pathlib,threading,sys,hashlib,statistics,subprocess,base64,platform,os
 from playwright.sync_api import sync_playwright,expect
-sys.stdout.reconfigure(encoding='utf-8');ROOT=pathlib.Path(__file__).resolve().parents[2];OUT=ROOT/'document/phase-1/evidence/1.7';OUT.mkdir(parents=True,exist_ok=True)
+sys.stdout.reconfigure(encoding='utf-8');ROOT=pathlib.Path(__file__).resolve().parents[2];OUT=ROOT/os.environ.get('SF_PERFORMANCE_PROOF_OUT','document/phase-1/evidence/1.7');OUT.mkdir(parents=True,exist_ok=True)
 baseline_path=ROOT/'temp/gate-0b-worker/baseline.json';baseline=json.loads(baseline_path.read_text(encoding='utf-8'));media=ROOT/'document/phase-0b/media-probe/probe.webm'
 class Handler(http.server.SimpleHTTPRequestHandler):
  extensions_map={**http.server.SimpleHTTPRequestHandler.extensions_map,'.js':'text/javascript','.mjs':'text/javascript','.wasm':'application/wasm'}

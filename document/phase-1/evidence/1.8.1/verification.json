@@ -1,0 +1,33 @@
+{
+  "date": "2026-11-15",
+  "development": "complete",
+  "codexAcceptance": "passed",
+  "geminiAcceptance": "pending",
+  "build": "TypeScript/Vite passed",
+  "uiBuild": "./assets/index-j3Hb5OYm.js",
+  "unit": {
+    "passed": 15,
+    "failed": 0
+  },
+  "nodeUI": {
+    "passed": 6,
+    "errors": []
+  },
+  "editor": {
+    "passed": 11,
+    "errors": []
+  },
+  "performanceP1P7": true,
+  "sourceHashes": {
+    "studio/src/ui/App.tsx": "097ff8a39f9966db118e221f3d83b8da7653139e379aa69e8bf22036eb5a0802",
+    "studio/src/ui/StoryCard.tsx": "503f33498554b6f83a1f61c3bac261f647c19e0189674114dbbe09878e811125",
+    "studio/src/ui/NodeInspector.tsx": "c83297b23e20f7ebed6b0d8af817fc14d91c859797eb24cd11bcb7f7b313d560",
+    "studio/src/ui/graph.ts": "422651412f7491af844f76a225448cea4f092bf8c2c91b1cff4e2de7697a896b",
+    "studio/src/ui/style.css": "92b542990f46dada2015688c9627edd99991dd4f4f0215ebf2317fb5a0e7fc9e"
+  },
+  "limits": [
+    "OPFS/injected picker UI tests",
+    "No new P8/SDK/native permission revocation run",
+    "Unapplied form drafts are session memory only"
+  ]
+}

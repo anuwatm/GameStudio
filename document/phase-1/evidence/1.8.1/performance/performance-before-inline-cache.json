@@ -1,0 +1,194 @@
+{
+  "passed": true,
+  "fixtureHash": "9872ffbb991fd00c324e18ae0afbcd9cca7d0449fa0b21ae8a3f890acc29bd33",
+  "nodeCount": 2000,
+  "samples": {
+    "P1": {
+      "warmup": 1515.9000000003725,
+      "raw": [
+        141.59999999962747,
+        41.5,
+        45.80000000074506,
+        49.299999999813735,
+        46.700000000186265
+      ],
+      "median": 46.700000000186265,
+      "max": 141.59999999962747,
+      "limit": 2000,
+      "passed": true
+    },
+    "P2": {
+      "warmup": 15.5,
+      "raw": [
+        10.099999999627471,
+        8.599999999627471,
+        9.899999999441206,
+        20.799999999813735,
+        8.799999999813735
+      ],
+      "median": 9.899999999441206,
+      "max": 20.799999999813735,
+      "limit": 200,
+      "passed": true
+    },
+    "P3": {
+      "warmup": 24.700000000186265,
+      "raw": [
+        21.40000000037253,
+        20.5,
+        22.600000000558794,
+        27,
+        20.40000000037253
+      ],
+      "median": 21.40000000037253,
+      "max": 27,
+      "limit": 100,
+      "passed": true
+    },
+    "P5": {
+      "warmup": 1333.2000000001863,
+      "raw": [
+        1416.8999999994412,
+        1225.7999999998137,
+        1228.800000000745,
+        1217.7999999998137,
+        1189
+      ],
+      "median": 1225.7999999998137,
+      "max": 1416.8999999994412,
+      "limit": 2000,
+      "passed": true
+    },
+    "P6": {
+      "warmup": 92.40000000037253,
+      "raw": [
+        99.40000000037253,
+        80.29999999981374,
+        76.1000000005588,
+        78.5,
+        94.59999999962747
+      ],
+      "median": 80.29999999981374,
+      "max": 99.40000000037253,
+      "limit": 150,
+      "passed": true
+    },
+    "P7": {
+      "warmup": 886.3999999994412,
+      "raw": [
+        88.5,
+        69.69999999925494,
+        54.90000000037253,
+        53.59999999962747,
+        52.799999999813735
+      ],
+      "median": 54.90000000037253,
+      "max": 88.5,
+      "limit": 1000,
+      "passed": true
+    },
+    "P4": {
+      "bytes": 688197,
+      "limit": 1000000,
+      "passed": true,
+      "rawBytes": 3799818,
+      "sha256": "9230f5afb4b2dbc0c473d118aa4652d8143754b68467314e9c4bb7c0dfdb9061"
+    }
+  },
+  "pageErrors": [],
+  "os": "Windows-11-10.0.26300-SP0",
+  "method": "warmup1 + measured5; retain all samples; no WASM startup in P1; P5 starts at Worker Project response; OPFS only for P5/P7 local fixture setup, not P8",
+  "browser": "157.0.4341.60",
+  "uiBuild": "./assets/index-C2VEMVg-.js",
+  "sourceHashes": {
+    "studio/src/ui/App.tsx": "6d30ca139e785ed26aa00125b294c8b7289e9a2a937c8995ba245c8d54662bd4",
+    "studio/src/ui/NodeInspector.tsx": "c83297b23e20f7ebed6b0d8af817fc14d91c859797eb24cd11bcb7f7b313d560",
+    "studio/src/ui/graph.ts": "422651412f7491af844f76a225448cea4f092bf8c2c91b1cff4e2de7697a896b",
+    "studio/src/core/recovery.ts": "4e8b488289f6e0742199c03f25e76b1921e55344052f3381d14ebeeba408610e"
+  },
+  "hardware": {
+    "logicalProcessors": 4,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/157.0.0.0 Safari/537.36 Edg/157.0.0.0"
+  },
+  "uiRounds": [
+    {
+      "round": 0,
+      "P5": 1333.2000000001863,
+      "P6": 92.40000000037253
+    },
+    {
+      "round": 1,
+      "P5": 1416.8999999994412,
+      "P6": 99.40000000037253
+    },
+    {
+      "round": 2,
+      "P5": 1225.7999999998137,
+      "P6": 80.29999999981374
+    },
+    {
+      "round": 3,
+      "P5": 1228.800000000745,
+      "P6": 76.1000000005588
+    },
+    {
+      "round": 4,
+      "P5": 1217.7999999998137,
+      "P6": 78.5
+    },
+    {
+      "round": 5,
+      "P5": 1189,
+      "P6": 94.59999999962747
+    }
+  ],
+  "mountedViewportNodes": 18,
+  "media": {
+    "sha256": "2ddc373b57a67dd5386d0e9fe687597627ef0efe485ae2a3a02f9db6f005eb2c",
+    "path": "C:\\LocalDevine\\www\\GameStudio\\document\\phase-0b\\media-probe\\probe.webm",
+    "frames": [
+      {
+        "ms": 886.3999999994412,
+        "width": 640,
+        "height": 360,
+        "mediaTime": 0,
+        "presentedFrames": 1
+      },
+      {
+        "ms": 88.5,
+        "width": 640,
+        "height": 360,
+        "mediaTime": 0,
+        "presentedFrames": 1
+      },
+      {
+        "ms": 69.69999999925494,
+        "width": 640,
+        "height": 360,
+        "mediaTime": 0,
+        "presentedFrames": 1
+      },
+      {
+        "ms": 54.90000000037253,
+        "width": 640,
+        "height": 360,
+        "mediaTime": 0,
+        "presentedFrames": 1
+      },
+      {
+        "ms": 53.59999999962747,
+        "width": 640,
+        "height": 360,
+        "mediaTime": 0,
+        "presentedFrames": 1
+      },
+      {
+        "ms": 52.799999999813735,
+        "width": 640,
+        "height": 360,
+        "mediaTime": 0,
+        "presentedFrames": 1
+      }
+    ]
+  }
+}
